@@ -103,12 +103,9 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
-\usepackage{booktabs}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\usepackage[]{natbib}
-\bibliographystyle{plainnat}
 \usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
@@ -988,8 +985,8 @@ Al igual que con un data frame, tenemos la opción de poner nombre a cada elemen
 \end{Shaded}
 
 \begin{verbatim}
-## Warning in matrix(1:4, nrow = 5): la longitud de los datos [4] no es un submúltiplo o múltiplo del número de filas
-## [5] en la matriz
+## Warning in matrix(1:4, nrow = 5): la longitud de los datos [4] no es un submúltiplo o múltiplo del
+## número de filas [5] en la matriz
 \end{verbatim}
 
 \begin{Shaded}
@@ -1616,7 +1613,7 @@ La segunda opción que vimos es utilizar la ruta completa del archivo, por ejemp
 
 \begin{verbatim}
 ## Rows: 344 Columns: 7
-## -- Column specification --------------------------------------------------------------------------------------------
+## -- Column specification -----------------------------------------------------------------------------
 ## Delimiter: ","
 ## chr (3): species, island, sex
 ## dbl (4): culmen_length_mm, culmen_depth_mm, flipper_length_mm, body_mass_g
@@ -2686,13 +2683,20 @@ cbind:
 \end{Shaded}
 
 \begin{verbatim}
-##   estudiante       curso notas ponderacion nota_ponderada estudiante       curso notas ponderacion nota_ponderada
-## 1         E1 Matemáticas     7         0.7            4.9         E1 Matemáticas     7         0.7            4.9
-## 2         E2 Matemáticas     8         0.7            5.6         E2 Matemáticas     8         0.7            5.6
-## 3         E3 Matemáticas     9         0.7            6.3         E3 Matemáticas     9         0.7            6.3
-## 4         E1    Biología    10         0.3            3.0         E1    Biología    10         0.3            3.0
-## 5         E2    Biología     9         0.3            2.7         E2    Biología     9         0.3            2.7
-## 6         E3    Biología     8         0.3            2.4         E3    Biología     8         0.3            2.4
+##   estudiante       curso notas ponderacion nota_ponderada estudiante       curso notas ponderacion
+## 1         E1 Matemáticas     7         0.7            4.9         E1 Matemáticas     7         0.7
+## 2         E2 Matemáticas     8         0.7            5.6         E2 Matemáticas     8         0.7
+## 3         E3 Matemáticas     9         0.7            6.3         E3 Matemáticas     9         0.7
+## 4         E1    Biología    10         0.3            3.0         E1    Biología    10         0.3
+## 5         E2    Biología     9         0.3            2.7         E2    Biología     9         0.3
+## 6         E3    Biología     8         0.3            2.4         E3    Biología     8         0.3
+##   nota_ponderada
+## 1            4.9
+## 2            5.6
+## 3            6.3
+## 4            3.0
+## 5            2.7
+## 6            2.4
 \end{verbatim}
 
 rbind:
@@ -3067,7 +3071,8 @@ Agrega una nueva columna a a la data llamada \texttt{tatuajes.por.año} que mues
 \end{Shaded}
 
 \begin{verbatim}
-##  [1]  0.3666667  0.1363636  0.0000000  0.2571429  0.6000000  2.9545455 28.1250000  0.1724138  0.4800000  0.6842105
+##  [1]  0.3666667  0.1363636  0.0000000  0.2571429  0.6000000  2.9545455 28.1250000  0.1724138
+##  [9]  0.4800000  0.6842105
 \end{verbatim}
 
 \hfill\break
@@ -3456,9 +3461,9 @@ Usandola con el \emph{pipe} sería algo así:\\
 \begin{verbatim}
 ## Rows: 60
 ## Columns: 3
-## $ len  <dbl> 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17.3, 13.6, 14.5,~
-## $ supp <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, V~
-## $ dose <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2~
+## $ len  <dbl> 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17~
+## $ supp <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC~
+## $ dose <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1~
 \end{verbatim}
 
 \begin{Shaded}
@@ -3471,8 +3476,8 @@ Usandola con el \emph{pipe} sería algo así:\\
 \begin{verbatim}
 ## Rows: 60
 ## Columns: 2
-## $ supp <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, V~
-## $ dose <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2~
+## $ supp <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC~
+## $ dose <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1~
 \end{verbatim}
 
 La función \textbf{glimpse} nos permite ver los datos como la función \emph{str} pero uniendolo al pipe.
@@ -3488,7 +3493,7 @@ También podemos seleccionar columnas con criterios, por ejemplo:\\
 \begin{verbatim}
 ## Rows: 60
 ## Columns: 1
-## $ dose <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2~
+## $ dose <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1~
 \end{verbatim}
 
 \begin{Shaded}
@@ -3500,7 +3505,7 @@ También podemos seleccionar columnas con criterios, por ejemplo:\\
 \begin{verbatim}
 ## Rows: 60
 ## Columns: 1
-## $ dose <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2~
+## $ dose <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1~
 \end{verbatim}
 
 \begin{Shaded}
@@ -3512,7 +3517,7 @@ También podemos seleccionar columnas con criterios, por ejemplo:\\
 \begin{verbatim}
 ## Rows: 60
 ## Columns: 1
-## $ dose <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2~
+## $ dose <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1~
 \end{verbatim}
 
 \begin{Shaded}
@@ -3524,7 +3529,7 @@ También podemos seleccionar columnas con criterios, por ejemplo:\\
 \begin{verbatim}
 ## Rows: 60
 ## Columns: 1
-## $ dose <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2~
+## $ dose <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1~
 \end{verbatim}
 
 \hfill\break
@@ -3540,8 +3545,8 @@ Seleccionando usando un vector, notemos también que en el orden que ponemos el 
 \begin{verbatim}
 ## Rows: 60
 ## Columns: 2
-## $ supp <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, V~
-## $ len  <dbl> 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17.3, 13.6, 14.5,~
+## $ supp <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC~
+## $ len  <dbl> 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17~
 \end{verbatim}
 
 \hfill\break
@@ -3559,8 +3564,8 @@ Por ejemplo, si usamos \emph{if} sería bajo un criterio como un tipo de dato
 \begin{verbatim}
 ## Rows: 60
 ## Columns: 2
-## $ len  <dbl> 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17.3, 13.6, 14.5,~
-## $ dose <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2~
+## $ len  <dbl> 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17~
+## $ dose <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1~
 \end{verbatim}
 
 \begin{Shaded}
@@ -3573,7 +3578,7 @@ Por ejemplo, si usamos \emph{if} sería bajo un criterio como un tipo de dato
 \begin{verbatim}
 ## Rows: 60
 ## Columns: 1
-## $ supp <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, V~
+## $ supp <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC~
 \end{verbatim}
 
 \hfill\break
@@ -3588,9 +3593,9 @@ Con \emph{all} podemos reformatear los nombres de nuestras columnas:
 \begin{verbatim}
 ## Rows: 60
 ## Columns: 3
-## $ LEN  <dbl> 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17.3, 13.6, 14.5,~
-## $ SUPP <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, V~
-## $ DOSE <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2~
+## $ LEN  <dbl> 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17~
+## $ SUPP <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC~
+## $ DOSE <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1~
 \end{verbatim}
 
 \hfill\break
@@ -3606,7 +3611,7 @@ Y con \emph{at} también podemos escoger columnas basadas en criterios, por ejem
 \begin{verbatim}
 ## Rows: 60
 ## Columns: 1
-## $ dose <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2~
+## $ dose <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1~
 \end{verbatim}
 
 \begin{Shaded}
@@ -3619,8 +3624,8 @@ Y con \emph{at} también podemos escoger columnas basadas en criterios, por ejem
 \begin{verbatim}
 ## Rows: 60
 ## Columns: 2
-## $ len  <dbl> 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17.3, 13.6, 14.5,~
-## $ supp <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, V~
+## $ len  <dbl> 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17~
+## $ supp <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC~
 \end{verbatim}
 
 \begin{Shaded}
@@ -3632,8 +3637,8 @@ Y con \emph{at} también podemos escoger columnas basadas en criterios, por ejem
 \begin{verbatim}
 ## Rows: 60
 ## Columns: 2
-## $ len  <dbl> 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17.3, 13.6, 14.5,~
-## $ supp <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, V~
+## $ len  <dbl> 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17~
+## $ supp <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC~
 \end{verbatim}
 
 \subsection{Filtrando filas}\label{filtrando-filas-1}
@@ -3667,9 +3672,9 @@ o con el pipe:
 \begin{verbatim}
 ## Rows: 30
 ## Columns: 3
-## $ len  <dbl> 15.2, 21.5, 17.6, 9.7, 14.5, 10.0, 8.2, 9.4, 16.5, 9.7, 19.7, 23.3, 23.6, 26.4, 20.0, 25.2, 25.8, 21.~
-## $ supp <fct> OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, O~
-## $ dose <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2~
+## $ len  <dbl> 15.2, 21.5, 17.6, 9.7, 14.5, 10.0, 8.2, 9.4, 16.5, 9.7, 19.7, 23.3, 23.6, 26.4, 20.0, ~
+## $ supp <fct> OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ~
+## $ dose <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1~
 \end{verbatim}
 
 \begin{Shaded}
@@ -3727,9 +3732,9 @@ Filtrando basado en un vector:
 \begin{verbatim}
 ## Rows: 52
 ## Columns: 3
-## $ len  <dbl> 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17.3, 13.6, 14.5,~
-## $ supp <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, V~
-## $ dose <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2~
+## $ len  <dbl> 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17~
+## $ supp <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC~
+## $ dose <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1~
 \end{verbatim}
 
 \hfill\break
@@ -4139,9 +4144,9 @@ Existen diferentes formas de renombrar las columnas una es con la función \emph
 \begin{verbatim}
 ## Rows: 60
 ## Columns: 3
-## $ dosis      <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, ~
-## $ longitud   <dbl> 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17.3, 13.6,~
-## $ suplemento <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC,~
+## $ dosis      <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, ~
+## $ longitud   <dbl> 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22~
+## $ suplemento <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, ~
 \end{verbatim}
 
 \hfill\break
@@ -4156,9 +4161,9 @@ También existe la función rename en todas sus versiones, ejemplos:
 \begin{verbatim}
 ## Rows: 60
 ## Columns: 3
-## $ len   <dbl> 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17.3, 13.6, 14.5~
-## $ supp  <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, ~
-## $ dosis <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, ~
+## $ len   <dbl> 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 1~
+## $ supp  <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, V~
+## $ dosis <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, ~
 \end{verbatim}
 
 \begin{Shaded}
@@ -4170,9 +4175,9 @@ También existe la función rename en todas sus versiones, ejemplos:
 \begin{verbatim}
 ## Rows: 60
 ## Columns: 3
-## $ Num_len  <dbl> 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17.3, 13.6, 1~
-## $ supp     <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, V~
-## $ Num_dose <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.~
+## $ Num_len  <dbl> 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5~
+## $ supp     <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC~
+## $ Num_dose <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.~
 \end{verbatim}
 
 \begin{Shaded}
@@ -4184,9 +4189,9 @@ También existe la función rename en todas sus versiones, ejemplos:
 \begin{verbatim}
 ## Rows: 60
 ## Columns: 3
-## $ len      <dbl> 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17.3, 13.6, 1~
-## $ supp     <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, V~
-## $ Num_dose <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.~
+## $ len      <dbl> 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5~
+## $ supp     <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC~
+## $ Num_dose <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.~
 \end{verbatim}
 
 \begin{Shaded}
@@ -4198,9 +4203,9 @@ También existe la función rename en todas sus versiones, ejemplos:
 \begin{verbatim}
 ## Rows: 60
 ## Columns: 3
-## $ LEN  <dbl> 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17.3, 13.6, 14.5,~
-## $ SUPP <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, V~
-## $ DOSE <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2~
+## $ LEN  <dbl> 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17~
+## $ SUPP <fct> VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC~
+## $ DOSE <dbl> 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1~
 \end{verbatim}
 
 \hfill\break
@@ -4676,7 +4681,8 @@ Agrega una nueva columna a a la data llamada \texttt{tatuajes.por.año} que mues
 \end{Shaded}
 
 \begin{verbatim}
-##  [1]  0.3666667  0.6000000  0.4800000  0.1724138  2.9545455  0.1363636  0.2571429  0.6842105 28.1250000  0.0000000
+##  [1]  0.3666667  0.6000000  0.4800000  0.1724138  2.9545455  0.1363636  0.2571429  0.6842105
+##  [9] 28.1250000  0.0000000
 \end{verbatim}
 
 \hfill\break
@@ -6393,13 +6399,13 @@ Hay muchos paquetes además de los que trae por default R stats (que viene por d
 
 \section{Prueba de Friedman}\label{prueba-de-friedman}
 
-\section{Prueba de Chi-cuadrado (χ²)}\label{prueba-de-chi-cuadrado-ux3c7uxb2}
+\section{Prueba de Chi-cuadrado}\label{prueba-de-chi-cuadrado}
 
 \section{Prueba de McNemar}\label{prueba-de-mcnemar}
 
 \section{Correlación de rango de Spearman}\label{correlaciuxf3n-de-rango-de-spearman}
 
-\section{Correlación de Kendall (τ de Kendall)}\label{correlaciuxf3n-de-kendall-ux3c4-de-kendall}
+\section{Correlación de Kendall}\label{correlaciuxf3n-de-kendall}
 
 \chapter{Análisis de riqueza y diversidad alfa y beta}\label{anuxe1lisis-de-riqueza-y-diversidad-alfa-y-beta}
 

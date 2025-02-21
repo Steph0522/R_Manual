@@ -151,10 +151,10 @@ prueba-de-mann-whitney-u-wilcoxon-rank-sum-test
 prueba-de-wilcoxon-para-muestras-relacionadas
 prueba-de-kruskal-wallis
 prueba-de-friedman
-prueba-de-chi-cuadrado-χ²
+prueba-de-chi-cuadrado
 prueba-de-mcnemar
 correlación-de-rango-de-spearman
-correlación-de-kendall-τ-de-kendall
+correlación-de-kendall
 análisis-de-riqueza-y-diversidad-alfa-y-beta
 análisis-multivariados
 pca

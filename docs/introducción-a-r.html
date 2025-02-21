@@ -844,8 +844,8 @@ Para esta estructura, no importan las dimensiones o largo de los elementos que q
 Al igual que con un data frame, tenemos la opción de poner nombre a cada elemento de una lista.</p>
 <div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="introducción-a-r.html#cb69-1" tabindex="-1"></a>un_vector <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span></span>
 <span id="cb69-2"><a href="introducción-a-r.html#cb69-2" tabindex="-1"></a>una_matriz <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">nrow =</span> <span class="dv">5</span>)</span></code></pre></div>
-<pre><code>## Warning in matrix(1:4, nrow = 5): la longitud de los datos [4] no es un submúltiplo o múltiplo del número de filas
-## [5] en la matriz</code></pre>
+<pre><code>## Warning in matrix(1:4, nrow = 5): la longitud de los datos [4] no es un submúltiplo o múltiplo del
+## número de filas [5] en la matriz</code></pre>
 <div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="introducción-a-r.html#cb71-1" tabindex="-1"></a>una_df     <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&quot;numeros&quot;</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="st">&quot;letras&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>))</span>
 <span id="cb71-2"><a href="introducción-a-r.html#cb71-2" tabindex="-1"></a></span>
 <span id="cb71-3"><a href="introducción-a-r.html#cb71-3" tabindex="-1"></a>una_lista <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;vector&quot;</span> <span class="ot">=</span> un_vector, <span class="st">&quot;matriz&quot;</span> <span class="ot">=</span> una_matriz, <span class="st">&quot;df&quot;</span> <span class="ot">=</span> una_df)</span>
@@ -1158,7 +1158,7 @@ Podemos usar la tecla <em>‘tab’</em> para explorar las demás opciones que p
 <p>La segunda opción que vimos es utilizar la ruta completa del archivo, por ejemplo:</p>
 <div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="introducción-a-r.html#cb141-1" tabindex="-1"></a>data<span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data/penguins_size.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 344 Columns: 7
-## ── Column specification ────────────────────────────────────────────────────────────────────────────────────────────
+## ── Column specification ─────────────────────────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (3): species, island, sex
 ## dbl (4): culmen_length_mm, culmen_depth_mm, flipper_length_mm, body_mass_g

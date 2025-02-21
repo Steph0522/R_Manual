@@ -3,8 +3,8 @@
 ##	Prueba de Wilcoxon para muestras relacionadas
 ##	Prueba de Kruskal-Wallis
 ##	Prueba de Friedman
-##	Prueba de Chi-cuadrado (χ²)
+##	Prueba de Chi-cuadrado
 ##	Prueba de McNemar
 ##	Correlación de rango de Spearman
-##	Correlación de Kendall (τ de Kendall)
+##	Correlación de Kendall 
 
