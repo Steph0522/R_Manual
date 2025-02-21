@@ -474,10 +474,10 @@ Para conocer la desviación estándar de todas las columnas numéricas, usamos l
 <p>Si queremos explorar cómo es la variación de la longitud del sepalo por cada especie:<br />
 </p>
 <div class="sourceCode" id="cb554"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb554-1"><a href="introducción-a-la-estadística.html#cb554-1" tabindex="-1"></a><span class="fu">boxplot</span>(iris<span class="sc">$</span>Largo_Sepalo <span class="sc">~</span> iris<span class="sc">$</span>Especies)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-245-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="R_Manual_files/figure-html/unnamed-chunk-245-1.png" width="384" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb555"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb555-1"><a href="introducción-a-la-estadística.html#cb555-1" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
 <span id="cb555-2"><a href="introducción-a-la-estadística.html#cb555-2" tabindex="-1"></a><span class="fu">ggbarplot</span>(<span class="at">data =</span> iris, <span class="at">x =</span> <span class="st">&quot;Especies&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Largo_Sepalo&quot;</span>, <span class="at">add =</span> <span class="st">&quot;mean_sd&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-246-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><img src="R_Manual_files/figure-html/unnamed-chunk-246-1.png" width="384" style="display: block; margin: auto;" /></p>
 <p><br />
 </p>
 </div>
@@ -491,15 +491,15 @@ Para este ejemplo, usaremos el ancho del sepalo en vez del largo del sepalo.
 <p><br />
 </p>
 <div class="sourceCode" id="cb556"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb556-1"><a href="introducción-a-la-estadística.html#cb556-1" tabindex="-1"></a><span class="fu">hist</span>(iris<span class="sc">$</span>Ancho_Sepalo)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-247-1.png" width="672" /></p>
+<p><img src="R_Manual_files/figure-html/unnamed-chunk-247-1.png" width="672" /></p>
 <div class="sourceCode" id="cb557"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb557-1"><a href="introducción-a-la-estadística.html#cb557-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(iris<span class="sc">$</span>Ancho_Sepalo))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-247-2.png" width="672" /></p>
+<p><img src="R_Manual_files/figure-html/unnamed-chunk-247-2.png" width="672" /></p>
 <div class="sourceCode" id="cb558"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb558-1"><a href="introducción-a-la-estadística.html#cb558-1" tabindex="-1"></a><span class="fu">qqnorm</span>(iris<span class="sc">$</span>Ancho_Sepalo)</span>
 <span id="cb558-2"><a href="introducción-a-la-estadística.html#cb558-2" tabindex="-1"></a><span class="fu">qqline</span>(iris<span class="sc">$</span>Ancho_Sepalo)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-248-1.png" width="672" /></p>
+<p><img src="R_Manual_files/figure-html/unnamed-chunk-248-1.png" width="672" /></p>
 <div class="sourceCode" id="cb559"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb559-1"><a href="introducción-a-la-estadística.html#cb559-1" tabindex="-1"></a><span class="fu">library</span>(car) <span class="co"># cargamos el paquete car</span></span>
 <span id="cb559-2"><a href="introducción-a-la-estadística.html#cb559-2" tabindex="-1"></a><span class="fu">qqPlot</span>(iris<span class="sc">$</span>Ancho_Sepalo )</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-249-1.png" width="672" /></p>
+<p><img src="R_Manual_files/figure-html/unnamed-chunk-249-1.png" width="672" /></p>
 <pre><code>## [1] 16 34</code></pre>
 <p>Al parecer nuestros datos tienen una distribución normal, según los gráficos, sin embargo, para estar seguros de esto, haremos una prueba llamada test de shapiro que nos permitirá confirmar esto:<br />
 </p>
@@ -555,7 +555,7 @@ El modelo se construye con la variable de respuesta al lado izquiero de la ecuac
 </p>
 <div class="sourceCode" id="cb569"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb569-1"><a href="introducción-a-la-estadística.html#cb569-1" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> <span class="fu">lm</span>(Ancho_Petalo <span class="sc">~</span> Largo_Petalo, <span class="at">data =</span> iris) </span>
 <span id="cb569-2"><a href="introducción-a-la-estadística.html#cb569-2" tabindex="-1"></a><span class="fu">plot</span>(modelo, <span class="at">which =</span> <span class="dv">2</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-253-1.png" width="672" /></p>
+<p><img src="R_Manual_files/figure-html/unnamed-chunk-253-1.png" width="672" /></p>
 <p>Son solo pocos puntos que se salen de la gráfica, así que asumimos normalidad.</p>
 <p>Exploremos el modelo:</p>
 <div class="sourceCode" id="cb570"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb570-1"><a href="introducción-a-la-estadística.html#cb570-1" tabindex="-1"></a><span class="fu">summary</span>(modelo)</span></code></pre></div>
@@ -597,7 +597,7 @@ Para la condición 1, en ningún lado nos dice que son muestras longitudinales, 
 Vamos a ver con estas dos gráficas si efectivamente se cumplen las condiciones 2 y 3.</p>
 <div class="sourceCode" id="cb572"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb572-1"><a href="introducción-a-la-estadística.html#cb572-1" tabindex="-1"></a>modelo_ancho <span class="ot">&lt;-</span> <span class="fu">lm</span>(Ancho_Sepalo <span class="sc">~</span> Especies, <span class="at">data =</span> iris) </span>
 <span id="cb572-2"><a href="introducción-a-la-estadística.html#cb572-2" tabindex="-1"></a><span class="fu">plot</span>(modelo_ancho, <span class="at">which =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>) )</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-255-1.png" width="45%" /><img src="_main_files/figure-html/unnamed-chunk-255-2.png" width="45%" /></p>
+<p><img src="R_Manual_files/figure-html/unnamed-chunk-255-1.png" width="45%" /><img src="R_Manual_files/figure-html/unnamed-chunk-255-2.png" width="45%" /></p>
 <p>Este gráfico muestra si los residuos tienen patrones no lineales.
 Si encuentra residuos igualmente distribuidos alrededor de una línea horizontal sin patrones distintos, es una buena indicación de que no tiene relaciones no lineales.
 La linea roja debe ser más o menos recta, no debe estar curvada, entre más recta mejor.</p>
@@ -664,7 +664,7 @@ La función <code>aov()</code> realiza lo mismo que la de <code>anova()</code>.<
 <p><br />
 Esta función aparte de ver las diferencias de medias nos ordena con letras cual es la mayor y cual es la menor, veamoslo mejor en una gráfica de barras.<br />
 </p>
-<p><img src="_main_files/figure-html/unnamed-chunk-259-1.png" width="672" /></p>
+<p><img src="R_Manual_files/figure-html/unnamed-chunk-259-1.png" width="672" /></p>
 <div style="page-break-after: always;"></div>
 </div>
 <div id="anova-2-vías" class="section level2 hasAnchor" number="5.13">
@@ -707,14 +707,14 @@ Boxplots
 :</p>
 <div class="sourceCode" id="cb583"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb583-1"><a href="introducción-a-la-estadística.html#cb583-1" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
 <span id="cb583-2"><a href="introducción-a-la-estadística.html#cb583-2" tabindex="-1"></a><span class="fu">ggboxplot</span>(<span class="at">data =</span> ToothGrowth, <span class="at">x =</span> <span class="st">&quot;supp&quot;</span>, <span class="at">y =</span> <span class="st">&quot;len&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;supp&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-262-1.png" width="672" /></p>
+<p><img src="R_Manual_files/figure-html/unnamed-chunk-262-1.png" width="672" /></p>
 <div class="sourceCode" id="cb584"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb584-1"><a href="introducción-a-la-estadística.html#cb584-1" tabindex="-1"></a><span class="fu">ggboxplot</span>(<span class="at">data =</span> ToothGrowth, <span class="at">x =</span> <span class="st">&quot;dose&quot;</span>, <span class="at">y =</span> <span class="st">&quot;len&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;dose&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-262-2.png" width="672" /></p>
+<p><img src="R_Manual_files/figure-html/unnamed-chunk-262-2.png" width="672" /></p>
 <div class="sourceCode" id="cb585"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb585-1"><a href="introducción-a-la-estadística.html#cb585-1" tabindex="-1"></a><span class="fu">ggboxplot</span>(<span class="at">data =</span> ToothGrowth, <span class="at">x =</span> <span class="st">&quot;dose&quot;</span>, <span class="at">y =</span> <span class="st">&quot;len&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;supp&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-262-3.png" width="672" /></p>
+<p><img src="R_Manual_files/figure-html/unnamed-chunk-262-3.png" width="672" /></p>
 <p>Líneas:</p>
 <div class="sourceCode" id="cb586"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb586-1"><a href="introducción-a-la-estadística.html#cb586-1" tabindex="-1"></a><span class="fu">ggline</span>(ToothGrowth, <span class="at">x =</span> <span class="st">&quot;dose&quot;</span>, <span class="at">y =</span> <span class="st">&quot;len&quot;</span>, <span class="at">color =</span> <span class="st">&quot;supp&quot;</span>, <span class="at">add =</span> <span class="fu">c</span>(<span class="st">&quot;mean_se&quot;</span>, <span class="st">&quot;jitter&quot;</span>))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-263-1.png" width="672" /></p>
+<p><img src="R_Manual_files/figure-html/unnamed-chunk-263-1.png" width="672" /></p>
 <p><br />
 Como pudimos ver aparentemente los factores podrían tener una interacción aunque muy level, en este caso podríamos correr una ANOVA dos vías o bien aditivo o bien mutiplicativo si queremos confirmar esta pequeña interacción.<br />
 </p>
@@ -792,7 +792,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["_main.pdf", "_main.docx"],
+"download": ["R_Manual.pdf", "R_Manual.docx"],
 "search": {
 "engine": "fuse",
 "options": null

@@ -1,3 +1,4 @@
+book_filename: "R_Manual"
 output_dir: "docs"
 delete_merged_file: true
 language:
@@ -6,10 +7,10 @@ language:
 
 bookdown:
   output:
-    pdf: "docs/_main.pdf"
-    word: "docs/_main.docx"
+    pdf: "docs/R_Manual.pdf"
+    word: "docs/R_Manual  .docx"
 
   # Opción para generar los botones de descarga automáticamente
   download:
-    pdf: "docs/_main.pdf"
-    word: "docs/_main.docx"
+    pdf: "docs/R_Manual.pdf"
+    word: "docs/R_Manual.docx"
