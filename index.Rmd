@@ -5,7 +5,7 @@ author:
   - "Mauricio Hernández"
 site: bookdown::bookdown_site
 documentclass: book
-url: 'https://github.com/Steph0522/R_Manual/'
+url: 'https://github.com/Steph0522/R_Manual/index.html'
 github-repo: "Steph0522/R_Manual"
 output:
  bookdown::gitbook:
