@@ -3,3 +3,8 @@ delete_merged_file: true
 language:
   ui:
     chapter_name: "Capítulo "
+
+bookdown:
+  output:
+    pdf: "docs/_main.pdf"
+    word: "docs/_main.docx"
