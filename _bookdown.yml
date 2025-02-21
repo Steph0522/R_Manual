@@ -8,3 +8,8 @@ bookdown:
   output:
     pdf: "docs/_main.pdf"
     word: "docs/_main.docx"
+
+  # Opción para generar los botones de descarga automáticamente
+  download:
+    pdf: "docs/_main.pdf"
+    word: "docs/_main.docx"
