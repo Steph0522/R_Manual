@@ -1,60 +1,58 @@
---- 
-title: "A Minimal Book Example"
-author: "John Doe"
-date: "`r Sys.Date()`"
+---
+title: 'MANUAL DE R Y RSTUDIO'
+author:
+  - "Stephanie Hereira-Pacheco"
+  - "Mauricio Hernández"
 site: bookdown::bookdown_site
 documentclass: book
-bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
-# cover-image: path to the social sharing image like images/cover.jpg
-description: |
-  This is a minimal example of using the bookdown package to write a book.
-  The HTML output format for this example is bookdown::gitbook,
-  set in the _output.yml file.
-link-citations: yes
-github-repo: rstudio/bookdown-demo
+url: 'https://github.com/Steph0522/R_Manual/_book/index.html/'
+github-repo: "Steph0522/R_Manual"
+output:
+ bookdown::gitbook:
+  toc_depth: 3 
+  config:
+    sharing: null
+editor_options: 
+  markdown: 
+    wrap: 72
+#link-citations: yes
 ---
 
-# About
-
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
-
-## Usage 
-
-Each **bookdown** chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter *must* start with a first-level heading: `# A good chapter`, and can contain one (and only one) first-level heading.
-
-Use second-level and higher headings within chapters like: `## A short section` or `### An even shorter section`.
-
-The `index.Rmd` file is required, and is also your first book chapter. It will be the homepage when you render the book.
-
-## Render book
-
-You can render the HTML version of this example book without changing anything:
-
-1. Find the **Build** pane in the RStudio IDE, and
-
-1. Click on **Build Book**, then select your output format, or select "All formats" if you'd like to use multiple formats from the same book source files.
-
-Or build the book from the R console:
-
-```{r, eval=FALSE}
-bookdown::render_book()
-```
-
-To render this example to PDF as a `bookdown::pdf_book`, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
-
-## Preview book
-
-As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in "Preview book", or from the R console:
-
-```{r eval=FALSE}
-bookdown::serve_book()
-```
 
 
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
-```
+#  Prefacio {-}
+
+Este libro contiene la recopilación de temas impartidos y tratados a lo largo de diferentes cursos y lecciones sobre R y sus aplicaciones en Ciencias Biológicas. 
+
+
+## Objetivo del libro
+
+Que los estudiantes de nivel pregrado y posgrado puedan aprender temas básicos y aplicados del lenguaje de R y su aplicación en sus estudios y trabajos enfocados en ciencias biológicas.
+
+
+## **Requisitos**
+
+- Rstudio versiones 2024 en adelante.
+- R versiones de 4.0 en adelante.
+
+## Instalación de Rsudio y R
+
+En caso de no tener instalado Rstudio y R que son los prerequisitos para llevar a cabo los ejercicios y temas de est elibro, entonces visita estas ligas para descargarlos e instalarlos.
+
+
+### Rstudio
+
+- En [MacOS](https://download1.rstudio.org/electron/macos/RStudio-2024.12.1-563.dmg)
+- En [Ubuntu](https://download1.rstudio.org/electron/jammy/amd64/rstudio-2024.12.1-563-amd64.deb)
+- En [Windows](https://download1.rstudio.org/electron/windows/RStudio-2024.12.1-563.exe)
+
+### R
+
+- Para [MacOS](https://cran.r-project.org/bin/macosx/)
+- Para [Ubuntu](https://cran.r-project.org/bin/linux/ubuntu/)
+- Para [Windows](https://cran.r-project.org/bin/windows/base/)
+
+
+## Aviso Legal: Protección de Propiedad Intelectual.
+
+El material contenido en este manual está protegido por las leyes mexicanas de Propiedad Intelectual. Por lo que su reproducción o distribución no autorizada con fines de lucro está prohibida.

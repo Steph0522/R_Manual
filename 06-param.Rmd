@@ -1,0 +1,12 @@
+# Tipos de pruebas paramétricas 
+
+##	Prueba t de una muestra
+##	Prueba t de dos muestras
+##	Prueba t de Welch
+##	Prueba F de Fisher
+##	Prueba t pareada
+##	ANOVA (one-way-anova, two-way-anova)
+##	ANCOVA
+##	Correlación de Pearson
+##	Regresión lineal simple y múltiple
+##	Etc.

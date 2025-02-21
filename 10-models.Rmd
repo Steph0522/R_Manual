@@ -1,0 +1,6 @@
+#	Modelización estadística:
+##	Modelo lineal general
+##	GLM con distribución Poisson
+##	GLM con distribución quasi-Poisson
+##	GLM con distribución de Bernoulli (Binomial)
+##	GLMM: modelos lineales generales mixtos

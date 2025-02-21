@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 3 Gráficos en R | MANUAL DE R Y RSTUDIO</title>
+  <meta name="description" content="Capítulo 3 Gráficos en R | MANUAL DE R Y RSTUDIO" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 3 Gráficos en R | MANUAL DE R Y RSTUDIO" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="Steph0522/R_Manual" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 3 Gráficos en R | MANUAL DE R Y RSTUDIO" />
+  
+  
+  
+
+<meta name="author" content="Stephanie Hereira-Pacheco" />
+<meta name="author" content="Mauricio Hernández" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="manejo-de-data-frames-y-bases-de-datos.html"/>
+<link rel="next" href="valor-de-significancia-p-en-estadística-p-value.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MANUAL DE R Y RSTUDIO</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefacio</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#objetivo-del-libro"><i class="fa fa-check"></i><b>0.1</b> Objetivo del libro</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#requisitos"><i class="fa fa-check"></i><b>0.2</b> <strong>Requisitos</strong></a></li>
+<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#instalación-de-rsudio-y-r"><i class="fa fa-check"></i><b>0.3</b> Instalación de Rsudio y R</a>
+<ul>
+<li class="chapter" data-level="0.3.1" data-path="index.html"><a href="index.html#rstudio"><i class="fa fa-check"></i><b>0.3.1</b> Rstudio</a></li>
+<li class="chapter" data-level="0.3.2" data-path="index.html"><a href="index.html#r"><i class="fa fa-check"></i><b>0.3.2</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="0.4" data-path="index.html"><a href="index.html#aviso-legal-protección-de-propiedad-intelectual."><i class="fa fa-check"></i><b>0.4</b> Aviso Legal: Protección de Propiedad Intelectual.</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introducción-a-r.html"><a href="introducción-a-r.html"><i class="fa fa-check"></i><b>1</b> : Introducción a R</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#getting-started"><i class="fa fa-check"></i><b>1.1</b> Comenzando con R y RStudio</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#breve-descripción-de-r"><i class="fa fa-check"></i><b>1.1.1</b> Breve descripción de R</a></li>
+<li class="chapter" data-level="1.1.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#un-poco-de-historia1"><i class="fa fa-check"></i><b>1.1.2</b> Un poco de historia…</a></li>
+<li class="chapter" data-level="1.1.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#por-qué-usar-r2"><i class="fa fa-check"></i><b>1.1.3</b> ¿Por qué usar R?</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#rstudio"><i class="fa fa-check"></i><b>1.1.4</b> RStudio</a></li>
+<li class="chapter" data-level="1.1.5" data-path="introducción-a-r.html"><a href="introducción-a-r.html#interfaz-de-rstudio"><i class="fa fa-check"></i><b>1.1.5</b> Interfaz de Rstudio</a></li>
+<li class="chapter" data-level="1.1.6" data-path="introducción-a-r.html"><a href="introducción-a-r.html#scripts"><i class="fa fa-check"></i><b>1.1.6</b> <em>Scripts</em></a></li>
+<li class="chapter" data-level="1.1.7" data-path="introducción-a-r.html"><a href="introducción-a-r.html#directorio-de-trabajo"><i class="fa fa-check"></i><b>1.1.7</b> Directorio de trabajo</a></li>
+<li class="chapter" data-level="1.1.8" data-path="introducción-a-r.html"><a href="introducción-a-r.html#sesión"><i class="fa fa-check"></i><b>1.1.8</b> Sesión</a></li>
+<li class="chapter" data-level="1.1.9" data-path="introducción-a-r.html"><a href="introducción-a-r.html#proyecto"><i class="fa fa-check"></i><b>1.1.9</b> Proyecto</a></li>
+<li class="chapter" data-level="1.1.10" data-path="introducción-a-r.html"><a href="introducción-a-r.html#instalación-de-paquetes-de-r"><i class="fa fa-check"></i><b>1.1.10</b> Instalación de paquetes de R</a></li>
+<li class="chapter" data-level="1.1.11" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tipos-de-objetos-en-r"><i class="fa fa-check"></i><b>1.1.11</b> Tipos de objetos en R</a></li>
+<li class="chapter" data-level="1.1.12" data-path="introducción-a-r.html"><a href="introducción-a-r.html#funciones-en-r6"><i class="fa fa-check"></i><b>1.1.12</b> Funciones en R</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tipos-de-datos"><i class="fa fa-check"></i><b>1.2</b> Tipos de datos</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tipos-de-estructura-de-los-datos"><i class="fa fa-check"></i><b>1.2.1</b> Tipos de estructura de los datos</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#data-frames"><i class="fa fa-check"></i><b>1.3</b> <em>Data frames</em></a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#el-operador-y-otras-formas-de-acceso"><i class="fa fa-check"></i><b>1.3.1</b> El operador <code>$</code> y otras formas de acceso</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introducción-a-r.html"><a href="introducción-a-r.html#creando-subconjuntos-o-indexación."><i class="fa fa-check"></i><b>1.4</b> Creando subconjuntos o Indexación.</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#importing-data"><i class="fa fa-check"></i><b>1.4.1</b> Importando datos</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="introducción-a-r.html"><a href="introducción-a-r.html#el-directorio-de-trabajo-y-rutas"><i class="fa fa-check"></i><b>1.5</b> El directorio de trabajo y rutas</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#descargando-un-archivo-de-la-web"><i class="fa fa-check"></i><b>1.5.1</b> Descargando un archivo de la web</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="introducción-a-r.html"><a href="introducción-a-r.html#funciones-de-importación"><i class="fa fa-check"></i><b>1.6</b> Funciones de importación</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#los-paquetes-readr-y-readxl1"><i class="fa fa-check"></i><b>1.6.1</b> Los paquetes readr y readxl</a></li>
+<li class="chapter" data-level="1.6.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#algunos-tips-para-hojas-de-cálculo-de-excel"><i class="fa fa-check"></i><b>1.6.2</b> Algunos tips para hojas de cálculo de excel…</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introducción-a-r.html"><a href="introducción-a-r.html#algunas-funciones-básicas-de-r"><i class="fa fa-check"></i><b>1.7</b> Algunas funciones Básicas de R</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#sort-y-order"><i class="fa fa-check"></i><b>1.7.1</b> <code>sort</code> y <code>order</code></a></li>
+<li class="chapter" data-level="1.7.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#max-y-which.max"><i class="fa fa-check"></i><b>1.7.2</b> <code>max</code> y <code>which.max</code></a></li>
+<li class="chapter" data-level="1.7.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#which"><i class="fa fa-check"></i><b>1.7.3</b> <code>which</code></a></li>
+<li class="chapter" data-level="1.7.4" data-path="introducción-a-r.html"><a href="introducción-a-r.html#match"><i class="fa fa-check"></i><b>1.7.4</b> <code>match</code></a></li>
+<li class="chapter" data-level="1.7.5" data-path="introducción-a-r.html"><a href="introducción-a-r.html#in"><i class="fa fa-check"></i><b>1.7.5</b> <code>%in%</code></a></li>
+<li class="chapter" data-level="1.7.6" data-path="introducción-a-r.html"><a href="introducción-a-r.html#la-familia-de-funciones-apply"><i class="fa fa-check"></i><b>1.7.6</b> La familia de funciones <code>apply</code></a></li>
+<li class="chapter" data-level="1.7.7" data-path="introducción-a-r.html"><a href="introducción-a-r.html#apply"><i class="fa fa-check"></i><b>1.7.7</b> apply</a></li>
+<li class="chapter" data-level="1.7.8" data-path="introducción-a-r.html"><a href="introducción-a-r.html#estructuras-de-control"><i class="fa fa-check"></i><b>1.7.8</b> Estructuras de control</a></li>
+<li class="chapter" data-level="1.7.9" data-path="introducción-a-r.html"><a href="introducción-a-r.html#while"><i class="fa fa-check"></i><b>1.7.9</b> while</a></li>
+<li class="chapter" data-level="1.7.10" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tratando-con-datos-na"><i class="fa fa-check"></i><b>1.7.10</b> Tratando con datos NA</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html"><i class="fa fa-check"></i><b>2</b> Manejo de data frames y bases de datos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#manipulación-de-datos-con-rbase"><i class="fa fa-check"></i><b>2.1</b> Manipulación de datos con Rbase</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#filtrado-y-obtención-de-subconjuntos"><i class="fa fa-check"></i><b>2.1.1</b> Filtrado y obtención de subconjuntos</a></li>
+<li class="chapter" data-level="2.1.2" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#creando-una-nueva-columna"><i class="fa fa-check"></i><b>2.1.2</b> Creando una nueva columna</a></li>
+<li class="chapter" data-level="2.1.3" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#aggregate-resumiendo-los-datos"><i class="fa fa-check"></i><b>2.1.3</b> <em>aggregate()</em> : Resumiendo los datos</a></li>
+<li class="chapter" data-level="2.1.4" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#renombrando-columnas-y-datos"><i class="fa fa-check"></i><b>2.1.4</b> Renombrando columnas y datos</a></li>
+<li class="chapter" data-level="2.1.5" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#cbind-y-rbind"><i class="fa fa-check"></i><b>2.1.5</b> <em>cbind() y rbind()</em></a></li>
+<li class="chapter" data-level="2.1.6" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#uniendo-tablas-con-merge"><i class="fa fa-check"></i><b>2.1.6</b> Uniendo tablas con <em>merge()</em></a></li>
+<li class="chapter" data-level="2.1.7" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#ordenando-tablas-por-un-criterio-o-columna"><i class="fa fa-check"></i><b>2.1.7</b> Ordenando tablas por un criterio o columna</a></li>
+<li class="chapter" data-level="2.1.8" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#funciones-adicionales-de-agregación"><i class="fa fa-check"></i><b>2.1.8</b> Funciones adicionales de agregación</a></li>
+<li class="chapter" data-level="2.1.9" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#ejemplo-aplicado1"><i class="fa fa-check"></i><b>2.1.9</b> Ejemplo aplicado</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#manejo-de-datos-con-tidyverse"><i class="fa fa-check"></i><b>2.2</b> Manejo de datos con tidyverse</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#tidyverse"><i class="fa fa-check"></i><b>2.2.1</b> <em>tidyverse</em></a></li>
+<li class="chapter" data-level="2.2.2" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#datos-tidy"><i class="fa fa-check"></i><b>2.2.2</b> Datos <em>tidy</em></a></li>
+<li class="chapter" data-level="2.2.3" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#manipulación-de-data-frames"><i class="fa fa-check"></i><b>2.2.3</b> Manipulación de <em>data frames</em></a></li>
+<li class="chapter" data-level="2.2.4" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#el-pipe"><i class="fa fa-check"></i><b>2.2.4</b> El <em>pipe</em>: <code>%&gt;%</code></a></li>
+<li class="chapter" data-level="2.2.5" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#seleccionando-columnas-1"><i class="fa fa-check"></i><b>2.2.5</b> Seleccionando columnas</a></li>
+<li class="chapter" data-level="2.2.6" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#filtrando-filas-1"><i class="fa fa-check"></i><b>2.2.6</b> Filtrando filas</a></li>
+<li class="chapter" data-level="2.2.7" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#creando-una-nueva-columna-1"><i class="fa fa-check"></i><b>2.2.7</b> Creando una nueva columna</a></li>
+<li class="chapter" data-level="2.2.8" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#datos-discretos"><i class="fa fa-check"></i><b>2.2.8</b> Datos discretos</a></li>
+<li class="chapter" data-level="2.2.9" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#resumiendo-los-datos"><i class="fa fa-check"></i><b>2.2.9</b> Resumiendo los datos</a></li>
+<li class="chapter" data-level="2.2.10" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#renombrando-columnas-con-tidyverse"><i class="fa fa-check"></i><b>2.2.10</b> Renombrando columnas Con <em>tidyverse</em></a></li>
+<li class="chapter" data-level="2.2.11" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#ordenando-tablas-por-un-criterio-o-columna-1"><i class="fa fa-check"></i><b>2.2.11</b> Ordenando tablas por un criterio o columna</a></li>
+<li class="chapter" data-level="2.2.12" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#uniendo-tablas"><i class="fa fa-check"></i><b>2.2.12</b> Uniendo tablas</a></li>
+<li class="chapter" data-level="2.2.13" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#funciones-adicionales-del-tydiverse"><i class="fa fa-check"></i><b>2.2.13</b> Funciones adicionales del <em>tydiverse</em></a></li>
+<li class="chapter" data-level="2.2.14" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#ejemplo-aplicado"><i class="fa fa-check"></i><b>2.2.14</b> Ejemplo Aplicado</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html"><i class="fa fa-check"></i><b>3</b> Gráficos en R</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#gráficas-en-r-base"><i class="fa fa-check"></i><b>3.1</b> Gráficas en R base</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#la-función-plot"><i class="fa fa-check"></i><b>3.1.1</b> La función <em>plot()</em></a></li>
+<li class="chapter" data-level="3.1.2" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#histrogramas"><i class="fa fa-check"></i><b>3.1.2</b> Histrogramas</a></li>
+<li class="chapter" data-level="3.1.3" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#diagramas-de-dispersión"><i class="fa fa-check"></i><b>3.1.3</b> Diagramas de dispersión</a></li>
+<li class="chapter" data-level="3.1.4" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#boxplots-o-diagramas-de-cajas"><i class="fa fa-check"></i><b>3.1.4</b> Boxplots o diagramas de cajas</a></li>
+<li class="chapter" data-level="3.1.5" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#otros-gráficos"><i class="fa fa-check"></i><b>3.1.5</b> Otros gráficos</a></li>
+<li class="chapter" data-level="3.1.6" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#barplots-o-gráficas-de-barras"><i class="fa fa-check"></i><b>3.1.6</b> Barplots o gráficas de barras</a></li>
+<li class="chapter" data-level="3.1.7" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#guardando-una-gráfica"><i class="fa fa-check"></i><b>3.1.7</b> Guardando una gráfica</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#gráficas-con-ggplot2"><i class="fa fa-check"></i><b>3.2</b> Gráficas con <em>ggplot2()</em></a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#ggplot"><i class="fa fa-check"></i><b>3.2.1</b> ggplot</a></li>
+<li class="chapter" data-level="3.2.2" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#geometrías"><i class="fa fa-check"></i><b>3.2.2</b> Geometrías</a></li>
+<li class="chapter" data-level="3.2.3" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#colores-títulos-escalas-y-otros-ajustes."><i class="fa fa-check"></i><b>3.2.3</b> Colores, títulos, escalas y otros ajustes.</a></li>
+<li class="chapter" data-level="3.2.4" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#escalas"><i class="fa fa-check"></i><b>3.2.4</b> Escalas</a></li>
+<li class="chapter" data-level="3.2.5" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#otros-ajustes"><i class="fa fa-check"></i><b>3.2.5</b> Otros ajustes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#figuras-multi-panel-facets"><i class="fa fa-check"></i><b>3.3</b> Figuras Multi-panel / Facets</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#facets"><i class="fa fa-check"></i><b>3.3.1</b> Facets</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#extras"><i class="fa fa-check"></i><b>3.4</b> Extras</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#stat_summary-y-stat_smoot"><i class="fa fa-check"></i><b>3.4.1</b> stat_summary() y stat_smoot()</a></li>
+<li class="chapter" data-level="3.4.2" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#ggpubr"><i class="fa fa-check"></i><b>3.4.2</b> <em>ggpubr()</em></a></li>
+<li class="chapter" data-level="3.4.3" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#misceláneos-ggcats4"><i class="fa fa-check"></i><b>3.4.3</b> Misceláneos: <em>ggcats()</em></a></li>
+<li class="chapter" data-level="3.4.4" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#misceláneos-ggtexttable"><i class="fa fa-check"></i><b>3.4.4</b> Misceláneos: <em>ggtexttable()</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="valor-de-significancia-p-en-estadística-p-value.html"><a href="valor-de-significancia-p-en-estadística-p-value.html"><i class="fa fa-check"></i><b>4</b> Valor de significancia p en estadística (p-value)</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="valor-de-significancia-p-en-estadística-p-value.html"><a href="valor-de-significancia-p-en-estadística-p-value.html#qué-es-el-valor-p"><i class="fa fa-check"></i><b>4.1</b> ¿Qué es el valor p?</a></li>
+<li class="chapter" data-level="4.2" data-path="valor-de-significancia-p-en-estadística-p-value.html"><a href="valor-de-significancia-p-en-estadística-p-value.html#interpretación-general-del-valor-p"><i class="fa fa-check"></i><b>4.2</b> Interpretación general del valor p</a></li>
+<li class="chapter" data-level="4.3" data-path="valor-de-significancia-p-en-estadística-p-value.html"><a href="valor-de-significancia-p-en-estadística-p-value.html#marco-de-prueba-de-hipótesis-relación-con-la-hipótesis-nula-y-alternativa"><i class="fa fa-check"></i><b>4.3</b> Marco de prueba de hipótesis: relación con la hipótesis nula y alternativa</a></li>
+<li class="chapter" data-level="4.4" data-path="valor-de-significancia-p-en-estadística-p-value.html"><a href="valor-de-significancia-p-en-estadística-p-value.html#regla-de-decisión-umbrales-comunes-para-el-valor-p"><i class="fa fa-check"></i><b>4.4</b> Regla de decisión: umbrales comunes para el valor p</a></li>
+<li class="chapter" data-level="4.5" data-path="valor-de-significancia-p-en-estadística-p-value.html"><a href="valor-de-significancia-p-en-estadística-p-value.html#errores-en-la-prueba-de-hipótesis-error-tipo-i-falso-positivo-y-error-tipo-ii-falso"><i class="fa fa-check"></i><b>4.5</b> Errores en la prueba de hipótesis: error tipo I (falso positivo) y error tipo II (falso</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html"><i class="fa fa-check"></i><b>5</b> Introducción a la estadística</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#diferencia-entre-estadística-y-bioestadística"><i class="fa fa-check"></i><b>5.1</b> Diferencia entre estadística y bioestadística</a></li>
+<li class="chapter" data-level="5.2" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#estadística-descriptiva-medidas-de-tendencia-central-y-medidas-de-dispersión"><i class="fa fa-check"></i><b>5.2</b> Estadística descriptiva: medidas de tendencia central y medidas de dispersión</a></li>
+<li class="chapter" data-level="5.3" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#estadística-inferencial-univariada-y-multivariada"><i class="fa fa-check"></i><b>5.3</b> Estadística inferencial: Univariada y multivariada</a></li>
+<li class="chapter" data-level="5.4" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#estadística-inferencial-paramétrica-supuestos-principales-de-las-pruebas-paramétricas"><i class="fa fa-check"></i><b>5.4</b> Estadística inferencial paramétrica: supuestos principales de las pruebas paramétricas</a></li>
+<li class="chapter" data-level="5.5" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#estadística-inferencial-no-paramétrica-supuestos-principales-de-las-pruebas-no-paramétricas"><i class="fa fa-check"></i><b>5.5</b> Estadística inferencial no paramétrica: supuestos principales de las pruebas no paramétricas</a></li>
+<li class="chapter" data-level="5.6" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#cómo-saber-si-mis-datos-presentan-una-distribución-normal-y-homogeneidad-de-las-variancias"><i class="fa fa-check"></i><b>5.6</b> ¿Cómo saber si mis datos presentan una distribución normal y homogeneidad de las variancias?:</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#prueba-de-shapiro-wilk"><i class="fa fa-check"></i><b>5.6.1</b> Prueba de Shapiro-Wilk</a></li>
+<li class="chapter" data-level="5.6.2" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#pruebas-de-ajuste-o-distribución-prueba-de-kolmogorov-smirnov-prueba-de-anderson-darling"><i class="fa fa-check"></i><b>5.6.2</b> Pruebas de ajuste o distribución: Prueba de Kolmogorov-Smirnov, Prueba de Anderson-Darling</a></li>
+<li class="chapter" data-level="5.6.3" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#prueba-de-leven-varianzas."><i class="fa fa-check"></i><b>5.6.3</b> Prueba de Leven (varianzas).</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#estadísticos-descriptivos"><i class="fa fa-check"></i><b>5.7</b> Estadísticos descriptivos</a></li>
+<li class="chapter" data-level="5.8" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#gráficos-descriptivos"><i class="fa fa-check"></i><b>5.8</b> Gráficos descriptivos</a></li>
+<li class="chapter" data-level="5.9" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#explorando-normalidad-en-los-datos"><i class="fa fa-check"></i><b>5.9</b> Explorando normalidad en los datos</a></li>
+<li class="chapter" data-level="5.10" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#correlación-y-regresión"><i class="fa fa-check"></i><b>5.10</b> Correlación y Regresión</a></li>
+<li class="chapter" data-level="5.11" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#anova-1-vía"><i class="fa fa-check"></i><b>5.11</b> ANOVA (1 vía)</a></li>
+<li class="chapter" data-level="5.12" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#prueba-de-tukey"><i class="fa fa-check"></i><b>5.12</b> Prueba de Tukey</a></li>
+<li class="chapter" data-level="5.13" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#anova-2-vías"><i class="fa fa-check"></i><b>5.13</b> ANOVA (2 vías)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tipos-de-pruebas-paramétricas.html"><a href="tipos-de-pruebas-paramétricas.html"><i class="fa fa-check"></i><b>6</b> Tipos de pruebas paramétricas</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="tipos-de-pruebas-paramétricas.html"><a href="tipos-de-pruebas-paramétricas.html#prueba-t-de-una-muestra"><i class="fa fa-check"></i><b>6.1</b> Prueba t de una muestra</a></li>
+<li class="chapter" data-level="6.2" data-path="tipos-de-pruebas-paramétricas.html"><a href="tipos-de-pruebas-paramétricas.html#prueba-t-de-dos-muestras"><i class="fa fa-check"></i><b>6.2</b> Prueba t de dos muestras</a></li>
+<li class="chapter" data-level="6.3" data-path="tipos-de-pruebas-paramétricas.html"><a href="tipos-de-pruebas-paramétricas.html#prueba-t-de-welch"><i class="fa fa-check"></i><b>6.3</b> Prueba t de Welch</a></li>
+<li class="chapter" data-level="6.4" data-path="tipos-de-pruebas-paramétricas.html"><a href="tipos-de-pruebas-paramétricas.html#prueba-f-de-fisher"><i class="fa fa-check"></i><b>6.4</b> Prueba F de Fisher</a></li>
+<li class="chapter" data-level="6.5" data-path="tipos-de-pruebas-paramétricas.html"><a href="tipos-de-pruebas-paramétricas.html#prueba-t-pareada"><i class="fa fa-check"></i><b>6.5</b> Prueba t pareada</a></li>
+<li class="chapter" data-level="6.6" data-path="tipos-de-pruebas-paramétricas.html"><a href="tipos-de-pruebas-paramétricas.html#anova-one-way-anova-two-way-anova"><i class="fa fa-check"></i><b>6.6</b> ANOVA (one-way-anova, two-way-anova)</a></li>
+<li class="chapter" data-level="6.7" data-path="tipos-de-pruebas-paramétricas.html"><a href="tipos-de-pruebas-paramétricas.html#ancova"><i class="fa fa-check"></i><b>6.7</b> ANCOVA</a></li>
+<li class="chapter" data-level="6.8" data-path="tipos-de-pruebas-paramétricas.html"><a href="tipos-de-pruebas-paramétricas.html#correlación-de-pearson"><i class="fa fa-check"></i><b>6.8</b> Correlación de Pearson</a></li>
+<li class="chapter" data-level="6.9" data-path="tipos-de-pruebas-paramétricas.html"><a href="tipos-de-pruebas-paramétricas.html#regresión-lineal-simple-y-múltiple"><i class="fa fa-check"></i><b>6.9</b> Regresión lineal simple y múltiple</a></li>
+<li class="chapter" data-level="6.10" data-path="tipos-de-pruebas-paramétricas.html"><a href="tipos-de-pruebas-paramétricas.html#etc."><i class="fa fa-check"></i><b>6.10</b> Etc.</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html"><i class="fa fa-check"></i><b>7</b> Tipos de pruebas no paramétricas</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#prueba-de-mann-whitney-u-wilcoxon-rank-sum-test"><i class="fa fa-check"></i><b>7.1</b> Prueba de Mann-Whitney U (Wilcoxon rank-sum test)</a></li>
+<li class="chapter" data-level="7.2" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#prueba-de-wilcoxon-para-muestras-relacionadas"><i class="fa fa-check"></i><b>7.2</b> Prueba de Wilcoxon para muestras relacionadas</a></li>
+<li class="chapter" data-level="7.3" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#prueba-de-kruskal-wallis"><i class="fa fa-check"></i><b>7.3</b> Prueba de Kruskal-Wallis</a></li>
+<li class="chapter" data-level="7.4" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#prueba-de-friedman"><i class="fa fa-check"></i><b>7.4</b> Prueba de Friedman</a></li>
+<li class="chapter" data-level="7.5" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#prueba-de-chi-cuadrado-χ²"><i class="fa fa-check"></i><b>7.5</b> Prueba de Chi-cuadrado (χ²)</a></li>
+<li class="chapter" data-level="7.6" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#prueba-de-mcnemar"><i class="fa fa-check"></i><b>7.6</b> Prueba de McNemar</a></li>
+<li class="chapter" data-level="7.7" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#correlación-de-rango-de-spearman"><i class="fa fa-check"></i><b>7.7</b> Correlación de rango de Spearman</a></li>
+<li class="chapter" data-level="7.8" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#correlación-de-kendall-τ-de-kendall"><i class="fa fa-check"></i><b>7.8</b> Correlación de Kendall (τ de Kendall)</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="análisis-de-riqueza-y-diversidad-alfa-y-beta.html"><a href="análisis-de-riqueza-y-diversidad-alfa-y-beta.html"><i class="fa fa-check"></i><b>8</b> Análisis de riqueza y diversidad alfa y beta</a></li>
+<li class="chapter" data-level="9" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html"><i class="fa fa-check"></i><b>9</b> Análisis multivariados</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#pca"><i class="fa fa-check"></i><b>9.1</b> PCA</a></li>
+<li class="chapter" data-level="9.2" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#pcoa"><i class="fa fa-check"></i><b>9.2</b> PCoA</a></li>
+<li class="chapter" data-level="9.3" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#nmds"><i class="fa fa-check"></i><b>9.3</b> NMDS</a></li>
+<li class="chapter" data-level="9.4" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#permanova"><i class="fa fa-check"></i><b>9.4</b> Permanova</a></li>
+<li class="chapter" data-level="9.5" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#permdis"><i class="fa fa-check"></i><b>9.5</b> permdis</a></li>
+<li class="chapter" data-level="9.6" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#anosim"><i class="fa fa-check"></i><b>9.6</b> Anosim</a></li>
+<li class="chapter" data-level="9.7" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#rda"><i class="fa fa-check"></i><b>9.7</b> RDA</a></li>
+<li class="chapter" data-level="9.8" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#cca"><i class="fa fa-check"></i><b>9.8</b> CCA</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="modelización-estadística.html"><a href="modelización-estadística.html"><i class="fa fa-check"></i><b>10</b> Modelización estadística:</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="modelización-estadística.html"><a href="modelización-estadística.html#modelo-lineal-general"><i class="fa fa-check"></i><b>10.1</b> Modelo lineal general</a></li>
+<li class="chapter" data-level="10.2" data-path="modelización-estadística.html"><a href="modelización-estadística.html#glm-con-distribución-poisson"><i class="fa fa-check"></i><b>10.2</b> GLM con distribución Poisson</a></li>
+<li class="chapter" data-level="10.3" data-path="modelización-estadística.html"><a href="modelización-estadística.html#glm-con-distribución-quasi-poisson"><i class="fa fa-check"></i><b>10.3</b> GLM con distribución quasi-Poisson</a></li>
+<li class="chapter" data-level="10.4" data-path="modelización-estadística.html"><a href="modelización-estadística.html#glm-con-distribución-de-bernoulli-binomial"><i class="fa fa-check"></i><b>10.4</b> GLM con distribución de Bernoulli (Binomial)</a></li>
+<li class="chapter" data-level="10.5" data-path="modelización-estadística.html"><a href="modelización-estadística.html#glmm-modelos-lineales-generales-mixtos"><i class="fa fa-check"></i><b>10.5</b> GLMM: modelos lineales generales mixtos</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MANUAL DE R Y RSTUDIO</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="gráficos-en-r" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Capítulo 3</span> Gráficos en R<a href="gráficos-en-r.html#gráficos-en-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="gráficas-en-r-base" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Gráficas en R base<a href="gráficos-en-r.html#gráficas-en-r-base" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>R cuenta con un sistema de generación de gráficas poderoso y flexible.
+En este capítulo revisaremos como crear las gráficas más comunes con R base y luego un poco más complejas usando <em>ggplot2</em> del <em>tidyverse</em>.</p>
+<div id="la-función-plot" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> La función <em>plot()</em><a href="gráficos-en-r.html#la-función-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La función <em>plot()</em> es usada de manera general para generar gráficos.
+Esta función es muy especial porque depende del tipo de datos que le demos generará diferentes tipos de gráficos.
+El argumento principal que pide esta función es <em>“x”</em> también podemos poner <em>“y”</em>.
+Y depende de estos el tipo de gráfica que se generará.
+Diremos:</p>
+<ul>
+<li><p><strong>Continuo</strong>: Cuando nos referimos a un vector numérico, entero, lógico o complejo.</p></li>
+<li><p><strong>Discreto</strong>: Cuando nos referimos a un vector de factores o cadenas de texto.</p></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>x</th>
+<th>y</th>
+<th>Tipo Gráfico</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Continuo</td>
+<td>Continuo</td>
+<td>Dispersión /Scatter</td>
+</tr>
+<tr class="even">
+<td>Continuo</td>
+<td>Discreto</td>
+<td>Dispersión y coercionada a numérica</td>
+</tr>
+<tr class="odd">
+<td>Continuo</td>
+<td>Ninguno</td>
+<td>Dispersión por número de renglón</td>
+</tr>
+<tr class="even">
+<td>Discreto</td>
+<td>Continuo</td>
+<td>Boxplot/Cajas</td>
+</tr>
+<tr class="odd">
+<td>Discreto</td>
+<td>Discreto</td>
+<td>Mosaico</td>
+</tr>
+<tr class="even">
+<td>Discreto</td>
+<td>Ninguno</td>
+<td>Barras</td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"></div>
+<div class="sourceCode" id="cb471"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb471-1"><a href="gráficos-en-r.html#cb471-1" tabindex="-1"></a><span class="co">#Ejemplos</span></span>
+<span id="cb471-2"><a href="gráficos-en-r.html#cb471-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>) )</span>
+<span id="cb471-3"><a href="gráficos-en-r.html#cb471-3" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x=</span>iris<span class="sc">$</span>Sepal.Length, <span class="at">y=</span>iris<span class="sc">$</span>Sepal.Width)</span>
+<span id="cb471-4"><a href="gráficos-en-r.html#cb471-4" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x=</span>iris<span class="sc">$</span>Sepal.Length, <span class="at">y =</span> iris<span class="sc">$</span>Species)</span>
+<span id="cb471-5"><a href="gráficos-en-r.html#cb471-5" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x=</span>iris<span class="sc">$</span>Sepal.Length)</span>
+<span id="cb471-6"><a href="gráficos-en-r.html#cb471-6" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> iris<span class="sc">$</span>Species, <span class="at">y =</span> iris<span class="sc">$</span>Sepal.Length)</span>
+<span id="cb471-7"><a href="gráficos-en-r.html#cb471-7" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x=</span>iris<span class="sc">$</span>Species, <span class="at">y=</span>iris<span class="sc">$</span>Species)</span>
+<span id="cb471-8"><a href="gráficos-en-r.html#cb471-8" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x=</span>iris<span class="sc">$</span>Species)</span></code></pre></div>
+<p><br />
+</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-190-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><br />
+</p>
+<p>Además de estas, también hay otras funciones de Rbase que nos permiten graficar tipos específicos como son <em>barplot()</em>, <em>boxplot()</em> o <em>hist()</em>.</p>
+<p><br />
+</p>
+</div>
+<div id="histrogramas" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Histrogramas<a href="gráficos-en-r.html#histrogramas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Los histogramas ya los vimos en el capítulo de estadísticos.
+Sabemos que nos permiten ver la distribución de nuestros datos (si son normales o no).
+Sin embargo, podemos usar más argmentos para darle formato, veamoslo con un ejemplo:</p>
+<div class="sourceCode" id="cb472"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb472-1"><a href="gráficos-en-r.html#cb472-1" tabindex="-1"></a><span class="fu">hist</span>(<span class="at">x =</span> iris<span class="sc">$</span>Sepal.Length, <span class="at">main =</span> <span class="st">&quot;Histograma de longitud de sepalo&quot;</span>, </span>
+<span id="cb472-2"><a href="gráficos-en-r.html#cb472-2" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Longitud&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Frecuencia&quot;</span>,</span>
+<span id="cb472-3"><a href="gráficos-en-r.html#cb472-3" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;purple&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-191-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>Como vemos en este ejemplo hay argumentos que aplicamos que puede ser aplicados para todos los gráficos de Rbase, tales como:</p>
+<ul>
+<li><p><em>main</em> : Titulo de la gráfica</p></li>
+<li><p><em>xlab</em> y <em>ylab</em>: Títulos de los axis x y y</p></li>
+<li><p><em>col</em> : color de las barras o gráfica.</p></li>
+</ul>
+</div>
+<div id="diagramas-de-dispersión" class="section level3 hasAnchor" number="3.1.3">
+<h3><span class="header-section-number">3.1.3</span> Diagramas de dispersión<a href="gráficos-en-r.html#diagramas-de-dispersión" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Estos diagramas nos son útiles para ver las relaciones que hay entre dos variables continuas.
+En el siguiente ejemplo veremos la relación entre las variables longitud y ancho del pétalo, pero en este caso los colorearemos por especies:</p>
+<div class="sourceCode" id="cb473"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb473-1"><a href="gráficos-en-r.html#cb473-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> iris<span class="sc">$</span>Petal.Length, <span class="at">y =</span> iris<span class="sc">$</span>Petal.Width, <span class="at">col =</span> iris<span class="sc">$</span>Species, <span class="at">xlab =</span> <span class="st">&quot;Largo&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Ancho&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-192-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>Si queremos agregar una leyenda a alguna de nuestras figuras de Rbase, usamos la función <em>legend()</em>:</p>
+<p><code>legend()</code> siempre nos pide siempre los siguientes argumentos.</p>
+<ul>
+<li><p><code>legend</code>: Las etiquetas de los datos que queremos describir con la leyenda.
+Por ejemplo, si tenemos cuatro categorías a describir, proporcionamos un vector de cuatro cadenas de texto.</p></li>
+<li><p><code>fill</code>: Los colores que acompañan a las etiquetas definidas con <code>legend</code>.
+Estos colores tienen que coincidir con los que hemos usado en el gráfico.</p></li>
+<li><p><code>x</code> y <code>y</code>: Las coordenadas en pixeles, en las que estará ubicada la leyenda.
+Podemos dar como argumento a <code>x</code> alguno de los siguientes, para ubicar automáticamente la leyenda: “bottomright”, “bottom”, “bottomleft”, “left”, “topleft”, “top”, “topright”, “right”, “center”.</p></li>
+<li><p><code>title</code>: Para poner título a la leyenda.</p></li>
+</ul>
+<p><br />
+Veámoslo con el mismo ejemplo, primero ponemos <em>plot()</em> con la gráfica que queremos y debajo <em>legend()</em> para ponerlo encima de la figura que ya habíamos hecho:<br />
+</p>
+<div class="sourceCode" id="cb474"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb474-1"><a href="gráficos-en-r.html#cb474-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> iris<span class="sc">$</span>Petal.Length, <span class="at">y =</span> iris<span class="sc">$</span>Petal.Width, <span class="at">col =</span> iris<span class="sc">$</span>Species, </span>
+<span id="cb474-2"><a href="gráficos-en-r.html#cb474-2" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Pétalo Iris por especie&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Largo&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Ancho&quot;</span>)</span>
+<span id="cb474-3"><a href="gráficos-en-r.html#cb474-3" tabindex="-1"></a><span class="fu">legend</span>(<span class="at">x =</span> <span class="st">&quot;topleft&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;Setosa&quot;</span>, <span class="st">&quot;Versicolor&quot;</span>, <span class="st">&quot;Virginica&quot;</span>), </span>
+<span id="cb474-4"><a href="gráficos-en-r.html#cb474-4" tabindex="-1"></a>       <span class="at">fill =</span> <span class="fu">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;green&quot;</span>), <span class="at">title =</span> <span class="st">&quot;Especie&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-193-1.png" width="672" /></p>
+<div style="page-break-after: always;"></div>
+</div>
+<div id="boxplots-o-diagramas-de-cajas" class="section level3 hasAnchor" number="3.1.4">
+<h3><span class="header-section-number">3.1.4</span> Boxplots o diagramas de cajas<a href="gráficos-en-r.html#boxplots-o-diagramas-de-cajas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Los diagramas de cajas o boxplots son gráficos que nos muestran la distribución de una variable mostrando sus cuartiles (parte baja primer cuartil y parte alta tercer cuartil), de manera que podamos ver su distribución y simetría.
+La línea horizontal media representa la “mediana” y las dos líneas verticales que muestran el valor máximo y mínimo.
+Veamos un ejemplo:<br />
+</p>
+<div class="sourceCode" id="cb475"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb475-1"><a href="gráficos-en-r.html#cb475-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x=</span>iris<span class="sc">$</span>Species, <span class="at">y =</span> iris<span class="sc">$</span>Sepal.Length, <span class="at">xlab =</span> <span class="st">&quot;Especie&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Longitud Sépalo&quot;</span>, </span>
+<span id="cb475-2"><a href="gráficos-en-r.html#cb475-2" tabindex="-1"></a>     <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;purple&quot;</span>, <span class="st">&quot;pink&quot;</span>, <span class="st">&quot;blue&quot;</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-194-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p>También podemos usar la función <em>boxplot()</em>.
+En esta segunda forma de hacer diagramas de cajas necesitamos declarar dos argumentos principales:</p>
+<ul>
+<li><p><code>formula</code>: Para esta función las fórmulas tienen el formato <code>y ~ x</code>, donde x es el nombre de la variable continua a graficar, y la x es la variable que usaremos como agrupación.</p></li>
+<li><p><code>data</code>: Es el data frame del que serántomadas las variables.</p></li>
+</ul>
+<p>Además declarar los demás argumentos extras como colores, títulos y demás.<br />
+</p>
+<div class="sourceCode" id="cb476"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb476-1"><a href="gráficos-en-r.html#cb476-1" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="at">formula =</span> Sepal.Length <span class="sc">~</span> Species, <span class="at">data =</span>  iris, <span class="at">xlab =</span> <span class="st">&quot;Especie&quot;</span>, </span>
+<span id="cb476-2"><a href="gráficos-en-r.html#cb476-2" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">&quot;Longitud Sépalo&quot;</span>, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;purple&quot;</span>, <span class="st">&quot;pink&quot;</span>, <span class="st">&quot;blue&quot;</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-195-1.png" width="384" style="display: block; margin: auto;" /></p>
+</div>
+<div id="otros-gráficos" class="section level3 hasAnchor" number="3.1.5">
+<h3><span class="header-section-number">3.1.5</span> Otros gráficos<a href="gráficos-en-r.html#otros-gráficos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Usando la función <em>plot()</em> podemos dibujar más gráficos de los vistos que son los estándares, como fue el caso cuando graficas modelos lineales.
+También existe otro argumento de esta función que se denomina <em>type</em> y nos permite escoger otros tipos de gráficos.
+Esto lo podemos ver usando el ‘?’
+para ver la ayuda y los argumentos.<br />
+</p>
+<div class="sourceCode" id="cb477"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb477-1"><a href="gráficos-en-r.html#cb477-1" tabindex="-1"></a>?plot</span></code></pre></div>
+<p>Son posibles los siguientes valores: “p” para puntos, “l” para líneas, “b” para puntos y líneas, “c” para puntos vacíos unidos por líneas, “o” para puntos sobretrazados y líneas, “s” y “S” para escalones y “h” para líneas verticales similares a histogramas.
+Finalmente, “n” no produce ningún punto o línea.
+Veamos algunos ejemplos:<br />
+</p>
+<div class="sourceCode" id="cb478"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb478-1"><a href="gráficos-en-r.html#cb478-1" tabindex="-1"></a><span class="co">#dataset de ensayo</span></span>
+<span id="cb478-2"><a href="gráficos-en-r.html#cb478-2" tabindex="-1"></a>df<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>),</span>
+<span id="cb478-3"><a href="gráficos-en-r.html#cb478-3" tabindex="-1"></a>                <span class="at">y=</span> <span class="fu">c</span>(<span class="dv">200</span>, <span class="dv">400</span>, <span class="dv">600</span>, <span class="dv">700</span>, <span class="dv">500</span>))</span>
+<span id="cb478-4"><a href="gráficos-en-r.html#cb478-4" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb478-5"><a href="gráficos-en-r.html#cb478-5" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>x, df<span class="sc">$</span>y, <span class="at">type =</span> <span class="st">&quot;p&quot;</span>, <span class="at">main =</span> <span class="st">&#39;type = &quot;p&quot;&#39;</span>)</span>
+<span id="cb478-6"><a href="gráficos-en-r.html#cb478-6" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>x, df<span class="sc">$</span>y, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">main =</span> <span class="st">&#39;type = &quot;l&quot;&#39;</span>)</span>
+<span id="cb478-7"><a href="gráficos-en-r.html#cb478-7" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>x, df<span class="sc">$</span>y, <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">main =</span> <span class="st">&#39;type = &quot;b&quot;&#39;</span>)</span>
+<span id="cb478-8"><a href="gráficos-en-r.html#cb478-8" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>x, df<span class="sc">$</span>y, <span class="at">type =</span> <span class="st">&quot;c&quot;</span>, <span class="at">main =</span> <span class="st">&#39;type = &quot;c&quot;&#39;</span>)</span>
+<span id="cb478-9"><a href="gráficos-en-r.html#cb478-9" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>x, df<span class="sc">$</span>y, <span class="at">type =</span> <span class="st">&quot;s&quot;</span>, <span class="at">main =</span> <span class="st">&#39;type = &quot;s&quot;&#39;</span>)</span>
+<span id="cb478-10"><a href="gráficos-en-r.html#cb478-10" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>x, df<span class="sc">$</span>y, <span class="at">type =</span> <span class="st">&quot;h&quot;</span>, <span class="at">main =</span> <span class="st">&#39;type = &quot;h&quot;&#39;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-197-1.png" width="672" /></p>
+<div style="page-break-after: always;"></div>
+<p>Ahora bien, en cuanto a líneas podemos escoger el tipo de línea con el argumento <em>lty</em>:<br />
+</p>
+<div class="sourceCode" id="cb479"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb479-1"><a href="gráficos-en-r.html#cb479-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb479-2"><a href="gráficos-en-r.html#cb479-2" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>x, df<span class="sc">$</span>y, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">lty=</span><span class="dv">1</span>, <span class="at">main =</span> <span class="st">&#39;type = &quot;l1&quot;&#39;</span>)</span>
+<span id="cb479-3"><a href="gráficos-en-r.html#cb479-3" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>x, df<span class="sc">$</span>y, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">lty=</span><span class="dv">2</span>, <span class="at">main =</span> <span class="st">&#39;type = &quot;l2&quot;&#39;</span>)</span>
+<span id="cb479-4"><a href="gráficos-en-r.html#cb479-4" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>x, df<span class="sc">$</span>y, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">lty=</span><span class="dv">3</span>, <span class="at">main =</span> <span class="st">&#39;type = &quot;l3&quot;&#39;</span>)</span>
+<span id="cb479-5"><a href="gráficos-en-r.html#cb479-5" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>x, df<span class="sc">$</span>y, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">lty=</span><span class="dv">4</span>, <span class="at">main =</span> <span class="st">&#39;type = &quot;l4&quot;&#39;</span>)</span>
+<span id="cb479-6"><a href="gráficos-en-r.html#cb479-6" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>x, df<span class="sc">$</span>y, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">lty=</span><span class="dv">5</span>, <span class="at">main =</span> <span class="st">&#39;type = &quot;l5&quot;&#39;</span>)</span>
+<span id="cb479-7"><a href="gráficos-en-r.html#cb479-7" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>x, df<span class="sc">$</span>y, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">lty=</span><span class="dv">6</span>, <span class="at">main =</span> <span class="st">&#39;type = &quot;l6&quot;&#39;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-198-1.png" width="672" /></p>
+<p><br />
+<br />
+</p>
+</div>
+<div id="barplots-o-gráficas-de-barras" class="section level3 hasAnchor" number="3.1.6">
+<h3><span class="header-section-number">3.1.6</span> Barplots o gráficas de barras<a href="gráficos-en-r.html#barplots-o-gráficas-de-barras" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><br />
+Las gráficas de barras nos permiten ver los valores de una manera diferente a las líneas:<br />
+</p>
+<div class="sourceCode" id="cb480"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb480-1"><a href="gráficos-en-r.html#cb480-1" tabindex="-1"></a><span class="fu">barplot</span>(y <span class="sc">~</span> x , <span class="at">data =</span> df, <span class="at">main =</span> <span class="st">&quot;Barplot&quot;</span>, <span class="at">col =</span> <span class="st">&quot;darkred&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-199-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p>También hay capas que podemos agregarle a las gráficas, como la capa <em>text</em> o la capa <em>abline</em> para agregar texto y líneas sobre la gráfica, por ejemplo:</p>
+<div class="sourceCode" id="cb481"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb481-1"><a href="gráficos-en-r.html#cb481-1" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>x, df<span class="sc">$</span>y, <span class="at">type =</span> <span class="st">&quot;p&quot;</span>, <span class="at">main =</span> <span class="st">&#39;type = &quot;p-capas&quot;&#39;</span>)</span>
+<span id="cb481-2"><a href="gráficos-en-r.html#cb481-2" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">400</span>, <span class="at">v=</span><span class="dv">3</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb481-3"><a href="gráficos-en-r.html#cb481-3" tabindex="-1"></a><span class="fu">text</span>(df, <span class="at">labels=</span><span class="fu">rownames</span>(df), <span class="at">cex=</span><span class="fl">0.7</span>, <span class="at">pos=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-200-1.png" width="384" style="display: block; margin: auto;" /></p>
+</div>
+<div id="guardando-una-gráfica" class="section level3 hasAnchor" number="3.1.7">
+<h3><span class="header-section-number">3.1.7</span> Guardando una gráfica<a href="gráficos-en-r.html#guardando-una-gráfica" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para guardar o exportar una gráfica debemos:</p>
+<ol style="list-style-type: decimal">
+<li><p>Indicar las instrucciones de cómo exportaremos la imagen</p></li>
+<li><p>Usar <em>plot()</em> y graficarla y luego,</p></li>
+<li><p><em>dev.off</em>() para quitarla del panel y exportarla</p></li>
+</ol>
+<div class="sourceCode" id="cb482"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb482-1"><a href="gráficos-en-r.html#cb482-1" tabindex="-1"></a><span class="fu">png</span>(<span class="at">filename=</span><span class="st">&quot;gráfica1.png&quot;</span>, <span class="at">width=</span><span class="dv">648</span>, <span class="at">height=</span><span class="dv">432</span>)</span>
+<span id="cb482-2"><a href="gráficos-en-r.html#cb482-2" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>x, df<span class="sc">$</span>y, <span class="at">type =</span> <span class="st">&quot;p&quot;</span>, <span class="at">main =</span> <span class="st">&#39;type = &quot;p&quot;&#39;</span>)</span>
+<span id="cb482-3"><a href="gráficos-en-r.html#cb482-3" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
+</div>
+</div>
+<div id="gráficas-con-ggplot2" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Gráficas con <em>ggplot2()</em><a href="gráficos-en-r.html#gráficas-con-ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Las gráficas con <em>ggplot2()</em> es quizás de las cosas más poderosas y atractivas de R si lo comparamos con otros lenguajes y/o programas.
+<em>ggplot2</em> es generalmente más intuitiva porque usa una gramática de gráficos además de ser visualmente agradable.</p>
+<p>La limitación de ggplot2 es que está diseñado para trabajar exclusivamente con tablas de datos en formato tidy (donde las filas son observaciones y las columnas son variables).
+Sin embargo,ya vimos en anteriores temas cómo podemos convertir nuestras tablas para que tengan este formato.</p>
+<p>Para usar ggplot2, tendrán que aprender varias funciones y argumentos.
+Estos son difíciles de memorizar, por lo que les recomendamos que tengan a mano la hoja de referencia de ggplot2.
+Pueden obtener una copia en línea o simplemente realizar una búsqueda en internet de “ggplot2 cheat sheet.” y econtraran algo como esto:</p>
+<p><br />
+</p>
+<p><img src="images/ggplot.png" width="500pt" style="display: block; margin: auto;" /></p>
+<p><br />
+</p>
+<p>O también en este link: <a href="https://www.rstudio.com/resources/cheatsheets/" title="cheaseet"><strong><em>cheaseet</em></strong></a>, donde podrán ver además estas hojas con indicaciones de otros paquetes de R que nos facilitarán un poco más las cosas.</p>
+<p>Es fácil de usar, pero puedes crear figuras complejas con una sintaxis bastante simple.</p>
+<p>“gg” significa gramática gráfica - Significa que se superponen diferentes capas de objetos y elementos sobre los anteriores para generar la figura.</p>
+<p>En esta parte se repasará las diferentes características de ggplot2:</p>
+<ol style="list-style-type: decimal">
+<li><p>geomas o “geoms”</p></li>
+<li><p>escalas o “scales”</p></li>
+<li><p>guías o “guides”</p></li>
+<li><p>temas o “theme”</p></li>
+<li><p>facetas o “facets”</p></li>
+</ol>
+<p>El primer paso para aprender <strong>ggplot2</strong> es poder separar un gráfico en componentes.
+Las figuras aquí, se construyen por capas.
+Los tres componentes principales para considerar son:</p>
+<ul>
+<li><p><strong>Data</strong>: nuestro set de datos o <em>dataframe</em></p></li>
+<li><p><strong>Mapeo estético o ‘aes’</strong>: El gráfico usa varias señales visuales para representar la información proveída por el set de datos.
+Las dos señales más importantes en este gráfico son las posiciones de los puntos en el eje-x y el eje-y.</p></li>
+<li><p><strong>Geometría</strong>: Nos indica el tipo de gráfica a realizar.
+Unas posibles geometrías son diagrama de barras, dispersión, histograma, densidades suaves (<em>smooth densities</em> en inglés), gráfico Q-Q y diagrama de cajas.</p></li>
+<li><p><strong>Elementos adicionales</strong>: temas, guías, colores, etc.</p></li>
+</ul>
+<p>Para esta parte usaremos como ejemplo el set de Datos de “ToothGrotwth” de nuevo y contruiremos por partes la gráfica.</p>
+<div id="ggplot" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> ggplot<a href="gráficos-en-r.html#ggplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El primer paso para crear un gráfico <strong>ggplot2</strong> es definir un objeto <code>ggplot</code>.
+Hacemos esto con la función <code>ggplot</code>, que inicializa el gráfico.</p>
+<p>Esta parte podemos hacerla evaluando dentro de la función o usando el pipe, así:</p>
+<div class="sourceCode" id="cb483"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb483-1"><a href="gráficos-en-r.html#cb483-1" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;ToothGrowth&quot;</span>)</span>
+<span id="cb483-2"><a href="gráficos-en-r.html#cb483-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb483-3"><a href="gráficos-en-r.html#cb483-3" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb483-4"><a href="gráficos-en-r.html#cb483-4" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ToothGrowth)</span>
+<span id="cb483-5"><a href="gráficos-en-r.html#cb483-5" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-204-1.png" width="288" style="display: block; margin: auto;" /></p>
+<p>El código crea un gráfico, en este caso una pizarra en blanco ya que no se ha definido la geometría.
+La única opción de estilo que vemos es un fondo gris.</p>
+<p>También dentro de esta capa de <em>ggplot()</em> se declara algo que se conoce como <strong><em>mapeo estético</em></strong> que describe cómo las propiedades de los datos se conectan con las características del gráfico.
+En otras palabras, más coloquiales, qué con qué graficamos, también podemos colocar aquí si queremos colorear o llenar un factor.
+Por ejemplo, con la data de ToothGrowth, queremos graficar el tamaño o longitud de los dientes versus la dosis aplicada y destacando o coloreando el método de aplicación de la vitamina C.<br />
+</p>
+<div class="sourceCode" id="cb484"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb484-1"><a href="gráficos-en-r.html#cb484-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> dose, <span class="at">y =</span> len, <span class="at">fill=</span>supp))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-205-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p>Aquí ya vemos que el eje x y el eje y ya aparecen con nombres de las variables, pero aún no nos muestra ningún gráfico, esto es porque no le indicamos aún que geometría o qué tipo de gráfico queremos.</p>
+</div>
+<div id="geometrías" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Geometrías<a href="gráficos-en-r.html#geometrías" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Esta es la siguiente capa en <em>ggplot2</em>.
+Los nombres de las funciones de geometría siguen el patrón: <code>geom_$</code> donde $ es el nombre de la geometría.
+Algunos ejemplos incluyen <code>geom_bar</code>, <code>geom_point</code> y <code>geom_histogram</code>.<br />
+Digamos que queremos ahora sí dibujar la gráfica del paso anterior pero usando puntos, para esto usamos la geometría <code>geom_point</code> .
+Luego de cada capa de <em>ggplot2</em> en vez de usar pipe usamos el signo <strong>+</strong> y así vamos agregando cada capa.<br />
+</p>
+<div class="sourceCode" id="cb485"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb485-1"><a href="gráficos-en-r.html#cb485-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> dose, <span class="at">y =</span> len, <span class="at">color=</span>supp)) <span class="sc">+</span></span>
+<span id="cb485-2"><a href="gráficos-en-r.html#cb485-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-206-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p>Ahora sí podemos ver lo que queríamos, cómo lucen los datos de longitud en cada dosis aplicada destacando o coloreando el modo de administración.
+Si en vez de puntos quisieramos, líneas, pues sólo cambiamos la capa de geometría:</p>
+<div class="sourceCode" id="cb486"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb486-1"><a href="gráficos-en-r.html#cb486-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> dose, <span class="at">y =</span> len, <span class="at">color=</span>supp)) <span class="sc">+</span></span>
+<span id="cb486-2"><a href="gráficos-en-r.html#cb486-2" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-207-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p>También podemos combinar lo visto en <em>tidyverse</em> con <em>ggplot2</em> por ejemplo si queremos hacer un boxplot o barplot debemos cambiar la variable de dosis para hacerla discreta en vez de numérica o continua.</p>
+<div class="sourceCode" id="cb487"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb487-1"><a href="gráficos-en-r.html#cb487-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">mutate</span>(<span class="at">dose=</span><span class="fu">case_when</span>(</span>
+<span id="cb487-2"><a href="gráficos-en-r.html#cb487-2" tabindex="-1"></a>  dose<span class="sc">==</span><span class="fl">0.5</span><span class="sc">~</span><span class="st">&quot;D0.5&quot;</span>,dose<span class="sc">==</span><span class="dv">1</span><span class="sc">~</span><span class="st">&quot;D1&quot;</span>, dose<span class="sc">==</span><span class="dv">2</span><span class="sc">~</span><span class="st">&quot;D2&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(</span>
+<span id="cb487-3"><a href="gráficos-en-r.html#cb487-3" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> dose, <span class="at">y =</span> len, <span class="at">color=</span>supp)) <span class="sc">+</span>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-208-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p>En el caso de <em>geom_bar</em> debemos cambiar y poner más argumentos, por ejemplo, como las barras son huecas en vez de usar ‘color’ usamos ‘fill’ y dentro de la geomtría escogemos una <code>stat</code> y una <code>position</code> , esto es para indicar cómo estarán las barras ubicadas y representadas.
+Los argumentos más usados para barras tradicionales los presento a continuación:</p>
+<div class="sourceCode" id="cb488"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb488-1"><a href="gráficos-en-r.html#cb488-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">mutate</span>(<span class="at">dose=</span><span class="fu">case_when</span>(</span>
+<span id="cb488-2"><a href="gráficos-en-r.html#cb488-2" tabindex="-1"></a>  dose<span class="sc">==</span><span class="fl">0.5</span><span class="sc">~</span><span class="st">&quot;D0.5&quot;</span>,dose<span class="sc">==</span><span class="dv">1</span><span class="sc">~</span><span class="st">&quot;D1&quot;</span>, dose<span class="sc">==</span><span class="dv">2</span><span class="sc">~</span><span class="st">&quot;D2&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(</span>
+<span id="cb488-3"><a href="gráficos-en-r.html#cb488-3" tabindex="-1"></a>    <span class="fu">aes</span>( <span class="at">x =</span> dose, <span class="at">y =</span> len, <span class="at">fill=</span>supp)) <span class="sc">+</span>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-209-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p>Podemos también agregar más de una capa de geometría y así hacer gráficas combinadas, por ejemplo:<br />
+</p>
+<div class="sourceCode" id="cb489"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb489-1"><a href="gráficos-en-r.html#cb489-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> dose, <span class="at">y =</span> len, <span class="at">color=</span>supp)) <span class="sc">+</span></span>
+<span id="cb489-2"><a href="gráficos-en-r.html#cb489-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb489-3"><a href="gráficos-en-r.html#cb489-3" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span><span class="fu">rownames</span>(ToothGrowth)))<span class="sc">+</span></span>
+<span id="cb489-4"><a href="gráficos-en-r.html#cb489-4" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-210-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p>En la gráfica pasada combinamos tres geometrías, puntos, texto y línea.
+De esta forma podemos hacer gráficas más elaboradas y mejor representadas.</p>
+</div>
+<div id="colores-títulos-escalas-y-otros-ajustes." class="section level3 hasAnchor" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> Colores, títulos, escalas y otros ajustes.<a href="gráficos-en-r.html#colores-títulos-escalas-y-otros-ajustes." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><br />
+Hasta ahora hemos construido gráficas con <em>ggplot2()</em> declarando el mapa estético y las diferentes geometrías.
+Sin embargo podemos notar de todas nuestras figuras anteriores que lucen muy parecidas en formato, mismos colores, mismo fondo y demás.</p>
+<p>Todos estos parámetros podemos modificarlos para personalizar nuestras figuras.</p>
+<div id="colores" class="section level4 hasAnchor" number="3.2.3.1">
+<h4><span class="header-section-number">3.2.3.1</span> Colores<a href="gráficos-en-r.html#colores" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><em>ggplot2()</em> tiene su escala personalizadas de colores, como lo vimos anteriormente.
+Sin embargo esto podemos cambiarlo usando una capa denominada <code>scale_color_$</code>, tomando <code>$</code> varias formas, como <code>scale_color_manual()</code>, <code>scale_color_continuous()</code>,<code>scale_color_discrete()</code>, <code>scale_color_brewer()</code> , entre otros.</p>
+<p>Todas estas opciones son depende de nuestro tipo de datos o del tipo de escala que queremos utilizar.
+Para declarar los colores en R podemos utilizar los nombres de los colores inglés como lo hicimos en la parte de R base o usando el formato de colores de html.
+También hay muchas paletas de varios paquetes ya definidas como la de <code>RColorBrewer</code> y <code>viridis</code>.</p>
+<p>Para buscar los colores en formato html pomos usar el siguiente link: <a href="https://htmlcolorcodes.com/es/" title="html-colors"><strong><em>html-colors</em></strong></a><strong><em>.</em></strong> El código html se ve de esta manera:<br />
+</p>
+<p><img src="images/colors.jpg" width="300pt" style="display: block; margin: auto;" /></p>
+<p><br />
+Y de esta manera los declaramos en nuestra gráfica usando <code>scale_color_manual()</code>:<br />
+</p>
+<div class="sourceCode" id="cb490"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb490-1"><a href="gráficos-en-r.html#cb490-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">mutate</span>(<span class="at">dose=</span><span class="fu">case_when</span>(</span>
+<span id="cb490-2"><a href="gráficos-en-r.html#cb490-2" tabindex="-1"></a>  dose<span class="sc">==</span><span class="fl">0.5</span><span class="sc">~</span><span class="st">&quot;D0.5&quot;</span>,dose<span class="sc">==</span><span class="dv">1</span><span class="sc">~</span><span class="st">&quot;D1&quot;</span>, dose<span class="sc">==</span><span class="dv">2</span><span class="sc">~</span><span class="st">&quot;D2&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(</span>
+<span id="cb490-3"><a href="gráficos-en-r.html#cb490-3" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> dose, <span class="at">y =</span> len, <span class="at">col=</span>supp)) <span class="sc">+</span>  <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
+<span id="cb490-4"><a href="gráficos-en-r.html#cb490-4" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#FF00FF&quot;</span>,<span class="st">&quot;#00FFFF&quot;</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-212-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><br />
+Ahora bien, como les mencioné anteriormente los diagramas de cajas y barras son elementos huecos entonces cuando indicados <em>col</em> lo que realmente coloreamos son los bordes, pero si queremos colorear las cajas adentro debemos usar <em>fill</em> como usamos en el <em>geom_bar()</em>, pero, en este caso en vez de usar <code>scale_color_$</code>, usamos <code>scale_fill_$</code> y de esta manera podemos reemplazarlo por todas las opciones anteriormente mencionadas:<br />
+</p>
+<div class="sourceCode" id="cb491"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb491-1"><a href="gráficos-en-r.html#cb491-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">mutate</span>(<span class="at">dose=</span><span class="fu">case_when</span>(</span>
+<span id="cb491-2"><a href="gráficos-en-r.html#cb491-2" tabindex="-1"></a>  dose<span class="sc">==</span><span class="fl">0.5</span><span class="sc">~</span><span class="st">&quot;D0.5&quot;</span>,dose<span class="sc">==</span><span class="dv">1</span><span class="sc">~</span><span class="st">&quot;D1&quot;</span>, dose<span class="sc">==</span><span class="dv">2</span><span class="sc">~</span><span class="st">&quot;D2&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(</span>
+<span id="cb491-3"><a href="gráficos-en-r.html#cb491-3" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> dose, <span class="at">y =</span> len, <span class="at">fill=</span>supp)) <span class="sc">+</span>  <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
+<span id="cb491-4"><a href="gráficos-en-r.html#cb491-4" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#FF00FF&quot;</span>,<span class="st">&quot;#00FFFF&quot;</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-213-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><br />
+Ahora, si dudamos mucho o no estamos seguros de cómo escoger los colores, podemos utilizar paletas de colores ya determinadas como las que mencioné <code>RColorBrewer</code> y <code>viridis</code>. Estas son las paletas de <code>RColorBrewer</code> y <code>viridis</code>:</p>
+<p><img src="images/rcolor.png" width="50%" style="display: block; margin: auto;" /><img src="images/viridis.png" width="50%" style="display: block; margin: auto;" /></p>
+<p><br />
+Y así las podemos usar:<br />
+</p>
+<div class="sourceCode" id="cb492"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb492-1"><a href="gráficos-en-r.html#cb492-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">mutate</span>(<span class="at">dose=</span><span class="fu">case_when</span>(</span>
+<span id="cb492-2"><a href="gráficos-en-r.html#cb492-2" tabindex="-1"></a>  dose<span class="sc">==</span><span class="fl">0.5</span><span class="sc">~</span><span class="st">&quot;D0.5&quot;</span>,dose<span class="sc">==</span><span class="dv">1</span><span class="sc">~</span><span class="st">&quot;D1&quot;</span>, dose<span class="sc">==</span><span class="dv">2</span><span class="sc">~</span><span class="st">&quot;D2&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(</span>
+<span id="cb492-3"><a href="gráficos-en-r.html#cb492-3" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> dose, <span class="at">y =</span> len, <span class="at">fill=</span>supp)) <span class="sc">+</span>  <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
+<span id="cb492-4"><a href="gráficos-en-r.html#cb492-4" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Dark2&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-215-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb493"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb493-1"><a href="gráficos-en-r.html#cb493-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">mutate</span>(<span class="at">dose=</span><span class="fu">case_when</span>(</span>
+<span id="cb493-2"><a href="gráficos-en-r.html#cb493-2" tabindex="-1"></a>  dose<span class="sc">==</span><span class="fl">0.5</span><span class="sc">~</span><span class="st">&quot;D0.5&quot;</span>,dose<span class="sc">==</span><span class="dv">1</span><span class="sc">~</span><span class="st">&quot;D1&quot;</span>, dose<span class="sc">==</span><span class="dv">2</span><span class="sc">~</span><span class="st">&quot;D2&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(</span>
+<span id="cb493-3"><a href="gráficos-en-r.html#cb493-3" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> dose, <span class="at">y =</span> len, <span class="at">fill=</span>supp)) <span class="sc">+</span>  <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
+<span id="cb493-4"><a href="gráficos-en-r.html#cb493-4" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option =</span> <span class="st">&quot;C&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-215-2.png" width="384" style="display: block; margin: auto;" /></p>
+<p><br />
+</p>
+<p>Entonces para <em>brewer</em> ponemos el nombre de la paleta que queremos uscar y el <em>viridis</em> ponemos la opción de paleta que queremos: “magma” (o “A”), “inferno” (“B”), “plasma” (“C”), “viridis” (“D”, default) and “cividis” (o “E”).</p>
+</div>
+<div id="títulos" class="section level4 hasAnchor" number="3.2.3.2">
+<h4><span class="header-section-number">3.2.3.2</span> Títulos<a href="gráficos-en-r.html#títulos" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Para asignar los títulos al eje x y al eje y podemos usar las capas <code>xlab()</code> y <code>ylab()</code>.
+Y para el título principal usamos <code>ggtitle()</code> .
+Así:</p>
+<div class="sourceCode" id="cb494"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb494-1"><a href="gráficos-en-r.html#cb494-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">mutate</span>(<span class="at">dose=</span><span class="fu">case_when</span>(</span>
+<span id="cb494-2"><a href="gráficos-en-r.html#cb494-2" tabindex="-1"></a>  dose<span class="sc">==</span><span class="fl">0.5</span><span class="sc">~</span><span class="st">&quot;D0.5&quot;</span>,dose<span class="sc">==</span><span class="dv">1</span><span class="sc">~</span><span class="st">&quot;D1&quot;</span>, dose<span class="sc">==</span><span class="dv">2</span><span class="sc">~</span><span class="st">&quot;D2&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(</span>
+<span id="cb494-3"><a href="gráficos-en-r.html#cb494-3" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> dose, <span class="at">y =</span> len, <span class="at">fill=</span>supp)) <span class="sc">+</span>  <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
+<span id="cb494-4"><a href="gráficos-en-r.html#cb494-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Longitud diente&quot;</span>)<span class="sc">+</span></span>
+<span id="cb494-5"><a href="gráficos-en-r.html#cb494-5" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Dosis&quot;</span>)<span class="sc">+</span></span>
+<span id="cb494-6"><a href="gráficos-en-r.html#cb494-6" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Longitud de dientes por Dosis aplicada&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-216-1.png" width="384" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="escalas" class="section level3 hasAnchor" number="3.2.4">
+<h3><span class="header-section-number">3.2.4</span> Escalas<a href="gráficos-en-r.html#escalas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para establecer o cambiar las escalas de nuestra figura usamos las funciones <code>scale_x_discrete()</code> o <code>scale_y_continuos()</code>dependiendo del tipo de datos que tengamos (cotinuos o numéricos y discretos o categóricos) en cada axis (x o y) y.</p>
+<div class="sourceCode" id="cb495"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb495-1"><a href="gráficos-en-r.html#cb495-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">mutate</span>(<span class="at">dose=</span><span class="fu">case_when</span>(</span>
+<span id="cb495-2"><a href="gráficos-en-r.html#cb495-2" tabindex="-1"></a>  dose<span class="sc">==</span><span class="fl">0.5</span><span class="sc">~</span><span class="st">&quot;D0.5&quot;</span>,dose<span class="sc">==</span><span class="dv">1</span><span class="sc">~</span><span class="st">&quot;D1&quot;</span>, dose<span class="sc">==</span><span class="dv">2</span><span class="sc">~</span><span class="st">&quot;D2&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(</span>
+<span id="cb495-3"><a href="gráficos-en-r.html#cb495-3" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> dose, <span class="at">y =</span> len, <span class="at">fill=</span>supp)) <span class="sc">+</span>  <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
+<span id="cb495-4"><a href="gráficos-en-r.html#cb495-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Longitud diente&quot;</span>)<span class="sc">+</span></span>
+<span id="cb495-5"><a href="gráficos-en-r.html#cb495-5" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Dosis&quot;</span>)<span class="sc">+</span></span>
+<span id="cb495-6"><a href="gráficos-en-r.html#cb495-6" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Longitud de dientes por Dosis aplicada&quot;</span>) <span class="sc">+</span></span>
+<span id="cb495-7"><a href="gráficos-en-r.html#cb495-7" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="st">&quot;D2&quot;</span>, <span class="st">&quot;D0.5&quot;</span>, <span class="st">&quot;D1&quot;</span>), <span class="at">position =</span><span class="st">&quot;bottom&quot;</span> )<span class="sc">+</span></span>
+<span id="cb495-8"><a href="gráficos-en-r.html#cb495-8" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">20</span>,<span class="dv">40</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">40</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;L0&quot;</span>, <span class="st">&quot;L20&quot;</span>, <span class="st">&quot;L40&quot;</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-217-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p>Como vemos, podemos explorar y probar diferentes parámetros para cambiar en el eje x y en el eje y sin tener que modificar nuestros datos sino solamente para ser graficado.</p>
+</div>
+<div id="otros-ajustes" class="section level3 hasAnchor" number="3.2.5">
+<h3><span class="header-section-number">3.2.5</span> Otros ajustes<a href="gráficos-en-r.html#otros-ajustes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Hay otros ajustes más geneales o específicos que podemos realizar a nuestros gráficos.
+Por ejemplo, los temas.
+<em>ggplot2()</em> usa como <em>default</em> el tema <code>theme_grey()</code> pero hay otros que podemos usar para cambiar el formarto de nuestras figuras.
+Veamos algunos ejemplos:</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-218-1.png" width="672" /></p>
+<p><br />
+</p>
+<p>Y así muchos otros más, los podemos explorar dando theme_ y usando la tecla TAB para ver las demás opciones que nos aparecen.</p>
+<p>Otros ajustes más específicos como tamaño y color de letras, posición de la leyenda, entre otros, los hacemos usando la capa denominada <code>theme()</code>.
+Vamos a dar un ejemplo de cómo hacer esto, pero para usar <strong>thene()</strong> es todo un capítulo muy extenso para entrar en detalles, si queremos conocer muchos de estos detalles hacemos <strong>?theme()</strong> y nos depliega la página de ayuda y veremos los argumentos posibles.</p>
+<div class="sourceCode" id="cb496"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb496-1"><a href="gráficos-en-r.html#cb496-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">mutate</span>(<span class="at">dose=</span><span class="fu">case_when</span>(</span>
+<span id="cb496-2"><a href="gráficos-en-r.html#cb496-2" tabindex="-1"></a>  dose<span class="sc">==</span><span class="fl">0.5</span><span class="sc">~</span><span class="st">&quot;D0.5&quot;</span>,dose<span class="sc">==</span><span class="dv">1</span><span class="sc">~</span><span class="st">&quot;D1&quot;</span>, dose<span class="sc">==</span><span class="dv">2</span><span class="sc">~</span><span class="st">&quot;D2&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(</span>
+<span id="cb496-3"><a href="gráficos-en-r.html#cb496-3" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> dose, <span class="at">y =</span> len, <span class="at">fill=</span>supp)) <span class="sc">+</span>  <span class="fu">geom_boxplot</span>()<span class="sc">+</span> </span>
+<span id="cb496-4"><a href="gráficos-en-r.html#cb496-4" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="st">&quot;14&quot;</span>, <span class="at">colour =</span> <span class="st">&quot;blue&quot;</span>),</span>
+<span id="cb496-5"><a href="gráficos-en-r.html#cb496-5" tabindex="-1"></a>        <span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>),</span>
+<span id="cb496-6"><a href="gráficos-en-r.html#cb496-6" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;top&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-219-1.png" width="384" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="figuras-multi-panel-facets" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Figuras Multi-panel / Facets<a href="gráficos-en-r.html#figuras-multi-panel-facets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para dibujar varias figuras en una misma página o output hay varias estrategias.
+Varias de ellas están fuera del alcance de este curso, pero para mencionarlas:</p>
+<ul>
+<li><p>par (multi-panel con R base)<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a></p></li>
+<li><p>cowplot (ggplot2)<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a></p></li>
+<li><p>grid.arrange(ggplot2)<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a></p></li>
+<li><p>Facets</p></li>
+</ul>
+<div id="facets" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Facets<a href="gráficos-en-r.html#facets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><br />
+Esta forma de graficar en multi-panel es quizás la más sencilla por ser una capa de <em>ggplot2()</em>. Para esta hay dos funciones <code>facet_grid()</code>y <code>facet_wrap()</code>. Los trataremos como ejemplos porque en detalle no son del alcance del presente curso.<br />
+</p>
+<p>Para facet_grid() hay dos opciones, presentarla por columnas o por filas:<br />
+</p>
+<div class="sourceCode" id="cb497"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb497-1"><a href="gráficos-en-r.html#cb497-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">mutate</span>(<span class="at">dose=</span><span class="fu">case_when</span>(</span>
+<span id="cb497-2"><a href="gráficos-en-r.html#cb497-2" tabindex="-1"></a>  dose<span class="sc">==</span><span class="fl">0.5</span><span class="sc">~</span><span class="st">&quot;D0.5&quot;</span>,dose<span class="sc">==</span><span class="dv">1</span><span class="sc">~</span><span class="st">&quot;D1&quot;</span>, dose<span class="sc">==</span><span class="dv">2</span><span class="sc">~</span><span class="st">&quot;D2&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(</span>
+<span id="cb497-3"><a href="gráficos-en-r.html#cb497-3" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> dose, <span class="at">y =</span> len, <span class="at">fill=</span>supp)) <span class="sc">+</span>  <span class="fu">geom_boxplot</span>()<span class="sc">+</span> </span>
+<span id="cb497-4"><a href="gráficos-en-r.html#cb497-4" tabindex="-1"></a>  <span class="fu">facet_grid</span>(supp<span class="sc">~</span>.)</span>
+<span id="cb497-5"><a href="gráficos-en-r.html#cb497-5" tabindex="-1"></a></span>
+<span id="cb497-6"><a href="gráficos-en-r.html#cb497-6" tabindex="-1"></a></span>
+<span id="cb497-7"><a href="gráficos-en-r.html#cb497-7" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">mutate</span>(<span class="at">dose=</span><span class="fu">case_when</span>(</span>
+<span id="cb497-8"><a href="gráficos-en-r.html#cb497-8" tabindex="-1"></a>  dose<span class="sc">==</span><span class="fl">0.5</span><span class="sc">~</span><span class="st">&quot;D0.5&quot;</span>,dose<span class="sc">==</span><span class="dv">1</span><span class="sc">~</span><span class="st">&quot;D1&quot;</span>, dose<span class="sc">==</span><span class="dv">2</span><span class="sc">~</span><span class="st">&quot;D2&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(</span>
+<span id="cb497-9"><a href="gráficos-en-r.html#cb497-9" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> dose, <span class="at">y =</span> len, <span class="at">fill=</span>supp)) <span class="sc">+</span>  <span class="fu">geom_boxplot</span>()<span class="sc">+</span> </span>
+<span id="cb497-10"><a href="gráficos-en-r.html#cb497-10" tabindex="-1"></a>  <span class="fu">facet_grid</span>(.<span class="sc">~</span>supp)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-221-1.png" width="960" style="display: block; margin: auto;" /></p>
+<div style="page-break-after: always;"></div>
+<p>Y con facet_wrap() podemos combinar columnas y filas, por ejemplo:<br />
+</p>
+<div class="sourceCode" id="cb498"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb498-1"><a href="gráficos-en-r.html#cb498-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">mutate</span>(<span class="at">dose=</span><span class="fu">case_when</span>(</span>
+<span id="cb498-2"><a href="gráficos-en-r.html#cb498-2" tabindex="-1"></a>  dose<span class="sc">==</span><span class="fl">0.5</span><span class="sc">~</span><span class="st">&quot;D0.5&quot;</span>,dose<span class="sc">==</span><span class="dv">1</span><span class="sc">~</span><span class="st">&quot;D1&quot;</span>, dose<span class="sc">==</span><span class="dv">2</span><span class="sc">~</span><span class="st">&quot;D2&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(</span>
+<span id="cb498-3"><a href="gráficos-en-r.html#cb498-3" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> dose, <span class="at">y =</span> len, <span class="at">fill=</span>supp)) <span class="sc">+</span>  <span class="fu">geom_boxplot</span>()<span class="sc">+</span> </span>
+<span id="cb498-4"><a href="gráficos-en-r.html#cb498-4" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>supp<span class="sc">+</span>dose, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-222-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div id="guardando-una-gráfica-en-ggplot2" class="section level4 hasAnchor" number="3.3.1.1">
+<h4><span class="header-section-number">3.3.1.1</span> Guardando una gráfica en ggplot2<a href="gráficos-en-r.html#guardando-una-gráfica-en-ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Para guardar una gráfica de tipo <em>ggplot2()</em> usamos la función <em>ggsave()</em></p>
+<div class="sourceCode" id="cb499"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb499-1"><a href="gráficos-en-r.html#cb499-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename =</span> <span class="st">&quot;plot.png&quot;</span>, <span class="at">plot =</span> a1, <span class="at">dpi =</span> <span class="dv">300</span>,<span class="at">width =</span> <span class="dv">4</span>, <span class="at">height =</span> <span class="fl">3.5</span>)</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="extras" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Extras<a href="gráficos-en-r.html#extras" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="stat_summary-y-stat_smoot" class="section level3 hasAnchor" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> stat_summary() y stat_smoot()<a href="gráficos-en-r.html#stat_summary-y-stat_smoot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Esta es una capa que nos permite poner desviaciones estándar o líneas que representan el promedio de los datos, por ejemplo:</p>
+<div class="sourceCode" id="cb500"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb500-1"><a href="gráficos-en-r.html#cb500-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> </span>
+<span id="cb500-2"><a href="gráficos-en-r.html#cb500-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> dose, <span class="at">y =</span> len)) <span class="sc">+</span></span>
+<span id="cb500-3"><a href="gráficos-en-r.html#cb500-3" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">geom =</span> <span class="st">&quot;line&quot;</span>, <span class="at">fun =</span> mean, <span class="fu">aes</span>(<span class="at">group =</span> supp, <span class="at">color =</span> supp), <span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span> </span>
+<span id="cb500-4"><a href="gráficos-en-r.html#cb500-4" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">geom =</span> <span class="st">&quot;errorbar&quot;</span>, <span class="at">fun.data =</span> mean_se, <span class="fu">aes</span>(<span class="at">group =</span> supp), <span class="at">width =</span> <span class="fl">0.1</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-224-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p>stat_smooth() nos permite colorear o resaltar la línea que representa nuestro modelo lineal:</p>
+<div class="sourceCode" id="cb501"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb501-1"><a href="gráficos-en-r.html#cb501-1" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Petal.Width, <span class="at">y =</span> Sepal.Length)) <span class="sc">+</span> </span>
+<span id="cb501-2"><a href="gráficos-en-r.html#cb501-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb501-3"><a href="gráficos-en-r.html#cb501-3" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-225-1.png" width="384" style="display: block; margin: auto;" /></p>
+</div>
+<div id="ggpubr" class="section level3 hasAnchor" number="3.4.2">
+<h3><span class="header-section-number">3.4.2</span> <em>ggpubr()</em><a href="gráficos-en-r.html#ggpubr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><em>ggpubr()</em> es una paqutería tipo compatible con <em>ggplot2()</em> pero un poco más fácil de declarar y más intuitivo.</p>
+<p>Veamos algunos pocos ejemplos de sus utilidades:</p>
+<div class="sourceCode" id="cb503"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb503-1"><a href="gráficos-en-r.html#cb503-1" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
+<span id="cb503-2"><a href="gráficos-en-r.html#cb503-2" tabindex="-1"></a><span class="fu">ggboxplot</span>(ToothGrowth, <span class="at">x =</span> <span class="st">&quot;dose&quot;</span>, <span class="at">y =</span> <span class="st">&quot;len&quot;</span>, <span class="at">color =</span> <span class="st">&quot;dose&quot;</span>,<span class="at">add =</span> <span class="st">&quot;jitter&quot;</span>, <span class="at">shape =</span> <span class="st">&quot;dose&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-226-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb504"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb504-1"><a href="gráficos-en-r.html#cb504-1" tabindex="-1"></a><span class="fu">ggbarplot</span>(ToothGrowth, <span class="at">x =</span> <span class="st">&quot;dose&quot;</span>, <span class="at">y =</span> <span class="st">&quot;len&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;dose&quot;</span>, <span class="at">add =</span> <span class="st">&quot;mean_se&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-227-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p><br />
+Vemos que los parámetros se definen similarmente pero con algunas diferencias, además que nos permite agregarles más elementos sin agregar más capas.
+Y el ‘output’ o tipo de gráfica es igual del tipo <strong>ggplot2()</strong>.<br />
+<br />
+</p>
+<p>Otras funciones interesantes de este paquete son <strong>facet.by</strong> que es un argumento que puede ser declarado dentro de la función principal y nos permite hacer las gráficas multi-panel y otro que es muy útil es el de <strong>stat_compare_means()</strong> que nos permite agregar una capa que hace análisis estátidísticos como t.test, wilcoxon, kruskal.walis, anova, entre otros y que nos evita hacer análisis fuera y que podamos agragarlas a la gráfica en un sólo paso.<br />
+</p>
+<div class="sourceCode" id="cb505"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb505-1"><a href="gráficos-en-r.html#cb505-1" tabindex="-1"></a><span class="fu">ggboxplot</span>(ToothGrowth, <span class="at">x =</span> <span class="st">&quot;dose&quot;</span>, <span class="at">y =</span> <span class="st">&quot;len&quot;</span>, <span class="at">color =</span> <span class="st">&quot;dose&quot;</span>,<span class="at">facet.by =</span> <span class="st">&quot;supp&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-228-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb506"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb506-1"><a href="gráficos-en-r.html#cb506-1" tabindex="-1"></a>comparaciones <span class="ot">&lt;-</span> <span class="fu">list</span>( <span class="fu">c</span>(<span class="st">&quot;0.5&quot;</span>, <span class="st">&quot;1&quot;</span>), <span class="fu">c</span>(<span class="st">&quot;1&quot;</span>, <span class="st">&quot;2&quot;</span>), <span class="fu">c</span>(<span class="st">&quot;0.5&quot;</span>, <span class="st">&quot;2&quot;</span>) )</span>
+<span id="cb506-2"><a href="gráficos-en-r.html#cb506-2" tabindex="-1"></a></span>
+<span id="cb506-3"><a href="gráficos-en-r.html#cb506-3" tabindex="-1"></a><span class="fu">ggbarplot</span>(ToothGrowth, <span class="at">x =</span> <span class="st">&quot;dose&quot;</span>, <span class="at">y =</span> <span class="st">&quot;len&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;dose&quot;</span>, <span class="at">add =</span> <span class="st">&quot;mean_sd&quot;</span>)<span class="sc">+</span></span>
+<span id="cb506-4"><a href="gráficos-en-r.html#cb506-4" tabindex="-1"></a>  <span class="fu">stat_compare_means</span>(<span class="at">comparisons =</span> comparaciones, <span class="at">label =</span> <span class="st">&quot;p.signif&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-228-2.png" width="384" style="display: block; margin: auto;" /></p>
+<div style="page-break-after: always;"></div>
+</div>
+<div id="misceláneos-ggcats4" class="section level3 hasAnchor" number="3.4.3">
+<h3><span class="header-section-number">3.4.3</span> Misceláneos: <em>ggcats()</em><a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a><a href="gráficos-en-r.html#misceláneos-ggcats4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><em>ggplot2()</em> nos permite usar diversos paquetes desarrollados por muchos usarios con fines divertidos o misceláneos, podemos verlo en el pie de página el link para explorar todos los que hay.
+Veremos <em>ggcats()</em>.
+Estas son las opciones que podemos usar:</p>
+<div class="sourceCode" id="cb507"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb507-1"><a href="gráficos-en-r.html#cb507-1" tabindex="-1"></a><span class="co"># install.packages(&quot;magick&quot;)</span></span>
+<span id="cb507-2"><a href="gráficos-en-r.html#cb507-2" tabindex="-1"></a><span class="co"># remotes::install_github(&quot;R-CoderDotCom/ggcats@main&quot;)</span></span>
+<span id="cb507-3"><a href="gráficos-en-r.html#cb507-3" tabindex="-1"></a><span class="fu">library</span>(ggcats)</span>
+<span id="cb507-4"><a href="gráficos-en-r.html#cb507-4" tabindex="-1"></a>grid <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">1</span>)</span>
+<span id="cb507-5"><a href="gráficos-en-r.html#cb507-5" tabindex="-1"></a></span>
+<span id="cb507-6"><a href="gráficos-en-r.html#cb507-6" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> grid[, <span class="dv">1</span>],</span>
+<span id="cb507-7"><a href="gráficos-en-r.html#cb507-7" tabindex="-1"></a>                 <span class="at">y =</span> grid[, <span class="dv">2</span>],</span>
+<span id="cb507-8"><a href="gráficos-en-r.html#cb507-8" tabindex="-1"></a>                 <span class="at">image =</span> <span class="fu">c</span>(<span class="st">&quot;nyancat&quot;</span>, <span class="st">&quot;bongo&quot;</span>,</span>
+<span id="cb507-9"><a href="gráficos-en-r.html#cb507-9" tabindex="-1"></a>                           <span class="st">&quot;colonel&quot;</span>, <span class="st">&quot;grumpy&quot;</span>,</span>
+<span id="cb507-10"><a href="gráficos-en-r.html#cb507-10" tabindex="-1"></a>                           <span class="st">&quot;hipster&quot;</span>, <span class="st">&quot;lil_bub&quot;</span>,</span>
+<span id="cb507-11"><a href="gráficos-en-r.html#cb507-11" tabindex="-1"></a>                           <span class="st">&quot;maru&quot;</span>, <span class="st">&quot;mouth&quot;</span>,</span>
+<span id="cb507-12"><a href="gráficos-en-r.html#cb507-12" tabindex="-1"></a>                           <span class="st">&quot;pop&quot;</span>, <span class="st">&quot;pop_close&quot;</span>, </span>
+<span id="cb507-13"><a href="gráficos-en-r.html#cb507-13" tabindex="-1"></a>                           <span class="st">&quot;pusheen&quot;</span>, <span class="st">&quot;pusheen_pc&quot;</span>,</span>
+<span id="cb507-14"><a href="gráficos-en-r.html#cb507-14" tabindex="-1"></a>                           <span class="st">&quot;toast&quot;</span>, <span class="st">&quot;venus&quot;</span>,</span>
+<span id="cb507-15"><a href="gráficos-en-r.html#cb507-15" tabindex="-1"></a>                           <span class="st">&quot;shironeko&quot;</span>))</span>
+<span id="cb507-16"><a href="gráficos-en-r.html#cb507-16" tabindex="-1"></a><span class="fu">ggplot</span>(df) <span class="sc">+</span></span>
+<span id="cb507-17"><a href="gráficos-en-r.html#cb507-17" tabindex="-1"></a> <span class="fu">geom_cat</span>(<span class="fu">aes</span>(x, y, <span class="at">cat =</span> image), <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb507-18"><a href="gráficos-en-r.html#cb507-18" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="fu">aes</span>(x, y <span class="sc">-</span> <span class="fl">0.5</span>, <span class="at">label =</span> image), <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb507-19"><a href="gráficos-en-r.html#cb507-19" tabindex="-1"></a>    <span class="fu">xlim</span>(<span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">5.5</span>)) <span class="sc">+</span> </span>
+<span id="cb507-20"><a href="gráficos-en-r.html#cb507-20" tabindex="-1"></a>    <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">3.5</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-229-1.png" width="672" /></p>
+<p><br />
+Entonces, por ejemplo si queremos usarlos como puntos de nuestra gráfica, sería algo así:<br />
+</p>
+<div class="sourceCode" id="cb508"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb508-1"><a href="gráficos-en-r.html#cb508-1" tabindex="-1"></a><span class="co">#hacemos la variable cats para escoger los que queremos</span></span>
+<span id="cb508-2"><a href="gráficos-en-r.html#cb508-2" tabindex="-1"></a>ToothGrowth<span class="sc">$</span>cats <span class="ot">&lt;-</span> <span class="fu">factor</span>(ToothGrowth<span class="sc">$</span>dose,</span>
+<span id="cb508-3"><a href="gráficos-en-r.html#cb508-3" tabindex="-1"></a>                           <span class="at">levels =</span> <span class="fu">c</span>(<span class="fl">0.5</span>,<span class="dv">1</span>,<span class="dv">2</span>),</span>
+<span id="cb508-4"><a href="gráficos-en-r.html#cb508-4" tabindex="-1"></a>                           <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;mouth&quot;</span>, <span class="st">&quot;grumpy&quot;</span>, <span class="st">&quot;pusheen_pc&quot;</span>))</span>
+<span id="cb508-5"><a href="gráficos-en-r.html#cb508-5" tabindex="-1"></a></span>
+<span id="cb508-6"><a href="gráficos-en-r.html#cb508-6" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> len, <span class="at">x =</span> dose)) <span class="sc">+</span> </span>
+<span id="cb508-7"><a href="gráficos-en-r.html#cb508-7" tabindex="-1"></a>  <span class="fu">geom_cat</span>(<span class="fu">aes</span>(<span class="at">cat =</span> cats), <span class="at">size =</span> <span class="dv">4</span>)  <span class="sc">+</span>  <span class="fu">xlim</span>(<span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">2.25</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-230-1.png" width="672" /></p>
+</div>
+<div id="misceláneos-ggtexttable" class="section level3 hasAnchor" number="3.4.4">
+<h3><span class="header-section-number">3.4.4</span> Misceláneos: <em>ggtexttable()</em><a href="gráficos-en-r.html#misceláneos-ggtexttable" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Esta función me permite hacer mis tablas como figuras que puedo exportar como imágenes y darle formato.
+Hace parte del paquete <strong>ggpubr()</strong> que vimos anteriormente.</p>
+<p>Haremos un ejemplo con los primeros cuatro datos de <strong>iris</strong>:</p>
+<div class="sourceCode" id="cb509"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb509-1"><a href="gráficos-en-r.html#cb509-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb509-2"><a href="gráficos-en-r.html#cb509-2" tabindex="-1"></a>df<span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>))</span>
+<span id="cb509-3"><a href="gráficos-en-r.html#cb509-3" tabindex="-1"></a><span class="fu">ggtexttable</span>(df, <span class="at">rows =</span> <span class="cn">NULL</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-231-1.png" width="672" /></p>
+<p>También podemos cambiar el tema con el que se formatea la tabla, por ejemplo:</p>
+<div class="sourceCode" id="cb510"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb510-1"><a href="gráficos-en-r.html#cb510-1" tabindex="-1"></a><span class="fu">ggtexttable</span>(df, <span class="at">rows =</span> <span class="cn">NULL</span>, <span class="at">theme =</span> <span class="fu">ttheme</span>(<span class="st">&quot;blank&quot;</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-232-1.png" width="672" /></p>
+<div class="sourceCode" id="cb511"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb511-1"><a href="gráficos-en-r.html#cb511-1" tabindex="-1"></a><span class="fu">ggtexttable</span>(df, <span class="at">rows =</span> <span class="cn">NULL</span>, <span class="at">theme =</span> <span class="fu">ttheme</span>(<span class="st">&quot;light&quot;</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-232-2.png" width="672" /></p>
+<div class="sourceCode" id="cb512"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb512-1"><a href="gráficos-en-r.html#cb512-1" tabindex="-1"></a><span class="fu">ggtexttable</span>(df, <span class="at">rows =</span> <span class="cn">NULL</span>, <span class="at">theme =</span> <span class="fu">ttheme</span>(<span class="st">&quot;classic&quot;</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-232-3.png" width="672" /></p>
+<div class="sourceCode" id="cb513"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb513-1"><a href="gráficos-en-r.html#cb513-1" tabindex="-1"></a><span class="fu">ggtexttable</span>(df, <span class="at">rows =</span> <span class="cn">NULL</span>, <span class="at">theme =</span> <span class="fu">ttheme</span>(<span class="st">&quot;minimal&quot;</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-232-4.png" width="672" /></p>
+<div class="sourceCode" id="cb514"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb514-1"><a href="gráficos-en-r.html#cb514-1" tabindex="-1"></a><span class="fu">ggtexttable</span>(df, <span class="at">rows =</span> <span class="cn">NULL</span>, <span class="at">theme =</span> <span class="fu">ttheme</span>(<span class="st">&quot;lVioletWhite&quot;</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-232-5.png" width="672" /></p>
+<div class="sourceCode" id="cb515"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb515-1"><a href="gráficos-en-r.html#cb515-1" tabindex="-1"></a><span class="fu">ggtexttable</span>(df, <span class="at">rows =</span> <span class="cn">NULL</span>, <span class="at">theme =</span> <span class="fu">ttheme</span>(<span class="st">&quot;mVioletWhite&quot;</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-232-6.png" width="672" /></p>
+<p>Para ver otros temas: <a href="https://rpkgs.datanovia.com/ggpubr/files/ggtexttable-theme.pdf" class="uri">https://rpkgs.datanovia.com/ggpubr/files/ggtexttable-theme.pdf</a></p>
+<p>Otros formateos:</p>
+<ul>
+<li><p>Poner en negrita una celda:</p>
+<div class="sourceCode" id="cb516"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb516-1"><a href="gráficos-en-r.html#cb516-1" tabindex="-1"></a><span class="fu">ggtexttable</span>(df, <span class="at">rows =</span> <span class="cn">NULL</span>,  <span class="at">theme =</span> <span class="fu">ttheme</span>(<span class="st">&quot;classic&quot;</span>)) <span class="sc">%&gt;%</span>  </span>
+<span id="cb516-2"><a href="gráficos-en-r.html#cb516-2" tabindex="-1"></a>  <span class="fu">table_cell_font</span>(<span class="at">row =</span> <span class="dv">3</span>, <span class="at">column =</span> <span class="dv">2</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-234-1.png" width="672" /></p></li>
+<li><p>Resaltar una columna:</p>
+<div class="sourceCode" id="cb517"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb517-1"><a href="gráficos-en-r.html#cb517-1" tabindex="-1"></a><span class="fu">ggtexttable</span>(df, <span class="at">rows =</span> <span class="cn">NULL</span>,  <span class="at">theme =</span> <span class="fu">ttheme</span>(<span class="st">&quot;classic&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb517-2"><a href="gráficos-en-r.html#cb517-2" tabindex="-1"></a>  <span class="fu">table_cell_bg</span>(<span class="at">row =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">column =</span> <span class="dv">3</span>, <span class="at">fill=</span><span class="st">&quot;yellow&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-235-1.png" width="672" /></p></li>
+<li><p>Poner títulos y pies de notas:</p>
+<div class="sourceCode" id="cb518"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb518-1"><a href="gráficos-en-r.html#cb518-1" tabindex="-1"></a><span class="fu">ggtexttable</span>(df, <span class="at">rows =</span> <span class="cn">NULL</span>,  <span class="at">theme =</span> <span class="fu">ttheme</span>(<span class="st">&quot;classic&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb518-2"><a href="gráficos-en-r.html#cb518-2" tabindex="-1"></a>  <span class="fu">tab_add_title</span>(<span class="at">text =</span> <span class="st">&quot;Data iris&quot;</span>,  <span class="at">size =</span> <span class="dv">14</span>, <span class="at">face=</span><span class="st">&quot;bold&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb518-3"><a href="gráficos-en-r.html#cb518-3" tabindex="-1"></a>  <span class="fu">tab_add_footnote</span>(<span class="at">text =</span> <span class="st">&quot;*Alguna nota&quot;</span>, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">face =</span> <span class="st">&quot;italic&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-236-1.png" width="672" /></p></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="10">
+<li id="fn10"><p><a href="https://bookdown.org/ndphillips/YaRrr/arranging-plots-with-parmfrow-and-layout.html" class="uri">https://bookdown.org/ndphillips/YaRrr/arranging-plots-with-parmfrow-and-layout.html</a><a href="gráficos-en-r.html#fnref10" class="footnote-back">↩︎</a></p></li>
+<li id="fn11"><p><a href="https://cran.r-project.org/web/packages/cowplot/vignettes/introduction.html" class="uri">https://cran.r-project.org/web/packages/cowplot/vignettes/introduction.html</a><a href="gráficos-en-r.html#fnref11" class="footnote-back">↩︎</a></p></li>
+<li id="fn12"><p><a href="https://cran.r-project.org/web/packages/egg/vignettes/Ecosystem.html" class="uri">https://cran.r-project.org/web/packages/egg/vignettes/Ecosystem.html</a><a href="gráficos-en-r.html#fnref12" class="footnote-back">↩︎</a></p></li>
+<li id="fn13"><p><a href="https://r-charts.com/es/miscelanea/" class="uri">https://r-charts.com/es/miscelanea/</a><a href="gráficos-en-r.html#fnref13" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="manejo-de-data-frames-y-bases-de-datos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="valor-de-significancia-p-en-estadística-p-value.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.docx"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

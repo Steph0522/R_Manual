@@ -1,0 +1,1997 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 2 Manejo de data frames y bases de datos | MANUAL DE R Y RSTUDIO</title>
+  <meta name="description" content="Capítulo 2 Manejo de data frames y bases de datos | MANUAL DE R Y RSTUDIO" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 2 Manejo de data frames y bases de datos | MANUAL DE R Y RSTUDIO" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="Steph0522/R_Manual" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 2 Manejo de data frames y bases de datos | MANUAL DE R Y RSTUDIO" />
+  
+  
+  
+
+<meta name="author" content="Stephanie Hereira-Pacheco" />
+<meta name="author" content="Mauricio Hernández" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introducción-a-r.html"/>
+<link rel="next" href="gráficos-en-r.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MANUAL DE R Y RSTUDIO</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefacio</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#objetivo-del-libro"><i class="fa fa-check"></i><b>0.1</b> Objetivo del libro</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#requisitos"><i class="fa fa-check"></i><b>0.2</b> <strong>Requisitos</strong></a></li>
+<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#instalación-de-rsudio-y-r"><i class="fa fa-check"></i><b>0.3</b> Instalación de Rsudio y R</a>
+<ul>
+<li class="chapter" data-level="0.3.1" data-path="index.html"><a href="index.html#rstudio"><i class="fa fa-check"></i><b>0.3.1</b> Rstudio</a></li>
+<li class="chapter" data-level="0.3.2" data-path="index.html"><a href="index.html#r"><i class="fa fa-check"></i><b>0.3.2</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="0.4" data-path="index.html"><a href="index.html#aviso-legal-protección-de-propiedad-intelectual."><i class="fa fa-check"></i><b>0.4</b> Aviso Legal: Protección de Propiedad Intelectual.</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introducción-a-r.html"><a href="introducción-a-r.html"><i class="fa fa-check"></i><b>1</b> : Introducción a R</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#getting-started"><i class="fa fa-check"></i><b>1.1</b> Comenzando con R y RStudio</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#breve-descripción-de-r"><i class="fa fa-check"></i><b>1.1.1</b> Breve descripción de R</a></li>
+<li class="chapter" data-level="1.1.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#un-poco-de-historia1"><i class="fa fa-check"></i><b>1.1.2</b> Un poco de historia…</a></li>
+<li class="chapter" data-level="1.1.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#por-qué-usar-r2"><i class="fa fa-check"></i><b>1.1.3</b> ¿Por qué usar R?</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#rstudio"><i class="fa fa-check"></i><b>1.1.4</b> RStudio</a></li>
+<li class="chapter" data-level="1.1.5" data-path="introducción-a-r.html"><a href="introducción-a-r.html#interfaz-de-rstudio"><i class="fa fa-check"></i><b>1.1.5</b> Interfaz de Rstudio</a></li>
+<li class="chapter" data-level="1.1.6" data-path="introducción-a-r.html"><a href="introducción-a-r.html#scripts"><i class="fa fa-check"></i><b>1.1.6</b> <em>Scripts</em></a></li>
+<li class="chapter" data-level="1.1.7" data-path="introducción-a-r.html"><a href="introducción-a-r.html#directorio-de-trabajo"><i class="fa fa-check"></i><b>1.1.7</b> Directorio de trabajo</a></li>
+<li class="chapter" data-level="1.1.8" data-path="introducción-a-r.html"><a href="introducción-a-r.html#sesión"><i class="fa fa-check"></i><b>1.1.8</b> Sesión</a></li>
+<li class="chapter" data-level="1.1.9" data-path="introducción-a-r.html"><a href="introducción-a-r.html#proyecto"><i class="fa fa-check"></i><b>1.1.9</b> Proyecto</a></li>
+<li class="chapter" data-level="1.1.10" data-path="introducción-a-r.html"><a href="introducción-a-r.html#instalación-de-paquetes-de-r"><i class="fa fa-check"></i><b>1.1.10</b> Instalación de paquetes de R</a></li>
+<li class="chapter" data-level="1.1.11" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tipos-de-objetos-en-r"><i class="fa fa-check"></i><b>1.1.11</b> Tipos de objetos en R</a></li>
+<li class="chapter" data-level="1.1.12" data-path="introducción-a-r.html"><a href="introducción-a-r.html#funciones-en-r6"><i class="fa fa-check"></i><b>1.1.12</b> Funciones en R</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tipos-de-datos"><i class="fa fa-check"></i><b>1.2</b> Tipos de datos</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tipos-de-estructura-de-los-datos"><i class="fa fa-check"></i><b>1.2.1</b> Tipos de estructura de los datos</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#data-frames"><i class="fa fa-check"></i><b>1.3</b> <em>Data frames</em></a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#el-operador-y-otras-formas-de-acceso"><i class="fa fa-check"></i><b>1.3.1</b> El operador <code>$</code> y otras formas de acceso</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introducción-a-r.html"><a href="introducción-a-r.html#creando-subconjuntos-o-indexación."><i class="fa fa-check"></i><b>1.4</b> Creando subconjuntos o Indexación.</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#importing-data"><i class="fa fa-check"></i><b>1.4.1</b> Importando datos</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="introducción-a-r.html"><a href="introducción-a-r.html#el-directorio-de-trabajo-y-rutas"><i class="fa fa-check"></i><b>1.5</b> El directorio de trabajo y rutas</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#descargando-un-archivo-de-la-web"><i class="fa fa-check"></i><b>1.5.1</b> Descargando un archivo de la web</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="introducción-a-r.html"><a href="introducción-a-r.html#funciones-de-importación"><i class="fa fa-check"></i><b>1.6</b> Funciones de importación</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#los-paquetes-readr-y-readxl1"><i class="fa fa-check"></i><b>1.6.1</b> Los paquetes readr y readxl</a></li>
+<li class="chapter" data-level="1.6.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#algunos-tips-para-hojas-de-cálculo-de-excel"><i class="fa fa-check"></i><b>1.6.2</b> Algunos tips para hojas de cálculo de excel…</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introducción-a-r.html"><a href="introducción-a-r.html#algunas-funciones-básicas-de-r"><i class="fa fa-check"></i><b>1.7</b> Algunas funciones Básicas de R</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#sort-y-order"><i class="fa fa-check"></i><b>1.7.1</b> <code>sort</code> y <code>order</code></a></li>
+<li class="chapter" data-level="1.7.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#max-y-which.max"><i class="fa fa-check"></i><b>1.7.2</b> <code>max</code> y <code>which.max</code></a></li>
+<li class="chapter" data-level="1.7.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#which"><i class="fa fa-check"></i><b>1.7.3</b> <code>which</code></a></li>
+<li class="chapter" data-level="1.7.4" data-path="introducción-a-r.html"><a href="introducción-a-r.html#match"><i class="fa fa-check"></i><b>1.7.4</b> <code>match</code></a></li>
+<li class="chapter" data-level="1.7.5" data-path="introducción-a-r.html"><a href="introducción-a-r.html#in"><i class="fa fa-check"></i><b>1.7.5</b> <code>%in%</code></a></li>
+<li class="chapter" data-level="1.7.6" data-path="introducción-a-r.html"><a href="introducción-a-r.html#la-familia-de-funciones-apply"><i class="fa fa-check"></i><b>1.7.6</b> La familia de funciones <code>apply</code></a></li>
+<li class="chapter" data-level="1.7.7" data-path="introducción-a-r.html"><a href="introducción-a-r.html#apply"><i class="fa fa-check"></i><b>1.7.7</b> apply</a></li>
+<li class="chapter" data-level="1.7.8" data-path="introducción-a-r.html"><a href="introducción-a-r.html#estructuras-de-control"><i class="fa fa-check"></i><b>1.7.8</b> Estructuras de control</a></li>
+<li class="chapter" data-level="1.7.9" data-path="introducción-a-r.html"><a href="introducción-a-r.html#while"><i class="fa fa-check"></i><b>1.7.9</b> while</a></li>
+<li class="chapter" data-level="1.7.10" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tratando-con-datos-na"><i class="fa fa-check"></i><b>1.7.10</b> Tratando con datos NA</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html"><i class="fa fa-check"></i><b>2</b> Manejo de data frames y bases de datos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#manipulación-de-datos-con-rbase"><i class="fa fa-check"></i><b>2.1</b> Manipulación de datos con Rbase</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#filtrado-y-obtención-de-subconjuntos"><i class="fa fa-check"></i><b>2.1.1</b> Filtrado y obtención de subconjuntos</a></li>
+<li class="chapter" data-level="2.1.2" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#creando-una-nueva-columna"><i class="fa fa-check"></i><b>2.1.2</b> Creando una nueva columna</a></li>
+<li class="chapter" data-level="2.1.3" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#aggregate-resumiendo-los-datos"><i class="fa fa-check"></i><b>2.1.3</b> <em>aggregate()</em> : Resumiendo los datos</a></li>
+<li class="chapter" data-level="2.1.4" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#renombrando-columnas-y-datos"><i class="fa fa-check"></i><b>2.1.4</b> Renombrando columnas y datos</a></li>
+<li class="chapter" data-level="2.1.5" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#cbind-y-rbind"><i class="fa fa-check"></i><b>2.1.5</b> <em>cbind() y rbind()</em></a></li>
+<li class="chapter" data-level="2.1.6" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#uniendo-tablas-con-merge"><i class="fa fa-check"></i><b>2.1.6</b> Uniendo tablas con <em>merge()</em></a></li>
+<li class="chapter" data-level="2.1.7" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#ordenando-tablas-por-un-criterio-o-columna"><i class="fa fa-check"></i><b>2.1.7</b> Ordenando tablas por un criterio o columna</a></li>
+<li class="chapter" data-level="2.1.8" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#funciones-adicionales-de-agregación"><i class="fa fa-check"></i><b>2.1.8</b> Funciones adicionales de agregación</a></li>
+<li class="chapter" data-level="2.1.9" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#ejemplo-aplicado1"><i class="fa fa-check"></i><b>2.1.9</b> Ejemplo aplicado</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#manejo-de-datos-con-tidyverse"><i class="fa fa-check"></i><b>2.2</b> Manejo de datos con tidyverse</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#tidyverse"><i class="fa fa-check"></i><b>2.2.1</b> <em>tidyverse</em></a></li>
+<li class="chapter" data-level="2.2.2" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#datos-tidy"><i class="fa fa-check"></i><b>2.2.2</b> Datos <em>tidy</em></a></li>
+<li class="chapter" data-level="2.2.3" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#manipulación-de-data-frames"><i class="fa fa-check"></i><b>2.2.3</b> Manipulación de <em>data frames</em></a></li>
+<li class="chapter" data-level="2.2.4" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#el-pipe"><i class="fa fa-check"></i><b>2.2.4</b> El <em>pipe</em>: <code>%&gt;%</code></a></li>
+<li class="chapter" data-level="2.2.5" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#seleccionando-columnas-1"><i class="fa fa-check"></i><b>2.2.5</b> Seleccionando columnas</a></li>
+<li class="chapter" data-level="2.2.6" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#filtrando-filas-1"><i class="fa fa-check"></i><b>2.2.6</b> Filtrando filas</a></li>
+<li class="chapter" data-level="2.2.7" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#creando-una-nueva-columna-1"><i class="fa fa-check"></i><b>2.2.7</b> Creando una nueva columna</a></li>
+<li class="chapter" data-level="2.2.8" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#datos-discretos"><i class="fa fa-check"></i><b>2.2.8</b> Datos discretos</a></li>
+<li class="chapter" data-level="2.2.9" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#resumiendo-los-datos"><i class="fa fa-check"></i><b>2.2.9</b> Resumiendo los datos</a></li>
+<li class="chapter" data-level="2.2.10" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#renombrando-columnas-con-tidyverse"><i class="fa fa-check"></i><b>2.2.10</b> Renombrando columnas Con <em>tidyverse</em></a></li>
+<li class="chapter" data-level="2.2.11" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#ordenando-tablas-por-un-criterio-o-columna-1"><i class="fa fa-check"></i><b>2.2.11</b> Ordenando tablas por un criterio o columna</a></li>
+<li class="chapter" data-level="2.2.12" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#uniendo-tablas"><i class="fa fa-check"></i><b>2.2.12</b> Uniendo tablas</a></li>
+<li class="chapter" data-level="2.2.13" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#funciones-adicionales-del-tydiverse"><i class="fa fa-check"></i><b>2.2.13</b> Funciones adicionales del <em>tydiverse</em></a></li>
+<li class="chapter" data-level="2.2.14" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html#ejemplo-aplicado"><i class="fa fa-check"></i><b>2.2.14</b> Ejemplo Aplicado</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html"><i class="fa fa-check"></i><b>3</b> Gráficos en R</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#gráficas-en-r-base"><i class="fa fa-check"></i><b>3.1</b> Gráficas en R base</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#la-función-plot"><i class="fa fa-check"></i><b>3.1.1</b> La función <em>plot()</em></a></li>
+<li class="chapter" data-level="3.1.2" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#histrogramas"><i class="fa fa-check"></i><b>3.1.2</b> Histrogramas</a></li>
+<li class="chapter" data-level="3.1.3" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#diagramas-de-dispersión"><i class="fa fa-check"></i><b>3.1.3</b> Diagramas de dispersión</a></li>
+<li class="chapter" data-level="3.1.4" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#boxplots-o-diagramas-de-cajas"><i class="fa fa-check"></i><b>3.1.4</b> Boxplots o diagramas de cajas</a></li>
+<li class="chapter" data-level="3.1.5" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#otros-gráficos"><i class="fa fa-check"></i><b>3.1.5</b> Otros gráficos</a></li>
+<li class="chapter" data-level="3.1.6" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#barplots-o-gráficas-de-barras"><i class="fa fa-check"></i><b>3.1.6</b> Barplots o gráficas de barras</a></li>
+<li class="chapter" data-level="3.1.7" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#guardando-una-gráfica"><i class="fa fa-check"></i><b>3.1.7</b> Guardando una gráfica</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#gráficas-con-ggplot2"><i class="fa fa-check"></i><b>3.2</b> Gráficas con <em>ggplot2()</em></a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#ggplot"><i class="fa fa-check"></i><b>3.2.1</b> ggplot</a></li>
+<li class="chapter" data-level="3.2.2" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#geometrías"><i class="fa fa-check"></i><b>3.2.2</b> Geometrías</a></li>
+<li class="chapter" data-level="3.2.3" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#colores-títulos-escalas-y-otros-ajustes."><i class="fa fa-check"></i><b>3.2.3</b> Colores, títulos, escalas y otros ajustes.</a></li>
+<li class="chapter" data-level="3.2.4" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#escalas"><i class="fa fa-check"></i><b>3.2.4</b> Escalas</a></li>
+<li class="chapter" data-level="3.2.5" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#otros-ajustes"><i class="fa fa-check"></i><b>3.2.5</b> Otros ajustes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#figuras-multi-panel-facets"><i class="fa fa-check"></i><b>3.3</b> Figuras Multi-panel / Facets</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#facets"><i class="fa fa-check"></i><b>3.3.1</b> Facets</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#extras"><i class="fa fa-check"></i><b>3.4</b> Extras</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#stat_summary-y-stat_smoot"><i class="fa fa-check"></i><b>3.4.1</b> stat_summary() y stat_smoot()</a></li>
+<li class="chapter" data-level="3.4.2" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#ggpubr"><i class="fa fa-check"></i><b>3.4.2</b> <em>ggpubr()</em></a></li>
+<li class="chapter" data-level="3.4.3" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#misceláneos-ggcats4"><i class="fa fa-check"></i><b>3.4.3</b> Misceláneos: <em>ggcats()</em></a></li>
+<li class="chapter" data-level="3.4.4" data-path="gráficos-en-r.html"><a href="gráficos-en-r.html#misceláneos-ggtexttable"><i class="fa fa-check"></i><b>3.4.4</b> Misceláneos: <em>ggtexttable()</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="valor-de-significancia-p-en-estadística-p-value.html"><a href="valor-de-significancia-p-en-estadística-p-value.html"><i class="fa fa-check"></i><b>4</b> Valor de significancia p en estadística (p-value)</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="valor-de-significancia-p-en-estadística-p-value.html"><a href="valor-de-significancia-p-en-estadística-p-value.html#qué-es-el-valor-p"><i class="fa fa-check"></i><b>4.1</b> ¿Qué es el valor p?</a></li>
+<li class="chapter" data-level="4.2" data-path="valor-de-significancia-p-en-estadística-p-value.html"><a href="valor-de-significancia-p-en-estadística-p-value.html#interpretación-general-del-valor-p"><i class="fa fa-check"></i><b>4.2</b> Interpretación general del valor p</a></li>
+<li class="chapter" data-level="4.3" data-path="valor-de-significancia-p-en-estadística-p-value.html"><a href="valor-de-significancia-p-en-estadística-p-value.html#marco-de-prueba-de-hipótesis-relación-con-la-hipótesis-nula-y-alternativa"><i class="fa fa-check"></i><b>4.3</b> Marco de prueba de hipótesis: relación con la hipótesis nula y alternativa</a></li>
+<li class="chapter" data-level="4.4" data-path="valor-de-significancia-p-en-estadística-p-value.html"><a href="valor-de-significancia-p-en-estadística-p-value.html#regla-de-decisión-umbrales-comunes-para-el-valor-p"><i class="fa fa-check"></i><b>4.4</b> Regla de decisión: umbrales comunes para el valor p</a></li>
+<li class="chapter" data-level="4.5" data-path="valor-de-significancia-p-en-estadística-p-value.html"><a href="valor-de-significancia-p-en-estadística-p-value.html#errores-en-la-prueba-de-hipótesis-error-tipo-i-falso-positivo-y-error-tipo-ii-falso"><i class="fa fa-check"></i><b>4.5</b> Errores en la prueba de hipótesis: error tipo I (falso positivo) y error tipo II (falso</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html"><i class="fa fa-check"></i><b>5</b> Introducción a la estadística</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#diferencia-entre-estadística-y-bioestadística"><i class="fa fa-check"></i><b>5.1</b> Diferencia entre estadística y bioestadística</a></li>
+<li class="chapter" data-level="5.2" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#estadística-descriptiva-medidas-de-tendencia-central-y-medidas-de-dispersión"><i class="fa fa-check"></i><b>5.2</b> Estadística descriptiva: medidas de tendencia central y medidas de dispersión</a></li>
+<li class="chapter" data-level="5.3" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#estadística-inferencial-univariada-y-multivariada"><i class="fa fa-check"></i><b>5.3</b> Estadística inferencial: Univariada y multivariada</a></li>
+<li class="chapter" data-level="5.4" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#estadística-inferencial-paramétrica-supuestos-principales-de-las-pruebas-paramétricas"><i class="fa fa-check"></i><b>5.4</b> Estadística inferencial paramétrica: supuestos principales de las pruebas paramétricas</a></li>
+<li class="chapter" data-level="5.5" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#estadística-inferencial-no-paramétrica-supuestos-principales-de-las-pruebas-no-paramétricas"><i class="fa fa-check"></i><b>5.5</b> Estadística inferencial no paramétrica: supuestos principales de las pruebas no paramétricas</a></li>
+<li class="chapter" data-level="5.6" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#cómo-saber-si-mis-datos-presentan-una-distribución-normal-y-homogeneidad-de-las-variancias"><i class="fa fa-check"></i><b>5.6</b> ¿Cómo saber si mis datos presentan una distribución normal y homogeneidad de las variancias?:</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#prueba-de-shapiro-wilk"><i class="fa fa-check"></i><b>5.6.1</b> Prueba de Shapiro-Wilk</a></li>
+<li class="chapter" data-level="5.6.2" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#pruebas-de-ajuste-o-distribución-prueba-de-kolmogorov-smirnov-prueba-de-anderson-darling"><i class="fa fa-check"></i><b>5.6.2</b> Pruebas de ajuste o distribución: Prueba de Kolmogorov-Smirnov, Prueba de Anderson-Darling</a></li>
+<li class="chapter" data-level="5.6.3" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#prueba-de-leven-varianzas."><i class="fa fa-check"></i><b>5.6.3</b> Prueba de Leven (varianzas).</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#estadísticos-descriptivos"><i class="fa fa-check"></i><b>5.7</b> Estadísticos descriptivos</a></li>
+<li class="chapter" data-level="5.8" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#gráficos-descriptivos"><i class="fa fa-check"></i><b>5.8</b> Gráficos descriptivos</a></li>
+<li class="chapter" data-level="5.9" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#explorando-normalidad-en-los-datos"><i class="fa fa-check"></i><b>5.9</b> Explorando normalidad en los datos</a></li>
+<li class="chapter" data-level="5.10" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#correlación-y-regresión"><i class="fa fa-check"></i><b>5.10</b> Correlación y Regresión</a></li>
+<li class="chapter" data-level="5.11" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#anova-1-vía"><i class="fa fa-check"></i><b>5.11</b> ANOVA (1 vía)</a></li>
+<li class="chapter" data-level="5.12" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#prueba-de-tukey"><i class="fa fa-check"></i><b>5.12</b> Prueba de Tukey</a></li>
+<li class="chapter" data-level="5.13" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#anova-2-vías"><i class="fa fa-check"></i><b>5.13</b> ANOVA (2 vías)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tipos-de-pruebas-paramétricas.html"><a href="tipos-de-pruebas-paramétricas.html"><i class="fa fa-check"></i><b>6</b> Tipos de pruebas paramétricas</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="tipos-de-pruebas-paramétricas.html"><a href="tipos-de-pruebas-paramétricas.html#prueba-t-de-una-muestra"><i class="fa fa-check"></i><b>6.1</b> Prueba t de una muestra</a></li>
+<li class="chapter" data-level="6.2" data-path="tipos-de-pruebas-paramétricas.html"><a href="tipos-de-pruebas-paramétricas.html#prueba-t-de-dos-muestras"><i class="fa fa-check"></i><b>6.2</b> Prueba t de dos muestras</a></li>
+<li class="chapter" data-level="6.3" data-path="tipos-de-pruebas-paramétricas.html"><a href="tipos-de-pruebas-paramétricas.html#prueba-t-de-welch"><i class="fa fa-check"></i><b>6.3</b> Prueba t de Welch</a></li>
+<li class="chapter" data-level="6.4" data-path="tipos-de-pruebas-paramétricas.html"><a href="tipos-de-pruebas-paramétricas.html#prueba-f-de-fisher"><i class="fa fa-check"></i><b>6.4</b> Prueba F de Fisher</a></li>
+<li class="chapter" data-level="6.5" data-path="tipos-de-pruebas-paramétricas.html"><a href="tipos-de-pruebas-paramétricas.html#prueba-t-pareada"><i class="fa fa-check"></i><b>6.5</b> Prueba t pareada</a></li>
+<li class="chapter" data-level="6.6" data-path="tipos-de-pruebas-paramétricas.html"><a href="tipos-de-pruebas-paramétricas.html#anova-one-way-anova-two-way-anova"><i class="fa fa-check"></i><b>6.6</b> ANOVA (one-way-anova, two-way-anova)</a></li>
+<li class="chapter" data-level="6.7" data-path="tipos-de-pruebas-paramétricas.html"><a href="tipos-de-pruebas-paramétricas.html#ancova"><i class="fa fa-check"></i><b>6.7</b> ANCOVA</a></li>
+<li class="chapter" data-level="6.8" data-path="tipos-de-pruebas-paramétricas.html"><a href="tipos-de-pruebas-paramétricas.html#correlación-de-pearson"><i class="fa fa-check"></i><b>6.8</b> Correlación de Pearson</a></li>
+<li class="chapter" data-level="6.9" data-path="tipos-de-pruebas-paramétricas.html"><a href="tipos-de-pruebas-paramétricas.html#regresión-lineal-simple-y-múltiple"><i class="fa fa-check"></i><b>6.9</b> Regresión lineal simple y múltiple</a></li>
+<li class="chapter" data-level="6.10" data-path="tipos-de-pruebas-paramétricas.html"><a href="tipos-de-pruebas-paramétricas.html#etc."><i class="fa fa-check"></i><b>6.10</b> Etc.</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html"><i class="fa fa-check"></i><b>7</b> Tipos de pruebas no paramétricas</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#prueba-de-mann-whitney-u-wilcoxon-rank-sum-test"><i class="fa fa-check"></i><b>7.1</b> Prueba de Mann-Whitney U (Wilcoxon rank-sum test)</a></li>
+<li class="chapter" data-level="7.2" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#prueba-de-wilcoxon-para-muestras-relacionadas"><i class="fa fa-check"></i><b>7.2</b> Prueba de Wilcoxon para muestras relacionadas</a></li>
+<li class="chapter" data-level="7.3" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#prueba-de-kruskal-wallis"><i class="fa fa-check"></i><b>7.3</b> Prueba de Kruskal-Wallis</a></li>
+<li class="chapter" data-level="7.4" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#prueba-de-friedman"><i class="fa fa-check"></i><b>7.4</b> Prueba de Friedman</a></li>
+<li class="chapter" data-level="7.5" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#prueba-de-chi-cuadrado-χ²"><i class="fa fa-check"></i><b>7.5</b> Prueba de Chi-cuadrado (χ²)</a></li>
+<li class="chapter" data-level="7.6" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#prueba-de-mcnemar"><i class="fa fa-check"></i><b>7.6</b> Prueba de McNemar</a></li>
+<li class="chapter" data-level="7.7" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#correlación-de-rango-de-spearman"><i class="fa fa-check"></i><b>7.7</b> Correlación de rango de Spearman</a></li>
+<li class="chapter" data-level="7.8" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#correlación-de-kendall-τ-de-kendall"><i class="fa fa-check"></i><b>7.8</b> Correlación de Kendall (τ de Kendall)</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="análisis-de-riqueza-y-diversidad-alfa-y-beta.html"><a href="análisis-de-riqueza-y-diversidad-alfa-y-beta.html"><i class="fa fa-check"></i><b>8</b> Análisis de riqueza y diversidad alfa y beta</a></li>
+<li class="chapter" data-level="9" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html"><i class="fa fa-check"></i><b>9</b> Análisis multivariados</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#pca"><i class="fa fa-check"></i><b>9.1</b> PCA</a></li>
+<li class="chapter" data-level="9.2" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#pcoa"><i class="fa fa-check"></i><b>9.2</b> PCoA</a></li>
+<li class="chapter" data-level="9.3" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#nmds"><i class="fa fa-check"></i><b>9.3</b> NMDS</a></li>
+<li class="chapter" data-level="9.4" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#permanova"><i class="fa fa-check"></i><b>9.4</b> Permanova</a></li>
+<li class="chapter" data-level="9.5" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#permdis"><i class="fa fa-check"></i><b>9.5</b> permdis</a></li>
+<li class="chapter" data-level="9.6" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#anosim"><i class="fa fa-check"></i><b>9.6</b> Anosim</a></li>
+<li class="chapter" data-level="9.7" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#rda"><i class="fa fa-check"></i><b>9.7</b> RDA</a></li>
+<li class="chapter" data-level="9.8" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#cca"><i class="fa fa-check"></i><b>9.8</b> CCA</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="modelización-estadística.html"><a href="modelización-estadística.html"><i class="fa fa-check"></i><b>10</b> Modelización estadística:</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="modelización-estadística.html"><a href="modelización-estadística.html#modelo-lineal-general"><i class="fa fa-check"></i><b>10.1</b> Modelo lineal general</a></li>
+<li class="chapter" data-level="10.2" data-path="modelización-estadística.html"><a href="modelización-estadística.html#glm-con-distribución-poisson"><i class="fa fa-check"></i><b>10.2</b> GLM con distribución Poisson</a></li>
+<li class="chapter" data-level="10.3" data-path="modelización-estadística.html"><a href="modelización-estadística.html#glm-con-distribución-quasi-poisson"><i class="fa fa-check"></i><b>10.3</b> GLM con distribución quasi-Poisson</a></li>
+<li class="chapter" data-level="10.4" data-path="modelización-estadística.html"><a href="modelización-estadística.html#glm-con-distribución-de-bernoulli-binomial"><i class="fa fa-check"></i><b>10.4</b> GLM con distribución de Bernoulli (Binomial)</a></li>
+<li class="chapter" data-level="10.5" data-path="modelización-estadística.html"><a href="modelización-estadística.html#glmm-modelos-lineales-generales-mixtos"><i class="fa fa-check"></i><b>10.5</b> GLMM: modelos lineales generales mixtos</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MANUAL DE R Y RSTUDIO</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="manejo-de-data-frames-y-bases-de-datos" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Capítulo 2</span> Manejo de data frames y bases de datos<a href="manejo-de-data-frames-y-bases-de-datos.html#manejo-de-data-frames-y-bases-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="manipulación-de-datos-con-rbase" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Manipulación de datos con Rbase<a href="manejo-de-data-frames-y-bases-de-datos.html#manipulación-de-datos-con-rbase" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="filtrado-y-obtención-de-subconjuntos" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Filtrado y obtención de subconjuntos<a href="manejo-de-data-frames-y-bases-de-datos.html#filtrado-y-obtención-de-subconjuntos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En los capítulos anteriores ya vimos algunos ejemplos de subconjuntos y filtrados, retomaremos algunos de estos y también veremos unos nuevos.
+Para ejemplificar mejor esta parte, de nuevo trabajaremos con el dataset de <strong>ToothGrowth</strong> y utilizaré la función <strong>head()</strong> para ver solo las 6 primeras filas:</p>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb209-1" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;ToothGrowth&quot;</span>)</span></code></pre></div>
+<div id="seleccionando-columnas" class="section level4 hasAnchor" number="2.1.1.1">
+<h4><span class="header-section-number">2.1.1.1</span> Seleccionando columnas<a href="manejo-de-data-frames-y-bases-de-datos.html#seleccionando-columnas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb210-1" tabindex="-1"></a><span class="fu">head</span>(ToothGrowth[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span></code></pre></div>
+<pre><code>##    len supp
+## 1  4.2   VC
+## 2 11.5   VC
+## 3  7.3   VC
+## 4  5.8   VC
+## 5  6.4   VC
+## 6 10.0   VC</code></pre>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb212-1" tabindex="-1"></a><span class="fu">head</span>(ToothGrowth[<span class="sc">-</span><span class="dv">3</span>])</span></code></pre></div>
+<pre><code>##    len supp
+## 1  4.2   VC
+## 2 11.5   VC
+## 3  7.3   VC
+## 4  5.8   VC
+## 5  6.4   VC
+## 6 10.0   VC</code></pre>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb214-1" tabindex="-1"></a><span class="fu">head</span>(ToothGrowth[<span class="fu">c</span>(<span class="st">&quot;dose&quot;</span>, <span class="st">&quot;len&quot;</span>)])</span></code></pre></div>
+<pre><code>##   dose  len
+## 1  0.5  4.2
+## 2  0.5 11.5
+## 3  0.5  7.3
+## 4  0.5  5.8
+## 5  0.5  6.4
+## 6  0.5 10.0</code></pre>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb216-1" tabindex="-1"></a><span class="fu">head</span>(ToothGrowth[<span class="sc">-</span><span class="dv">1</span><span class="sc">:-</span><span class="dv">2</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span></code></pre></div>
+<pre><code>##    len supp
+## 3  7.3   VC
+## 4  5.8   VC
+## 5  6.4   VC
+## 6 10.0   VC
+## 7 11.2   VC
+## 8 11.2   VC</code></pre>
+<p><br />
+</p>
+</div>
+<div id="filtrando-filas" class="section level4 hasAnchor" number="2.1.1.2">
+<h4><span class="header-section-number">2.1.1.2</span> Filtrando filas<a href="manejo-de-data-frames-y-bases-de-datos.html#filtrando-filas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Tradicionalmente indexando podemos filtrar nuestra tabla usando:</p>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb218-1" tabindex="-1"></a><span class="fu">head</span>(ToothGrowth[<span class="sc">-</span><span class="dv">1</span><span class="sc">:-</span><span class="dv">2</span>,])</span></code></pre></div>
+<pre><code>##    len supp dose
+## 3  7.3   VC  0.5
+## 4  5.8   VC  0.5
+## 5  6.4   VC  0.5
+## 6 10.0   VC  0.5
+## 7 11.2   VC  0.5
+## 8 11.2   VC  0.5</code></pre>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb220-1" tabindex="-1"></a><span class="fu">head</span>(ToothGrowth[<span class="fu">which</span>(ToothGrowth<span class="sc">$</span>supp <span class="sc">==</span> <span class="st">&quot;VC&quot;</span>),])</span></code></pre></div>
+<pre><code>##    len supp dose
+## 1  4.2   VC  0.5
+## 2 11.5   VC  0.5
+## 3  7.3   VC  0.5
+## 4  5.8   VC  0.5
+## 5  6.4   VC  0.5
+## 6 10.0   VC  0.5</code></pre>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb222-1" tabindex="-1"></a>ind<span class="ot">&lt;-</span>ToothGrowth<span class="sc">$</span>len<span class="sc">&gt;</span><span class="dv">27</span></span>
+<span id="cb222-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb222-2" tabindex="-1"></a>ind2<span class="ot">&lt;-</span> ToothGrowth<span class="sc">$</span>sup<span class="sc">==</span><span class="st">&quot;OJ&quot;</span></span>
+<span id="cb222-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb222-3" tabindex="-1"></a><span class="fu">head</span>(ToothGrowth[ind,])</span></code></pre></div>
+<pre><code>##     len supp dose
+## 23 33.9   VC    2
+## 26 32.5   VC    2
+## 30 29.5   VC    2
+## 50 27.3   OJ    1
+## 56 30.9   OJ    2
+## 58 27.3   OJ    2</code></pre>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb224-1" tabindex="-1"></a><span class="fu">head</span>(ToothGrowth[ind2,])</span></code></pre></div>
+<pre><code>##     len supp dose
+## 31 15.2   OJ  0.5
+## 32 21.5   OJ  0.5
+## 33 17.6   OJ  0.5
+## 34  9.7   OJ  0.5
+## 35 14.5   OJ  0.5
+## 36 10.0   OJ  0.5</code></pre>
+<p>Un detalle importante en los <strong>dataframes</strong> son la inserción de los llamados <em>“NA”</em> que son datos que no han sido introducidos por error o porque no se tienen los datos.
+En algunos análisis estos tipos de datos no son deseados porque pueden generar ruido por lo que se sugiere identificarlos, omitirlos y/o eliminarlos.
+Veamos un ejemplo:</p>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb226-1" tabindex="-1"></a>promedio_clases<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">clase=</span><span class="fu">c</span>(<span class="st">&quot;M&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;B&quot;</span>),</span>
+<span id="cb226-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb226-2" tabindex="-1"></a>                             <span class="at">notas=</span><span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">9</span>, <span class="cn">NA</span>))</span>
+<span id="cb226-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb226-3" tabindex="-1"></a><span class="fu">mean</span>(promedio_clases<span class="sc">$</span>notas)</span></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<p><br />
+Una opción que tenemos es colocar el argumento <strong>na.rm=TRUE</strong> para que nos ignore los NA’s la función:</p>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb228-1" tabindex="-1"></a><span class="fu">mean</span>(promedio_clases<span class="sc">$</span>notas, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 8.6</code></pre>
+<p><br />
+Pero si queremos identificar cuales son los datos que nos dan NA y filtrarlos usamos la función <em>is.na()</em>:</p>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb230-1" tabindex="-1"></a><span class="fu">is.na</span>(promedio_clases<span class="sc">$</span>notas)</span></code></pre></div>
+<pre><code>## [1] FALSE FALSE FALSE FALSE FALSE  TRUE</code></pre>
+<p><br />
+Indexando podemos remover estos <strong>NA</strong>:</p>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb232-1" tabindex="-1"></a>promedio_clases[<span class="sc">!</span><span class="fu">is.na</span>(promedio_clases<span class="sc">$</span>notas),]</span></code></pre></div>
+<pre><code>##   clase notas
+## 1     M     7
+## 2     M     8
+## 3     M     9
+## 4     B    10
+## 5     B     9</code></pre>
+<p><br />
+También R tiene una función que nos hace más fácil esto:</p>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb234-1" tabindex="-1"></a><span class="fu">na.omit</span>(promedio_clases)</span></code></pre></div>
+<pre><code>##   clase notas
+## 1     M     7
+## 2     M     8
+## 3     M     9
+## 4     B    10
+## 5     B     9</code></pre>
+</div>
+<div id="filtrando-con-subset" class="section level4 hasAnchor" number="2.1.1.3">
+<h4><span class="header-section-number">2.1.1.3</span> Filtrando con <em>subset()</em><a href="manejo-de-data-frames-y-bases-de-datos.html#filtrando-con-subset" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Hay una función en R básico que nos permite obtener subconjuntos o filtrar las filas de nuestras tablas de manera más intuitiva.
+Usaremos de nuevo la data de <em>ToothGrowth</em>:</p>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb236-1" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">subset</span>(ToothGrowth, dose<span class="sc">==</span><span class="st">&quot;0.5&quot;</span>))</span></code></pre></div>
+<pre><code>##    len supp dose
+## 1  4.2   VC  0.5
+## 2 11.5   VC  0.5
+## 3  7.3   VC  0.5
+## 4  5.8   VC  0.5
+## 5  6.4   VC  0.5
+## 6 10.0   VC  0.5</code></pre>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb238-1" tabindex="-1"></a><span class="fu">subset</span>(ToothGrowth, dose<span class="sc">==</span><span class="st">&quot;0.5&quot;</span> <span class="sc">&amp;</span> supp <span class="sc">==</span><span class="st">&quot;OJ&quot;</span> <span class="sc">&amp;</span> len <span class="sc">&gt;</span><span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##     len supp dose
+## 31 15.2   OJ  0.5
+## 32 21.5   OJ  0.5
+## 33 17.6   OJ  0.5
+## 35 14.5   OJ  0.5
+## 39 16.5   OJ  0.5</code></pre>
+<p><br />
+</p>
+</div>
+</div>
+<div id="creando-una-nueva-columna" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Creando una nueva columna<a href="manejo-de-data-frames-y-bases-de-datos.html#creando-una-nueva-columna" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para crear una nueva columna de una <em>dataframe</em> podemos utilizar varios métodos:<br />
+- El primero sería declarar una variable nueva de la dataframe y de ahí indicarle que se desea como nueva columna en el dataframe utilizando el <em>“$”</em>. Creemos una data como la anterior de las notas:</p>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb240-1" tabindex="-1"></a>promedio_notas<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">estudiante =</span> <span class="fu">c</span>(<span class="st">&quot;E1&quot;</span>, <span class="st">&quot;E2&quot;</span>, <span class="st">&quot;E3&quot;</span>,<span class="st">&quot;E1&quot;</span>, <span class="st">&quot;E2&quot;</span>, <span class="st">&quot;E3&quot;</span>),</span>
+<span id="cb240-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb240-2" tabindex="-1"></a>                            <span class="at">clase=</span><span class="fu">c</span>(<span class="st">&quot;M&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;B&quot;</span>),</span>
+<span id="cb240-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb240-3" tabindex="-1"></a>                             <span class="at">notas=</span><span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">9</span>, <span class="dv">8</span>))</span>
+<span id="cb240-4"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb240-4" tabindex="-1"></a></span>
+<span id="cb240-5"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb240-5" tabindex="-1"></a>promedio_notas<span class="sc">$</span>ponderacion <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.7</span>,<span class="fl">0.7</span>,<span class="fl">0.7</span>, <span class="fl">0.3</span>,<span class="fl">0.3</span>,<span class="fl">0.3</span>)</span>
+<span id="cb240-6"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb240-6" tabindex="-1"></a></span>
+<span id="cb240-7"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb240-7" tabindex="-1"></a>promedio_notas</span></code></pre></div>
+<pre><code>##   estudiante clase notas ponderacion
+## 1         E1     M     7         0.7
+## 2         E2     M     8         0.7
+## 3         E3     M     9         0.7
+## 4         E1     B    10         0.3
+## 5         E2     B     9         0.3
+## 6         E3     B     8         0.3</code></pre>
+<p><br />
+- También podemos usar las funciones <em>within()</em> y <em>transform():</em><br />
+</p>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb242-1" tabindex="-1"></a>promedio_notas<span class="ot">&lt;-</span><span class="fu">within</span>(promedio_notas,  nota_ponderada <span class="ot">&lt;-</span> notas<span class="sc">*</span>ponderacion) </span>
+<span id="cb242-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb242-2" tabindex="-1"></a></span>
+<span id="cb242-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb242-3" tabindex="-1"></a>promedio_notas<span class="ot">&lt;-</span><span class="fu">transform</span>(promedio_notas,  <span class="at">nota_ponderada =</span> notas<span class="sc">*</span>ponderacion) </span>
+<span id="cb242-4"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb242-4" tabindex="-1"></a></span>
+<span id="cb242-5"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb242-5" tabindex="-1"></a>promedio_notas</span></code></pre></div>
+<pre><code>##   estudiante clase notas ponderacion nota_ponderada
+## 1         E1     M     7         0.7            4.9
+## 2         E2     M     8         0.7            5.6
+## 3         E3     M     9         0.7            6.3
+## 4         E1     B    10         0.3            3.0
+## 5         E2     B     9         0.3            2.7
+## 6         E3     B     8         0.3            2.4</code></pre>
+</div>
+<div id="aggregate-resumiendo-los-datos" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> <em>aggregate()</em> : Resumiendo los datos<a href="manejo-de-data-frames-y-bases-de-datos.html#aggregate-resumiendo-los-datos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Con la función <em>aggregate()</em> podemos resumir nuestros datos, por ejemplo:<br />
+</p>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb244-1" tabindex="-1"></a><span class="fu">aggregate</span>(notas <span class="sc">~</span> clase, <span class="at">data =</span> promedio_notas, mean)</span></code></pre></div>
+<pre><code>##   clase notas
+## 1     B     9
+## 2     M     8</code></pre>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb246-1" tabindex="-1"></a><span class="fu">aggregate</span>(notas <span class="sc">~</span> estudiante, <span class="at">data =</span> promedio_notas, median)</span></code></pre></div>
+<pre><code>##   estudiante notas
+## 1         E1   8.5
+## 2         E2   8.5
+## 3         E3   8.5</code></pre>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb248-1" tabindex="-1"></a><span class="fu">aggregate</span>(notas <span class="sc">~</span> clase<span class="sc">+</span>estudiante, <span class="at">data =</span> promedio_notas, sum)</span></code></pre></div>
+<pre><code>##   clase estudiante notas
+## 1     B         E1    10
+## 2     M         E1     7
+## 3     B         E2     9
+## 4     M         E2     8
+## 5     B         E3     8
+## 6     M         E3     9</code></pre>
+</div>
+<div id="renombrando-columnas-y-datos" class="section level3 hasAnchor" number="2.1.4">
+<h3><span class="header-section-number">2.1.4</span> Renombrando columnas y datos<a href="manejo-de-data-frames-y-bases-de-datos.html#renombrando-columnas-y-datos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para renombrar columnas podemo sólo reescribir el nuevo nombre por el viejo, por ejemplo:<br />
+</p>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb250-1" tabindex="-1"></a><span class="fu">colnames</span>(promedio_notas)</span></code></pre></div>
+<pre><code>## [1] &quot;estudiante&quot;     &quot;clase&quot;          &quot;notas&quot;          &quot;ponderacion&quot;    &quot;nota_ponderada&quot;</code></pre>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb252-1" tabindex="-1"></a><span class="fu">colnames</span>(promedio_notas)[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">&quot;curso&quot;</span></span>
+<span id="cb252-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb252-2" tabindex="-1"></a><span class="fu">colnames</span>(promedio_notas)</span></code></pre></div>
+<pre><code>## [1] &quot;estudiante&quot;     &quot;curso&quot;          &quot;notas&quot;          &quot;ponderacion&quot;    &quot;nota_ponderada&quot;</code></pre>
+<p>También si queremos cambiar todos los nombres de las columnas (no lo correré pero dejaré el ejemplo):</p>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb254-1" tabindex="-1"></a><span class="fu">names</span>(promedio_notas) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>)</span></code></pre></div>
+<div id="renombrando-valores-en-una-columna" class="section level4 hasAnchor" number="2.1.4.1">
+<h4><span class="header-section-number">2.1.4.1</span> Renombrando valores en una columna:<a href="manejo-de-data-frames-y-bases-de-datos.html#renombrando-valores-en-una-columna" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb255-1" tabindex="-1"></a>promedio_notas<span class="sc">$</span>curso <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(promedio_notas<span class="sc">$</span>curso <span class="sc">==</span> <span class="st">&quot;M&quot;</span>, <span class="st">&quot;Matemáticas&quot;</span>, <span class="st">&quot;Biología&quot;</span>)   </span>
+<span id="cb255-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb255-2" tabindex="-1"></a>promedio_notas<span class="sc">$</span>curso </span></code></pre></div>
+<pre><code>## [1] &quot;Matemáticas&quot; &quot;Matemáticas&quot; &quot;Matemáticas&quot; &quot;Biología&quot;    &quot;Biología&quot;    &quot;Biología&quot;</code></pre>
+</div>
+</div>
+<div id="cbind-y-rbind" class="section level3 hasAnchor" number="2.1.5">
+<h3><span class="header-section-number">2.1.5</span> <em>cbind() y rbind()</em><a href="manejo-de-data-frames-y-bases-de-datos.html#cbind-y-rbind" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><em>cbind()</em> y <em>rbind()</em> son funciones que nos permiten combinar y juntar vectores, matrices y tablas.</p>
+<p>“c” es para juntar por columnas (horizontalmente, una al lado de otra) y “r” para combinar combinar por filas (verticalmente, una abajo de otra).</p>
+<p>Ejemplos:</p>
+<p>cbind:</p>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb257-1" tabindex="-1"></a>correcion_nota<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)</span>
+<span id="cb257-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb257-2" tabindex="-1"></a><span class="fu">cbind</span>(promedio_notas, correcion_nota)</span></code></pre></div>
+<pre><code>##   estudiante       curso notas ponderacion nota_ponderada correcion_nota
+## 1         E1 Matemáticas     7         0.7            4.9             10
+## 2         E2 Matemáticas     8         0.7            5.6              9
+## 3         E3 Matemáticas     9         0.7            6.3              8
+## 4         E1    Biología    10         0.3            3.0              8
+## 5         E2    Biología     9         0.3            2.7              9
+## 6         E3    Biología     8         0.3            2.4             10</code></pre>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb259-1" tabindex="-1"></a><span class="fu">cbind</span>(promedio_notas, promedio_notas)</span></code></pre></div>
+<pre><code>##   estudiante       curso notas ponderacion nota_ponderada estudiante       curso notas ponderacion
+## 1         E1 Matemáticas     7         0.7            4.9         E1 Matemáticas     7         0.7
+## 2         E2 Matemáticas     8         0.7            5.6         E2 Matemáticas     8         0.7
+## 3         E3 Matemáticas     9         0.7            6.3         E3 Matemáticas     9         0.7
+## 4         E1    Biología    10         0.3            3.0         E1    Biología    10         0.3
+## 5         E2    Biología     9         0.3            2.7         E2    Biología     9         0.3
+## 6         E3    Biología     8         0.3            2.4         E3    Biología     8         0.3
+##   nota_ponderada
+## 1            4.9
+## 2            5.6
+## 3            6.3
+## 4            3.0
+## 5            2.7
+## 6            2.4</code></pre>
+<p>rbind:</p>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb261-1" tabindex="-1"></a>notas_fisica<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">estudiante =</span> <span class="fu">c</span>(<span class="st">&quot;E1&quot;</span>, <span class="st">&quot;E2&quot;</span>, <span class="st">&quot;E3&quot;</span>),</span>
+<span id="cb261-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb261-2" tabindex="-1"></a>                            <span class="at">curso=</span><span class="fu">c</span>(<span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>),</span>
+<span id="cb261-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb261-3" tabindex="-1"></a>                             <span class="at">notas=</span><span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">8</span>))</span>
+<span id="cb261-4"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb261-4" tabindex="-1"></a><span class="fu">rbind</span>(promedio_notas, notas_fisica)</span></code></pre></div>
+<p>Error in rbind(deparse.level, …) : numbers of columns of arguments do not match<br />
+Vemos este error es debido a que tanto para hacer el cbind o el rbind se necesitan tener las mismas dimensiones entre objetos (tablas, vectores y matrices).
+Y en el caso del rbind, deben tener el mismo nombre de columnas (colnames).
+En este caso quería agregar unas filas abajo en esta tabla pero nos faltó la columna de ponderación, probemos de nuevo:<br />
+</p>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb262-1" tabindex="-1"></a>notas_fisica<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">estudiante =</span> <span class="fu">c</span>(<span class="st">&quot;E1&quot;</span>, <span class="st">&quot;E2&quot;</span>, <span class="st">&quot;E3&quot;</span>),</span>
+<span id="cb262-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb262-2" tabindex="-1"></a>                            <span class="at">curso=</span><span class="fu">c</span>(<span class="st">&quot;Fisica&quot;</span>, <span class="st">&quot;Fisica&quot;</span>, <span class="st">&quot;Fisica&quot;</span>),</span>
+<span id="cb262-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb262-3" tabindex="-1"></a>                             <span class="at">notas=</span><span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">8</span>),</span>
+<span id="cb262-4"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb262-4" tabindex="-1"></a>                            <span class="at">ponderacion =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>), </span>
+<span id="cb262-5"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb262-5" tabindex="-1"></a>                          <span class="at">nota_ponderada=</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">9</span>, <span class="dv">8</span>))</span>
+<span id="cb262-6"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb262-6" tabindex="-1"></a><span class="fu">rbind</span>(promedio_notas, notas_fisica)</span></code></pre></div>
+<pre><code>##   estudiante       curso notas ponderacion nota_ponderada
+## 1         E1 Matemáticas     7         0.7            4.9
+## 2         E2 Matemáticas     8         0.7            5.6
+## 3         E3 Matemáticas     9         0.7            6.3
+## 4         E1    Biología    10         0.3            3.0
+## 5         E2    Biología     9         0.3            2.7
+## 6         E3    Biología     8         0.3            2.4
+## 7         E1      Fisica     7         0.1           10.0
+## 8         E2      Fisica     9         0.1            9.0
+## 9         E3      Fisica     8         0.1            8.0</code></pre>
+<p><br />
+</p>
+</div>
+<div id="uniendo-tablas-con-merge" class="section level3 hasAnchor" number="2.1.6">
+<h3><span class="header-section-number">2.1.6</span> Uniendo tablas con <em>merge()</em><a href="manejo-de-data-frames-y-bases-de-datos.html#uniendo-tablas-con-merge" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Con la funcion <em>merge()</em> podemos unir dos <em>dataframes</em> con nombres de columnas y filas comunes:</p>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb264-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">k1 =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>), <span class="at">k2 =</span> <span class="fu">c</span>(<span class="st">&quot;a1&quot;</span>,<span class="st">&quot;a2&quot;</span>,<span class="st">&quot;a3&quot;</span>,<span class="st">&quot;a4&quot;</span>,<span class="st">&quot;a5&quot;</span>), <span class="at">data =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
+<span id="cb264-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb264-2" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">k3 =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">4</span>,<span class="dv">5</span>), <span class="at">k2 =</span> <span class="fu">c</span>(<span class="st">&quot;a1&quot;</span>,<span class="st">&quot;a2&quot;</span>,<span class="st">&quot;a3&quot;</span>,<span class="st">&quot;a4&quot;</span>,<span class="st">&quot;a5&quot;</span>), <span class="at">data =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
+<span id="cb264-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb264-3" tabindex="-1"></a></span>
+<span id="cb264-4"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb264-4" tabindex="-1"></a><span class="fu">merge</span>(x, y, <span class="at">by =</span> <span class="st">&quot;k2&quot;</span>) </span></code></pre></div>
+<pre><code>##   k2 k1 data.x k3 data.y
+## 1 a1  1      1  2      1
+## 2 a2  3      2  2      2
+## 3 a3  3      3  6      3
+## 4 a4  4      4  4      4
+## 5 a5  5      5  5      5</code></pre>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb266-1" tabindex="-1"></a><span class="fu">merge</span>(x, y, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;k2&quot;</span>, <span class="st">&quot;data&quot;</span>), <span class="at">all =</span> <span class="cn">TRUE</span>) </span></code></pre></div>
+<pre><code>##   k2 data k1 k3
+## 1 a1    1  1  2
+## 2 a2    2  3  2
+## 3 a3    3  3  6
+## 4 a4    4  4  4
+## 5 a5    5  5  5</code></pre>
+<p>Vimos como se pueden unir tablas con columnas en común estas pueden ser una o más y preferiblemente que tengan nombres diferentes las columnas que no se van a unir.</p>
+</div>
+<div id="ordenando-tablas-por-un-criterio-o-columna" class="section level3 hasAnchor" number="2.1.7">
+<h3><span class="header-section-number">2.1.7</span> Ordenando tablas por un criterio o columna<a href="manejo-de-data-frames-y-bases-de-datos.html#ordenando-tablas-por-un-criterio-o-columna" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Podemos ordenar nuestra tabla con uno o más criterios:</p>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb268-1" tabindex="-1"></a>promedio_notas <span class="ot">&lt;-</span> promedio_notas[<span class="fu">order</span>(promedio_notas<span class="sc">$</span>notas, <span class="at">decreasing =</span> <span class="cn">TRUE</span>),]</span>
+<span id="cb268-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb268-2" tabindex="-1"></a>promedio_notas</span></code></pre></div>
+<pre><code>##   estudiante       curso notas ponderacion nota_ponderada
+## 4         E1    Biología    10         0.3            3.0
+## 3         E3 Matemáticas     9         0.7            6.3
+## 5         E2    Biología     9         0.3            2.7
+## 2         E2 Matemáticas     8         0.7            5.6
+## 6         E3    Biología     8         0.3            2.4
+## 1         E1 Matemáticas     7         0.7            4.9</code></pre>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb270-1" tabindex="-1"></a>promedio_notas <span class="ot">&lt;-</span> promedio_notas[<span class="fu">order</span>(promedio_notas<span class="sc">$</span>notas, promedio_notas<span class="sc">$</span>ponderacion),]</span>
+<span id="cb270-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb270-2" tabindex="-1"></a>promedio_notas</span></code></pre></div>
+<pre><code>##   estudiante       curso notas ponderacion nota_ponderada
+## 1         E1 Matemáticas     7         0.7            4.9
+## 6         E3    Biología     8         0.3            2.4
+## 2         E2 Matemáticas     8         0.7            5.6
+## 5         E2    Biología     9         0.3            2.7
+## 3         E3 Matemáticas     9         0.7            6.3
+## 4         E1    Biología    10         0.3            3.0</code></pre>
+</div>
+<div id="funciones-adicionales-de-agregación" class="section level3 hasAnchor" number="2.1.8">
+<h3><span class="header-section-number">2.1.8</span> Funciones adicionales de agregación<a href="manejo-de-data-frames-y-bases-de-datos.html#funciones-adicionales-de-agregación" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>para calcular fácilmente los promedos o sumas de todas las columnas y las filas usamos rowMeans(), colMeans(), rowSums() y colSums().</p>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb272-1" tabindex="-1"></a>examen <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&quot;q1&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
+<span id="cb272-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb272-2" tabindex="-1"></a>                     <span class="st">&quot;q2&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb272-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb272-3" tabindex="-1"></a>                     <span class="st">&quot;q3&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
+<span id="cb272-4"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb272-4" tabindex="-1"></a>                     <span class="st">&quot;q4&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb272-5"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb272-5" tabindex="-1"></a>                     <span class="st">&quot;q5&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb273-1" tabindex="-1"></a><span class="fu">rowMeans</span>(examen)</span></code></pre></div>
+<pre><code>## [1] 1.0 0.2 0.6 0.6 0.4</code></pre>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb275-1" tabindex="-1"></a><span class="fu">colMeans</span>(examen)</span></code></pre></div>
+<pre><code>##  q1  q2  q3  q4  q5 
+## 0.2 0.6 0.4 1.0 0.6</code></pre>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb277-1" tabindex="-1"></a><span class="fu">rowSums</span>(examen)</span></code></pre></div>
+<pre><code>## [1] 5 1 3 3 2</code></pre>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb279-1" tabindex="-1"></a><span class="fu">colSums</span>(examen)</span></code></pre></div>
+<pre><code>## q1 q2 q3 q4 q5 
+##  1  3  2  5  3</code></pre>
+<p><br />
+</p>
+<p>También si queremos saber cuántas columnas y filas tienen nuestros datos además de <em>dim()</em> y <em>str()</em> podemos usar:</p>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb281-1" tabindex="-1"></a><span class="fu">nrow</span>(examen)</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb283-1" tabindex="-1"></a><span class="fu">ncol</span>(examen)</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div style="page-break-after: always;"></div>
+</div>
+<div id="ejemplo-aplicado1" class="section level3 hasAnchor" number="2.1.9">
+<h3><span class="header-section-number">2.1.9</span> Ejemplo aplicado<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a><a href="manejo-de-data-frames-y-bases-de-datos.html#ejemplo-aplicado1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Las siguientes dos tablas muestran los resultados de dos encuestas hechas a 10 personas.
+En la primera encuesta preguntaron su género y su edad.
+Y en la segunda preguntaron su superhéroe favorito y cantidad de tatuajes que tenía.</p>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb285-1" tabindex="-1"></a>primera<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Nombre=</span> <span class="fu">c</span>(<span class="st">&quot;Astrid&quot;</span>, <span class="st">&quot;Lea&quot;</span>, <span class="st">&quot;Sarina&quot;</span>, <span class="st">&quot;Remon&quot;</span>, <span class="st">&quot;Letizia&quot;</span>, </span>
+<span id="cb285-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb285-2" tabindex="-1"></a>                               <span class="st">&quot;Babice&quot;</span>, <span class="st">&quot;Jonas&quot;</span>, <span class="st">&quot;Wendy&quot;</span>, <span class="st">&quot;Nivedithia&quot;</span>, <span class="st">&quot;Gioia&quot;</span>),</span>
+<span id="cb285-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb285-3" tabindex="-1"></a>                     <span class="at">Sexo=</span> <span class="fu">c</span>(<span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>),</span>
+<span id="cb285-4"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb285-4" tabindex="-1"></a>                     <span class="at">Edad=</span> <span class="fu">c</span>(<span class="dv">30</span>,<span class="dv">25</span>,<span class="dv">25</span>,<span class="dv">29</span>,<span class="dv">22</span>,<span class="dv">22</span>,<span class="dv">35</span>,<span class="dv">19</span>,<span class="dv">32</span>,<span class="dv">21</span>))</span>
+<span id="cb285-5"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb285-5" tabindex="-1"></a>segunda<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Nombre=</span> <span class="fu">c</span>(<span class="st">&quot;Astrid&quot;</span>, <span class="st">&quot;Lea&quot;</span>, <span class="st">&quot;Sarina&quot;</span>, <span class="st">&quot;Remon&quot;</span>, <span class="st">&quot;Letizia&quot;</span>, </span>
+<span id="cb285-6"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb285-6" tabindex="-1"></a>                               <span class="st">&quot;Babice&quot;</span>, <span class="st">&quot;Jonas&quot;</span>, <span class="st">&quot;Wendy&quot;</span>, <span class="st">&quot;Nivedithia&quot;</span>, <span class="st">&quot;Gioia&quot;</span>),</span>
+<span id="cb285-7"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb285-7" tabindex="-1"></a>                     Superhéroe<span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Batman&quot;</span>, <span class="st">&quot;Superman&quot;</span>, <span class="st">&quot;Batman&quot;</span>, <span class="st">&quot;Spiderman&quot;</span>, <span class="st">&quot;Batman&quot;</span>, </span>
+<span id="cb285-8"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb285-8" tabindex="-1"></a>                                   <span class="st">&quot;Antman&quot;</span>, <span class="st">&quot;Batman&quot;</span>, <span class="st">&quot;Superman&quot;</span>, <span class="st">&quot;Maggot&quot;</span>, <span class="st">&quot;Superman&quot;</span>),</span>
+<span id="cb285-9"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb285-9" tabindex="-1"></a>                     <span class="at">Tatuajes=</span> <span class="fu">c</span>(<span class="dv">11</span>,<span class="dv">15</span>,<span class="dv">12</span>,<span class="dv">5</span>,<span class="dv">65</span>,<span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">13</span>,<span class="dv">900</span>,<span class="dv">0</span>))</span>
+<span id="cb285-10"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb285-10" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(primera); knitr<span class="sc">::</span><span class="fu">kable</span>(segunda)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Nombre</th>
+<th align="left">Sexo</th>
+<th align="right">Edad</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Astrid</td>
+<td align="left">F</td>
+<td align="right">30</td>
+</tr>
+<tr class="even">
+<td align="left">Lea</td>
+<td align="left">F</td>
+<td align="right">25</td>
+</tr>
+<tr class="odd">
+<td align="left">Sarina</td>
+<td align="left">F</td>
+<td align="right">25</td>
+</tr>
+<tr class="even">
+<td align="left">Remon</td>
+<td align="left">M</td>
+<td align="right">29</td>
+</tr>
+<tr class="odd">
+<td align="left">Letizia</td>
+<td align="left">F</td>
+<td align="right">22</td>
+</tr>
+<tr class="even">
+<td align="left">Babice</td>
+<td align="left">F</td>
+<td align="right">22</td>
+</tr>
+<tr class="odd">
+<td align="left">Jonas</td>
+<td align="left">M</td>
+<td align="right">35</td>
+</tr>
+<tr class="even">
+<td align="left">Wendy</td>
+<td align="left">F</td>
+<td align="right">19</td>
+</tr>
+<tr class="odd">
+<td align="left">Nivedithia</td>
+<td align="left">F</td>
+<td align="right">32</td>
+</tr>
+<tr class="even">
+<td align="left">Gioia</td>
+<td align="left">F</td>
+<td align="right">21</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Nombre</th>
+<th align="left">Superhéroe</th>
+<th align="right">Tatuajes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Astrid</td>
+<td align="left">Batman</td>
+<td align="right">11</td>
+</tr>
+<tr class="even">
+<td align="left">Lea</td>
+<td align="left">Superman</td>
+<td align="right">15</td>
+</tr>
+<tr class="odd">
+<td align="left">Sarina</td>
+<td align="left">Batman</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="left">Remon</td>
+<td align="left">Spiderman</td>
+<td align="right">5</td>
+</tr>
+<tr class="odd">
+<td align="left">Letizia</td>
+<td align="left">Batman</td>
+<td align="right">65</td>
+</tr>
+<tr class="even">
+<td align="left">Babice</td>
+<td align="left">Antman</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="left">Jonas</td>
+<td align="left">Batman</td>
+<td align="right">9</td>
+</tr>
+<tr class="even">
+<td align="left">Wendy</td>
+<td align="left">Superman</td>
+<td align="right">13</td>
+</tr>
+<tr class="odd">
+<td align="left">Nivedithia</td>
+<td align="left">Maggot</td>
+<td align="right">900</td>
+</tr>
+<tr class="even">
+<td align="left">Gioia</td>
+<td align="left">Superman</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<p>Para hacer:</p>
+<ol style="list-style-type: decimal">
+<li><p>Combina las dos tablas en una sola y completa las siguientes asignaciones.</p></li>
+<li><p>¿Cuál es la edad media de las mujeres y hombres por separado?</p></li>
+<li><p>¿Cuál fue el número más alto de tatuajes en un hombre?</p></li>
+<li><p>¿Cuál es el porcentaje de personas debajo de 32 años que son mujeres?</p></li>
+<li><p>Agrega una nueva columna a a la data llamada <code>tatuajes.por.año</code> que muestre cuántos tatuajes por año se ha hecho cada persona por cada año en su vida.</p></li>
+<li><p>¿Cuál persona tiene el mayor número de tatuajes por año?</p></li>
+<li><p>¿Cuáles son los nombres de las mujeres a las que su superheroe favorito es superman?</p></li>
+<li><p>¿Cuál es la mediana del número de tatuajes de cad apersona que está por encima de los 20 años y que su personaje favorito es Batman?<br />
+</p></li>
+</ol>
+<div id="resolviendo" class="section level4 hasAnchor" number="2.1.9.1">
+<h4><span class="header-section-number">2.1.9.1</span> Resolviendo<a href="manejo-de-data-frames-y-bases-de-datos.html#resolviendo" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li>Combina las dos tablas en una sola y completa las siguientes asignaciones.<br />
+</li>
+</ol>
+<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb286-1" tabindex="-1"></a>encuestas<span class="ot">&lt;-</span> <span class="fu">merge</span>(primera, segunda, <span class="at">by =</span> <span class="st">&quot;Nombre&quot;</span>)</span></code></pre></div>
+<p><br />
+2.
+¿Cuál es la edad media de las mujeres y hombres por separado?
+cómo podemos hacer esto?<br />
+</p>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb287-1" tabindex="-1"></a><span class="fu">aggregate</span>(Edad <span class="sc">~</span> Sexo, <span class="at">data =</span> encuestas, mean)</span></code></pre></div>
+<pre><code>##   Sexo Edad
+## 1    F 24.5
+## 2    M 32.0</code></pre>
+<p><br />
+3.
+¿Cuál fue el número más alto de tatuajes en un hombre?<br />
+</p>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb289-1" tabindex="-1"></a>males<span class="ot">&lt;-</span> <span class="fu">subset</span>(encuestas, Sexo<span class="sc">==</span><span class="st">&quot;M&quot;</span>)</span>
+<span id="cb289-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb289-2" tabindex="-1"></a><span class="fu">max</span>(males<span class="sc">$</span>Tatuajes)</span></code></pre></div>
+<pre><code>## [1] 9</code></pre>
+<p><br />
+4.
+¿Cuál es el porcentaje de mujeres debajo de 32 años?<br />
+</p>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb291-1" tabindex="-1"></a>fem<span class="ot">&lt;-</span> <span class="fu">subset</span>(encuestas, Sexo<span class="sc">==</span><span class="st">&quot;F&quot;</span>)</span>
+<span id="cb291-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb291-2" tabindex="-1"></a>fem_32<span class="ot">&lt;-</span> fem[fem<span class="sc">$</span>Edad<span class="sc">&lt;</span><span class="dv">32</span>,]</span>
+<span id="cb291-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb291-3" tabindex="-1"></a></span>
+<span id="cb291-4"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb291-4" tabindex="-1"></a>(<span class="fu">nrow</span>(fem_32)<span class="sc">/</span><span class="fu">nrow</span>(fem))<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
+<pre><code>## [1] 87.5</code></pre>
+<p><br />
+5.
+Agrega una nueva columna a a la data llamada <code>tatuajes.por.año</code> que muestre cuántos tatuajes por año se ha hecho cada persona por cada año en su vida.<br />
+</p>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb293-1" tabindex="-1"></a>encuestas<span class="sc">$</span>tatuajes.por.año<span class="ot">&lt;-</span> encuestas<span class="sc">$</span>Tatuajes<span class="sc">/</span>encuestas<span class="sc">$</span>Edad</span>
+<span id="cb293-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb293-2" tabindex="-1"></a>encuestas<span class="sc">$</span>tatuajes.por.año</span></code></pre></div>
+<pre><code>##  [1]  0.3666667  0.1363636  0.0000000  0.2571429  0.6000000  2.9545455 28.1250000  0.1724138  0.4800000
+## [10]  0.6842105</code></pre>
+<p><br />
+6.
+¿Cuál persona tiene el mayor número de tatuajes por año?<br />
+</p>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb295-1" tabindex="-1"></a>mayor_tatuaje<span class="ot">&lt;-</span><span class="fu">which.max</span>(encuestas<span class="sc">$</span>tatuajes.por.año)</span>
+<span id="cb295-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb295-2" tabindex="-1"></a>encuestas[mayor_tatuaje,]</span></code></pre></div>
+<pre><code>##       Nombre Sexo Edad Superhéroe Tatuajes tatuajes.por.año
+## 7 Nivedithia    F   32     Maggot      900           28.125</code></pre>
+<p><br />
+7.
+¿Cuáles son los nombres de las mujeres a las que su superheroe favorito es superman?<br />
+</p>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb297-1" tabindex="-1"></a>sup<span class="ot">&lt;-</span>fem[fem<span class="sc">$</span>Superhéroe<span class="sc">==</span><span class="st">&quot;Superman&quot;</span>,]</span>
+<span id="cb297-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb297-2" tabindex="-1"></a>sup<span class="sc">$</span>Nombre</span></code></pre></div>
+<pre><code>## [1] &quot;Gioia&quot; &quot;Lea&quot;   &quot;Wendy&quot;</code></pre>
+<p><br />
+8.
+¿Cuál es la mediana del número de tatuajes de cada persona que está por encima de los 20 años y que su personaje favorito es superman?<br />
+</p>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb299-1" tabindex="-1"></a>ocho<span class="ot">&lt;-</span> <span class="fu">subset</span>(encuestas, Edad<span class="sc">&gt;</span><span class="dv">20</span> <span class="sc">&amp;</span> Superhéroe <span class="sc">==</span><span class="st">&quot;Batman&quot;</span>)</span>
+<span id="cb299-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb299-2" tabindex="-1"></a><span class="fu">median</span>(ocho<span class="sc">$</span>Tatuajes)</span></code></pre></div>
+<pre><code>## [1] 11.5</code></pre>
+</div>
+</div>
+</div>
+<div id="manejo-de-datos-con-tidyverse" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Manejo de datos con tidyverse<a href="manejo-de-data-frames-y-bases-de-datos.html#manejo-de-datos-con-tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="tidyverse" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> <em>tidyverse</em><a href="manejo-de-data-frames-y-bases-de-datos.html#tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Hasta ahora hemos estado manipulando las tablas o <em>dataframes</em> creando subconjuntos mediante la indexación y utlizando otras funciones del Rbase.
+Sin embargo, existe todo un universo llamado <em>tidyverse</em> que nos perimte hacer todo esto que vimos y más de manera más intuitiva.</p>
+<p>Podemos cargar todos los paquetes del <em>tidyverse</em> a la vez al instalar y cargar el paquete <strong>tidyverse</strong>:</p>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb301-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<p>Los paquetes que se activan son dplyr, purr, tidyr, stringr, tibble para el manejo de tablas; readr para importar y exportar datos y forcats para manejo de factores.
+Además de ggplot2 que es el paquete para graficar.</p>
+</div>
+<div id="datos-tidy" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Datos <em>tidy</em><a href="manejo-de-data-frames-y-bases-de-datos.html#datos-tidy" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Hemos estado trabajando con tablas o <em>dataframes</em>, sin embargo, el <em>tidyverse</em> presenta un nuevo tipo de forma de almacenamiento de datos.
+Decimos que una tabla de datos está en formato <em>tidy</em> si cada fila representa una observación y las columnas representan las diferentes variables disponibles para cada una de estas observaciones.
+El set de datos <code>us_rent_income</code> o como lo he denominado <em>rentas_us</em> es un ejemplo de un <em>data frame tidy</em>.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">estado</th>
+<th align="left">variable</th>
+<th align="right">estimado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Alabama</td>
+<td align="left">ingreso</td>
+<td align="right">24476</td>
+</tr>
+<tr class="even">
+<td align="left">Alabama</td>
+<td align="left">renta</td>
+<td align="right">747</td>
+</tr>
+<tr class="odd">
+<td align="left">Alaska</td>
+<td align="left">ingreso</td>
+<td align="right">32940</td>
+</tr>
+<tr class="even">
+<td align="left">Alaska</td>
+<td align="left">renta</td>
+<td align="right">1200</td>
+</tr>
+<tr class="odd">
+<td align="left">Arizona</td>
+<td align="left">ingreso</td>
+<td align="right">27517</td>
+</tr>
+<tr class="even">
+<td align="left">Arizona</td>
+<td align="left">renta</td>
+<td align="right">972</td>
+</tr>
+<tr class="odd">
+<td align="left">Arkansas</td>
+<td align="left">ingreso</td>
+<td align="right">23789</td>
+</tr>
+<tr class="even">
+<td align="left">Arkansas</td>
+<td align="left">renta</td>
+<td align="right">709</td>
+</tr>
+<tr class="odd">
+<td align="left">California</td>
+<td align="left">ingreso</td>
+<td align="right">29454</td>
+</tr>
+<tr class="even">
+<td align="left">California</td>
+<td align="left">renta</td>
+<td align="right">1358</td>
+</tr>
+</tbody>
+</table>
+<p>Cada fila representa una medida con cada una de las otras dos columnas proveyendo una variable diferente relacionada con las otras dos: variable (si es el ingreso o la renta) y el estado.</p>
+<p>Ahora bien, también podemos ver la misma información pero organizada de otra forma:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">estado</th>
+<th align="right">ingreso</th>
+<th align="right">renta</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Alabama</td>
+<td align="right">24476</td>
+<td align="right">747</td>
+</tr>
+<tr class="even">
+<td align="left">Alaska</td>
+<td align="right">32940</td>
+<td align="right">1200</td>
+</tr>
+<tr class="odd">
+<td align="left">Arizona</td>
+<td align="right">27517</td>
+<td align="right">972</td>
+</tr>
+<tr class="even">
+<td align="left">Arkansas</td>
+<td align="right">23789</td>
+<td align="right">709</td>
+</tr>
+<tr class="odd">
+<td align="left">California</td>
+<td align="right">29454</td>
+<td align="right">1358</td>
+</tr>
+</tbody>
+</table>
+<p>Se provee la misma información, pero hay dos diferencias importantes en el formato: 1) cada fila incluye varias observaciones y 2) una de las variables, “variable”, se almacena en el encabezado.<br />
+Para que los paquetes del <em>tidyverse</em> se utilicen de manera óptima, le tenemos que cambiar la forma a los datos para que estén en formato <em>tidy</em>, como las primera tabla.
+Esto podemos hacerlo fuera de R o también R tiene funciones para hacerlo, que veremos más adelante.</p>
+<div id="tibbles" class="section level4 hasAnchor" number="2.2.2.1">
+<h4><span class="header-section-number">2.2.2.1</span> Tibbles<a href="manejo-de-data-frames-y-bases-de-datos.html#tibbles" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Los datos o tablas resultantes luego de aplicar funciones del <em>tidyverse</em> se conocen como <strong>tibbles</strong> y son prácticamente igual que los <em>dataframes</em> pero con unas ligeras diferencias.
+Veamos:<br />
+</p>
+<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb302-1" tabindex="-1"></a>df<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">letras=</span><span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>),</span>
+<span id="cb302-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb302-2" tabindex="-1"></a>                números<span class="ot">=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span>
+<span id="cb302-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb302-3" tabindex="-1"></a>tib<span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(df)</span></code></pre></div>
+<p><br />
+</p>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb303-1" tabindex="-1"></a><span class="fu">class</span>(df)</span></code></pre></div>
+<pre><code>## [1] &quot;data.frame&quot;</code></pre>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb305-1" tabindex="-1"></a><span class="fu">class</span>(tib)</span></code></pre></div>
+<pre><code>## [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;</code></pre>
+<p><br />
+</p>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb307-1" tabindex="-1"></a><span class="fu">print</span>(df)</span></code></pre></div>
+<pre><code>##   letras números
+## 1      a       1
+## 2      b       2
+## 3      c       3</code></pre>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb309-1" tabindex="-1"></a><span class="fu">print</span>(tib)</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 2
+##   letras números
+##   &lt;chr&gt;    &lt;int&gt;
+## 1 a            1
+## 2 b            2
+## 3 c            3</code></pre>
+<p>Se ven ligeramente diferentes, como que la tibble te muestra información como tipo de dato de columna y las dimensiones, además de omitir los rownames por defecto.
+Algunas funciones pueden dar error si no es de un tipo u otro, por ejemplo si en vez de ser un <em>dataframe</em> es un <em>tibble</em> pero en escencia son lo mismo y se manejan igual.
+De aquí en adelante nos dirijiremos indistintamente sobre las dos, aunque ya sabemos la diferencia entre una y otra.</p>
+</div>
+</div>
+<div id="manipulación-de-data-frames" class="section level3 hasAnchor" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> Manipulación de <em>data frames</em><a href="manejo-de-data-frames-y-bases-de-datos.html#manipulación-de-data-frames" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El paquete <strong>dplyr</strong> del <em>tidyverse</em> ofrece funciones que realizan algunas de las operaciones más comunes y que ya vimos el capítulo anterior con R base.
+Las funciones principales de <em>dplyr</em> son: <em>select</em>, <em>mutate</em>, <em>filter</em> y <em>summarise</em>.
+Pero antes, revisemos lo que es el <em>pipe</em>.</p>
+</div>
+<div id="el-pipe" class="section level3 hasAnchor" number="2.2.4">
+<h3><span class="header-section-number">2.2.4</span> El <em>pipe</em>: <code>%&gt;%</code><a href="manejo-de-data-frames-y-bases-de-datos.html#el-pipe" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><br />
+El <em>pipe</em> es la herramienta que nos permite darle <em>dplyr</em> las órdenes, comandos o funciones a realizar.
+Lo podemos poner con el atajo del teclado <strong>“Ctrl + Shift + M (Windows/linux)”</strong> y <strong>“Cmd + Shift + M (Mac)”</strong>.<br />
+Con <strong>dplyr</strong>, podemos realizar una serie de operaciones, por escoger una columna, crear una nueva, filtrar nuestras filas y demás
+. En Rbase tendríamos que hacer paso por paso, por ejemplo
+:<br />
+</p>
+<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb311-1" tabindex="-1"></a><span class="co">#asignando la data a la variable &quot;mi_data&quot;</span></span>
+<span id="cb311-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb311-2" tabindex="-1"></a>mi_data<span class="ot">&lt;-</span>ToothGrowth</span>
+<span id="cb311-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb311-3" tabindex="-1"></a><span class="fu">head</span>(mi_data)</span></code></pre></div>
+<pre><code>##    len supp dose
+## 1  4.2   VC  0.5
+## 2 11.5   VC  0.5
+## 3  7.3   VC  0.5
+## 4  5.8   VC  0.5
+## 5  6.4   VC  0.5
+## 6 10.0   VC  0.5</code></pre>
+<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb313-1" tabindex="-1"></a><span class="co">#escoger sólo las columnas len y dose</span></span>
+<span id="cb313-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb313-2" tabindex="-1"></a>mi_data<span class="ot">&lt;-</span> mi_data[<span class="fu">c</span>(<span class="st">&quot;len&quot;</span>, <span class="st">&quot;dose&quot;</span>)]</span>
+<span id="cb313-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb313-3" tabindex="-1"></a><span class="fu">head</span>(mi_data)</span></code></pre></div>
+<pre><code>##    len dose
+## 1  4.2  0.5
+## 2 11.5  0.5
+## 3  7.3  0.5
+## 4  5.8  0.5
+## 5  6.4  0.5
+## 6 10.0  0.5</code></pre>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb315-1" tabindex="-1"></a><span class="co">#hacer una nueva columna declarando la variable &quot;dose&quot; como un factor </span></span>
+<span id="cb315-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb315-2" tabindex="-1"></a>mi_data<span class="sc">$</span>dose<span class="ot">&lt;-</span> <span class="fu">factor</span>(mi_data<span class="sc">$</span>dose, <span class="at">levels =</span> <span class="fu">c</span>(<span class="fl">0.5</span>,<span class="fl">1.0</span>, <span class="fl">2.0</span>), <span class="at">labels =</span><span class="fu">c</span>(<span class="st">&quot;D0.5&quot;</span>, <span class="st">&quot;D1&quot;</span>, <span class="st">&quot;2&quot;</span>))</span>
+<span id="cb315-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb315-3" tabindex="-1"></a><span class="fu">head</span>(mi_data)</span></code></pre></div>
+<pre><code>##    len dose
+## 1  4.2 D0.5
+## 2 11.5 D0.5
+## 3  7.3 D0.5
+## 4  5.8 D0.5
+## 5  6.4 D0.5
+## 6 10.0 D0.5</code></pre>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb317-1" tabindex="-1"></a><span class="co">#filtrar solo los que sean de dosis = 1</span></span>
+<span id="cb317-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb317-2" tabindex="-1"></a>mi_data<span class="ot">&lt;-</span> mi_data[mi_data<span class="sc">$</span>dose<span class="sc">==</span><span class="st">&quot;D1&quot;</span>,]</span>
+<span id="cb317-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb317-3" tabindex="-1"></a><span class="fu">head</span>(mi_data)</span></code></pre></div>
+<pre><code>##     len dose
+## 11 16.5   D1
+## 12 16.5   D1
+## 13 15.2   D1
+## 14 17.3   D1
+## 15 22.5   D1
+## 16 17.3   D1</code></pre>
+<p><br />
+En cambio en dplyr y con funciones que veremos a continuación, todos estos pasos podemos resumirlos a la siguiente línea de código:<br />
+</p>
+<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb319-1" tabindex="-1"></a>mi_data<span class="ot">&lt;-</span> ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(len, dose) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(</span>
+<span id="cb319-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb319-2" tabindex="-1"></a>  <span class="at">dose=</span><span class="fu">case_when</span>(dose<span class="sc">==</span><span class="fl">0.5</span><span class="sc">~</span><span class="st">&quot;D0.5&quot;</span>,dose<span class="sc">==</span><span class="dv">1</span><span class="sc">~</span><span class="st">&quot;D1&quot;</span>, dose<span class="sc">==</span><span class="dv">2</span><span class="sc">~</span><span class="st">&quot;D2&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(dose<span class="sc">==</span><span class="st">&quot;D1&quot;</span>)</span>
+<span id="cb319-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb319-3" tabindex="-1"></a><span class="fu">head</span>(mi_data)</span></code></pre></div>
+<pre><code>##    len dose
+## 1 16.5   D1
+## 2 16.5   D1
+## 3 15.2   D1
+## 4 17.3   D1
+## 5 22.5   D1
+## 6 17.3   D1</code></pre>
+<p>Como vimos para realizar la secuencia de estos pasos y unir estas funciones en una sólo línea de código hicimos uso del <em>pipe</em> <code>%&gt;%</code>.
+En general, el <em>pipe</em> envía el resultado que se encuentra en el lado izquierdo del <em>pipe</em> para ser el primer argumento de la función en el lado derecho del <em>pipe</em>.
+Aquí vemos un ejemplo sencillo:</p>
+<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb321-1" tabindex="-1"></a><span class="dv">16</span> <span class="sc">%&gt;%</span> <span class="fu">sqrt</span>()</span></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<p>Podemos continuar canalizando (<em>piping</em> en inglés) valores a lo largo de:</p>
+<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb323-1" tabindex="-1"></a><span class="dv">16</span> <span class="sc">%&gt;%</span> <span class="fu">sqrt</span>() <span class="sc">%&gt;%</span> <span class="fu">log2</span>()</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<p>La declaración anterior es equivalente a:</p>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb325-1" tabindex="-1"></a><span class="fu">log2</span>(<span class="fu">sqrt</span>(<span class="dv">16</span>))</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<p><br />
+Ahora veremos todas las funciones que nos permitirán manipular nuestras tablas en el mismo orden que las vimos en Rbase (el capítulo pasado).<br />
+</p>
+</div>
+<div id="seleccionando-columnas-1" class="section level3 hasAnchor" number="2.2.5">
+<h3><span class="header-section-number">2.2.5</span> Seleccionando columnas<a href="manejo-de-data-frames-y-bases-de-datos.html#seleccionando-columnas-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><em>dplyr</em> tiena una función muy intuitiva para seleccionar las columnas que queremos en un <em>dataframe</em> y es <strong>select()</strong></p>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb327-1" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">select</span>(<span class="at">.data =</span> ToothGrowth, len, dose))</span></code></pre></div>
+<pre><code>##    len dose
+## 1  4.2  0.5
+## 2 11.5  0.5
+## 3  7.3  0.5
+## 4  5.8  0.5
+## 5  6.4  0.5
+## 6 10.0  0.5</code></pre>
+<p>Usandola con el <em>pipe</em> sería algo así:<br />
+</p>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb329-1" tabindex="-1"></a><span class="co">#seleccionando columnas que queremos</span></span>
+<span id="cb329-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb329-2" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(len, dose) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<pre><code>##    len dose
+## 1  4.2  0.5
+## 2 11.5  0.5
+## 3  7.3  0.5
+## 4  5.8  0.5
+## 5  6.4  0.5
+## 6 10.0  0.5</code></pre>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb331-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(len<span class="sc">:</span>dose) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 60
+## Columns: 3
+## $ len  &lt;dbl&gt; 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17.3…
+## $ supp &lt;fct&gt; VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, …
+## $ dose &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0…</code></pre>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb333-1" tabindex="-1"></a><span class="co">#Seleccionando columnas que no queremos</span></span>
+<span id="cb333-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb333-2" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>len) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 60
+## Columns: 2
+## $ supp &lt;fct&gt; VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, …
+## $ dose &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0…</code></pre>
+<p>La función <strong>glimpse</strong> nos permite ver los datos como la función <em>str</em> pero uniendolo al pipe.</p>
+<p>También podemos seleccionar columnas con criterios, por ejemplo:<br />
+</p>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb335-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;d&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 60
+## Columns: 1
+## $ dose &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0…</code></pre>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb337-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">&quot;ose&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 60
+## Columns: 1
+## $ dose &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0…</code></pre>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb339-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">ends_with</span>(<span class="st">&quot;ose&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 60
+## Columns: 1
+## $ dose &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0…</code></pre>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb341-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">matches</span>(<span class="st">&quot;o.+e&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 60
+## Columns: 1
+## $ dose &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0…</code></pre>
+<p><br />
+Seleccionando usando un vector, notemos también que en el orden que ponemos el vector así va a apareciendo reordenando las columnas en nuestra tabla:</p>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb343-1" tabindex="-1"></a>colum <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;supp&quot;</span>, <span class="st">&quot;len&quot;</span>)</span>
+<span id="cb343-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb343-2" tabindex="-1"></a>ToothGrowth  <span class="sc">%&gt;%</span>  <span class="fu">select</span>(<span class="sc">!!</span>colum) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 60
+## Columns: 2
+## $ supp &lt;fct&gt; VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, …
+## $ len  &lt;dbl&gt; 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17.3…</code></pre>
+<p><br />
+Cada función del <em>tidyverse</em> tiene tres variantes que son <em>at</em>, <em>if</em> y <em>all</em> que al combinarlos con nuestras funciones principales como <em>select</em> nos permiten hacer muchas cosas más.<br />
+Por ejemplo, si usamos <em>if</em> sería bajo un criterio como un tipo de dato
+:<br />
+</p>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb345-1" tabindex="-1"></a><span class="co">#selección positiva</span></span>
+<span id="cb345-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb345-2" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select_if</span>(is.numeric) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 60
+## Columns: 2
+## $ len  &lt;dbl&gt; 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17.3…
+## $ dose &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0…</code></pre>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb347-1" tabindex="-1"></a><span class="co">#selección negativa</span></span>
+<span id="cb347-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb347-2" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select_if</span>(<span class="sc">~!</span><span class="fu">is.numeric</span>(.)) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 60
+## Columns: 1
+## $ supp &lt;fct&gt; VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, …</code></pre>
+<p><br />
+Con <em>all</em> podemos reformatear los nombres de nuestras columnas:</p>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb349-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select_all</span>(toupper) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 60
+## Columns: 3
+## $ LEN  &lt;dbl&gt; 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17.3…
+## $ SUPP &lt;fct&gt; VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, …
+## $ DOSE &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0…</code></pre>
+<p><br />
+Y con <em>at</em> también podemos escoger columnas basadas en criterios, por ejemplo:</p>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb351-1" tabindex="-1"></a><span class="co">#npositiva</span></span>
+<span id="cb351-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb351-2" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span> <span class="fu">select_at</span>(<span class="fu">vars</span>(<span class="fu">contains</span>(<span class="st">&quot;ose&quot;</span>))) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 60
+## Columns: 1
+## $ dose &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0…</code></pre>
+<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb353-1" tabindex="-1"></a><span class="co">#negativa</span></span>
+<span id="cb353-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb353-2" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span> <span class="fu">select_at</span>(<span class="fu">vars</span>(<span class="sc">-</span><span class="fu">contains</span>(<span class="st">&quot;ose&quot;</span>))) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 60
+## Columns: 2
+## $ len  &lt;dbl&gt; 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17.3…
+## $ supp &lt;fct&gt; VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, …</code></pre>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb355-1" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span> <span class="fu">select_at</span>(<span class="fu">vars</span>(<span class="sc">!</span><span class="fu">contains</span>(<span class="st">&quot;ose&quot;</span>))) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 60
+## Columns: 2
+## $ len  &lt;dbl&gt; 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17.3…
+## $ supp &lt;fct&gt; VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, …</code></pre>
+</div>
+<div id="filtrando-filas-1" class="section level3 hasAnchor" number="2.2.6">
+<h3><span class="header-section-number">2.2.6</span> Filtrando filas<a href="manejo-de-data-frames-y-bases-de-datos.html#filtrando-filas-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para filtrar nuestra data a nivel de filas usamos la función <em>filter</em>:</p>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb357-1" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">filter</span>(ToothGrowth, supp<span class="sc">==</span><span class="st">&quot;OJ&quot;</span>) )</span></code></pre></div>
+<pre><code>##    len supp dose
+## 1 15.2   OJ  0.5
+## 2 21.5   OJ  0.5
+## 3 17.6   OJ  0.5
+## 4  9.7   OJ  0.5
+## 5 14.5   OJ  0.5
+## 6 10.0   OJ  0.5</code></pre>
+<p>o con el pipe:</p>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb359-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter</span>(supp<span class="sc">==</span><span class="st">&quot;OJ&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 30
+## Columns: 3
+## $ len  &lt;dbl&gt; 15.2, 21.5, 17.6, 9.7, 14.5, 10.0, 8.2, 9.4, 16.5, 9.7, 19.7, 23.3, 23.6, 26.4, 20.0, 25…
+## $ supp &lt;fct&gt; OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, …
+## $ dose &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0…</code></pre>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb361-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter</span>(len<span class="sc">&gt;</span><span class="dv">30</span>) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 3
+## Columns: 3
+## $ len  &lt;dbl&gt; 33.9, 32.5, 30.9
+## $ supp &lt;fct&gt; VC, VC, OJ
+## $ dose &lt;dbl&gt; 2, 2, 2</code></pre>
+<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb363-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter</span>(supp<span class="sc">==</span><span class="st">&quot;OJ&quot;</span>, len<span class="sc">&gt;</span><span class="dv">30</span>) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 1
+## Columns: 3
+## $ len  &lt;dbl&gt; 30.9
+## $ supp &lt;fct&gt; OJ
+## $ dose &lt;dbl&gt; 2</code></pre>
+<p><br />
+Filtrando basado en un vector:</p>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb365-1" tabindex="-1"></a>len_quiero<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">26.4</span>, <span class="fl">27.3</span> ,<span class="fl">29.4</span>, <span class="fl">23.0</span>)</span>
+<span id="cb365-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb365-2" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter</span>(len <span class="sc">%in%</span> len_quiero) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 8
+## Columns: 3
+## $ len  &lt;dbl&gt; 26.4, 26.4, 27.3, 26.4, 26.4, 27.3, 29.4, 23.0
+## $ supp &lt;fct&gt; VC, OJ, OJ, OJ, OJ, OJ, OJ, OJ
+## $ dose &lt;dbl&gt; 2, 1, 1, 2, 2, 2, 2, 2</code></pre>
+<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb367-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span>len <span class="sc">%in%</span> len_quiero) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 52
+## Columns: 3
+## $ len  &lt;dbl&gt; 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17.3…
+## $ supp &lt;fct&gt; VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, …
+## $ dose &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0…</code></pre>
+<p><br />
+Filtrando NA’s (en caso de que este dataset tuviera NA’s):</p>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb369-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(len))</span></code></pre></div>
+<p><br />
+En el caso de <em>if</em> , <em>all</em> y <em>at</em> , nos permiten filtrar con condiciones y a través de varias columnas:</p>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb370-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter_if</span>(is.numeric, <span class="fu">all_vars</span>(<span class="fu">between</span>(.,<span class="dv">2</span>,<span class="dv">20</span>)))</span></code></pre></div>
+<pre><code>##    len supp dose
+## 1 18.5   VC    2</code></pre>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb372-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter_all</span>(<span class="fu">any_vars</span>(. <span class="sc">&gt;</span> <span class="dv">30</span>))</span></code></pre></div>
+<pre><code>## Warning: There was 1 warning in `filter()`.
+## ℹ In argument: `len &gt; 30 | supp &gt; 30 | dose &gt; 30`.
+## Caused by warning in `Ops.factor()`:
+## ! &#39;&gt;&#39; not meaningful for factors</code></pre>
+<pre><code>##    len supp dose
+## 1 33.9   VC    2
+## 2 32.5   VC    2
+## 3 30.9   OJ    2</code></pre>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb375-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter_at</span>(<span class="fu">vars</span>(len, dose), <span class="fu">all_vars</span>(.<span class="sc">&gt;</span><span class="dv">1</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<pre><code>##    len supp dose
+## 1 23.6   VC    2
+## 2 18.5   VC    2
+## 3 33.9   VC    2
+## 4 25.5   VC    2
+## 5 26.4   VC    2
+## 6 32.5   VC    2</code></pre>
+<p><br />
+</p>
+</div>
+<div id="creando-una-nueva-columna-1" class="section level3 hasAnchor" number="2.2.7">
+<h3><span class="header-section-number">2.2.7</span> Creando una nueva columna<a href="manejo-de-data-frames-y-bases-de-datos.html#creando-una-nueva-columna-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><br />
+Para crear una nueva columna en <em>dplyr</em> usamos la función <em>mutate()</em>:</p>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb377-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">lenlog =</span> <span class="fu">log</span>(len)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<pre><code>##    len supp dose   lenlog
+## 1  4.2   VC  0.5 1.435085
+## 2 11.5   VC  0.5 2.442347
+## 3  7.3   VC  0.5 1.987874
+## 4  5.8   VC  0.5 1.757858
+## 5  6.4   VC  0.5 1.856298
+## 6 10.0   VC  0.5 2.302585</code></pre>
+<p><br />
+Al igual que las funciones pasadas también podemos utilizar <em>if</em>, <em>all</em> y <em>at</em>:</p>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb379-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">mutate_if</span>(is.numeric, round) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<pre><code>##   len supp dose
+## 1   4   VC    0
+## 2  12   VC    0
+## 3   7   VC    0
+## 4   6   VC    0
+## 5   6   VC    0
+## 6  10   VC    0</code></pre>
+<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb381-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">mutate_all</span>(tolower) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<pre><code>##    len supp dose
+## 1  4.2   vc  0.5
+## 2 11.5   vc  0.5
+## 3  7.3   vc  0.5
+## 4  5.8   vc  0.5
+## 5  6.4   vc  0.5
+## 6   10   vc  0.5</code></pre>
+<p><br />
+La acción de mutar o la función que se pone después del argumento (como round y tolower), muchas veces se pone sin paréntesis pero otras las requiere.
+Vemos también que usando el <em>mutate_all</em> cambia todas las columnas (lo que quiere decir que las numéricas las convierte en character).
+Ahora si quisieramos usarla al revés:</p>
+<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb383-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">mutate_all</span>(round) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<p>Error: Problem with <code>mutate()</code> column <code>supp</code></p>
+<p><br />
+En estos casos es mejor usar if, como vimos en el ejemplo anterior, <em>all</em> aplica mejor si tenemos una data con el mismo tipo de datos (números, caracterres, factores).
+Ahora bien, <em>at</em> nos permite hacer cambios a columnas específicas:</p>
+<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb384-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">mutate_at</span>(<span class="fu">vars</span>(<span class="fu">contains</span>(<span class="st">&quot;ose&quot;</span>)), <span class="sc">~</span>(.<span class="sc">*</span><span class="dv">100</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<pre><code>##    len supp dose
+## 1  4.2   VC   50
+## 2 11.5   VC   50
+## 3  7.3   VC   50
+## 4  5.8   VC   50
+## 5  6.4   VC   50
+## 6 10.0   VC   50</code></pre>
+<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb386-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">mutate_at</span>(<span class="st">&quot;dose&quot;</span>, <span class="sc">~</span>(.<span class="sc">*</span><span class="dv">100</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<pre><code>##    len supp dose
+## 1  4.2   VC   50
+## 2 11.5   VC   50
+## 3  7.3   VC   50
+## 4  5.8   VC   50
+## 5  6.4   VC   50
+## 6 10.0   VC   50</code></pre>
+<p><br />
+</p>
+</div>
+<div id="datos-discretos" class="section level3 hasAnchor" number="2.2.8">
+<h3><span class="header-section-number">2.2.8</span> Datos discretos<a href="manejo-de-data-frames-y-bases-de-datos.html#datos-discretos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Existen varias herramientas que nos sirven para trabajar con datos discretos, por ejemplo si queremos cambiar los datos de una columna y modificarlos:</p>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb388-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">mutate</span>(<span class="at">supp2 =</span> <span class="fu">recode_factor</span>(supp,</span>
+<span id="cb388-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb388-2" tabindex="-1"></a>                        <span class="st">&quot;OJ&quot;</span> <span class="ot">=</span> <span class="st">&quot;Jugo&quot;</span>,</span>
+<span id="cb388-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb388-3" tabindex="-1"></a>                        <span class="st">&quot;VC&quot;</span> <span class="ot">=</span> <span class="st">&quot;Ascórbico&quot;</span>,</span>
+<span id="cb388-4"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb388-4" tabindex="-1"></a>                        <span class="at">.default =</span> <span class="st">&quot;other&quot;</span>,</span>
+<span id="cb388-5"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb388-5" tabindex="-1"></a>                        <span class="at">.ordered =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> <span class="fu">tail</span>()</span></code></pre></div>
+<pre><code>##     len supp dose supp2
+## 55 24.8   OJ    2  Jugo
+## 56 30.9   OJ    2  Jugo
+## 57 26.4   OJ    2  Jugo
+## 58 27.3   OJ    2  Jugo
+## 59 29.4   OJ    2  Jugo
+## 60 23.0   OJ    2  Jugo</code></pre>
+<p><br />
+Otra cosa que podemos hacer es crear una nueva columna con valores discretos usando valores numéricos, por ejemplo:</p>
+<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb390-1" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span>  <span class="fu">mutate</span>(<span class="at">dose2 =</span> <span class="fu">ifelse</span>(dose <span class="sc">&gt;</span> <span class="dv">1</span>, <span class="st">&quot;alto&quot;</span>, <span class="st">&quot;bajo&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<pre><code>##    len supp dose dose2
+## 1  4.2   VC  0.5  bajo
+## 2 11.5   VC  0.5  bajo
+## 3  7.3   VC  0.5  bajo
+## 4  5.8   VC  0.5  bajo
+## 5  6.4   VC  0.5  bajo
+## 6 10.0   VC  0.5  bajo</code></pre>
+<p><br />
+Y si queremos renombrar los datos en una columna, entonces:<br />
+</p>
+<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb392-1" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span><span class="fu">mutate</span>(<span class="at">dose =</span> <span class="fu">case_when</span>(</span>
+<span id="cb392-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb392-2" tabindex="-1"></a>    dose <span class="sc">==</span> <span class="fl">0.5</span> <span class="sc">~</span> <span class="st">&quot;D_0.5&quot;</span>,</span>
+<span id="cb392-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb392-3" tabindex="-1"></a>    dose <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">&quot;D_1&quot;</span>,</span>
+<span id="cb392-4"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb392-4" tabindex="-1"></a>    dose <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">&quot;D_2&quot;</span>)) <span class="sc">%&gt;%</span>  <span class="fu">mutate</span>(</span>
+<span id="cb392-5"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb392-5" tabindex="-1"></a>      <span class="at">dose =</span> <span class="fu">factor</span>(dose, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;D_2&quot;</span>, <span class="st">&quot;D_1&quot;</span>, <span class="st">&quot;D_0.5&quot;</span>))) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<pre><code>##    len supp  dose
+## 1  4.2   VC D_0.5
+## 2 11.5   VC D_0.5
+## 3  7.3   VC D_0.5
+## 4  5.8   VC D_0.5
+## 5  6.4   VC D_0.5
+## 6 10.0   VC D_0.5</code></pre>
+<p><br />
+Para separar o unir datos de una columna con data discreta (caracter), podemos usar las funciones <em>unite()</em> y <em>separate()</em>, por ejemplo:</p>
+<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb394-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">unite</span>(<span class="st">&quot;interaccion&quot;</span>, supp<span class="sc">:</span>dose, <span class="at">sep =</span> <span class="st">&quot;_&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<pre><code>##    len interaccion
+## 1  4.2      VC_0.5
+## 2 11.5      VC_0.5
+## 3  7.3      VC_0.5
+## 4  5.8      VC_0.5
+## 5  6.4      VC_0.5
+## 6 10.0      VC_0.5</code></pre>
+<p><br />
+Para ejemplifcar <em>separate</em> usaremos el ejemplo anterior:</p>
+<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb396-1" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span><span class="fu">mutate</span>(<span class="at">dose =</span> <span class="fu">case_when</span>(</span>
+<span id="cb396-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb396-2" tabindex="-1"></a>    dose <span class="sc">==</span> <span class="fl">0.5</span> <span class="sc">~</span> <span class="st">&quot;D_0.5&quot;</span>,</span>
+<span id="cb396-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb396-3" tabindex="-1"></a>    dose <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">&quot;D_1&quot;</span>,</span>
+<span id="cb396-4"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb396-4" tabindex="-1"></a>    dose <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">&quot;D_2&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">separate</span>(dose, <span class="fu">c</span>(<span class="st">&quot;D&quot;</span>, <span class="st">&quot;dose&quot;</span>),</span>
+<span id="cb396-5"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb396-5" tabindex="-1"></a>                                     <span class="at">sep =</span> <span class="st">&quot;_&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<pre><code>##    len supp D dose
+## 1  4.2   VC D  0.5
+## 2 11.5   VC D  0.5
+## 3  7.3   VC D  0.5
+## 4  5.8   VC D  0.5
+## 5  6.4   VC D  0.5
+## 6 10.0   VC D  0.5</code></pre>
+<div style="page-break-after: always;"></div>
+</div>
+<div id="resumiendo-los-datos" class="section level3 hasAnchor" number="2.2.9">
+<h3><span class="header-section-number">2.2.9</span> Resumiendo los datos<a href="manejo-de-data-frames-y-bases-de-datos.html#resumiendo-los-datos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><br />
+Hay varias funciones en <em>tidyverse</em> que nos permiten hacer un resumen de nuestros datos, como por ejemplo la función <em>count()</em>:<br />
+</p>
+<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb398-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">count</span>(supp, <span class="at">sort=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>##   supp  n
+## 1   OJ 30
+## 2   VC 30</code></pre>
+<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb400-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">count</span>(dose, supp, <span class="at">sort=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>##   dose supp  n
+## 1  0.5   OJ 10
+## 2  0.5   VC 10
+## 3  1.0   OJ 10
+## 4  1.0   VC 10
+## 5  2.0   OJ 10
+## 6  2.0   VC 10</code></pre>
+<p><br />
+Otra forma es usar <em>group_by()</em> que nos permite agrupar nuestros datos bajo alguna condición y luego aplicar una función a estos:</p>
+<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb402-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(supp) <span class="sc">%&gt;%</span><span class="fu">count</span>()</span></code></pre></div>
+<pre><code>## # A tibble: 2 × 2
+## # Groups:   supp [2]
+##   supp      n
+##   &lt;fct&gt; &lt;int&gt;
+## 1 OJ       30
+## 2 VC       30</code></pre>
+<p><br />
+Con este <em>group_by()</em> podemos aplicar cualquier cantidad de funciones, por ejemplo para en vez que me de el conteo me de el promedio, mediana, cuenta, suma, etc; para esto, debemos ocupar una nueva función muy útil llamada <em>summarise()</em>:</p>
+<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb404-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(supp) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">promedio =</span> <span class="fu">mean</span>(len), <span class="at">suma =</span> <span class="fu">sum</span>(len),</span>
+<span id="cb404-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb404-2" tabindex="-1"></a>                                             <span class="at">n =</span> <span class="fu">n</span>(), <span class="at">mediana =</span><span class="fu">median</span>(len))</span></code></pre></div>
+<pre><code>## # A tibble: 2 × 5
+##   supp  promedio  suma     n mediana
+##   &lt;fct&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt;
+## 1 OJ        20.7  620.    30    22.7
+## 2 VC        17.0  509.    30    16.5</code></pre>
+<p><br />
+Esta función también viene en todas las presentaciones, es decir, <em>at</em>, <em>if</em> y <em>all</em>, Ejemplos:</p>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb406-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">group_by</span>(supp) <span class="sc">%&gt;%</span> <span class="fu">summarise_if</span>(is.numeric, mean)</span></code></pre></div>
+<pre><code>## # A tibble: 2 × 3
+##   supp    len  dose
+##   &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 OJ     20.7  1.17
+## 2 VC     17.0  1.17</code></pre>
+<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb408-1" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span>  <span class="fu">group_by</span>(supp) <span class="sc">%&gt;%</span> <span class="fu">summarise_at</span>(<span class="fu">vars</span>(<span class="fu">contains</span>(<span class="st">&quot;ose&quot;</span>)), mean)</span></code></pre></div>
+<pre><code>## # A tibble: 2 × 2
+##   supp   dose
+##   &lt;fct&gt; &lt;dbl&gt;
+## 1 OJ     1.17
+## 2 VC     1.17</code></pre>
+<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb410-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">group_by</span>(supp) <span class="sc">%&gt;%</span>  <span class="fu">summarise_all</span>(mean)</span></code></pre></div>
+<pre><code>## # A tibble: 2 × 3
+##   supp    len  dose
+##   &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 OJ     20.7  1.17
+## 2 VC     17.0  1.17</code></pre>
+<p><br />
+</p>
+</div>
+<div id="renombrando-columnas-con-tidyverse" class="section level3 hasAnchor" number="2.2.10">
+<h3><span class="header-section-number">2.2.10</span> Renombrando columnas Con <em>tidyverse</em><a href="manejo-de-data-frames-y-bases-de-datos.html#renombrando-columnas-con-tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Existen diferentes formas de renombrar las columnas una es con la función <em>select()</em>:</p>
+<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb412-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb412-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="at">dosis=</span>dose, <span class="at">longitud=</span>len, <span class="at">suplemento=</span>supp) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 60
+## Columns: 3
+## $ dosis      &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.…
+## $ longitud   &lt;dbl&gt; 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5…
+## $ suplemento &lt;fct&gt; VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC…</code></pre>
+<p><br />
+También existe la función rename en todas sus versiones, ejemplos:</p>
+<div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb414-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb414-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">dosis=</span>dose) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 60
+## Columns: 3
+## $ len   &lt;dbl&gt; 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17.…
+## $ supp  &lt;fct&gt; VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC,…
+## $ dosis &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.…</code></pre>
+<div class="sourceCode" id="cb416"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb416-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb416-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">rename_if</span>(is.numeric, <span class="sc">~</span><span class="fu">paste0</span>(<span class="st">&quot;Num_&quot;</span>, .)) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 60
+## Columns: 3
+## $ Num_len  &lt;dbl&gt; 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, …
+## $ supp     &lt;fct&gt; VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, …
+## $ Num_dose &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,…</code></pre>
+<div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb418-1" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span> <span class="fu">rename_at</span>(<span class="fu">vars</span>(<span class="fu">contains</span>(<span class="st">&quot;ose&quot;</span>)), <span class="sc">~</span><span class="fu">paste0</span>(<span class="st">&quot;Num_&quot;</span>, .)) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 60
+## Columns: 3
+## $ len      &lt;dbl&gt; 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, …
+## $ supp     &lt;fct&gt; VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, …
+## $ Num_dose &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,…</code></pre>
+<div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb420-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb420-1" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span> <span class="fu">rename_all</span>(toupper) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 60
+## Columns: 3
+## $ LEN  &lt;dbl&gt; 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17.3…
+## $ SUPP &lt;fct&gt; VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, …
+## $ DOSE &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0…</code></pre>
+<p><br />
+</p>
+</div>
+<div id="ordenando-tablas-por-un-criterio-o-columna-1" class="section level3 hasAnchor" number="2.2.11">
+<h3><span class="header-section-number">2.2.11</span> Ordenando tablas por un criterio o columna<a href="manejo-de-data-frames-y-bases-de-datos.html#ordenando-tablas-por-un-criterio-o-columna-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><br />
+Conocemos las funciones <code>order</code> y <code>sort</code>, pero para ordenar tablas enteras, la función <code>arrange</code> de <strong>dplyr</strong> es útil.
+Por ejemplo:</p>
+<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb422-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(len) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<pre><code>##   len supp dose
+## 1 4.2   VC  0.5
+## 2 5.2   VC  0.5
+## 3 5.8   VC  0.5
+## 4 6.4   VC  0.5
+## 5 7.0   VC  0.5
+## 6 7.3   VC  0.5</code></pre>
+<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb424-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="sc">-</span>len) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<pre><code>##    len supp dose
+## 1 33.9   VC    2
+## 2 32.5   VC    2
+## 3 30.9   OJ    2
+## 4 29.5   VC    2
+## 5 29.4   OJ    2
+## 6 27.3   OJ    1</code></pre>
+<p><br />
+También podemos ordenar por varios criterios:</p>
+<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb426-1" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span>  <span class="fu">arrange</span>(dose, supp) <span class="sc">%&gt;%</span>  <span class="fu">head</span>()</span></code></pre></div>
+<pre><code>##    len supp dose
+## 1 15.2   OJ  0.5
+## 2 21.5   OJ  0.5
+## 3 17.6   OJ  0.5
+## 4  9.7   OJ  0.5
+## 5 14.5   OJ  0.5
+## 6 10.0   OJ  0.5</code></pre>
+<p><br />
+</p>
+</div>
+<div id="uniendo-tablas" class="section level3 hasAnchor" number="2.2.12">
+<h3><span class="header-section-number">2.2.12</span> Uniendo tablas<a href="manejo-de-data-frames-y-bases-de-datos.html#uniendo-tablas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><br />
+Para la unión de tablas usaremos una familia de funciones denominadas <strong>joins</strong>.</p>
+<p>Las diferentes presentaciones de esta función nos permite juntar tablas:<br />
+- inner_join() : incluye todas las filas en x y y (es decir la inteserccion o las que comparten).</p>
+<ul>
+<li><p>left_join(): incluye todas las filas en x.</p></li>
+<li><p>right_join(): incuye todas las filas en y.</p></li>
+<li><p>full_join(): incluye todas las filas en x o y (este incluye todos, incluso las que no comparten)<br />
+</p></li>
+</ul>
+<div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb428-1" tabindex="-1"></a>band_members; band_instruments</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 2
+##   name  band   
+##   &lt;chr&gt; &lt;chr&gt;  
+## 1 Mick  Stones 
+## 2 John  Beatles
+## 3 Paul  Beatles</code></pre>
+<pre><code>## # A tibble: 3 × 2
+##   name  plays 
+##   &lt;chr&gt; &lt;chr&gt; 
+## 1 John  guitar
+## 2 Paul  bass  
+## 3 Keith guitar</code></pre>
+<div class="sourceCode" id="cb431"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb431-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb431-1" tabindex="-1"></a>band_members <span class="sc">%&gt;%</span> <span class="fu">full_join</span>(band_instruments)</span></code></pre></div>
+<pre><code>## Joining with `by = join_by(name)`</code></pre>
+<pre><code>## # A tibble: 4 × 3
+##   name  band    plays 
+##   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; 
+## 1 Mick  Stones  &lt;NA&gt;  
+## 2 John  Beatles guitar
+## 3 Paul  Beatles bass  
+## 4 Keith &lt;NA&gt;    guitar</code></pre>
+<div class="sourceCode" id="cb434"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb434-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb434-1" tabindex="-1"></a>band_members <span class="sc">%&gt;%</span> <span class="fu">inner_join</span>(band_instruments, <span class="at">by =</span> <span class="st">&quot;name&quot;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 2 × 3
+##   name  band    plays 
+##   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; 
+## 1 John  Beatles guitar
+## 2 Paul  Beatles bass</code></pre>
+<div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb436-1" tabindex="-1"></a>band_members <span class="sc">%&gt;%</span> <span class="fu">left_join</span>(band_instruments)</span></code></pre></div>
+<pre><code>## Joining with `by = join_by(name)`</code></pre>
+<pre><code>## # A tibble: 3 × 3
+##   name  band    plays 
+##   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; 
+## 1 Mick  Stones  &lt;NA&gt;  
+## 2 John  Beatles guitar
+## 3 Paul  Beatles bass</code></pre>
+<div class="sourceCode" id="cb439"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb439-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb439-1" tabindex="-1"></a>band_members <span class="sc">%&gt;%</span> <span class="fu">right_join</span>(band_instruments)</span></code></pre></div>
+<pre><code>## Joining with `by = join_by(name)`</code></pre>
+<pre><code>## # A tibble: 3 × 3
+##   name  band    plays 
+##   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; 
+## 1 John  Beatles guitar
+## 2 Paul  Beatles bass  
+## 3 Keith &lt;NA&gt;    guitar</code></pre>
+</div>
+<div id="funciones-adicionales-del-tydiverse" class="section level3 hasAnchor" number="2.2.13">
+<h3><span class="header-section-number">2.2.13</span> Funciones adicionales del <em>tydiverse</em><a href="manejo-de-data-frames-y-bases-de-datos.html#funciones-adicionales-del-tydiverse" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><br />
+Anteriormente, usamos la función <code>head</code> para evitar que la página se llene con todo el set de datos.
+Si queremos ver una mayor proporción, podemos usar la función <code>top_n</code>.
+Esta función toma un <em>data frame</em> como primer argumento, el número de filas para mostrar en el segundo y la variable para filtrar en el tercero.
+Aquí hay un ejemplo de cómo ver las 5 filas superiores:<br />
+</p>
+<div class="sourceCode" id="cb442"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb442-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb442-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">top_n</span>(<span class="dv">5</span>, len)</span></code></pre></div>
+<pre><code>##    len supp dose
+## 1 33.9   VC    2
+## 2 32.5   VC    2
+## 3 29.5   VC    2
+## 4 30.9   OJ    2
+## 5 29.4   OJ    2</code></pre>
+<p><br />
+También hay otras funciones que son útiles en los diferentes análisis donde a veces ocupamos los rownames o a veces no, estas funciones nos permiten hacer una columna que sea rownames y viceversa, por ejemplo:<br />
+</p>
+<div class="sourceCode" id="cb444"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb444-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb444-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">rownames_to_column</span>(<span class="at">var =</span> <span class="st">&quot;row&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<pre><code>##   row  len supp dose
+## 1   1  4.2   VC  0.5
+## 2   2 11.5   VC  0.5
+## 3   3  7.3   VC  0.5
+## 4   4  5.8   VC  0.5
+## 5   5  6.4   VC  0.5
+## 6   6 10.0   VC  0.5</code></pre>
+<div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb446-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">rownames_to_column</span>(</span>
+<span id="cb446-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb446-2" tabindex="-1"></a>  <span class="at">var =</span> <span class="st">&quot;row&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">&quot;row&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<pre><code>##    len supp dose
+## 1  4.2   VC  0.5
+## 2 11.5   VC  0.5
+## 3  7.3   VC  0.5
+## 4  5.8   VC  0.5
+## 5  6.4   VC  0.5
+## 6 10.0   VC  0.5</code></pre>
+<p><br />
+Si queremos convertir las tablas como al principio del capítulo, es decir, convertir una tabla que no está en formato <em>tidy</em> a una que sí esté y viceversa podemos usar las funciones <strong>pivot_longer()</strong> y <strong>pivot_wider()</strong> (antes denominadas <strong>gather()</strong> y <strong>spread()</strong>, pero ya están reemplazadas aunque aún no eliminadas).<br />
+</p>
+<div class="sourceCode" id="cb448"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb448-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb448-1" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
+<span id="cb448-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb448-2" tabindex="-1"></a>data_iris<span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> <span class="fu">select</span>(Sepal.Length, Sepal.Width) <span class="sc">%&gt;%</span> <span class="fu">rownames_to_column</span>(<span class="at">var =</span> <span class="st">&quot;ids&quot;</span>)</span>
+<span id="cb448-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb448-3" tabindex="-1"></a><span class="fu">head</span>(data_iris)</span></code></pre></div>
+<pre><code>##   ids Sepal.Length Sepal.Width
+## 1   1          5.1         3.5
+## 2   2          4.9         3.0
+## 3   3          4.7         3.2
+## 4   4          4.6         3.1
+## 5   5          5.0         3.6
+## 6   6          5.4         3.9</code></pre>
+<p><br />
+Vamos a cambiarla a formato tidy:<br />
+</p>
+<div class="sourceCode" id="cb450"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb450-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb450-1" tabindex="-1"></a>tidy_iris<span class="ot">&lt;-</span><span class="fu">pivot_longer</span>(<span class="at">names_to =</span> <span class="st">&quot;variable&quot;</span>, </span>
+<span id="cb450-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb450-2" tabindex="-1"></a>             <span class="at">values_to =</span> <span class="st">&quot;longitud&quot;</span>, </span>
+<span id="cb450-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb450-3" tabindex="-1"></a>             <span class="at">data =</span> data_iris, </span>
+<span id="cb450-4"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb450-4" tabindex="-1"></a>             <span class="at">cols =</span> Sepal.Length<span class="sc">:</span>Sepal.Width) </span>
+<span id="cb450-5"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb450-5" tabindex="-1"></a><span class="fu">head</span>(tidy_iris)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 3
+##   ids   variable     longitud
+##   &lt;chr&gt; &lt;chr&gt;           &lt;dbl&gt;
+## 1 1     Sepal.Length      5.1
+## 2 1     Sepal.Width       3.5
+## 3 2     Sepal.Length      4.9
+## 4 2     Sepal.Width       3  
+## 5 3     Sepal.Length      4.7
+## 6 3     Sepal.Width       3.2</code></pre>
+<p><br />
+Y si queremos regresar a como lo teníamos:<br />
+</p>
+<div class="sourceCode" id="cb452"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb452-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb452-1" tabindex="-1"></a>notidy_iris<span class="ot">&lt;-</span> tidy_iris  <span class="sc">%&gt;%</span> <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> variable,</span>
+<span id="cb452-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb452-2" tabindex="-1"></a>                          <span class="at">values_from =</span> longitud)</span>
+<span id="cb452-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb452-3" tabindex="-1"></a><span class="fu">head</span>(notidy_iris)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 3
+##   ids   Sepal.Length Sepal.Width
+##   &lt;chr&gt;        &lt;dbl&gt;       &lt;dbl&gt;
+## 1 1              5.1         3.5
+## 2 2              4.9         3  
+## 3 3              4.7         3.2
+## 4 4              4.6         3.1
+## 5 5              5           3.6
+## 6 6              5.4         3.9</code></pre>
+</div>
+<div id="ejemplo-aplicado" class="section level3 hasAnchor" number="2.2.14">
+<h3><span class="header-section-number">2.2.14</span> Ejemplo Aplicado<a href="manejo-de-data-frames-y-bases-de-datos.html#ejemplo-aplicado" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb454"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb454-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb454-1" tabindex="-1"></a>primera<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Nombre=</span> <span class="fu">c</span>(<span class="st">&quot;Astrid&quot;</span>, <span class="st">&quot;Lea&quot;</span>, <span class="st">&quot;Sarina&quot;</span>, <span class="st">&quot;Remon&quot;</span>, <span class="st">&quot;Letizia&quot;</span>, </span>
+<span id="cb454-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb454-2" tabindex="-1"></a>                               <span class="st">&quot;Babice&quot;</span>, <span class="st">&quot;Jonas&quot;</span>, <span class="st">&quot;Wendy&quot;</span>, <span class="st">&quot;Nivedithia&quot;</span>, <span class="st">&quot;Gioia&quot;</span>),</span>
+<span id="cb454-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb454-3" tabindex="-1"></a>                     <span class="at">Sexo=</span> <span class="fu">c</span>(<span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>),</span>
+<span id="cb454-4"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb454-4" tabindex="-1"></a>                     <span class="at">Edad=</span> <span class="fu">c</span>(<span class="dv">30</span>,<span class="dv">25</span>,<span class="dv">25</span>,<span class="dv">29</span>,<span class="dv">22</span>,<span class="dv">22</span>,<span class="dv">35</span>,<span class="dv">19</span>,<span class="dv">32</span>,<span class="dv">21</span>))</span>
+<span id="cb454-5"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb454-5" tabindex="-1"></a>segunda<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Nombre=</span> <span class="fu">c</span>(<span class="st">&quot;Astrid&quot;</span>, <span class="st">&quot;Lea&quot;</span>, <span class="st">&quot;Sarina&quot;</span>, <span class="st">&quot;Remon&quot;</span>, <span class="st">&quot;Letizia&quot;</span>, </span>
+<span id="cb454-6"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb454-6" tabindex="-1"></a>                               <span class="st">&quot;Babice&quot;</span>, <span class="st">&quot;Jonas&quot;</span>, <span class="st">&quot;Wendy&quot;</span>, <span class="st">&quot;Nivedithia&quot;</span>, <span class="st">&quot;Gioia&quot;</span>),</span>
+<span id="cb454-7"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb454-7" tabindex="-1"></a>                     Superhéroe<span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Batman&quot;</span>, <span class="st">&quot;Superman&quot;</span>, <span class="st">&quot;Batman&quot;</span>, <span class="st">&quot;Spiderman&quot;</span>, <span class="st">&quot;Batman&quot;</span>, </span>
+<span id="cb454-8"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb454-8" tabindex="-1"></a>                                   <span class="st">&quot;Antman&quot;</span>, <span class="st">&quot;Batman&quot;</span>, <span class="st">&quot;Superman&quot;</span>, <span class="st">&quot;Maggot&quot;</span>, <span class="st">&quot;Superman&quot;</span>),</span>
+<span id="cb454-9"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb454-9" tabindex="-1"></a>                     <span class="at">Tatuajes=</span> <span class="fu">c</span>(<span class="dv">11</span>,<span class="dv">15</span>,<span class="dv">12</span>,<span class="dv">5</span>,<span class="dv">65</span>,<span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">13</span>,<span class="dv">900</span>,<span class="dv">0</span>))</span>
+<span id="cb454-10"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb454-10" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(primera); knitr<span class="sc">::</span><span class="fu">kable</span>(segunda)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Nombre</th>
+<th align="left">Sexo</th>
+<th align="right">Edad</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Astrid</td>
+<td align="left">F</td>
+<td align="right">30</td>
+</tr>
+<tr class="even">
+<td align="left">Lea</td>
+<td align="left">F</td>
+<td align="right">25</td>
+</tr>
+<tr class="odd">
+<td align="left">Sarina</td>
+<td align="left">F</td>
+<td align="right">25</td>
+</tr>
+<tr class="even">
+<td align="left">Remon</td>
+<td align="left">M</td>
+<td align="right">29</td>
+</tr>
+<tr class="odd">
+<td align="left">Letizia</td>
+<td align="left">F</td>
+<td align="right">22</td>
+</tr>
+<tr class="even">
+<td align="left">Babice</td>
+<td align="left">F</td>
+<td align="right">22</td>
+</tr>
+<tr class="odd">
+<td align="left">Jonas</td>
+<td align="left">M</td>
+<td align="right">35</td>
+</tr>
+<tr class="even">
+<td align="left">Wendy</td>
+<td align="left">F</td>
+<td align="right">19</td>
+</tr>
+<tr class="odd">
+<td align="left">Nivedithia</td>
+<td align="left">F</td>
+<td align="right">32</td>
+</tr>
+<tr class="even">
+<td align="left">Gioia</td>
+<td align="left">F</td>
+<td align="right">21</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Nombre</th>
+<th align="left">Superhéroe</th>
+<th align="right">Tatuajes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Astrid</td>
+<td align="left">Batman</td>
+<td align="right">11</td>
+</tr>
+<tr class="even">
+<td align="left">Lea</td>
+<td align="left">Superman</td>
+<td align="right">15</td>
+</tr>
+<tr class="odd">
+<td align="left">Sarina</td>
+<td align="left">Batman</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="left">Remon</td>
+<td align="left">Spiderman</td>
+<td align="right">5</td>
+</tr>
+<tr class="odd">
+<td align="left">Letizia</td>
+<td align="left">Batman</td>
+<td align="right">65</td>
+</tr>
+<tr class="even">
+<td align="left">Babice</td>
+<td align="left">Antman</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="left">Jonas</td>
+<td align="left">Batman</td>
+<td align="right">9</td>
+</tr>
+<tr class="even">
+<td align="left">Wendy</td>
+<td align="left">Superman</td>
+<td align="right">13</td>
+</tr>
+<tr class="odd">
+<td align="left">Nivedithia</td>
+<td align="left">Maggot</td>
+<td align="right">900</td>
+</tr>
+<tr class="even">
+<td align="left">Gioia</td>
+<td align="left">Superman</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<p>Para hacer:</p>
+<ol style="list-style-type: decimal">
+<li><p>Combina las dos tablas en una sola y completa las siguientes asignaciones.</p></li>
+<li><p>¿Cuál es la edad media de las mujeres y hombres por separado?</p></li>
+<li><p>¿Cuál fue el número más alto de tatuajes en un hombre?</p></li>
+<li><p>¿Cuál es el porcentaje de personas debajo de 32 años que son mujeres?</p></li>
+<li><p>Agrega una nueva columna a a la data llamada <code>tatuajes.por.año</code> que muestre cuántos tatuajes por año se ha hecho cada persona por cada año en su vida.</p></li>
+<li><p>¿Cuál persona tiene el mayor número de tatuajes por año?</p></li>
+<li><p>¿Cuáles son los nombres de las mujeres a las que su superheroe favorito es superman?</p></li>
+<li><p>¿Cuál es la mediana del número de tatuajes de cad apersona que está por encima de los 20 años y que su personaje favorito es Batman?<br />
+</p></li>
+</ol>
+<div id="resolviendo-1" class="section level4 hasAnchor" number="2.2.14.1">
+<h4><span class="header-section-number">2.2.14.1</span> Resolviendo<a href="manejo-de-data-frames-y-bases-de-datos.html#resolviendo-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li>Combina las dos tablas en una sola y completa las siguientes asignaciones.<br />
+</li>
+</ol>
+<div class="sourceCode" id="cb455"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb455-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb455-1" tabindex="-1"></a>encuestas<span class="ot">&lt;-</span>primera <span class="sc">%&gt;%</span> <span class="fu">full_join</span>(segunda)</span></code></pre></div>
+<pre><code>## Joining with `by = join_by(Nombre)`</code></pre>
+<p><br />
+2.
+¿Cuál es la edad media de las mujeres y hombres por separado?<br />
+</p>
+<div class="sourceCode" id="cb457"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb457-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb457-1" tabindex="-1"></a>encuestas <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Sexo) <span class="sc">%&gt;%</span> <span class="fu">summarise_at</span>(<span class="fu">c</span>(<span class="st">&quot;Edad&quot;</span>), mean)</span></code></pre></div>
+<pre><code>## # A tibble: 2 × 2
+##   Sexo   Edad
+##   &lt;chr&gt; &lt;dbl&gt;
+## 1 F      24.5
+## 2 M      32</code></pre>
+<p><br />
+3.
+¿Cuál fue el número más alto de tatuajes en un hombre?<br />
+</p>
+<div class="sourceCode" id="cb459"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb459-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb459-1" tabindex="-1"></a>encuestas <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Sexo<span class="sc">==</span><span class="st">&quot;M&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Tatuajes <span class="sc">==</span> <span class="fu">max</span>(Tatuajes)) </span></code></pre></div>
+<pre><code>##   Nombre Sexo Edad Superhéroe Tatuajes
+## 1  Jonas    M   35     Batman        9</code></pre>
+<p><br />
+4.
+¿Cuál es el porcentaje de mujeres debajo de 32 años?<br />
+</p>
+<div class="sourceCode" id="cb461"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb461-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb461-1" tabindex="-1"></a>fem<span class="ot">&lt;-</span> encuestas <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Sexo<span class="sc">==</span><span class="st">&quot;F&quot;</span>)</span>
+<span id="cb461-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb461-2" tabindex="-1"></a>fem_32<span class="ot">&lt;-</span> encuestas <span class="sc">%&gt;%</span> <span class="fu">filter</span>( Sexo<span class="sc">==</span><span class="st">&quot;F&quot;</span>, Edad<span class="sc">&lt;</span><span class="dv">32</span>)</span>
+<span id="cb461-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb461-3" tabindex="-1"></a>(<span class="fu">nrow</span>(fem_32)<span class="sc">/</span><span class="fu">nrow</span>(fem))<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
+<pre><code>## [1] 87.5</code></pre>
+<p><br />
+5.
+Agrega una nueva columna a a la data llamada <code>tatuajes.por.año</code> que muestre cuántos tatuajes por año se ha hecho cada persona por cada año en su vida.<br />
+</p>
+<div class="sourceCode" id="cb463"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb463-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb463-1" tabindex="-1"></a>encuestas<span class="ot">&lt;-</span> encuestas <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="st">&quot;tatuajesporaño&quot;</span><span class="ot">=</span>Tatuajes<span class="sc">/</span>Edad)</span>
+<span id="cb463-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb463-2" tabindex="-1"></a>encuestas<span class="sc">$</span>tatuajesporaño</span></code></pre></div>
+<pre><code>##  [1]  0.3666667  0.6000000  0.4800000  0.1724138  2.9545455  0.1363636  0.2571429  0.6842105 28.1250000
+## [10]  0.0000000</code></pre>
+<p><br />
+6.
+¿Cuál persona tiene el mayor número de tatuajes por año?<br />
+</p>
+<div class="sourceCode" id="cb465"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb465-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb465-1" tabindex="-1"></a>encuestas  <span class="sc">%&gt;%</span> <span class="fu">filter</span>(tatuajesporaño <span class="sc">==</span> <span class="fu">max</span>(tatuajesporaño)) </span></code></pre></div>
+<pre><code>##       Nombre Sexo Edad Superhéroe Tatuajes tatuajesporaño
+## 1 Nivedithia    F   32     Maggot      900         28.125</code></pre>
+<p><br />
+7.
+¿Cuáles son los nombres de las mujeres a las que su superheroe favorito es superman?<br />
+</p>
+<div class="sourceCode" id="cb467"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb467-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb467-1" tabindex="-1"></a>encuestas <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Sexo<span class="sc">==</span><span class="st">&quot;F&quot;</span>, Superhéroe<span class="sc">==</span><span class="st">&quot;Superman&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(Nombre)</span></code></pre></div>
+<pre><code>##   Nombre
+## 1    Lea
+## 2  Wendy
+## 3  Gioia</code></pre>
+<p><br />
+8.
+¿Cuál es la mediana del número de tatuajes de cada persona que está por encima de los 20 años y que su personaje favorito es batman?<br />
+</p>
+<div class="sourceCode" id="cb469"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb469-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb469-1" tabindex="-1"></a>encuestas <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Edad<span class="sc">&gt;</span><span class="dv">20</span>, Superhéroe <span class="sc">==</span><span class="st">&quot;Batman&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">mediana=</span><span class="fu">median</span>(Tatuajes))</span></code></pre></div>
+<pre><code>##   mediana
+## 1    11.5</code></pre>
+
+</div>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="9">
+<li id="fn9"><p><a href="https://bookdown.org/ndphillips/YaRrr/arranging-plots-with-parmfrow-and-layout.html" class="uri">https://bookdown.org/ndphillips/YaRrr/arranging-plots-with-parmfrow-and-layout.html</a><a href="manejo-de-data-frames-y-bases-de-datos.html#fnref9" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introducción-a-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="gráficos-en-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.docx"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

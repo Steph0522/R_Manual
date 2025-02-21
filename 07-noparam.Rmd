@@ -1,0 +1,10 @@
+# Tipos de pruebas no paramétricas 
+## Prueba de Mann-Whitney U (Wilcoxon rank-sum test)
+##	Prueba de Wilcoxon para muestras relacionadas
+##	Prueba de Kruskal-Wallis
+##	Prueba de Friedman
+##	Prueba de Chi-cuadrado (χ²)
+##	Prueba de McNemar
+##	Correlación de rango de Spearman
+##	Correlación de Kendall (τ de Kendall)
+

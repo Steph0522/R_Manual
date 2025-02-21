@@ -1,0 +1,9 @@
+# Análisis multivariados
+## PCA
+## PCoA
+## NMDS
+## Permanova
+## permdis
+## Anosim
+## RDA
+## CCA

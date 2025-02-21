@@ -1,0 +1,6 @@
+#	Valor de significancia p en estadística (p-value)
+##	¿Qué es el valor p?
+##	Interpretación general del valor p
+##	Marco de prueba de hipótesis: relación con la hipótesis nula y alternativa
+##	Regla de decisión: umbrales comunes para el valor p
+##	Errores en la prueba de hipótesis: error tipo I (falso positivo) y error tipo II (falso 
