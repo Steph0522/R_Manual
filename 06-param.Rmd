@@ -10,3 +10,233 @@
 ##	Correlación de Pearson
 ##	Regresión lineal simple y múltiple
 ##	Etc.
+
+
+|TIPO    |   PRUEBA     | 
+|:-:|:-:|
+| Comparación de 2 grupos	  |   t de Student/Welch  | 
+| Comparación de >2 grupos       | Anova   | 
+| Correlación de dos variables     | Coeficiente de Pearson| 
+| Variables cualitativas     | Prueba de Z| 
+
+
+# t de Student
+- Desarrollada por William Sealy Gosset. La prueba t permite comparar las medias de una muestra con la media teórica de una población, o comparar dos poblaciones. 
+
+- Una de las características de la prueba de student, es que permite la hipótesis alternativa de ver si dos medias son diferentes o si, una media es mayor, o menor que otra. 
+
+- Esta prueba tiene variantes dependiendo de nuestros datos.
+
+- Para ser utilizada es necesario que se cumplan los siguientes supuestos:
+>- Muestreo aleatorio
+>- Los datos y errores deben tener una distribución normal 
+>- Cuando se comparan dos distribuciones las varianzas deben ser iguales (σ1=σ2) y/o homogéneas.
+
+
+# t de Student una muestra
+
+
+En la prueba t de Student para una muestra, se usa la siguiente fórmula:
+
+
+$$t=\frac{\bar{x}-\mu}{s/\sqrt{n}}$$
+Dónde $t$ es el estadístico, $\bar{x}$ es la media muestral, $s$ es la desviación estándar muestral,  $n$ es el tamaño de la muestra y $\mu$ es la media verdadera de la población. 
+
+El estadístico $t$ posee un valor de p asociado dependiendo de los grados de libertad de la prueba. 
+
+Mide qué tan inusual es la media de la muestra observada de la media de la muestra hipotética. Lo hace midiendo qué tan lejos está la media de la muestra observada de la media de la población hipotética en términos de errores estándar.
+
+
+### Ejemplo de una muestra
+
+
+
+```{r, warning=FALSE, message=FALSE}
+data<- data.frame(Congelador=1:10,
+                  Temperatura=c(-2.14,-0.8,
+                                -2.75,-2.58,   
+                                -2.26,-2.46,
+                                -1.33,-2.85,
+                                -0.93,-2.01))
+shapiro.test(data$Temperatura)$p.value
+```
+
+Manualmente 
+```{r, warning=FALSE, message=FALSE}
+prom = mean(data$Temperatura); desves = sd(data$Temperatura); sn = sqrt(nrow(data));mu = 0
+t=(prom-mu)/(desves/sn)
+t;pt(t, df=9)
+```
+
+
+.pull-rigth[
+Con R
+```{r}
+t.test(data$Temperatura, mu = 0, alternative = "less")
+```
+
+
+
+
+## t de Student para medidas pareadas
+
+En la prueba t de Student para medidas pareadas se usa la siguiente fórmula:
+
+$$t=\frac{\bar{x}_{d}-\mu_{d}}{s_{d}/\sqrt{n}}$$
+Dónde $t$ es el estadístico, $\bar{x_{d}}$ es la media muestral de la diferencia de las medidas, $s_{d}$ es la desviación estándar muestral, $n$ es el tamaño de la muestra y $\mu_{d}$ es la diferencia de medias de mis grupos. 
+
+- Data ejemplo:
+
+```{r}
+data_pareada<- data.frame(Pan=1:10,
+                         Temp_pre=c(20.83,19.72,19.64,20.09,22.25,
+                                   20.83,21.31,22.50,21.17,19.57),
+                         Temp_post=c(100.87,98.58,109.09,121.83,122.78,
+                                     111.41,103.96,121.81,127.85,115.17))
+
+data_pareada$Diferencia<- data_pareada$Temp_post - data_pareada$Temp_pre
+                                
+```
+
+
+## Ejemplo muestras pareadas
+```{r, echo=FALSE}
+knitr::kable(data_pareada, align = "c")
+```
+
+
+# Ejemplo muestras pareadas
+
+
+
+```{r, warning=FALSE, message=FALSE}
+shapiro.test(data_pareada$Diferencia)
+```
+
+Manualmente 
+```{r, warning=FALSE, message=FALSE}
+prom = mean(data_pareada$Diferenci); desves = sd(data_pareada$Diferenci); sn = sqrt(nrow(data_pareada));mu = 0
+t=(prom-mu)/(desves/sn)
+t;pt(t, df=9, lower.tail = FALSE)
+```
+
+
+.pull-rigth[
+Con R
+```{r}
+t.test(data_pareada$Temp_post, data_pareada$Temp_pre, mu = 0, alternative = "greater", paired = TRUE)
+```
+
+
+
+
+# t de Student para dos grupos
+
+En la prueba t de Student para dos grupós se usa la siguiente fórmula:
+
+$$t_{obs}=\frac{\bar{x_{1}}-\bar{x_{2}}-\Delta}{\sqrt{s^2/n_{1}+s^2/n_{2}}}$$
+
+Dónde $t_{obs}$ es el estadístico, $\bar{x_{1,2}}$ son los promedios de los grupos y $\Delta$ es el promedio teórico de la distribución nula de la diferencia de promedios (usualmente se usa 0), el $s^2$ viene dado por:
+$$s^2=\frac{\Sigma{(x_{1}-\bar{x_{1}})^2}-\Sigma{(x_{2}-\bar{x_{2}})^2}}{n_{1}+n_{2}-2} = \frac{s^2_{1}(n_{1}-1)-s^2_{2}(n_{2}-1)}{n_{1}+n_{2}-2}$$ 
+
+En este caso los grados de libertad se calculan :
+$$df = (n_{1}-1)+(n_{2}-1)=n_{1}+n_{2}-2$$
+
+# t de Student para dos grupos
+
+- Debemos tener en cuenta si hay dependencia o no de los grupos y si la varianza es igual y/o homogénea. 
+
+- Cuando los grupos son independientes, se supone que proceden de diferentes poblaciones que tienen la misma varianza. 
+
+- La t de muestras independientes es una medida de la diferencia de las medias de los dos grupos. 
+
+- La distribución de la que se muestrea la diferencia de medias no es de una sola población sino de la combinación de las dos poblaciones. 
+
+-Por ejemplo, tengo una población con promedio de 10 y otra de 7, varianzas de 4 y 4, entonces mi combinación tendrá un promedio de 3 (diferencia) y varianza de 8. 
+
+
+
+## Ejemplo para dos grupos
+
+```{r}
+freidora<- data.frame(
+  Oster1=c(4.72,7.40,3.50,3.85,4.47,
+           4.09,6.34,3.30,7.13,4.99),
+  Oster2=c(9.19,11.44,9.64,12.09,10.80,
+           12.71,10.04,9.06,6.31,9.44))
+ro1<- freidora$Oster1-mean(freidora$Oster1)
+ro2<- freidora$Oster2-mean(freidora$Oster2)
+
+shapiro.test(c(ro1,ro2))
+```
+
+
+.
+```{r, echo=FALSE}
+knitr::kable(freidora, align = "c", format = "pipe", padding = 0)
+```
+
+
+
+# Ejemplo para dos grupos
+
+
+Manualmente 
+```{r, warning=FALSE, message=FALSE}
+prom1 = mean(freidora$Oster1)
+prom2=mean(freidora$Oster2)
+
+s=((var(freidora$Oster1)*9)+(var(freidora$Oster2)*9))/(10+10-2)
+t=(prom1-prom2-0)/(sqrt(s/10+s/10))
+t; pt(-6.8527, df=18, lower.tail=TRUE)+pt(6.8527, df=18, lower.tail=FALSE)
+```
+
+
+.pull-rigth[
+Con R
+```{r}
+t.test(freidora$Oster1, freidora$Oster2, mu=0, paired=FALSE, alternative="two.sided", var.equal=TRUE)
+```
+
+
+
+
+# Prueba de Welch
+
+
+
+Para los casos donde no se cumplen que las varianzas sean iguales u homogéneas.
+
+$$t_{obs}=\frac{\bar{x_{1}}-\bar{x_{2}}-\Delta}{\sqrt{s_{1}^2/n_{1}+s_{2}^2/n_{2}}}$$
+
+Los grados de libertad se calculan:
+
+$$df =\frac{(s_{1}^2/n_{1}+s_{2}^2/n_{2})^2}{s_{1}^4/(n_{1}-1)+s_{2}^4/(n_{2}-1)}$$
+
+.
+```{r}
+t.test(freidora$Oster1, freidora$Oster2, mu=0, paired=FALSE, alternative="two.sided", var.equal=FALSE)
+```
+
+
+## Pruebas no paramétricas y supuestos estadísticos
+
+- Las pruebas no paramétricas no requieren que conozcamos la distribución de nuestros datos ni parámetros de la población de estudio como su media o varianza poblacional.
+
+- Las pruebas no paramétricas nos permiten analizar
+datos en escala nominal u ordinal y en su mayoría los resultados se derivan a partir de procedimientos de ordenación y recuento, por lo que su base lógica es de fácil comprensión. 
+
+- Cuando trabajamos con muestras pequeñas (n < 10) en
+las que se desconoce si es válido suponer la normalidad de los datos, conviene utilizar pruebas no paramétricas
+
+- Pocos supuestos: aleatoriedad e independencia.
+
+
+# PRUEBAS NO PARAMÉTRICAS
+
+
+|VENTAJAS    | DESVENTAJAS     | 
+|-|-|
+| - Mayor aplicabilidad | - Eficiencia estadística menor
+| - Se pueden usar variables ordinales     |- Poder estadísitico menor   | 
+| - Son más fáciles de calcular     | - No se pueden evaluar interacciones| 

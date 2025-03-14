@@ -4,24 +4,27 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 9 Análisis multivariados | MANUAL DE R Y RSTUDIO</title>
-  <meta name="description" content="Capítulo 9 Análisis multivariados | MANUAL DE R Y RSTUDIO" />
+  <title>Capítulo 28 Análisis multivariados | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</title>
+  <meta name="description" content="Capítulo 28 Análisis multivariados | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 9 Análisis multivariados | MANUAL DE R Y RSTUDIO" />
+  <meta property="og:title" content="Capítulo 28 Análisis multivariados | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="Steph0522/R_Manual" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 9 Análisis multivariados | MANUAL DE R Y RSTUDIO" />
+  <meta name="twitter:title" content="Capítulo 28 Análisis multivariados | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   
   
   
 
-<meta name="author" content="Stephanie Hereira-Pacheco" />
-<meta name="author" content="Mauricio Hernández" />
+<meta name="author" content="Dra. Stephanie Hereira-Pacheco" />
+<meta name="author" content="Dr. Mauricio Hernández" />
+<meta name="author" content="Dr. Daniel Rivera" />
+<meta name="author" content="MsC. Braulio Pérez Alva" />
+<meta name="author" content="MsC. Yefrin Valladares" />
 
 
 
@@ -52,6 +55,10 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
@@ -140,67 +147,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">MANUAL DE R Y RSTUDIO</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefacio</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Breve semblanza de los autores:</a>
 <ul>
-<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#objetivo-del-libro"><i class="fa fa-check"></i><b>0.1</b> Objetivo del libro</a></li>
-<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#requisitos"><i class="fa fa-check"></i><b>0.2</b> <strong>Requisitos</strong></a></li>
-<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#instalación-de-rsudio-y-r"><i class="fa fa-check"></i><b>0.3</b> Instalación de Rsudio y R</a>
-<ul>
-<li class="chapter" data-level="0.3.1" data-path="index.html"><a href="index.html#rstudio"><i class="fa fa-check"></i><b>0.3.1</b> Rstudio</a></li>
-<li class="chapter" data-level="0.3.2" data-path="index.html"><a href="index.html#r"><i class="fa fa-check"></i><b>0.3.2</b> R</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#aviso-legal-protección-de-propiedad-intelectual"><i class="fa fa-check"></i>Aviso Legal: protección de propiedad intelectual</a></li>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#índice"><i class="fa fa-check"></i><b>0.1</b> Índice</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prefacio"><i class="fa fa-check"></i>Prefacio</a></li>
 </ul></li>
-<li class="chapter" data-level="0.4" data-path="index.html"><a href="index.html#aviso-legal-protección-de-propiedad-intelectual."><i class="fa fa-check"></i><b>0.4</b> Aviso Legal: Protección de Propiedad Intelectual.</a></li>
+<li class="chapter" data-level="1" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html"><i class="fa fa-check"></i><b>1</b> Introducción a R y Rstudio</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#requisitos-para-la-instalación-de-r"><i class="fa fa-check"></i><b>1.0.1</b> Requisitos para la instalación de R</a></li>
+<li class="chapter" data-level="1.0.2" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#instalación-de-rsudio-y-r"><i class="fa fa-check"></i><b>1.0.2</b> Instalación de Rsudio y R</a></li>
+<li class="chapter" data-level="1.1" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#getting-started"><i class="fa fa-check"></i><b>1.1</b> Comenzando con R y RStudio</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#breve-descripción-de-r"><i class="fa fa-check"></i><b>1.1.1</b> Breve descripción de R</a></li>
+<li class="chapter" data-level="1.1.2" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#un-poco-de-historia1"><i class="fa fa-check"></i><b>1.1.2</b> Un poco de historia…</a></li>
+<li class="chapter" data-level="1.1.3" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#por-qué-usar-r2"><i class="fa fa-check"></i><b>1.1.3</b> ¿Por qué usar R?</a></li>
+<li class="chapter" data-level="1.1.4" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#rstudio"><i class="fa fa-check"></i><b>1.1.4</b> RStudio</a></li>
+<li class="chapter" data-level="1.1.5" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#interfaz-de-rstudio"><i class="fa fa-check"></i><b>1.1.5</b> Interfaz de Rstudio</a></li>
+<li class="chapter" data-level="1.1.6" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#scripts"><i class="fa fa-check"></i><b>1.1.6</b> <em>Scripts</em></a></li>
+<li class="chapter" data-level="1.1.7" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#directorio-de-trabajo"><i class="fa fa-check"></i><b>1.1.7</b> Directorio de trabajo</a></li>
+<li class="chapter" data-level="1.1.8" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#sesión"><i class="fa fa-check"></i><b>1.1.8</b> Sesión</a></li>
+<li class="chapter" data-level="1.1.9" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#proyecto"><i class="fa fa-check"></i><b>1.1.9</b> Proyecto</a></li>
+<li class="chapter" data-level="1.1.10" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#instalación-de-paquetes-de-r"><i class="fa fa-check"></i><b>1.1.10</b> Instalación de paquetes de R</a></li>
+<li class="chapter" data-level="1.1.11" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#tipos-de-objetos-en-r"><i class="fa fa-check"></i><b>1.1.11</b> Tipos de objetos en R</a></li>
+<li class="chapter" data-level="1.1.12" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#funciones-en-r6"><i class="fa fa-check"></i><b>1.1.12</b> Funciones en R</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="introducción-a-r.html"><a href="introducción-a-r.html"><i class="fa fa-check"></i><b>1</b> : Introducción a R</a>
+<li class="chapter" data-level="1.2" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#tipos-de-datos"><i class="fa fa-check"></i><b>1.2</b> Tipos de datos</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#getting-started"><i class="fa fa-check"></i><b>1.1</b> Comenzando con R y RStudio</a>
-<ul>
-<li class="chapter" data-level="1.1.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#breve-descripción-de-r"><i class="fa fa-check"></i><b>1.1.1</b> Breve descripción de R</a></li>
-<li class="chapter" data-level="1.1.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#un-poco-de-historia1"><i class="fa fa-check"></i><b>1.1.2</b> Un poco de historia…</a></li>
-<li class="chapter" data-level="1.1.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#por-qué-usar-r2"><i class="fa fa-check"></i><b>1.1.3</b> ¿Por qué usar R?</a></li>
-<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#rstudio"><i class="fa fa-check"></i><b>1.1.4</b> RStudio</a></li>
-<li class="chapter" data-level="1.1.5" data-path="introducción-a-r.html"><a href="introducción-a-r.html#interfaz-de-rstudio"><i class="fa fa-check"></i><b>1.1.5</b> Interfaz de Rstudio</a></li>
-<li class="chapter" data-level="1.1.6" data-path="introducción-a-r.html"><a href="introducción-a-r.html#scripts"><i class="fa fa-check"></i><b>1.1.6</b> <em>Scripts</em></a></li>
-<li class="chapter" data-level="1.1.7" data-path="introducción-a-r.html"><a href="introducción-a-r.html#directorio-de-trabajo"><i class="fa fa-check"></i><b>1.1.7</b> Directorio de trabajo</a></li>
-<li class="chapter" data-level="1.1.8" data-path="introducción-a-r.html"><a href="introducción-a-r.html#sesión"><i class="fa fa-check"></i><b>1.1.8</b> Sesión</a></li>
-<li class="chapter" data-level="1.1.9" data-path="introducción-a-r.html"><a href="introducción-a-r.html#proyecto"><i class="fa fa-check"></i><b>1.1.9</b> Proyecto</a></li>
-<li class="chapter" data-level="1.1.10" data-path="introducción-a-r.html"><a href="introducción-a-r.html#instalación-de-paquetes-de-r"><i class="fa fa-check"></i><b>1.1.10</b> Instalación de paquetes de R</a></li>
-<li class="chapter" data-level="1.1.11" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tipos-de-objetos-en-r"><i class="fa fa-check"></i><b>1.1.11</b> Tipos de objetos en R</a></li>
-<li class="chapter" data-level="1.1.12" data-path="introducción-a-r.html"><a href="introducción-a-r.html#funciones-en-r6"><i class="fa fa-check"></i><b>1.1.12</b> Funciones en R</a></li>
+<li class="chapter" data-level="1.2.1" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#tipos-de-estructura-de-los-datos"><i class="fa fa-check"></i><b>1.2.1</b> Tipos de estructura de los datos</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tipos-de-datos"><i class="fa fa-check"></i><b>1.2</b> Tipos de datos</a>
+<li class="chapter" data-level="1.3" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#data-frames"><i class="fa fa-check"></i><b>1.3</b> <em>Data frames</em></a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tipos-de-estructura-de-los-datos"><i class="fa fa-check"></i><b>1.2.1</b> Tipos de estructura de los datos</a></li>
+<li class="chapter" data-level="1.3.1" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#el-operador-y-otras-formas-de-acceso"><i class="fa fa-check"></i><b>1.3.1</b> El operador <code>$</code> y otras formas de acceso</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#data-frames"><i class="fa fa-check"></i><b>1.3</b> <em>Data frames</em></a>
+<li class="chapter" data-level="1.4" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#creando-subconjuntos-o-indexación."><i class="fa fa-check"></i><b>1.4</b> Creando subconjuntos o Indexación.</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#el-operador-y-otras-formas-de-acceso"><i class="fa fa-check"></i><b>1.3.1</b> El operador <code>$</code> y otras formas de acceso</a></li>
+<li class="chapter" data-level="1.4.1" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#importing-data"><i class="fa fa-check"></i><b>1.4.1</b> Importando datos</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="introducción-a-r.html"><a href="introducción-a-r.html#creando-subconjuntos-o-indexación."><i class="fa fa-check"></i><b>1.4</b> Creando subconjuntos o Indexación.</a>
+<li class="chapter" data-level="1.5" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#el-directorio-de-trabajo-y-rutas"><i class="fa fa-check"></i><b>1.5</b> El directorio de trabajo y rutas</a>
 <ul>
-<li class="chapter" data-level="1.4.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#importing-data"><i class="fa fa-check"></i><b>1.4.1</b> Importando datos</a></li>
+<li class="chapter" data-level="1.5.1" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#descargando-un-archivo-de-la-web"><i class="fa fa-check"></i><b>1.5.1</b> Descargando un archivo de la web</a></li>
 </ul></li>
-<li class="chapter" data-level="1.5" data-path="introducción-a-r.html"><a href="introducción-a-r.html#el-directorio-de-trabajo-y-rutas"><i class="fa fa-check"></i><b>1.5</b> El directorio de trabajo y rutas</a>
+<li class="chapter" data-level="1.6" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#funciones-de-importación"><i class="fa fa-check"></i><b>1.6</b> Funciones de importación</a>
 <ul>
-<li class="chapter" data-level="1.5.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#descargando-un-archivo-de-la-web"><i class="fa fa-check"></i><b>1.5.1</b> Descargando un archivo de la web</a></li>
+<li class="chapter" data-level="1.6.1" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#los-paquetes-readr-y-readxl1"><i class="fa fa-check"></i><b>1.6.1</b> Los paquetes readr y readxl</a></li>
+<li class="chapter" data-level="1.6.2" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#algunos-tips-para-hojas-de-cálculo-de-excel"><i class="fa fa-check"></i><b>1.6.2</b> Algunos tips para hojas de cálculo de excel…</a></li>
 </ul></li>
-<li class="chapter" data-level="1.6" data-path="introducción-a-r.html"><a href="introducción-a-r.html#funciones-de-importación"><i class="fa fa-check"></i><b>1.6</b> Funciones de importación</a>
+<li class="chapter" data-level="1.7" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#algunas-funciones-básicas-de-r"><i class="fa fa-check"></i><b>1.7</b> Algunas funciones Básicas de R</a>
 <ul>
-<li class="chapter" data-level="1.6.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#los-paquetes-readr-y-readxl1"><i class="fa fa-check"></i><b>1.6.1</b> Los paquetes readr y readxl</a></li>
-<li class="chapter" data-level="1.6.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#algunos-tips-para-hojas-de-cálculo-de-excel"><i class="fa fa-check"></i><b>1.6.2</b> Algunos tips para hojas de cálculo de excel…</a></li>
-</ul></li>
-<li class="chapter" data-level="1.7" data-path="introducción-a-r.html"><a href="introducción-a-r.html#algunas-funciones-básicas-de-r"><i class="fa fa-check"></i><b>1.7</b> Algunas funciones Básicas de R</a>
-<ul>
-<li class="chapter" data-level="1.7.1" data-path="introducción-a-r.html"><a href="introducción-a-r.html#sort-y-order"><i class="fa fa-check"></i><b>1.7.1</b> <code>sort</code> y <code>order</code></a></li>
-<li class="chapter" data-level="1.7.2" data-path="introducción-a-r.html"><a href="introducción-a-r.html#max-y-which.max"><i class="fa fa-check"></i><b>1.7.2</b> <code>max</code> y <code>which.max</code></a></li>
-<li class="chapter" data-level="1.7.3" data-path="introducción-a-r.html"><a href="introducción-a-r.html#which"><i class="fa fa-check"></i><b>1.7.3</b> <code>which</code></a></li>
-<li class="chapter" data-level="1.7.4" data-path="introducción-a-r.html"><a href="introducción-a-r.html#match"><i class="fa fa-check"></i><b>1.7.4</b> <code>match</code></a></li>
-<li class="chapter" data-level="1.7.5" data-path="introducción-a-r.html"><a href="introducción-a-r.html#in"><i class="fa fa-check"></i><b>1.7.5</b> <code>%in%</code></a></li>
-<li class="chapter" data-level="1.7.6" data-path="introducción-a-r.html"><a href="introducción-a-r.html#la-familia-de-funciones-apply"><i class="fa fa-check"></i><b>1.7.6</b> La familia de funciones <code>apply</code></a></li>
-<li class="chapter" data-level="1.7.7" data-path="introducción-a-r.html"><a href="introducción-a-r.html#apply"><i class="fa fa-check"></i><b>1.7.7</b> apply</a></li>
-<li class="chapter" data-level="1.7.8" data-path="introducción-a-r.html"><a href="introducción-a-r.html#estructuras-de-control"><i class="fa fa-check"></i><b>1.7.8</b> Estructuras de control</a></li>
-<li class="chapter" data-level="1.7.9" data-path="introducción-a-r.html"><a href="introducción-a-r.html#while"><i class="fa fa-check"></i><b>1.7.9</b> while</a></li>
-<li class="chapter" data-level="1.7.10" data-path="introducción-a-r.html"><a href="introducción-a-r.html#tratando-con-datos-na"><i class="fa fa-check"></i><b>1.7.10</b> Tratando con datos NA</a></li>
+<li class="chapter" data-level="1.7.1" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#sort-y-order"><i class="fa fa-check"></i><b>1.7.1</b> <code>sort</code> y <code>order</code></a></li>
+<li class="chapter" data-level="1.7.2" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#max-y-which.max"><i class="fa fa-check"></i><b>1.7.2</b> <code>max</code> y <code>which.max</code></a></li>
+<li class="chapter" data-level="1.7.3" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#which"><i class="fa fa-check"></i><b>1.7.3</b> <code>which</code></a></li>
+<li class="chapter" data-level="1.7.4" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#match"><i class="fa fa-check"></i><b>1.7.4</b> <code>match</code></a></li>
+<li class="chapter" data-level="1.7.5" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#in"><i class="fa fa-check"></i><b>1.7.5</b> <code>%in%</code></a></li>
+<li class="chapter" data-level="1.7.6" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#la-familia-de-funciones-apply"><i class="fa fa-check"></i><b>1.7.6</b> La familia de funciones <code>apply</code></a></li>
+<li class="chapter" data-level="1.7.7" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#apply"><i class="fa fa-check"></i><b>1.7.7</b> apply</a></li>
+<li class="chapter" data-level="1.7.8" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#estructuras-de-control"><i class="fa fa-check"></i><b>1.7.8</b> Estructuras de control</a></li>
+<li class="chapter" data-level="1.7.9" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#while"><i class="fa fa-check"></i><b>1.7.9</b> while</a></li>
+<li class="chapter" data-level="1.7.10" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#tratando-con-datos-na"><i class="fa fa-check"></i><b>1.7.10</b> Tratando con datos NA</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="manejo-de-data-frames-y-bases-de-datos.html"><a href="manejo-de-data-frames-y-bases-de-datos.html"><i class="fa fa-check"></i><b>2</b> Manejo de data frames y bases de datos</a>
@@ -281,20 +285,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#estadística-descriptiva-medidas-de-tendencia-central-y-medidas-de-dispersión"><i class="fa fa-check"></i><b>5.2</b> Estadística descriptiva: medidas de tendencia central y medidas de dispersión</a></li>
 <li class="chapter" data-level="5.3" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#estadística-inferencial-univariada-y-multivariada"><i class="fa fa-check"></i><b>5.3</b> Estadística inferencial: Univariada y multivariada</a></li>
 <li class="chapter" data-level="5.4" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#estadística-inferencial-paramétrica-supuestos-principales-de-las-pruebas-paramétricas"><i class="fa fa-check"></i><b>5.4</b> Estadística inferencial paramétrica: supuestos principales de las pruebas paramétricas</a></li>
-<li class="chapter" data-level="5.5" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#estadística-inferencial-no-paramétrica-supuestos-principales-de-las-pruebas-no-paramétricas"><i class="fa fa-check"></i><b>5.5</b> Estadística inferencial no paramétrica: supuestos principales de las pruebas no paramétricas</a></li>
-<li class="chapter" data-level="5.6" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#cómo-saber-si-mis-datos-presentan-una-distribución-normal-y-homogeneidad-de-las-variancias"><i class="fa fa-check"></i><b>5.6</b> ¿Cómo saber si mis datos presentan una distribución normal y homogeneidad de las variancias?:</a>
+<li class="chapter" data-level="5.5" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#cómo-saber-si-mis-datos-presentan-una-distribución-normal-y-homogeneidad-de-las-variancias"><i class="fa fa-check"></i><b>5.5</b> ¿Cómo saber si mis datos presentan una distribución normal y homogeneidad de las variancias?:</a>
 <ul>
-<li class="chapter" data-level="5.6.1" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#prueba-de-shapiro-wilk"><i class="fa fa-check"></i><b>5.6.1</b> Prueba de Shapiro-Wilk</a></li>
-<li class="chapter" data-level="5.6.2" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#pruebas-de-ajuste-o-distribución-prueba-de-kolmogorov-smirnov-prueba-de-anderson-darling"><i class="fa fa-check"></i><b>5.6.2</b> Pruebas de ajuste o distribución: Prueba de Kolmogorov-Smirnov, Prueba de Anderson-Darling</a></li>
-<li class="chapter" data-level="5.6.3" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#prueba-de-leven-varianzas."><i class="fa fa-check"></i><b>5.6.3</b> Prueba de Leven (varianzas).</a></li>
+<li class="chapter" data-level="5.5.1" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#métodos-visuales"><i class="fa fa-check"></i><b>5.5.1</b> Métodos visuales</a></li>
+<li class="chapter" data-level="5.5.2" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#prueba-de-shapiro-wilk"><i class="fa fa-check"></i><b>5.5.2</b> Prueba de Shapiro-Wilk</a></li>
+<li class="chapter" data-level="5.5.3" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#pruebas-de-ajuste-o-distribución-prueba-de-kolmogorov-smirnov-prueba-de-anderson-darling"><i class="fa fa-check"></i><b>5.5.3</b> Pruebas de ajuste o distribución: Prueba de Kolmogorov-Smirnov, Prueba de Anderson-Darling</a></li>
+<li class="chapter" data-level="5.5.4" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#probando-homocedasticidad-o-heterocedasticidad"><i class="fa fa-check"></i><b>5.5.4</b> Probando Homocedasticidad o heterocedasticidad</a></li>
 </ul></li>
-<li class="chapter" data-level="5.7" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#estadísticos-descriptivos"><i class="fa fa-check"></i><b>5.7</b> Estadísticos descriptivos</a></li>
-<li class="chapter" data-level="5.8" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#gráficos-descriptivos"><i class="fa fa-check"></i><b>5.8</b> Gráficos descriptivos</a></li>
-<li class="chapter" data-level="5.9" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#explorando-normalidad-en-los-datos"><i class="fa fa-check"></i><b>5.9</b> Explorando normalidad en los datos</a></li>
-<li class="chapter" data-level="5.10" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#correlación-y-regresión"><i class="fa fa-check"></i><b>5.10</b> Correlación y Regresión</a></li>
-<li class="chapter" data-level="5.11" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#anova-1-vía"><i class="fa fa-check"></i><b>5.11</b> ANOVA (1 vía)</a></li>
-<li class="chapter" data-level="5.12" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#prueba-de-tukey"><i class="fa fa-check"></i><b>5.12</b> Prueba de Tukey</a></li>
-<li class="chapter" data-level="5.13" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#anova-2-vías"><i class="fa fa-check"></i><b>5.13</b> ANOVA (2 vías)</a></li>
+<li class="chapter" data-level="5.6" data-path="introducción-a-la-estadística.html"><a href="introducción-a-la-estadística.html#estadística-inferencial-no-paramétrica-supuestos-principales-de-las-pruebas-no-paramétricas"><i class="fa fa-check"></i><b>5.6</b> Estadística inferencial no paramétrica: supuestos principales de las pruebas no paramétricas</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="tipos-de-pruebas-paramétricas.html"><a href="tipos-de-pruebas-paramétricas.html"><i class="fa fa-check"></i><b>6</b> Tipos de pruebas paramétricas</a>
 <ul>
@@ -309,36 +307,72 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.9" data-path="tipos-de-pruebas-paramétricas.html"><a href="tipos-de-pruebas-paramétricas.html#regresión-lineal-simple-y-múltiple"><i class="fa fa-check"></i><b>6.9</b> Regresión lineal simple y múltiple</a></li>
 <li class="chapter" data-level="6.10" data-path="tipos-de-pruebas-paramétricas.html"><a href="tipos-de-pruebas-paramétricas.html#etc."><i class="fa fa-check"></i><b>6.10</b> Etc.</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html"><i class="fa fa-check"></i><b>7</b> Tipos de pruebas no paramétricas</a>
+<li class="chapter" data-level="7" data-path="t-de-student.html"><a href="t-de-student.html"><i class="fa fa-check"></i><b>7</b> t de Student</a></li>
+<li class="chapter" data-level="8" data-path="t-de-student-una-muestra.html"><a href="t-de-student-una-muestra.html"><i class="fa fa-check"></i><b>8</b> t de Student una muestra</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#prueba-de-mann-whitney-u-wilcoxon-rank-sum-test"><i class="fa fa-check"></i><b>7.1</b> Prueba de Mann-Whitney U (Wilcoxon rank-sum test)</a></li>
-<li class="chapter" data-level="7.2" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#prueba-de-wilcoxon-para-muestras-relacionadas"><i class="fa fa-check"></i><b>7.2</b> Prueba de Wilcoxon para muestras relacionadas</a></li>
-<li class="chapter" data-level="7.3" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#prueba-de-kruskal-wallis"><i class="fa fa-check"></i><b>7.3</b> Prueba de Kruskal-Wallis</a></li>
-<li class="chapter" data-level="7.4" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#prueba-de-friedman"><i class="fa fa-check"></i><b>7.4</b> Prueba de Friedman</a></li>
-<li class="chapter" data-level="7.5" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#prueba-de-chi-cuadrado"><i class="fa fa-check"></i><b>7.5</b> Prueba de Chi-cuadrado</a></li>
-<li class="chapter" data-level="7.6" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#prueba-de-mcnemar"><i class="fa fa-check"></i><b>7.6</b> Prueba de McNemar</a></li>
-<li class="chapter" data-level="7.7" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#correlación-de-rango-de-spearman"><i class="fa fa-check"></i><b>7.7</b> Correlación de rango de Spearman</a></li>
-<li class="chapter" data-level="7.8" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#correlación-de-kendall"><i class="fa fa-check"></i><b>7.8</b> Correlación de Kendall</a></li>
+<li class="chapter" data-level="8.0.1" data-path="t-de-student-una-muestra.html"><a href="t-de-student-una-muestra.html#ejemplo-de-una-muestra"><i class="fa fa-check"></i><b>8.0.1</b> Ejemplo de una muestra</a></li>
+<li class="chapter" data-level="8.1" data-path="t-de-student-una-muestra.html"><a href="t-de-student-una-muestra.html#t-de-student-para-medidas-pareadas"><i class="fa fa-check"></i><b>8.1</b> t de Student para medidas pareadas</a></li>
+<li class="chapter" data-level="8.2" data-path="t-de-student-una-muestra.html"><a href="t-de-student-una-muestra.html#ejemplo-muestras-pareadas"><i class="fa fa-check"></i><b>8.2</b> Ejemplo muestras pareadas</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="análisis-de-riqueza-y-diversidad-alfa-y-beta.html"><a href="análisis-de-riqueza-y-diversidad-alfa-y-beta.html"><i class="fa fa-check"></i><b>8</b> Análisis de riqueza y diversidad alfa y beta</a></li>
-<li class="chapter" data-level="9" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html"><i class="fa fa-check"></i><b>9</b> Análisis multivariados</a>
+<li class="chapter" data-level="9" data-path="ejemplo-muestras-pareadas-1.html"><a href="ejemplo-muestras-pareadas-1.html"><i class="fa fa-check"></i><b>9</b> Ejemplo muestras pareadas</a></li>
+<li class="chapter" data-level="10" data-path="t-de-student-para-dos-grupos.html"><a href="t-de-student-para-dos-grupos.html"><i class="fa fa-check"></i><b>10</b> t de Student para dos grupos</a></li>
+<li class="chapter" data-level="11" data-path="t-de-student-para-dos-grupos-1.html"><a href="t-de-student-para-dos-grupos-1.html"><i class="fa fa-check"></i><b>11</b> t de Student para dos grupos</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#pca"><i class="fa fa-check"></i><b>9.1</b> PCA</a></li>
-<li class="chapter" data-level="9.2" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#pcoa"><i class="fa fa-check"></i><b>9.2</b> PCoA</a></li>
-<li class="chapter" data-level="9.3" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#nmds"><i class="fa fa-check"></i><b>9.3</b> NMDS</a></li>
-<li class="chapter" data-level="9.4" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#permanova"><i class="fa fa-check"></i><b>9.4</b> Permanova</a></li>
-<li class="chapter" data-level="9.5" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#permdis"><i class="fa fa-check"></i><b>9.5</b> permdis</a></li>
-<li class="chapter" data-level="9.6" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#anosim"><i class="fa fa-check"></i><b>9.6</b> Anosim</a></li>
-<li class="chapter" data-level="9.7" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#rda"><i class="fa fa-check"></i><b>9.7</b> RDA</a></li>
-<li class="chapter" data-level="9.8" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#cca"><i class="fa fa-check"></i><b>9.8</b> CCA</a></li>
+<li class="chapter" data-level="11.1" data-path="t-de-student-para-dos-grupos-1.html"><a href="t-de-student-para-dos-grupos-1.html#ejemplo-para-dos-grupos"><i class="fa fa-check"></i><b>11.1</b> Ejemplo para dos grupos</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="modelización-estadística.html"><a href="modelización-estadística.html"><i class="fa fa-check"></i><b>10</b> Modelización estadística:</a>
+<li class="chapter" data-level="12" data-path="ejemplo-para-dos-grupos-1.html"><a href="ejemplo-para-dos-grupos-1.html"><i class="fa fa-check"></i><b>12</b> Ejemplo para dos grupos</a></li>
+<li class="chapter" data-level="13" data-path="prueba-de-welch.html"><a href="prueba-de-welch.html"><i class="fa fa-check"></i><b>13</b> Prueba de Welch</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="modelización-estadística.html"><a href="modelización-estadística.html#modelo-lineal-general"><i class="fa fa-check"></i><b>10.1</b> Modelo lineal general</a></li>
-<li class="chapter" data-level="10.2" data-path="modelización-estadística.html"><a href="modelización-estadística.html#glm-con-distribución-poisson"><i class="fa fa-check"></i><b>10.2</b> GLM con distribución Poisson</a></li>
-<li class="chapter" data-level="10.3" data-path="modelización-estadística.html"><a href="modelización-estadística.html#glm-con-distribución-quasi-poisson"><i class="fa fa-check"></i><b>10.3</b> GLM con distribución quasi-Poisson</a></li>
-<li class="chapter" data-level="10.4" data-path="modelización-estadística.html"><a href="modelización-estadística.html#glm-con-distribución-de-bernoulli-binomial"><i class="fa fa-check"></i><b>10.4</b> GLM con distribución de Bernoulli (Binomial)</a></li>
-<li class="chapter" data-level="10.5" data-path="modelización-estadística.html"><a href="modelización-estadística.html#glmm-modelos-lineales-generales-mixtos"><i class="fa fa-check"></i><b>10.5</b> GLMM: modelos lineales generales mixtos</a></li>
+<li class="chapter" data-level="13.1" data-path="prueba-de-welch.html"><a href="prueba-de-welch.html#pruebas-no-paramétricas-y-supuestos-estadísticos"><i class="fa fa-check"></i><b>13.1</b> Pruebas no paramétricas y supuestos estadísticos</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="pruebas-no-paramétricas.html"><a href="pruebas-no-paramétricas.html"><i class="fa fa-check"></i><b>14</b> PRUEBAS NO PARAMÉTRICAS</a></li>
+<li class="chapter" data-level="15" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html"><i class="fa fa-check"></i><b>15</b> Tipos de pruebas no paramétricas</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#prueba-de-mann-whitney-u-wilcoxon-rank-sum-test"><i class="fa fa-check"></i><b>15.1</b> Prueba de Mann-Whitney U (Wilcoxon rank-sum test)</a></li>
+<li class="chapter" data-level="15.2" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#prueba-de-wilcoxon-para-muestras-relacionadas"><i class="fa fa-check"></i><b>15.2</b> Prueba de Wilcoxon para muestras relacionadas</a></li>
+<li class="chapter" data-level="15.3" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#prueba-de-kruskal-wallis"><i class="fa fa-check"></i><b>15.3</b> Prueba de Kruskal-Wallis</a></li>
+<li class="chapter" data-level="15.4" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#prueba-de-friedman"><i class="fa fa-check"></i><b>15.4</b> Prueba de Friedman</a></li>
+<li class="chapter" data-level="15.5" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#prueba-de-chi-cuadrado"><i class="fa fa-check"></i><b>15.5</b> Prueba de Chi-cuadrado</a></li>
+<li class="chapter" data-level="15.6" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#prueba-de-mcnemar"><i class="fa fa-check"></i><b>15.6</b> Prueba de McNemar</a></li>
+<li class="chapter" data-level="15.7" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#correlación-de-rango-de-spearman"><i class="fa fa-check"></i><b>15.7</b> Correlación de rango de Spearman</a></li>
+<li class="chapter" data-level="15.8" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#correlación-de-kendall"><i class="fa fa-check"></i><b>15.8</b> Correlación de Kendall</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="pruebas-no-paramétricas-1.html"><a href="pruebas-no-paramétricas-1.html"><i class="fa fa-check"></i><b>16</b> PRUEBAS NO PARAMÉTRICAS</a></li>
+<li class="chapter" data-level="17" data-path="u-mann-whitney.html"><a href="u-mann-whitney.html"><i class="fa fa-check"></i><b>17</b> U Mann Whitney</a></li>
+<li class="chapter" data-level="18" data-path="u-mann-whitney-1.html"><a href="u-mann-whitney-1.html"><i class="fa fa-check"></i><b>18</b> U Mann Whitney</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="u-mann-whitney-1.html"><a href="u-mann-whitney-1.html#u-mann-whitney---ejemplo"><i class="fa fa-check"></i><b>18.1</b> U Mann Whitney - Ejemplo</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="u-mann-whitney---ejemplo-1.html"><a href="u-mann-whitney---ejemplo-1.html"><i class="fa fa-check"></i><b>19</b> U Mann Whitney - Ejemplo</a></li>
+<li class="chapter" data-level="20" data-path="prueba-de-wilcoxon-para-dos-muestras-dependientes.html"><a href="prueba-de-wilcoxon-para-dos-muestras-dependientes.html"><i class="fa fa-check"></i><b>20</b> Prueba de Wilcoxon para dos muestras dependientes</a></li>
+<li class="chapter" data-level="21" data-path="prueba-de-wilcoxon.html"><a href="prueba-de-wilcoxon.html"><i class="fa fa-check"></i><b>21</b> Prueba de Wilcoxon</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="prueba-de-wilcoxon.html"><a href="prueba-de-wilcoxon.html#prueba-wilcoxon---ejemplo"><i class="fa fa-check"></i><b>21.1</b> Prueba Wilcoxon - ejemplo</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="wilcoxon--ejemplo.html"><a href="wilcoxon--ejemplo.html"><i class="fa fa-check"></i><b>22</b> Wilcoxon -ejemplo</a></li>
+<li class="chapter" data-level="23" data-path="ejemplo-aplicado-1.html"><a href="ejemplo-aplicado-1.html"><i class="fa fa-check"></i><b>23</b> Ejemplo aplicado</a></li>
+<li class="chapter" data-level="24" data-path="ejemplo-aplicado-2.html"><a href="ejemplo-aplicado-2.html"><i class="fa fa-check"></i><b>24</b> Ejemplo aplicado</a></li>
+<li class="chapter" data-level="25" data-path="ejemplo-aplicado-3.html"><a href="ejemplo-aplicado-3.html"><i class="fa fa-check"></i><b>25</b> Ejemplo aplicado</a></li>
+<li class="chapter" data-level="26" data-path="resumen.html"><a href="resumen.html"><i class="fa fa-check"></i><b>26</b> RESUMEN</a></li>
+<li class="chapter" data-level="27" data-path="análisis-de-riqueza-y-diversidad-alfa-y-beta.html"><a href="análisis-de-riqueza-y-diversidad-alfa-y-beta.html"><i class="fa fa-check"></i><b>27</b> Análisis de riqueza y diversidad alfa y beta</a></li>
+<li class="chapter" data-level="28" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html"><i class="fa fa-check"></i><b>28</b> Análisis multivariados</a>
+<ul>
+<li class="chapter" data-level="28.1" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#pca"><i class="fa fa-check"></i><b>28.1</b> PCA</a></li>
+<li class="chapter" data-level="28.2" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#pcoa"><i class="fa fa-check"></i><b>28.2</b> PCoA</a></li>
+<li class="chapter" data-level="28.3" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#nmds"><i class="fa fa-check"></i><b>28.3</b> NMDS</a></li>
+<li class="chapter" data-level="28.4" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#permanova"><i class="fa fa-check"></i><b>28.4</b> Permanova</a></li>
+<li class="chapter" data-level="28.5" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#permdis"><i class="fa fa-check"></i><b>28.5</b> permdis</a></li>
+<li class="chapter" data-level="28.6" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#anosim"><i class="fa fa-check"></i><b>28.6</b> Anosim</a></li>
+<li class="chapter" data-level="28.7" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#rda"><i class="fa fa-check"></i><b>28.7</b> RDA</a></li>
+<li class="chapter" data-level="28.8" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#cca"><i class="fa fa-check"></i><b>28.8</b> CCA</a></li>
+</ul></li>
+<li class="chapter" data-level="29" data-path="modelización-estadística.html"><a href="modelización-estadística.html"><i class="fa fa-check"></i><b>29</b> Modelización estadística:</a>
+<ul>
+<li class="chapter" data-level="29.1" data-path="modelización-estadística.html"><a href="modelización-estadística.html#modelo-lineal-general"><i class="fa fa-check"></i><b>29.1</b> Modelo lineal general</a></li>
+<li class="chapter" data-level="29.2" data-path="modelización-estadística.html"><a href="modelización-estadística.html#glm-con-distribución-poisson"><i class="fa fa-check"></i><b>29.2</b> GLM con distribución Poisson</a></li>
+<li class="chapter" data-level="29.3" data-path="modelización-estadística.html"><a href="modelización-estadística.html#glm-con-distribución-quasi-poisson"><i class="fa fa-check"></i><b>29.3</b> GLM con distribución quasi-Poisson</a></li>
+<li class="chapter" data-level="29.4" data-path="modelización-estadística.html"><a href="modelización-estadística.html#glm-con-distribución-de-bernoulli-binomial"><i class="fa fa-check"></i><b>29.4</b> GLM con distribución de Bernoulli (Binomial)</a></li>
+<li class="chapter" data-level="29.5" data-path="modelización-estadística.html"><a href="modelización-estadística.html#glmm-modelos-lineales-generales-mixtos"><i class="fa fa-check"></i><b>29.5</b> GLMM: modelos lineales generales mixtos</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -352,7 +386,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MANUAL DE R Y RSTUDIO</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</a>
           </h1>
         </div>
 
@@ -360,31 +394,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="análisis-multivariados" class="section level1 hasAnchor" number="9">
-<h1><span class="header-section-number">Capítulo 9</span> Análisis multivariados<a href="análisis-multivariados.html#análisis-multivariados" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="pca" class="section level2 hasAnchor" number="9.1">
-<h2><span class="header-section-number">9.1</span> PCA<a href="análisis-multivariados.html#pca" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="análisis-multivariados" class="section level1 hasAnchor" number="28">
+<h1><span class="header-section-number">Capítulo 28</span> Análisis multivariados<a href="análisis-multivariados.html#análisis-multivariados" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="pca" class="section level2 hasAnchor" number="28.1">
+<h2><span class="header-section-number">28.1</span> PCA<a href="análisis-multivariados.html#pca" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="pcoa" class="section level2 hasAnchor" number="9.2">
-<h2><span class="header-section-number">9.2</span> PCoA<a href="análisis-multivariados.html#pcoa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="pcoa" class="section level2 hasAnchor" number="28.2">
+<h2><span class="header-section-number">28.2</span> PCoA<a href="análisis-multivariados.html#pcoa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="nmds" class="section level2 hasAnchor" number="9.3">
-<h2><span class="header-section-number">9.3</span> NMDS<a href="análisis-multivariados.html#nmds" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="nmds" class="section level2 hasAnchor" number="28.3">
+<h2><span class="header-section-number">28.3</span> NMDS<a href="análisis-multivariados.html#nmds" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="permanova" class="section level2 hasAnchor" number="9.4">
-<h2><span class="header-section-number">9.4</span> Permanova<a href="análisis-multivariados.html#permanova" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="permanova" class="section level2 hasAnchor" number="28.4">
+<h2><span class="header-section-number">28.4</span> Permanova<a href="análisis-multivariados.html#permanova" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="permdis" class="section level2 hasAnchor" number="9.5">
-<h2><span class="header-section-number">9.5</span> permdis<a href="análisis-multivariados.html#permdis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="permdis" class="section level2 hasAnchor" number="28.5">
+<h2><span class="header-section-number">28.5</span> permdis<a href="análisis-multivariados.html#permdis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="anosim" class="section level2 hasAnchor" number="9.6">
-<h2><span class="header-section-number">9.6</span> Anosim<a href="análisis-multivariados.html#anosim" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="anosim" class="section level2 hasAnchor" number="28.6">
+<h2><span class="header-section-number">28.6</span> Anosim<a href="análisis-multivariados.html#anosim" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="rda" class="section level2 hasAnchor" number="9.7">
-<h2><span class="header-section-number">9.7</span> RDA<a href="análisis-multivariados.html#rda" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="rda" class="section level2 hasAnchor" number="28.7">
+<h2><span class="header-section-number">28.7</span> RDA<a href="análisis-multivariados.html#rda" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="cca" class="section level2 hasAnchor" number="9.8">
-<h2><span class="header-section-number">9.8</span> CCA<a href="análisis-multivariados.html#cca" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="cca" class="section level2 hasAnchor" number="28.8">
+<h2><span class="header-section-number">28.8</span> CCA<a href="análisis-multivariados.html#cca" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 </div>
 </div>
@@ -438,6 +472,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

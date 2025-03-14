@@ -1,8 +1,12 @@
 ---
-title: 'MANUAL DE R Y RSTUDIO'
+title: 'NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO '
 author:
-  - "Stephanie Hereira-Pacheco"
-  - "Mauricio Hernández"
+  - "Dra. Stephanie Hereira-Pacheco"
+  - "Dr. Mauricio Hernández" 
+  - "Dr. Daniel Rivera"
+  - "MsC. Braulio Pérez Alva" 
+  - "MsC. Yefrin Valladares"
+  
 site: bookdown::bookdown_site
 documentclass: book
 url: 'https://steph0522.github.io/R_Manual/index.html'
@@ -18,41 +22,149 @@ editor_options:
 #link-citations: yes
 ---
 
+# Breve semblanza de los autores:  {-}
+
+La Dra. Stephanie Hereira-Pacheco (PhD) es Ingeniera Agroindustrial de profesión, posee un máster en y un doctorado en ciencias en la especialidad en Biotecnología. Es investigadora del Centro en Ciencias Biológicas de la Universidad Autónoma de Tlaxcala (México). Dentro de sus líneas de investigación destacan los temas relacionados a ecología microbiana, metagenómica, bioinformática y metabolitos secundarios. Ha publicado una gran cantidad de artículos científicos en diferentes revistas de alto impacto entre ellas PeerJ, Scientific Reports, Molecular Ecology. Fungal Ecoloy, Microbology Spectrum, etc.  
+
+ 
+
+El Dr. Mauricio Hernández (PhD) es biólogo, posee un máster en geología y un doctorado en Ciencias Biológicas. El Dr. Hernández es profesor e investigador en el Departamento de Biología Celular y Genética, Escuela de Biología, Facultad de Ciencias (Universidad Nacional Autónoma de Honduras). Sus líneas de investigación cubren áreas relacionadas a la ecología molecular, microbiología, ambientes contaminados por compuestos orgánicos persistentes, entre otros. Sus trabajos de investigación han sido publicados en revistas internaciones como ser Molecular Ecology, Animal Microbiome, Integrative Zoology, Trends in Ecology and Evolution, Environmental Pollution, Journal of Hazardous Materials, etc. 
+
+ 
+
+## Aviso Legal: protección de propiedad intelectual {-}
+
+El contenido de este manual se encuentra bajo la protección de las normativas vigentes en materia de Propiedad Intelectual en los marcos legales de México y Honduras. Por lo tanto, su reproducción o distribución no autorizada con fines comerciales o lucrativos está prohibida. 
 
 
-#  Prefacio {-}
+## Índice 
 
-Este libro contiene la recopilación de temas impartidos y tratados a lo largo de diferentes cursos y lecciones sobre R y sus aplicaciones en Ciencias Biológicas. 
-
-
-## Objetivo del libro
-
-Que los estudiantes de nivel pregrado y posgrado puedan aprender temas básicos y aplicados del lenguaje de R y su aplicación en sus estudios y trabajos enfocados en ciencias biológicas.
+Prefacio 
 
 
-## **Requisitos**
+Introducción a R y Rstudio
 
-- Rstudio versiones 2024 en adelante.
-- R versiones de 4.0 en adelante.
+- Requisitos para la instalación de R
 
-## Instalación de Rsudio y R
+- Instalación de R y Rstudio 
 
-En caso de no tener instalado Rstudio y R que son los prerequisitos para llevar a cabo los ejercicios y temas de est elibro, entonces visita estas ligas para descargarlos e instalarlos.
+- Tipos de datos 
+
+- Dataframes 
+
+- Directorio de trabajo 
+
+- Funciones básicas en R 
+
+Manejo de dataframes y bases de datos 
+
+Construcción de gráficos 
+
+Valor de significancia p en estadística (p-value) 
+
+- ¿Qué es el valor p? 
+
+- Interpretación general del valor p 
+
+- Marco de prueba de hipótesis: hipótesis nula y alternativa 
+
+- Regla de decisión: umbrales comunes para el valor p 
+
+- Errores en la prueba de hipótesis 
+
+Introducción a la estadística 
+
+- Diferencia entre estadística y bioestadística 
+
+- Estadística descriptiva: medidas de tendencia central y medidas de dispersión 
+
+- Estadística inferencial: univariada y multivariada 
+
+- Estadística inferencial paramétrica: supuestos principales de las pruebas paramétricas 
+
+- Estadística inferencial no paramétrica: supuestos principales de las pruebas no paramétricas 
+
+- Test estadísticos para determinar distribución y homogeneidad de varianzas en un conjunto de datos: prueba de Shapiro-Wilk, pruebas de ajuste o distribución (Kolmogorov-Smirnov, Anderson-Darling) y prueba de Levins (varianzas). 
+
+Tipos de pruebas paramétricas 
+
+- Prueba t (t de Student) para un conjunto de datos 
+
+- Prueba t (t de Student) para dos conjuntos de datos 
+
+- Prueba t (t de Student) para datos pareados 
+
+- Prueba t de Welch 
+
+- Prueba F de Fisher 
+
+- Análisis de varianza “ANOVA”: una vía (one-way) y dos vías (two-way) 
+
+- Análisis de covarianza (ANCOVA) 
+
+- Correlación de Pearson 
+
+- Regresión lineal simple y múltiple 
+
+Tipos de pruebas no paramétricas 
+
+- Prueba de Mann-Whitney U (o Wilcoxon rank-sum test) – muestras independientes 
+
+- Prueba de Wilcoxon para muestras relacionadas 
+
+- Prueba de Kruskal-Wallis – muestras independientes 
+
+- Prueba de Friedman – muestras relacionadas 
+
+- Prueba de Chi-Cuadrado – datos categóricos (frecuencias) 
+
+- Prueba de McNemar – datos categóricos (frecuencias) 
+
+- Correlación de rango de Spearman 
+
+- Correlación de Kendall 
+
+Análisis de riqueza, diversidad alfa y beta 
+
+- Números de Hill (diversidad al órden q0, q1 y q2) 
+
+Análisis multivariados 
+
+- Análisis de componentes principales (PCA) 
+
+- Análisis de coordenadas principales (PCoA) 
+
+- Escalamiento multidimensional no métrico (NMDS) 
+
+- Análisis de varianza multivariado permutacional (PERMANOVA) 
+
+- PERMDIS 
+
+- ANOSIM 
+
+- RDA 
+
+- CCA 
+
+Modelización estadística 
+
+- Modelo lineal 
+
+- Modelo lineal general (GLM) 
+
+- GLM con distribución Poisson 
+
+- GLM con distribución quasi-Poisson 
+
+- GLM con distribución de Bernoulli (binomail) 
+
+- GLMM: modelos lineales generales mixtos 
 
 
-### Rstudio
+##  Prefacio {-}
 
-- En [MacOS](https://download1.rstudio.org/electron/macos/RStudio-2024.12.1-563.dmg)
-- En [Ubuntu](https://download1.rstudio.org/electron/jammy/amd64/rstudio-2024.12.1-563-amd64.deb)
-- En [Windows](https://download1.rstudio.org/electron/windows/RStudio-2024.12.1-563.exe)
+Actualmente, las ciencias biológicas son consideradas una de las áreas más activas en la investigación científica. Dentro de este campo, los investigadores recurren cada vez más a las herramientas computacionales para analizar e interpretar datos biológicos complejos. Entre las diversas herramientas de programación disponibles, R ha sido considerado como uno de los lenguajes más robustos, versátiles y ampliamente utilizados para los análisis de datos. Sin embargo, consideramos que existe una brecha importante entre la recolección, análisis e interpretación de datos, particularmente para los estudiantes universitarios. Aunado a esta falta de conocimiento, reconocemos que los estudiantes egresados deben poseer las habilidades básicas para realizar análisis estadísticos y brindar explicaciones sencillas a fenómenos naturales biológicos. Este manual tiene como objetivo proporcionar una introducción al uso del software R, orientado principalmente a estudiantes de pregrado y posgrado, así como investigadores de las ciencias biológicas. Debido a la gran cantidad de paquetes desarrollados por la comunidad científica, R ofrece una amplia gama de herramientas relacionadas con la manipulación de datos, modelado estadístico, visualización de gráficos, entre otros. 
 
-### R
-
-- Para [MacOS](https://cran.r-project.org/bin/macosx/)
-- Para [Ubuntu](https://cran.r-project.org/bin/linux/ubuntu/)
-- Para [Windows](https://cran.r-project.org/bin/windows/base/)
+A lo largo de texto, trataremos de cubrir aspectos básicos de R, como la importación y exportación de datos, pruebas para evaluar distribución y varianza de los datos, aplicación de pruebas paramétricas y no paramétricas, gráficos de alta calidad, entre otros. El contenido ha sido cuidadosamente estructurado para brindar una guía detallada con ejemplos prácticos en el contexto de las ciencias biológicas. Por lo tanto, los estudiantes serán capaces de manejar conjuntos de datos, visualizar distribuciones y tendencias, realizar pruebas de hipótesis, aplicar modelos estadísticos y otros aspectos fundamentales para sus proyectos de investigación. 
 
 
-## Aviso Legal: Protección de Propiedad Intelectual.
-
-El material contenido en este manual está protegido por las leyes mexicanas de Propiedad Intelectual. Por lo que su reproducción o distribución no autorizada con fines de lucro está prohibida.

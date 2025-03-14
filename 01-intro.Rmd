@@ -1,4 +1,29 @@
-# : Introducción a R
+#  Introducción a R y Rstudio
+
+
+### Requisitos para la instalación de R
+
+- R versión de 4.0 en adelante.
+- Rstudio versiones 2024 en adelante.
+
+### Instalación de Rsudio y R 
+
+En caso de no tener instalado R y Rstudio y R que son los prerequisitosprerrequisitos para realizar  llevar a cabo los ejercicios de est e manuallibro, entonces debe visitar estas ligas los siguientes links para descargarlos e instalarlos. 
+
+
+#### R 
+
+- Para [MacOS](https://cran.r-project.org/bin/macosx/)
+- Para [Ubuntu](https://cran.r-project.org/bin/linux/ubuntu/)
+- Para [Windows](https://cran.r-project.org/bin/windows/base/)
+
+
+####Rstudio 
+
+- En [MacOS](https://download1.rstudio.org/electron/macos/RStudio-2024.12.1-563.dmg)
+- En [Ubuntu](https://download1.rstudio.org/electron/jammy/amd64/rstudio-2024.12.1-563-amd64.deb)
+- En [Windows](https://download1.rstudio.org/electron/windows/RStudio-2024.12.1-563.exe)
+
 
 
 ## Comenzando con R y RStudio {#getting-started}
@@ -15,27 +40,23 @@ if(knitr::is_html_output()){
 ### Breve descripción de R
 
 R es un lenguaje de programación como C o Java o Python pero enfocado principalmente a la estadística.
-No fue creado por ingenieros de software para el desarrollo de software, sino por estadísticos como un ambiente interactivo para el análisis de datos.
-Otros programas como los que mencioné anteriormente sí están más enfocados en el desarrollo de programas aunque también pueden usarse para hacer cálculos estadísticos.
-Cuando instalamos R en nuestra computadora en realidad lo que estamos instalando es el entorno computacional y para que podamos hacer uso de ese entorno necesitamos conocer la manera de escribir que el software pueda interpretar y ejecutar las instrucciones que le damos.
-Eso es lo que aprenderemos a hacer en este curso.
+Cuando instalamos R en nuestra computadora, en realidad estamos instalando un entorno de programación, y para poder utilizarlo correctamente, necesitamos aprender a escribir las instrucciones de manera que el software pueda interpretarlas y ejecutarlas adecuadamenteCuando instalamos R en nuestra computadora en realidad lo que estamos instalando es el entorno computacional y para que podamos hacer uso de ese entorno necesitamos conocer la manera de escribir que el software pueda interpretar y ejecutar las instrucciones que le damos. Eso es lo que aprenderemos a hacer en este curso.  
 
-Como en otros lenguajes de programación, en R pueden guardar su trabajo como una secuencia de comandos o instrucciones, conocida como un *script*, que se pueden ejecutar fácilmente en cualquier momento, los podemos guardar y nos servirań siempre.
+Como en otros lenguajes de programación, en R podemos guardar nuestros proyectos de trabajo mediante un *script*, que poder ser ejecutado eventualmente y ser compartido con otros usuarios de R. 
+
+ 
 
 ### Un poco de historia...[^1]
 
 [^1]: <https://bookdown.org/jboscomendoza/r-principiantes4/un-poco-de-historia.html>
 
-R proviene del lenguaje S, creado en los Laboratorios Bell (Estados Unidos).
-Los mismos que inventaron el transistor, el láser, el sistema operativo Unix y algunas otras cosas más.
+R tiene su origen en el lenguaje de programación S, desarrollado en los Laboratorios Bell de Estados Unidos. Más tarde, en 1993, Ross Ihaka y Robert Gentleman, de la Universidad de Auckland en Nueva Zelanda, crearon una versión de S de código abierto y gratuita, lo que permitió su acceso y uso generalizado. No obstante, fue en el año 2000 cuando se lanzó una versión estable de R. Hoy en día, el desarrollo y mantenimiento del software están a cargo del R Development Core Team, un grupo internacional de expertos en ciencias computacionales y estadísticas, que provienen de diversas instituciones académicas y de investigaciónR proviene del lenguaje S, creado en los Laboratorios Bell (Estados Unidos). Los mismos que inventaron el transistor, el láser, el sistema operativo Unix y algunas otras cosas más. 
 
-Ross Ihaka y Robert Gentleman, de la Universidad de Auckland de Nueva Zelanda, decidieron crear una implementación abierta y gratuita de S.
-Este trabajo, que culminaría en la creación de R inició en 1992 y no fue hasta el 2000 que se obtuvo una versión final estable.
+Ross Ihaka y Robert Gentleman, de la Universidad de Auckland de Nueva Zelanda, decidieron crear una implementación abierta y gratuita de S. Este trabajo, que culminaría en la creación de R inició en 1992 y no fue hasta el 2000 que se obtuvo una versión final estable. 
 
-Hoy día, el mantenimiento y desarrollo de R es realizado por el R Development Core Team, un equipo de especialistas en ciencias computacionales y estadística provenientes de diferentes instituciones y lugares alrededor del mundo.
+Hoy día, el mantenimiento y desarrollo de R es realizado por el R Development Core Team, un equipo de especialistas en ciencias computacionales y estadística provenientes de diferentes instituciones y lugares alrededor del mundo. 
 
-R posee una Licencia Pública General de GNU, esto, para que pueda ser distribuido de manera gratuita, por lo que es software libre y de código abierto.
-Esta licencia también te permite usar R para los fines que desees, sin limitaciones, no importando si son personales, académicos o comerciales.
+R posee una Licencia Pública General de GNU, esto, para que pueda ser distribuido de manera gratuita, por lo que es software libre y de código abierto. Esta licencia también te permite usar R para los fines que desees, sin limitaciones, no importando si son personales, académicos o comerciales. 
 
 ### ¿Por qué usar R?[^2]
 
@@ -43,9 +64,9 @@ Esta licencia también te permite usar R para los fines que desees, sin limitaci
 
 1.  R es gratuito y de código abierto[^3].
 2.  Se ejecuta en todas las plataformas principales: Windows, Mac Os, UNIX/Linux.
-3.  Los *scripts* y los objetos de datos se pueden compartir sin problemas entre plataformas.
-4.  Existe una comunidad grande, creciente y activa de usuarios de R y, como resultado, hay numerosos recursos para aprender y hacer preguntas[^4] [^5].
-5.  Es fácil para otras personas contribuir con complementos (*add-ons* en inglés) o paquetes que les permiten a los desarrolladores compartir implementaciones de software de nuevas metodologías de ciencia de datos. Esto les da a los usuarios de R acceso temprano a los métodos y herramientas más recientes que se desarrollan para una amplia variedad de disciplinas, incluyendo la ecología, la biología molecular, las ciencias sociales y la geografía, entre otros campos.
+3.  Los *scripts* y los objetos y los objetos de datos se pueden compartir sin problemas entre plataformas y usuarios.
+4.  Existe una comunidad, creciente y activa de usuarios de R y, como resultado, hay numerosos recursos para aprender[^4] [^5].
+5.  s fácil para otras personas contribuir con complementos (add-ons en inglés) o paquetes que les permiten a los desarrolladores compartir implementaciones de software relacionados ade nuevas metodologías de ciencia de datos. Esto les daaporta a los usuarios de R acceso directotemprano a los métodos y herramientas más recientes que se desarrollan para una amplia variedad de disciplinas, incluyendo la ecología, la biología molecular, las ciencias sociales y la geografía, entre otros campos.
 
 [^3]: <https://opensource.org/history>
 
@@ -60,36 +81,33 @@ Nos provee un editor visual e interactivo para crear y editar nuestros *scripts*
 
 ### Interfaz de Rstudio
 
-Rstudio posee 4 paneles principales:
+Rstudio posee 4 paneles principales  (Figura 1):
 
-1.  El panel izquierdo superior aparece nuestro editor de códigos.
-    Donde ponemos los scripts que vamos a correr.
+1.  Enl el panel izquierdo superior aparece nuestro el editor de códigos. Es decir, comprende la sección donde se crean los  Donde ponemos los scripts que deber ser vamos a ejecutadoscorrer. 
 
-2.  A la derecha, el panel superior incluye pestañas como *Environment* y *History*, que son el ambiente y el historial, aquí podremos observar los objetos que vayamos declarando y data que subamos, además del historial de scripts.
+2.  A la derecha, el panel superior incluye pestañas como Environment e History. La pestaña Environment (ambiente) muestra los nombres de todos los objetos (como vectores, matrices, bases de datos, etc.) creados en la consola. Por otra parte, la pestaña History le muestra un historial de todo el código que ha desarrollado previamente en la consolala derecha, el panel superior incluye pestañas como Environment y History, que son el ambiente y el historial, aquí podremos observar los objetos que vayamos declarando y data que subamos, además del historial de scripts. 
 
-3.  En el panel inferior izquierdo nos aparece nuestra consola de R que es donde se corren los códigos.
+3.  A la derecha, el panel superior incluye pestañas como Environment e History. La pestaña Environment (ambiente) muestra los nombres de todos los objetos (como vectores, matrices, bases de datos, etc.) creados en la consola. Por otra parte, la pestaña History le muestra un historial de todo el código que ha desarrollado previamente en la consolala derecha, el panel superior incluye pestañas como Environment y History, que son el ambiente y el historial, aquí podremos observar los objetos que vayamos declarando y data que subamos, además del historial de scripts. 
 
-4.  En el panel inferior derecho se muestran cinco pestañas: *File*, *Plots*, *Packages*, *Help* y *Viewer*.
-    Pueden hacer clic en cada pestaña para moverse por las diferentes opciones.
-    Pero a grandes rasgos, en file vemos donde nos encontramos situados y los archivos que hay en nuestro directorio.
-    En plots se visualizan las imágenes que generamos, en packages los paquetes que poseemos instalados y cargados, en Help cuando necesitamos información extra de nuestros paquetes y en Viewer exploramos scripts de rmarkdown.
+4.  En el panel inferior derecho se muestran cinco pestañas: *File*, *Plots*, *Packages*, *Help* y *Viewer*. Pueden hacer clic en cada pestaña para moverse por las diferentes opciones. Pero a grandes rasgos, en file vemos donde nos encontramos situados y los archivos que hay en nuestro directorio. En plots se visualizan las imágenes que generamos, en packages los paquetes que poseemos instalados y cargados, en Help cuando necesitamos información extra de nuestros paquetes y en Viewer exploramos scripts de rmarkdown.
 
 \
 
-```{r, echo=FALSE, out.width= "300pt", fig.align='center'}
+```{r, echo=FALSE, out.width="300pt", fig.align='center', fig.cap="Figure 1. Se representan los cuatro paneles de Rstudio"}
+
 ## http://ww2.coastal.edu/kingw/statistics/R-tutorials/install_help/R_console.png
+
 img_path<- "images"
+
 knitr::include_graphics(file.path(img_path, "Consola2.png"))
 ```
 
 ### *Scripts*
 
-Una de las grandes ventajas de R y Rstudio es que se pueden guardar los diversos códigos e instrucciones, los famosos conocidos como *scripts*, que entonces se pueden editar y guardar con un editor de texto.
+Una de las principales ventajas de R es la posibilidad de guardar los códigos y comandos mediante scripts. Un script es un archivo de texto que contiene una serie de instrucciones y comentarios. Para crear un nuevo script en R, solo tiene que hacer clic en "File", luego seleccionar "New File" y elegir "R Script". Esto abrirá un nuevo panel en la pantalla, donde podrá comenzar a escribir sus códigos y comentarios.Una de las grandes ventajas de R y Rstudio es que se pueden guardar los diversos códigos e instrucciones, los famosos conocidos como scripts, que entonces se pueden editar y guardar con un editor de texto. 
 
-Para iniciar un nuevo *script*, hagan clic en *Archivo*, entonces *Nuevo Archivo* y luego *R Script*.
-Esto inicia un nuevo panel a la izquierda y es aquí donde pueden comenzar a escribir su *script*.\
 
-```{r, echo=FALSE,   out.width="50%"}
+```{r, echo=FALSE,   out.width="50%", fig.cap="Figura 2. Representación gráfica de como abrir un nuevo script (File > New file > R script). "}
 knitr::include_graphics(file.path(img_path,"script.jpeg"))
 knitr::include_graphics(file.path(img_path,"script2.jpg"))
 
@@ -97,7 +115,7 @@ knitr::include_graphics(file.path(img_path,"script2.jpg"))
 
 \
 
-Podemos abrir y ejecutar scripts en R usando la función source(), dandole como argumento la ruta del archivo .R en nuestra computadora, entre comillas o yendo a *File*, entonces *Open File* y luego buscando en las carpetas donde tengas el script.
+Podemos abrir y ejecutar scripts en R usando la función source(), dandoleindicando como argumento la ruta del archivo .R en nuestra computadora, o dar click en File > Open File y luego buscar la carpeta donde se encuentre entre comillas o yendo a File, entonces Open File y luego buscando en las carpetas donde tengas el script. 
 
 Por ejemplo.
 
@@ -106,30 +124,21 @@ source("C:/mi_script.R")
 
 ```
 
-#### Cómo ejecutar comandos mientras editan *scripts*
+#### Cómo ejecutar comandos mientras se editan *scripts*
 
-Empezamos por abrir un nuevo *script* y luego nombramos el *script*.
-Podemos hacer esto a través del editor guardando el nuevo *script* actual sin nombre.
-Al guardar el script por primera vez use un nombre descriptivo, con letras minúsculas, sin espacios, preferiblemente con "\_" para separar palabras, evitar guiones "-" para separar las palabras.
-Llamaremos a este *script*: *mi_script.R*.\
+Para comenzar, abrimos un nuevo script y le asignamos un nombre. Esto se puede hacer guardando el script sin nombre a través del editor (Figura 3). Al guardar el script por primera vez, es importante usar un nombre descriptivo, en minúsculas, sin espacios y preferiblemente con guiones bajos ("_") para separar las palabras. Se deben evitar los guiones ("-"). Un ejemplo de nombre adecuado para el script podría ser: **"mi_script.R"**.Empezamos por abrir un nuevo script y luego nombramos el script. Podemos hacer esto a través del editor guardando el nuevo script actual sin nombre. Al guardar el script por primera vez use un nombre descriptivo, con letras minúsculas, sin espacios, preferiblemente con “_” para separar palabras, evitar guiones “-” para separar las palabras. Llamaremos a este script: **mi_script.R**. 
+ 
 
-```{r, echo=FALSE, out.width= "300pt", fig.align='center'}
+```{r, echo=FALSE, out.width= "300pt", fig.align='center', fig.cap="Con el editor de scripts como ventana activa, guarde y asigne un nombre a su archivo, junto con la extensión de archivo “. R”."}
 knitr::include_graphics(file.path(img_path,"save.png"))
 
 ```
 
-Ahora podemos editar nuestro primer *script*.
+Ahora podemos editar nuestro primer script. Las primeras líneas de código se utilizan para agregar títulos o comentarios, los cuales se indican con el símbolo "#" al inicio de cada línea. A continuación, cargamos los paquetes y los datos que vamos a utilizar en el análisis. En una sección posterior, profundizaremos más sobre cómo cargar datos y paquetes de manera adecuada. Como ejemplo, utilizaremos la base de datos "Iris". Primero, cargamos la librería "datasets" y posteriormente los datos. Luego, obtendremos un resumen de los datos y, finalmente, creamos un gráfico boxplot. Para ejecutar cada línea de código, debemos hacer clic en el botón "Run" en la parte superior derecha del panel de edición. También se puede ejecutar una línea de código usando las combinaciones de teclas: Control+Enter en Windows y Linux, o Command+Return en Mac. 
 
-Las primeras líneas de código son títulos o comentarios, para hacerlo siempre debemos poner el símbolo *"\#"* para indicar que no es un código y luego cargamos los paquetes y datos que vamos a utilizar.
-Para esta parte, luego veremos otra sección donde profundizaremos mejor en esto de cargar datos y paquetes.
+ 
 
-Ahora podemos continuar escribiendo código.
-Como ejemplo, trabajaremos con *"iris"* dataset.
-Cargamos la librería *"datasets"* y cargamos la data, luego veremos el resumen de los datos y por último graficaremos un boxplot.
-Para hacer esto, escribimos cada línea de código y luego hacemos click en el botón *Run* en la parte derecha superior del panel de edición.
-Para ejecutar una línea pueden usar Control+Enter en Windows y Linux y Command+Return en Mac.
-
-Estas son las líneas del código:
+Ejecute las siguientes líneas de código y obtenga los resultados provistos en la Figura 3:
 
 ```{r, eval=FALSE}
 library(datasets)
@@ -139,36 +148,26 @@ boxplot(iris)
 
 ```
 
-Y así luce al correrlo:\
 
-```{r, echo=TRUE, out.width= "500pt",echo=FALSE}
+```{r, echo=TRUE, out.width= "500pt",echo=FALSE, fig.align='center', fig.cap="Figura 3. Resumen (panel inferior izquierdo) y gráfico boxplot (panel inferior derecho) de la base de datos “Iris”. "}
 knitr::include_graphics(file.path(img_path,"code.png"))
 
 ```
 
 \
 
-Tan pronto se corra el código, aparece en la consola y el gráfico aparece en en panel de *"Plots"* , este panel permite hacer click hacia delante o hacia atrás en diferentes gráficos, hacer zoom en el gráfico o guardar los gráficos como archivos.
-
 ### Directorio de trabajo
 
-El *directorio de trabajo* es el lugar en nuestra computadora en el que se encuentran los archivos con los que estamos trabajando en R.
-Este es el lugar donde R busca los archivos para importarlos y al que serán exportados o guardados, a menos que se indique otra cosa.
-
-Para saber donde está ubicado tu directorio de trabajo, puedes poner el código:
+El **directorio de trabajo** es la carpeta donde se encuentran los archivos (base de datos) que posteriormente son importados a R. Para saber cuál es la ubicación del directorio de trabajo use la siguiente función “getwd”. Para cambiar el directorio de trabajo, debe usar la función “setwd” y establecer la respectiva ruta (e.g. "/home/Desktop/”). Además, se puede conocer el contenido del directorio, utilizando las siguientes funciones “list.files” y “list.dirs”. 
 
 ```{r, eval=FALSE}
 getwd()
 ```
 
-Y para establecer o cambiar este directorio de trabajo, correr el siguiente código:
 
 ```{r, eval=FALSE}
 setwd("/home/steph/Desktop/")
 ```
-
-Por ejemplo en este caso estoy estableciendo mi directorio de trabajo en la carpeta "Escritorio".
-También si se quiere conocer el contenido de tu directorio, como archivos o directorios puedes usar los siguientes códigos:
 
 ```{r, eval=FALSE}
 list.files()
@@ -177,79 +176,57 @@ list.dirs()
 
 ### Sesión
 
-Los objetos y funciones de R son almacenados en la memoria de nuestra computadora.
-Cuando ejecutamos R, ya estamos creando una instancia del entorno computacional de este lenguaje de programación, cada instancia es una *sesión*.
+En R, los objetos y funciones se almacenan en la memoria durante una sesión y no se comparten entre sesiones. Cada vez que inicia R, se crea una nueva sesión. Debe guardar los objetos generados durante la sesión, ya que los scripts se guardan automáticamente, pero no los objetos. Estos se guardan en un archivo **.RData** en su directorio de trabajo. Para ver todos los objetos guardados, utilice la función *ls*. En la Figura 4 se muestra cómo crear un nuevo proyecto en R. 
 
-Todos los objetos, tablas, gráficas y funciones creadas en una sesión, permanecen sólo en ella, no son compartidos entre sesiones.
-Si se quiere guardar toda esta data generada en la sesión antes de cerrar el R hay que indicar que se guarde, sino, aunque se guarden los scripts, los objetos (que algunos pueden ser muy pesados y ocupar memoria) no se guardarán.
-Lo cual es una opción si no se tiene mucho espacio en el disco.
-Es posible tener más de una sesión de R activa en la misma computadora.
-Esto se guarda en un archivo con extensión \*\*.Rdata\* en tu directorio de trabajo.
-
-Con la función *ls()* conoceremos una lista con los nombres de todo lo guardado en la sesión.
-En las siguientes imágenes ilustro como crear un nuevo proyecto:
-
-### Proyecto
-
-Un proyecto de R (extensión .Rproj) identifica todos los archivos y contenido asociado con él.
-Ayuda a organizar tu trabajo y así cada curso, artículo o trabajo diferente puede tener un proyecto diferente.
-Al crear un proyecto todos los ficheros quedan vinculados directamente a él.\
-
-```{r, echo=FALSE, out.width= "400pt", echo=FALSE, fig.align='center'}
+```{r, echo=FALSE, out.width= "400pt", echo=FALSE, fig.align='center', fig.cap="Figura 4."}
 knitr::include_graphics(file.path(img_path,"new_directory.png"))
 ```
 
+### Proyecto
+
+Un proyecto de R (con extensión .Rproj) es una carpeta que contiene todos los archivos y recursos relacionados. Dentro del proyecto, los scripts, archivos de datos, resultados e historial se organizan en subcarpetas, lo que facilita la gestión del trabajo. Al crear un proyecto, todos los archivos quedan vinculados, lo que mejora la organización y el flujo de trabajo. Para crear un proyecto debe realizar los siguientes pasos (XX > XY > XZ; ver Figura XX):Un proyecto de R (extensión .Rproj) identifica todos los archivos y contenido asociado con él. Ayuda a organizar tu trabajo y así cada curso, artículo o trabajo diferente puede tener un proyecto diferente. Al crea
+
+
 \
 
-```{r, echo=FALSE, out.width= "400pt", echo=FALSE, fig.align='center'}
+```{r, echo=FALSE, out.width= "400pt", echo=FALSE, fig.align='center', fig.cap="Figura 5."}
 knitr::include_graphics(file.path(img_path,"new_directory2.png"))
 ```
 
 \
 
-```{r, echo=FALSE, out.width= "400pt", echo=FALSE, fig.align='center'}
+```{r, echo=FALSE, out.width= "400pt", echo=FALSE, fig.align='center', fig.cap="Figura 6."}
 knitr::include_graphics(file.path(img_path,"new_directory3.png"))
 ```
 
 \
 
 ### Instalación de paquetes de R
-
-Dentro de las ventajas de R está que muchos desarrolladores y programadores elaboran constantemente complementos, aplicaciones o en palabras propias *paquetes* que nos permiten usar en acceso libre y que tienen muchas funcionalidades.
-Actualmente hay muchos disponibles en CRAN (Comprehensive R Archive Network) que es una red de servidores alrededor del mundo que almacena versiones actualizadas del código de R y su documentación.
-También hay muchos paquetes desarrollados publicados en GitHub y en Bioconductor.
-Por ejemplo para instalar el paquete tidyverse, que es de gran utilidad y que veremos en sesiones posteriores, usamos el código:
+Una de las principales ventajas de R es que numerosos desarrolladores y programadores crean paquetes continuamente, los cuales están disponibles de forma gratuita y ofrecen diversas funcionalidades. Actualmente, existen muchos paquetes accesibles a través de CRAN (Comprehensive R Archive Network), una red global de servidores que proporcionan versiones actualizadas. Además, se pueden encontrar numerosos paquetes en plataformas como GitHub y Bioconductor. Un ejemplo de ello es el paquete tidyverse, muy útil y que exploraremos en sesiones posteriores. Para instalarlo, utilice el siguiente códigoDentro de las ventajas de R está que muchos desarrolladores y programadores elaboran constantemente complementos, aplicaciones o en palabras propias paquetes que nos permiten usar en acceso libre y que tienen muchas funcionalidades. Actualmente hay muchos disponibles en CRAN (Comprehensive R Archive Network) que es una red de servidores alrededor del mundo que almacena versiones actualizadas del código de R y su documentación. También hay muchos paquetes desarrollados publicados en GitHub y en Bioconductor. Por ejemplo para instalar el paquete tidyverse, que es de gran utilidad y que veremos en sesiones posteriores, usamos el código: 
 
 ```{r,eval=FALSE}
 install.packages("tidyverse")
 ```
 
-En RStudio pueden navegar a la pestaña *Pakages* y seleccionar *Install*.
-Luego, escribir el paquete que queremos siempre y cuando esté en CRAN.
-Para cargar una librería como lo vimos anteriormente se usa la función, `library()`:
+En RStudio, se puede ir a la pestaña "Packages" y hacer clic en "Install". Luego, debe escribir el nombre del paquete que desea instalar, siempre y cuando esté disponible en CRAN. Para cargar una librería utilice la función “library()”En RStudio pueden navegar a la pestaña Pakages y seleccionar Install. Luego, escribir el paquete que queremos siempre y cuando esté en CRAN. Para cargar una librería como lo vimos anteriormente se usa la función, **library()**: 
 
 ```{r, eval=FALSE}
 library(tidyverse)
 ```
+Una vez que se instalaninstalados los paquetes, no debenn instalarselo nuevamentede nuevo., Ssin embargo, cada vez que cerramos o reiniciamos sesión, reiniciamos sesión o abrimos un nuevo proyecto o sesión tenemos que volver a cargarlos. Además,  
 
-Una vez que se instalan los paquetes, no deben instalarlo de nuevo, sin embargo, cada vez que cerramos sesión, reiniciamos sesión o abrimos un nuevo proyecto o sesión tenemos que volver a cargarlos.
+dDebemos tener en cuenta que la instalación de tidyverse instala incluye varios paquetes. Esto ocurre comúnmente cuando un paquete tiene dependencias, es decir, usa funciones de otros paquetes. Cuando cargan un paquete usando library, también cargan sus dependencias.  
 
-Debemos tener en cuenta que la instalación de **tidyverse** instala varios paquetes.
-Esto ocurre comúnmente cuando un paquete tiene *dependencias*, es decir usa funciones de otros paquetes.
-Cuando cargan un paquete usando `library`, también cargan sus dependencias.
-
-Hay paquetes que no se encuentra en CRAN o que si queremos su versión en desarrollo, se necesitan de otros paquetes para ser instalados, por ejemplo, si queremos instalar la versión en desarrollo del paquete *"rmarkdown"*, que se encuentra en github, se utiliza el paquete devtools:
+Hay paquetes que no se encuentra en CRAN, por lo tanto o que si queremos su versión en desarrollo, se necesitan de otros paquetes para ser instalados. , Ppor ejemplo, si queremos instalar la versión en desarrollo del paquete “rmarkdown”, que se encuentra en github, se utiliza el paquete devtools. Los dos puntos “::” se usan para llamar a una función de un paquete sin cargar el paquete completamente en la sesión.: 
 
 ```{r, eval=FALSE, echo=TRUE}
 devtools::install_github('rstudio/rmarkdown')
 ```
 
-Los dos puntos *"::"* se utilizan para denotar que llamamos la función de un paquete pero sin llamarla permanentemente en nuestra sesión.
 
 ### Tipos de objetos en R
 
-La información que manipulamos en R se estructura en forma de objetos y los podemos ver almacenados en el panel del ambiente de trabajo o *Enviroment*.
-Los objetos pueden ser:
+a información que manipulamos en R se estructura en forma de objetos y los podemos ver almacenados en el panel del ambiente de trabajo o Enviroment. Una ventaja de los lenguajes de programación es la posibilidad de definir variables y escribir expresiones matemáticas para almacenar valores que se usarán eventualmente. En R, usamos <- para asignar valores a las variables. Aunque también se puede usar =, pero se recomienda evitarlo, ya que el signo = se utiliza para igualdad lógica, lo que podría generar confusión. Los objetos pueden ser de diferentes tipos: 
 
 -   Números escalares o letras
 
@@ -257,8 +234,7 @@ Los objetos pueden ser:
 
 -   Dataframes, tablas y listas
 
-Más adelante detallaremos este tipo de objetos o datos en R.
-Aquí unos ejemplos:
+Más adelante detallaremos este tipo de objetos o datos en R. Aquí unos ejemplosEn las siguientes líneas de comando se puede observar algunos tipo de objetos: 
 
 ```{r}
 
@@ -270,12 +246,9 @@ d<- data.frame(Especie=c("A", "B"), Longitud=c(c(1,2)))         #dataframe o tab
 e<- list(c(1:20), c(1:10))                                      #lista
 ```
 
-Una ventaja de los lenguajes de programación es poder definir variables y escribir expresiones como estas, como se hace en las matemáticas y así almacenar los valores para su uso posterior.
-Usamos `<-` para asignar valores a las variables.
-También podemos asignar valores usando `=` en lugar de `<-`, pero recomendamos no usar `=`.
-Esto, debido a que en R el signo `=` implica igualdad en términos lógicos y no asignación y esto puede evitarnos confusiones en el futuro.
+ 
 
-Para ver el valor almacenado en una variable, simplemente le pedimos a R que evalúe `a` y R nos muestra el valor almacenado:
+Para visualizar ver la información el valor almacenadao en un objetouna variable, simplemente le pedimos a R que evalúe a y R nos muestra el valor almacenadoesa información mediante la función print o escribiendo directamente el objeto creado. Por Ejemplo: 
 
 ```{r}
 a

@@ -8,3 +8,234 @@
 ##	Correlación de rango de Spearman
 ##	Correlación de Kendall 
 
+
+# PRUEBAS NO PARAMÉTRICAS
+
+
+|TIPO    |   PRUEBA     | 
+|:-:|:-:|
+| Comparación de 2 grupos	  |   Wilcoxon/U Mann Withney | 
+| Comparación de >2 grupos       | Kruskal-wallis/Friedman  | 
+| Correlación de dos variables     | Coeficiente de Spearman| 
+| Variables cualitativas     | Chi-cuadrada/Fisher| 
+
+
+# U Mann Whitney
+
+- Este	estadístico,	introducido	simultáneamente	por	Mann	y	Whitney	en	1947,	se	utiliza	para	contrastar	si	dos	muestras,	extraídas	independientemente,	proceden	de	la	misma	población, no admite medidas repetidas.
+
+- Compara	las	diferencias	entre	dos	medianas,	por	lo	que	se	basa	en	rangos	en	lugar	de	en	los	parámetros	de	la	muestra	(media,	varianza).
+
+- Requisitos: variable cuantitativa, independencia y aleatoriedad.
+
+- Establece que existen diferencias entre las medianas  de dos grupos sin suponer cuál de las dos es mayor o menor que la otra. 
+
+# U Mann Whitney
+
+- Se ordenan los datos (juntando los grupos) en orden creciente. El rango de cada dato será el número de orden que le corresponde.
+
+- Se suman los rangos de cada uno de los grupos y se calcula la suma de los rangos de cada grupo $(W_{1},W_{2}$).
+
+- Se escoge el menor y considerando los df se puede usar una tablar de valores críticos para evaluar la significancia. 
+
+
+
+## U Mann Whitney - Ejemplo
+
+```{r}
+data_u<- data.frame(Control=c(12, 22, 38, 42, 50),
+                    Tratamiento=c(14, 25, 40, 44, 48))
+
+```
+
+```{r}
+knitr::kable(data_u, align = "c")
+```
+]
+
+.pull-right[
+```{r, echo=FALSE}
+dat<- data.frame(Tipo= c("C", "E","C", "E","C", "E", "C", "E", "E", "C"), Valor=c(12,14,22,25,38,40,42,44,48,50))
+knitr::kable(dat, align = "c")
+
+```
+
+]
+
+```{r, echo=FALSE}
+dat2<-data.frame(C=12, E=14, C=22, E=25, C=38, E=40, C=42, E=44, E=48, C=50, check.names = F)
+```
+```{r, echo=FALSE}
+knitr::kable(dat2, align = "c")
+```
+Para la condición de control, tomamos el número total de valores de la condición experimental que son más pequeños que cada valor de la condición de control. Hay 0 valores (12), 1 que es más pequeño que el segundo valor más pequeño (22), 2 que son más pequeños que el tercer valor más pequeño (38), 3 que son menores de 42, y 5 que son menores de 50 para un total de 11.
+
+Para la condición del tratamiento, tomamos el número de valores que son más pequeños que cada valor de la condición experimental. Hay 1 valor de condición de control más pequeño que el valor de condición experimental más pequeño (14), 2 que son más pequeños que 25, 3 que son más pequeños que 40, 4 que son más pequeños que 44 y también 4 que son más pequeños que 48 para un Total de 14. 
+
+Tomamos el valor de U como el menor que sería 11.
+
+# U Mann Whitney - Ejemplo
+En R
+```{r}
+wilcox.test(data_u$Control, data_u$Tratamiento, paired = FALSE)
+```
+
+
+
+# Prueba de Wilcoxon para dos muestras dependientes
+
+- Esta es la opción no paramétrica para la prueba t de Student cuando los errores no se distribuyen de manera normal y se tiene una muestra o dos muestras apareadas. 
+
+- El estadístico W se calcula obteniendo las diferencias de los valores, ordenando de menor a mayor el valor absouto de las diferencias las diferencias y asignando un rango, en caso de empates se obtiene la media de los rangos y se asigna el mismo rango a las dos observaciones.
+
+- Funciona de la misma manera que la anterior pero es más potente porque tiene en cuenta la magnitud de los rangos de las diferencias. Es decir, una pequeña diferencia negativa o positiva significa menos o más en el cálculo de la estadística de prueba que una gran diferencia negativa o positiva.
+
+
+
+# Prueba de Wilcoxon 
+
+1. Arreglar las observaciones pareadas y obtener las diferencias de cada pareja.
+2. Arreglar las diferencias en función de rangos como valores absolutos, sin importar el signo, pero de manera que los rangos conserven el signo correspondiente a la
+diferencia.
+3. Obtener la sumatoria de los rangos en valores absolutos por signos.
+4. Si se trata de muestras pequeñas, comparar el valor obtenido con los valores críticos de la tabla de Wilcoxon.
+5. Distribuir las muestras mayores que 25 bajo la curva normal y, por tanto, calcular el valor Z.
+6. Decidir si se acepta o rechaza la hipótesis
+
+
+
+## Prueba Wilcoxon - ejemplo
+
+```{r}
+data_w<- data.frame(Observ=c(1:11),
+                    Antes=c(1,8,0,0,1,3,3,3,5,6,5),
+                    Despues=c(3,5,-2,-1,1,-5,-7,-362,-1,0,-10))
+data_w$Diferencia<- data_w$Antes-data_w$Despues
+
+```
+
+```{r,echo=FALSE, warning=FALSE,message=FALSE}
+library(kableExtra)
+knitr::kable(data_w, align = "c") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+```
+
+
+
+
+```{r, echo=FALSE}
+knitr::kable(data_w %>% dplyr::arrange(-Diferencia), align = "c") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+```
+
+
+```{r, echo=FALSE}
+dato<- data_w %>% dplyr::arrange(-Diferencia) %>% mutate(Rango=c(10,9,8,7,5.5,5.5,4,2.5,1,0,2.5)) 
+knitr::kable(dato, align = "c") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+```
+
+
+
+
+```{r,echo=FALSE}
+dato<- data_w %>% dplyr::arrange(-Diferencia) %>% mutate(Rango=c(10,9,8,7,5.5,5.5,4,2.5,1,0,2.5)) %>% mutate(Signo=c("+", "+", "+","+", "+", "+","+","+","+","=","-"), Rango_Signo=paste0(Signo,Rango)) 
+knitr::kable(dato, align = "c") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+```
+
+
+# Wilcoxon -ejemplo
+
+```{r,echo=TRUE}
+T_pos = 10+9+8+7+5.5+5.5+4+2.5+1
+T_neg = 2.5
+
+T_pos; T_neg
+```
+```{r}
+Two_tailed_W = max(T_pos,T_neg)
+Two_tailed_W
+```
+
+
+.pull-right[
+En R
+```{r, warning=FALSE, message=FALSE}
+wilcox.test(data_w$Antes, data_w$Despues, paired = TRUE)
+```
+
+
+
+
+# Ejemplo aplicado
+
+```{r}
+Grupo1 <- c(38.9, 61.2, 73.3, 21.8, 63.4, 64.6, 48.4, 48.8, 48.5)
+Grupo2 <- c(67.8, 60, 63.4, 76, 89.4, 73.3, 67.3, 61.3, 62.4) 
+my_data <- data.frame( 
+                group = rep(c("G1", "G2"), each = 9),
+                weight = c(Grupo1,  Grupo2)
+                )
+
+```
+¿Hay diferencias entre estos dos grupos?
+
+
+
+
+
+```{r}
+with(my_data, shapiro.test(weight[group == "G1"]))
+```
+
+
+```{r}
+#Prueba de normalidad
+with(my_data, shapiro.test(weight[group == "G2"])) 
+```
+
+
+# Ejemplo aplicado
+
+```{r}
+Grupo1 <- c(38.9, 61.2, 73.3, 21.8, 63.4, 64.6, 48.4, 48.8, 48.5)
+Grupo2 <- c(67.8, 60, 63.4, 76, 89.4, 73.3, 67.3, 61.3, 62.4) 
+my_data <- data.frame( 
+                group = rep(c("G1", "G2"), each = 9),
+                weight = c(Grupo1,  Grupo2)
+                )
+
+```
+¿Hay diferencias entre estos dos grupos?
+
+```{r}
+var.test(weight ~ group, data = my_data)
+```
+
+
+# Ejemplo aplicado
+
+```{r}
+Grupo1 <- c(38.9, 61.2, 73.3, 21.8, 63.4, 64.6, 48.4, 48.8, 48.5)
+Grupo2 <- c(67.8, 60, 63.4, 76, 89.4, 73.3, 67.3, 61.3, 62.4) 
+my_data <- data.frame( 
+                group = rep(c("G1", "G2"), each = 9),
+                weight = c(Grupo1,  Grupo2)
+                )
+
+```
+¿Hay diferencias entre estos dos grupos?
+
+```{r}
+t.test(Grupo1, Grupo2, var.equal = TRUE)
+```
+
+# RESUMEN
+
+|ESTADÍSTICOS PARAMÉTRICOS       |  ESTADÍSTICOS NO PARAMÉTRICOS     | 
+  |:-|:-|
+  | Se conoce la población, paramétros y distribución  |   No se conoce la población, parámetros y distribución | 
+  | Supuestos basados en población       | Sin supuestos sobre la población  | 
+  | Aplicable para variables continuas     | Aplicable para continuas y muchos tipos de discretas| 
+  | Mayor poder estadísitco     | Menor poder estadístico| 
