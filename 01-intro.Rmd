@@ -8,8 +8,7 @@
 
 ### Instalación de Rsudio y R 
 
-En caso de no tener instalado R y Rstudio y R que son los prerequisitosprerrequisitos para realizar  llevar a cabo los ejercicios de est e manuallibro, entonces debe visitar estas ligas los siguientes links para descargarlos e instalarlos. 
-
+En caso de no tener instalado R y Rstudio que son los prerrequisitos para realizar cada uno de los ejercicios, entonces debe visitar los siguientes links para descargar e instalarlos. Es recomendable instalar la última versión para que disponga de los paquetes y funciones más actualizados y, le permitan a su vez, un mejor uso del software. 
 
 #### R 
 
@@ -18,7 +17,7 @@ En caso de no tener instalado R y Rstudio y R que son los prerequisitosprerrequi
 - Para [Windows](https://cran.r-project.org/bin/windows/base/)
 
 
-####Rstudio 
+#### Rstudio 
 
 - En [MacOS](https://download1.rstudio.org/electron/macos/RStudio-2024.12.1-563.dmg)
 - En [Ubuntu](https://download1.rstudio.org/electron/jammy/amd64/rstudio-2024.12.1-563-amd64.deb)
@@ -39,10 +38,7 @@ if(knitr::is_html_output()){
 
 ### Breve descripción de R
 
-R es un lenguaje de programación como C o Java o Python pero enfocado principalmente a la estadística.
-Cuando instalamos R en nuestra computadora, en realidad estamos instalando un entorno de programación, y para poder utilizarlo correctamente, necesitamos aprender a escribir las instrucciones de manera que el software pueda interpretarlas y ejecutarlas adecuadamenteCuando instalamos R en nuestra computadora en realidad lo que estamos instalando es el entorno computacional y para que podamos hacer uso de ese entorno necesitamos conocer la manera de escribir que el software pueda interpretar y ejecutar las instrucciones que le damos. Eso es lo que aprenderemos a hacer en este curso.  
-
-Como en otros lenguajes de programación, en R podemos guardar nuestros proyectos de trabajo mediante un *script*, que poder ser ejecutado eventualmente y ser compartido con otros usuarios de R. 
+R es un lenguaje de programación como C, Java o Python, pero enfocado principalmente a la estadística. Cuando instalamos R en nuestra computadora, en realidad estamos instalando un entorno de programación, pero es necesario escribir correctamente las instrucciones para que puedan ser interpretarlas y ejecutarlas adecuadamente. Como en otros lenguajes de programación, en R podemos guardar nuestros proyectos de trabajo mediante un **script**, que puede ser utilizado eventualmente y compartido con otros usuarios de R. 
 
  
 
@@ -50,14 +46,9 @@ Como en otros lenguajes de programación, en R podemos guardar nuestros proyecto
 
 [^1]: <https://bookdown.org/jboscomendoza/r-principiantes4/un-poco-de-historia.html>
 
-R tiene su origen en el lenguaje de programación S, desarrollado en los Laboratorios Bell de Estados Unidos. Más tarde, en 1993, Ross Ihaka y Robert Gentleman, de la Universidad de Auckland en Nueva Zelanda, crearon una versión de S de código abierto y gratuita, lo que permitió su acceso y uso generalizado. No obstante, fue en el año 2000 cuando se lanzó una versión estable de R. Hoy en día, el desarrollo y mantenimiento del software están a cargo del R Development Core Team, un grupo internacional de expertos en ciencias computacionales y estadísticas, que provienen de diversas instituciones académicas y de investigaciónR proviene del lenguaje S, creado en los Laboratorios Bell (Estados Unidos). Los mismos que inventaron el transistor, el láser, el sistema operativo Unix y algunas otras cosas más. 
+R tiene su origen en el lenguaje de programación S, desarrollado en los Laboratorios Bell de Estados Unidos. Posteriormente, en 1993, Ross Ihaka y Robert Gentleman, de la Universidad de Auckland en Nueva Zelanda, crearon una versión de S de código abierto y gratuita, lo que permitió su acceso y uso generalizado. No obstante, fue en el año 2000 cuando se lanzó una versión estable de R. Actualmente, el desarrollo y mantenimiento del software están a cargo del R Development Core Team, un grupo internacional de expertos en ciencias computacionales y estadísticas, provenientes de diversas instituciones académicas. 
 
-Ross Ihaka y Robert Gentleman, de la Universidad de Auckland de Nueva Zelanda, decidieron crear una implementación abierta y gratuita de S. Este trabajo, que culminaría en la creación de R inició en 1992 y no fue hasta el 2000 que se obtuvo una versión final estable. 
-
-Hoy día, el mantenimiento y desarrollo de R es realizado por el R Development Core Team, un equipo de especialistas en ciencias computacionales y estadística provenientes de diferentes instituciones y lugares alrededor del mundo. 
-
-R posee una Licencia Pública General de GNU, esto, para que pueda ser distribuido de manera gratuita, por lo que es software libre y de código abierto. Esta licencia también te permite usar R para los fines que desees, sin limitaciones, no importando si son personales, académicos o comerciales. 
-
+ 
 ### ¿Por qué usar R?[^2]
 
 [^2]: <https://rafalab.github.io/dslibro/getting-started.html>
@@ -66,7 +57,7 @@ R posee una Licencia Pública General de GNU, esto, para que pueda ser distribui
 2.  Se ejecuta en todas las plataformas principales: Windows, Mac Os, UNIX/Linux.
 3.  Los *scripts* y los objetos y los objetos de datos se pueden compartir sin problemas entre plataformas y usuarios.
 4.  Existe una comunidad, creciente y activa de usuarios de R y, como resultado, hay numerosos recursos para aprender[^4] [^5].
-5.  s fácil para otras personas contribuir con complementos (add-ons en inglés) o paquetes que les permiten a los desarrolladores compartir implementaciones de software relacionados ade nuevas metodologías de ciencia de datos. Esto les daaporta a los usuarios de R acceso directotemprano a los métodos y herramientas más recientes que se desarrollan para una amplia variedad de disciplinas, incluyendo la ecología, la biología molecular, las ciencias sociales y la geografía, entre otros campos.
+5.  Es fácil para otras personas contribuir con complementos (add-ons en inglés) o paquetes que les permiten a los desarrolladores compartir implementaciones de software relacionados a nuevas metodologías de ciencia de datos. Esto les aporta a los usuarios de R acceso directo a los métodos y herramientas más recientes que se desarrollan para una amplia variedad de disciplinas, incluyendo la ecología, la biología molecular, las ciencias sociales y la geografía, entre otros campos. 
 
 [^3]: <https://opensource.org/history>
 

@@ -41,7 +41,6 @@ El contenido de este manual se encuentra bajo la protección de las normativas v
 
 Prefacio 
 
-
 Introducción a R y Rstudio
 
 - Requisitos para la instalación de R
@@ -166,5 +165,4 @@ Modelización estadística
 Actualmente, las ciencias biológicas son consideradas una de las áreas más activas en la investigación científica. Dentro de este campo, los investigadores recurren cada vez más a las herramientas computacionales para analizar e interpretar datos biológicos complejos. Entre las diversas herramientas de programación disponibles, R ha sido considerado como uno de los lenguajes más robustos, versátiles y ampliamente utilizados para los análisis de datos. Sin embargo, consideramos que existe una brecha importante entre la recolección, análisis e interpretación de datos, particularmente para los estudiantes universitarios. Aunado a esta falta de conocimiento, reconocemos que los estudiantes egresados deben poseer las habilidades básicas para realizar análisis estadísticos y brindar explicaciones sencillas a fenómenos naturales biológicos. Este manual tiene como objetivo proporcionar una introducción al uso del software R, orientado principalmente a estudiantes de pregrado y posgrado, así como investigadores de las ciencias biológicas. Debido a la gran cantidad de paquetes desarrollados por la comunidad científica, R ofrece una amplia gama de herramientas relacionadas con la manipulación de datos, modelado estadístico, visualización de gráficos, entre otros. 
 
 A lo largo de texto, trataremos de cubrir aspectos básicos de R, como la importación y exportación de datos, pruebas para evaluar distribución y varianza de los datos, aplicación de pruebas paramétricas y no paramétricas, gráficos de alta calidad, entre otros. El contenido ha sido cuidadosamente estructurado para brindar una guía detallada con ejemplos prácticos en el contexto de las ciencias biológicas. Por lo tanto, los estudiantes serán capaces de manejar conjuntos de datos, visualizar distribuciones y tendencias, realizar pruebas de hipótesis, aplicar modelos estadísticos y otros aspectos fundamentales para sus proyectos de investigación. 
-
 
