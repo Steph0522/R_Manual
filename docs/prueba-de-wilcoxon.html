@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 21 Prueba de Wilcoxon | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</title>
-  <meta name="description" content="Capítulo 21 Prueba de Wilcoxon | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <title>Capítulo 21 Prueba de Wilcoxon | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</title>
+  <meta name="description" content="Capítulo 21 Prueba de Wilcoxon | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 21 Prueba de Wilcoxon | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <meta property="og:title" content="Capítulo 21 Prueba de Wilcoxon | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="Steph0522/R_Manual" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 21 Prueba de Wilcoxon | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <meta name="twitter:title" content="Capítulo 21 Prueba de Wilcoxon | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   
   
   
@@ -384,7 +384,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</a>
           </h1>
         </div>
 
@@ -405,10 +405,10 @@ diferencia.</li>
 </ol>
 <div id="prueba-wilcoxon---ejemplo" class="section level2 hasAnchor" number="21.1">
 <h2><span class="header-section-number">21.1</span> Prueba Wilcoxon - ejemplo<a href="prueba-de-wilcoxon.html#prueba-wilcoxon---ejemplo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb599"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb599-1"><a href="prueba-de-wilcoxon.html#cb599-1" tabindex="-1"></a>data_w<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Observ=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">11</span>),</span>
-<span id="cb599-2"><a href="prueba-de-wilcoxon.html#cb599-2" tabindex="-1"></a>                    <span class="at">Antes=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">8</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">5</span>),</span>
-<span id="cb599-3"><a href="prueba-de-wilcoxon.html#cb599-3" tabindex="-1"></a>                    <span class="at">Despues=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="sc">-</span><span class="dv">5</span>,<span class="sc">-</span><span class="dv">7</span>,<span class="sc">-</span><span class="dv">362</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="sc">-</span><span class="dv">10</span>))</span>
-<span id="cb599-4"><a href="prueba-de-wilcoxon.html#cb599-4" tabindex="-1"></a>data_w<span class="sc">$</span>Diferencia<span class="ot">&lt;-</span> data_w<span class="sc">$</span>Antes<span class="sc">-</span>data_w<span class="sc">$</span>Despues</span></code></pre></div>
+<div class="sourceCode" id="cb589"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb589-1"><a href="prueba-de-wilcoxon.html#cb589-1" tabindex="-1"></a>data_w<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Observ=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">11</span>),</span>
+<span id="cb589-2"><a href="prueba-de-wilcoxon.html#cb589-2" tabindex="-1"></a>                    <span class="at">Antes=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">8</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">5</span>),</span>
+<span id="cb589-3"><a href="prueba-de-wilcoxon.html#cb589-3" tabindex="-1"></a>                    <span class="at">Despues=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="sc">-</span><span class="dv">5</span>,<span class="sc">-</span><span class="dv">7</span>,<span class="sc">-</span><span class="dv">362</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="sc">-</span><span class="dv">10</span>))</span>
+<span id="cb589-4"><a href="prueba-de-wilcoxon.html#cb589-4" tabindex="-1"></a>data_w<span class="sc">$</span>Diferencia<span class="ot">&lt;-</span> data_w<span class="sc">$</span>Antes<span class="sc">-</span>data_w<span class="sc">$</span>Despues</span></code></pre></div>
 <table class=" lightable-classic" style="color: black; font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>

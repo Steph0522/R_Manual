@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 13 Prueba de Welch | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</title>
-  <meta name="description" content="Capítulo 13 Prueba de Welch | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <title>Capítulo 13 Prueba de Welch | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</title>
+  <meta name="description" content="Capítulo 13 Prueba de Welch | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 13 Prueba de Welch | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <meta property="og:title" content="Capítulo 13 Prueba de Welch | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="Steph0522/R_Manual" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 13 Prueba de Welch | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <meta name="twitter:title" content="Capítulo 13 Prueba de Welch | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   
   
   
@@ -384,7 +384,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</a>
           </h1>
         </div>
 
@@ -399,7 +399,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Los grados de libertad se calculan:</p>
 <p><span class="math display">\[df =\frac{(s_{1}^2/n_{1}+s_{2}^2/n_{2})^2}{s_{1}^4/(n_{1}-1)+s_{2}^4/(n_{2}-1)}\]</span></p>
 <p>.</p>
-<div class="sourceCode" id="cb593"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb593-1"><a href="prueba-de-welch.html#cb593-1" tabindex="-1"></a><span class="fu">t.test</span>(freidora<span class="sc">$</span>Oster1, freidora<span class="sc">$</span>Oster2, <span class="at">mu=</span><span class="dv">0</span>, <span class="at">paired=</span><span class="cn">FALSE</span>, <span class="at">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="at">var.equal=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb583"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb583-1"><a href="prueba-de-welch.html#cb583-1" tabindex="-1"></a><span class="fu">t.test</span>(freidora<span class="sc">$</span>Oster1, freidora<span class="sc">$</span>Oster2, <span class="at">mu=</span><span class="dv">0</span>, <span class="at">paired=</span><span class="cn">FALSE</span>, <span class="at">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="at">var.equal=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 

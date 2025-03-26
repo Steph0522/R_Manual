@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 2 Manejo de data frames y bases de datos | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</title>
-  <meta name="description" content="Capítulo 2 Manejo de data frames y bases de datos | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <title>Capítulo 2 Manejo de data frames y bases de datos | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</title>
+  <meta name="description" content="Capítulo 2 Manejo de data frames y bases de datos | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 2 Manejo de data frames y bases de datos | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <meta property="og:title" content="Capítulo 2 Manejo de data frames y bases de datos | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="Steph0522/R_Manual" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 2 Manejo de data frames y bases de datos | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <meta name="twitter:title" content="Capítulo 2 Manejo de data frames y bases de datos | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   
   
   
@@ -384,7 +384,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</a>
           </h1>
         </div>
 
@@ -958,19 +958,6 @@ Agrega una nueva columna a a la data llamada <code>tatuajes.por.año</code> que 
 Sin embargo, existe todo un universo llamado <em>tidyverse</em> que nos perimte hacer todo esto que vimos y más de manera más intuitiva.</p>
 <p>Podemos cargar todos los paquetes del <em>tidyverse</em> a la vez al instalar y cargar el paquete <strong>tidyverse</strong>:</p>
 <div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb295-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
-<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.3.3</code></pre>
-<pre><code>## Warning: package &#39;tidyr&#39; was built under R version 4.3.2</code></pre>
-<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 4.3.2</code></pre>
-<pre><code>## Warning: package &#39;stringr&#39; was built under R version 4.3.2</code></pre>
-<pre><code>## ── Attaching core tidyverse packages ───────────────────────────────────────────── tidyverse 2.0.0 ──
-## ✔ dplyr     1.1.4     ✔ purrr     1.0.2
-## ✔ forcats   1.0.0     ✔ stringr   1.5.1
-## ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-## ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-## ── Conflicts ─────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
-## ✖ dplyr::filter() masks stats::filter()
-## ✖ dplyr::lag()    masks stats::lag()
-## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 <p>Los paquetes que se activan son dplyr, purr, tidyr, stringr, tibble para el manejo de tablas; readr para importar y exportar datos y forcats para manejo de factores.
 Además de ggplot2 que es el paquete para graficar.</p>
 </div>
@@ -1042,7 +1029,6 @@ El set de datos <code>us_rent_income</code> o como lo he denominado <em>rentas_u
 </table>
 <p>Cada fila representa una medida con cada una de las otras dos columnas proveyendo una variable diferente relacionada con las otras dos: variable (si es el ingreso o la renta) y el estado.</p>
 <p>Ahora bien, también podemos ver la misma información pero organizada de otra forma:</p>
-<pre><code>## Warning: package &#39;knitr&#39; was built under R version 4.3.3</code></pre>
 <table>
 <thead>
 <tr class="header">
@@ -1087,23 +1073,23 @@ Esto podemos hacerlo fuera de R o también R tiene funciones para hacerlo, que v
 <p>Los datos o tablas resultantes luego de aplicar funciones del <em>tidyverse</em> se conocen como <strong>tibbles</strong> y son prácticamente igual que los <em>dataframes</em> pero con unas ligeras diferencias.
 Veamos:<br />
 </p>
-<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb302-1" tabindex="-1"></a>df<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">letras=</span><span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>),</span>
-<span id="cb302-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb302-2" tabindex="-1"></a>                números<span class="ot">=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span>
-<span id="cb302-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb302-3" tabindex="-1"></a>tib<span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(df)</span></code></pre></div>
+<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb296-1" tabindex="-1"></a>df<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">letras=</span><span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>),</span>
+<span id="cb296-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb296-2" tabindex="-1"></a>                números<span class="ot">=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span>
+<span id="cb296-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb296-3" tabindex="-1"></a>tib<span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(df)</span></code></pre></div>
 <p><br />
 </p>
-<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb303-1" tabindex="-1"></a><span class="fu">class</span>(df)</span></code></pre></div>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb297-1" tabindex="-1"></a><span class="fu">class</span>(df)</span></code></pre></div>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
-<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb305-1" tabindex="-1"></a><span class="fu">class</span>(tib)</span></code></pre></div>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb299-1" tabindex="-1"></a><span class="fu">class</span>(tib)</span></code></pre></div>
 <pre><code>## [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;</code></pre>
 <p><br />
 </p>
-<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb307-1" tabindex="-1"></a><span class="fu">print</span>(df)</span></code></pre></div>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb301-1" tabindex="-1"></a><span class="fu">print</span>(df)</span></code></pre></div>
 <pre><code>##   letras números
 ## 1      a       1
 ## 2      b       2
 ## 3      c       3</code></pre>
-<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb309-1" tabindex="-1"></a><span class="fu">print</span>(tib)</span></code></pre></div>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb303-1" tabindex="-1"></a><span class="fu">print</span>(tib)</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 2
 ##   letras números
 ##   &lt;chr&gt;    &lt;int&gt;
@@ -1130,9 +1116,9 @@ Con <strong>dplyr</strong>, podemos realizar una serie de operaciones, por escog
 . En Rbase tendríamos que hacer paso por paso, por ejemplo
 :<br />
 </p>
-<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb311-1" tabindex="-1"></a><span class="co">#asignando la data a la variable &quot;mi_data&quot;</span></span>
-<span id="cb311-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb311-2" tabindex="-1"></a>mi_data<span class="ot">&lt;-</span>ToothGrowth</span>
-<span id="cb311-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb311-3" tabindex="-1"></a><span class="fu">head</span>(mi_data)</span></code></pre></div>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb305-1" tabindex="-1"></a><span class="co">#asignando la data a la variable &quot;mi_data&quot;</span></span>
+<span id="cb305-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb305-2" tabindex="-1"></a>mi_data<span class="ot">&lt;-</span>ToothGrowth</span>
+<span id="cb305-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb305-3" tabindex="-1"></a><span class="fu">head</span>(mi_data)</span></code></pre></div>
 <pre><code>##    len supp dose
 ## 1  4.2   VC  0.5
 ## 2 11.5   VC  0.5
@@ -1140,9 +1126,9 @@ Con <strong>dplyr</strong>, podemos realizar una serie de operaciones, por escog
 ## 4  5.8   VC  0.5
 ## 5  6.4   VC  0.5
 ## 6 10.0   VC  0.5</code></pre>
-<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb313-1" tabindex="-1"></a><span class="co">#escoger sólo las columnas len y dose</span></span>
-<span id="cb313-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb313-2" tabindex="-1"></a>mi_data<span class="ot">&lt;-</span> mi_data[<span class="fu">c</span>(<span class="st">&quot;len&quot;</span>, <span class="st">&quot;dose&quot;</span>)]</span>
-<span id="cb313-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb313-3" tabindex="-1"></a><span class="fu">head</span>(mi_data)</span></code></pre></div>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb307-1" tabindex="-1"></a><span class="co">#escoger sólo las columnas len y dose</span></span>
+<span id="cb307-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb307-2" tabindex="-1"></a>mi_data<span class="ot">&lt;-</span> mi_data[<span class="fu">c</span>(<span class="st">&quot;len&quot;</span>, <span class="st">&quot;dose&quot;</span>)]</span>
+<span id="cb307-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb307-3" tabindex="-1"></a><span class="fu">head</span>(mi_data)</span></code></pre></div>
 <pre><code>##    len dose
 ## 1  4.2  0.5
 ## 2 11.5  0.5
@@ -1150,9 +1136,9 @@ Con <strong>dplyr</strong>, podemos realizar una serie de operaciones, por escog
 ## 4  5.8  0.5
 ## 5  6.4  0.5
 ## 6 10.0  0.5</code></pre>
-<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb315-1" tabindex="-1"></a><span class="co">#hacer una nueva columna declarando la variable &quot;dose&quot; como un factor </span></span>
-<span id="cb315-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb315-2" tabindex="-1"></a>mi_data<span class="sc">$</span>dose<span class="ot">&lt;-</span> <span class="fu">factor</span>(mi_data<span class="sc">$</span>dose, <span class="at">levels =</span> <span class="fu">c</span>(<span class="fl">0.5</span>,<span class="fl">1.0</span>, <span class="fl">2.0</span>), <span class="at">labels =</span><span class="fu">c</span>(<span class="st">&quot;D0.5&quot;</span>, <span class="st">&quot;D1&quot;</span>, <span class="st">&quot;2&quot;</span>))</span>
-<span id="cb315-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb315-3" tabindex="-1"></a><span class="fu">head</span>(mi_data)</span></code></pre></div>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb309-1" tabindex="-1"></a><span class="co">#hacer una nueva columna declarando la variable &quot;dose&quot; como un factor </span></span>
+<span id="cb309-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb309-2" tabindex="-1"></a>mi_data<span class="sc">$</span>dose<span class="ot">&lt;-</span> <span class="fu">factor</span>(mi_data<span class="sc">$</span>dose, <span class="at">levels =</span> <span class="fu">c</span>(<span class="fl">0.5</span>,<span class="fl">1.0</span>, <span class="fl">2.0</span>), <span class="at">labels =</span><span class="fu">c</span>(<span class="st">&quot;D0.5&quot;</span>, <span class="st">&quot;D1&quot;</span>, <span class="st">&quot;2&quot;</span>))</span>
+<span id="cb309-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb309-3" tabindex="-1"></a><span class="fu">head</span>(mi_data)</span></code></pre></div>
 <pre><code>##    len dose
 ## 1  4.2 D0.5
 ## 2 11.5 D0.5
@@ -1160,9 +1146,9 @@ Con <strong>dplyr</strong>, podemos realizar una serie de operaciones, por escog
 ## 4  5.8 D0.5
 ## 5  6.4 D0.5
 ## 6 10.0 D0.5</code></pre>
-<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb317-1" tabindex="-1"></a><span class="co">#filtrar solo los que sean de dosis = 1</span></span>
-<span id="cb317-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb317-2" tabindex="-1"></a>mi_data<span class="ot">&lt;-</span> mi_data[mi_data<span class="sc">$</span>dose<span class="sc">==</span><span class="st">&quot;D1&quot;</span>,]</span>
-<span id="cb317-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb317-3" tabindex="-1"></a><span class="fu">head</span>(mi_data)</span></code></pre></div>
+<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb311-1" tabindex="-1"></a><span class="co">#filtrar solo los que sean de dosis = 1</span></span>
+<span id="cb311-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb311-2" tabindex="-1"></a>mi_data<span class="ot">&lt;-</span> mi_data[mi_data<span class="sc">$</span>dose<span class="sc">==</span><span class="st">&quot;D1&quot;</span>,]</span>
+<span id="cb311-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb311-3" tabindex="-1"></a><span class="fu">head</span>(mi_data)</span></code></pre></div>
 <pre><code>##     len dose
 ## 11 16.5   D1
 ## 12 16.5   D1
@@ -1173,9 +1159,9 @@ Con <strong>dplyr</strong>, podemos realizar una serie de operaciones, por escog
 <p><br />
 En cambio en dplyr y con funciones que veremos a continuación, todos estos pasos podemos resumirlos a la siguiente línea de código:<br />
 </p>
-<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb319-1" tabindex="-1"></a>mi_data<span class="ot">&lt;-</span> ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(len, dose) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(</span>
-<span id="cb319-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb319-2" tabindex="-1"></a>  <span class="at">dose=</span><span class="fu">case_when</span>(dose<span class="sc">==</span><span class="fl">0.5</span><span class="sc">~</span><span class="st">&quot;D0.5&quot;</span>,dose<span class="sc">==</span><span class="dv">1</span><span class="sc">~</span><span class="st">&quot;D1&quot;</span>, dose<span class="sc">==</span><span class="dv">2</span><span class="sc">~</span><span class="st">&quot;D2&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(dose<span class="sc">==</span><span class="st">&quot;D1&quot;</span>)</span>
-<span id="cb319-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb319-3" tabindex="-1"></a><span class="fu">head</span>(mi_data)</span></code></pre></div>
+<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb313-1" tabindex="-1"></a>mi_data<span class="ot">&lt;-</span> ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(len, dose) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(</span>
+<span id="cb313-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb313-2" tabindex="-1"></a>  <span class="at">dose=</span><span class="fu">case_when</span>(dose<span class="sc">==</span><span class="fl">0.5</span><span class="sc">~</span><span class="st">&quot;D0.5&quot;</span>,dose<span class="sc">==</span><span class="dv">1</span><span class="sc">~</span><span class="st">&quot;D1&quot;</span>, dose<span class="sc">==</span><span class="dv">2</span><span class="sc">~</span><span class="st">&quot;D2&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(dose<span class="sc">==</span><span class="st">&quot;D1&quot;</span>)</span>
+<span id="cb313-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb313-3" tabindex="-1"></a><span class="fu">head</span>(mi_data)</span></code></pre></div>
 <pre><code>##    len dose
 ## 1 16.5   D1
 ## 2 16.5   D1
@@ -1186,13 +1172,13 @@ En cambio en dplyr y con funciones que veremos a continuación, todos estos paso
 <p>Como vimos para realizar la secuencia de estos pasos y unir estas funciones en una sólo línea de código hicimos uso del <em>pipe</em> <code>%&gt;%</code>.
 En general, el <em>pipe</em> envía el resultado que se encuentra en el lado izquierdo del <em>pipe</em> para ser el primer argumento de la función en el lado derecho del <em>pipe</em>.
 Aquí vemos un ejemplo sencillo:</p>
-<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb321-1" tabindex="-1"></a><span class="dv">16</span> <span class="sc">%&gt;%</span> <span class="fu">sqrt</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb315-1" tabindex="-1"></a><span class="dv">16</span> <span class="sc">%&gt;%</span> <span class="fu">sqrt</span>()</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
 <p>Podemos continuar canalizando (<em>piping</em> en inglés) valores a lo largo de:</p>
-<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb323-1" tabindex="-1"></a><span class="dv">16</span> <span class="sc">%&gt;%</span> <span class="fu">sqrt</span>() <span class="sc">%&gt;%</span> <span class="fu">log2</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb317-1" tabindex="-1"></a><span class="dv">16</span> <span class="sc">%&gt;%</span> <span class="fu">sqrt</span>() <span class="sc">%&gt;%</span> <span class="fu">log2</span>()</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 <p>La declaración anterior es equivalente a:</p>
-<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb325-1" tabindex="-1"></a><span class="fu">log2</span>(<span class="fu">sqrt</span>(<span class="dv">16</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb319-1" tabindex="-1"></a><span class="fu">log2</span>(<span class="fu">sqrt</span>(<span class="dv">16</span>))</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 <p><br />
 Ahora veremos todas las funciones que nos permitirán manipular nuestras tablas en el mismo orden que las vimos en Rbase (el capítulo pasado).<br />
@@ -1201,7 +1187,7 @@ Ahora veremos todas las funciones que nos permitirán manipular nuestras tablas 
 <div id="seleccionando-columnas-1" class="section level3 hasAnchor" number="2.2.5">
 <h3><span class="header-section-number">2.2.5</span> Seleccionando columnas<a href="manejo-de-data-frames-y-bases-de-datos.html#seleccionando-columnas-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>dplyr</em> tiena una función muy intuitiva para seleccionar las columnas que queremos en un <em>dataframe</em> y es <strong>select()</strong></p>
-<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb327-1" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">select</span>(<span class="at">.data =</span> ToothGrowth, len, dose))</span></code></pre></div>
+<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb321-1" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">select</span>(<span class="at">.data =</span> ToothGrowth, len, dose))</span></code></pre></div>
 <pre><code>##    len dose
 ## 1  4.2  0.5
 ## 2 11.5  0.5
@@ -1211,8 +1197,8 @@ Ahora veremos todas las funciones que nos permitirán manipular nuestras tablas 
 ## 6 10.0  0.5</code></pre>
 <p>Usandola con el <em>pipe</em> sería algo así:<br />
 </p>
-<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb329-1" tabindex="-1"></a><span class="co">#seleccionando columnas que queremos</span></span>
-<span id="cb329-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb329-2" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(len, dose) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb323-1" tabindex="-1"></a><span class="co">#seleccionando columnas que queremos</span></span>
+<span id="cb323-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb323-2" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(len, dose) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>##    len dose
 ## 1  4.2  0.5
 ## 2 11.5  0.5
@@ -1220,14 +1206,14 @@ Ahora veremos todas las funciones que nos permitirán manipular nuestras tablas 
 ## 4  5.8  0.5
 ## 5  6.4  0.5
 ## 6 10.0  0.5</code></pre>
-<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb331-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(len<span class="sc">:</span>dose) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb325-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(len<span class="sc">:</span>dose) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 60
 ## Columns: 3
 ## $ len  &lt;dbl&gt; 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17…
 ## $ supp &lt;fct&gt; VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC…
 ## $ dose &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1…</code></pre>
-<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb333-1" tabindex="-1"></a><span class="co">#Seleccionando columnas que no queremos</span></span>
-<span id="cb333-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb333-2" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>len) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb327-1" tabindex="-1"></a><span class="co">#Seleccionando columnas que no queremos</span></span>
+<span id="cb327-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb327-2" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>len) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 60
 ## Columns: 2
 ## $ supp &lt;fct&gt; VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC…
@@ -1235,26 +1221,26 @@ Ahora veremos todas las funciones que nos permitirán manipular nuestras tablas 
 <p>La función <strong>glimpse</strong> nos permite ver los datos como la función <em>str</em> pero uniendolo al pipe.</p>
 <p>También podemos seleccionar columnas con criterios, por ejemplo:<br />
 </p>
-<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb335-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;d&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb329-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;d&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 60
 ## Columns: 1
 ## $ dose &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1…</code></pre>
-<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb337-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">&quot;ose&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb331-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">&quot;ose&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 60
 ## Columns: 1
 ## $ dose &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1…</code></pre>
-<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb339-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">ends_with</span>(<span class="st">&quot;ose&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb333-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">ends_with</span>(<span class="st">&quot;ose&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 60
 ## Columns: 1
 ## $ dose &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1…</code></pre>
-<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb341-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">matches</span>(<span class="st">&quot;o.+e&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb335-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">matches</span>(<span class="st">&quot;o.+e&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 60
 ## Columns: 1
 ## $ dose &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1…</code></pre>
 <p><br />
 Seleccionando usando un vector, notemos también que en el orden que ponemos el vector así va a apareciendo reordenando las columnas en nuestra tabla:</p>
-<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb343-1" tabindex="-1"></a>colum <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;supp&quot;</span>, <span class="st">&quot;len&quot;</span>)</span>
-<span id="cb343-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb343-2" tabindex="-1"></a>ToothGrowth  <span class="sc">%&gt;%</span>  <span class="fu">select</span>(<span class="sc">!!</span>colum) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb337-1" tabindex="-1"></a>colum <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;supp&quot;</span>, <span class="st">&quot;len&quot;</span>)</span>
+<span id="cb337-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb337-2" tabindex="-1"></a>ToothGrowth  <span class="sc">%&gt;%</span>  <span class="fu">select</span>(<span class="sc">!!</span>colum) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 60
 ## Columns: 2
 ## $ supp &lt;fct&gt; VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC…
@@ -1264,20 +1250,20 @@ Cada función del <em>tidyverse</em> tiene tres variantes que son <em>at</em>, <
 Por ejemplo, si usamos <em>if</em> sería bajo un criterio como un tipo de dato
 :<br />
 </p>
-<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb345-1" tabindex="-1"></a><span class="co">#selección positiva</span></span>
-<span id="cb345-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb345-2" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select_if</span>(is.numeric) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb339-1" tabindex="-1"></a><span class="co">#selección positiva</span></span>
+<span id="cb339-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb339-2" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select_if</span>(is.numeric) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 60
 ## Columns: 2
 ## $ len  &lt;dbl&gt; 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17…
 ## $ dose &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1…</code></pre>
-<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb347-1" tabindex="-1"></a><span class="co">#selección negativa</span></span>
-<span id="cb347-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb347-2" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select_if</span>(<span class="sc">~!</span><span class="fu">is.numeric</span>(.)) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb341-1" tabindex="-1"></a><span class="co">#selección negativa</span></span>
+<span id="cb341-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb341-2" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select_if</span>(<span class="sc">~!</span><span class="fu">is.numeric</span>(.)) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 60
 ## Columns: 1
 ## $ supp &lt;fct&gt; VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC…</code></pre>
 <p><br />
 Con <em>all</em> podemos reformatear los nombres de nuestras columnas:</p>
-<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb349-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select_all</span>(toupper) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb343-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select_all</span>(toupper) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 60
 ## Columns: 3
 ## $ LEN  &lt;dbl&gt; 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17…
@@ -1285,18 +1271,18 @@ Con <em>all</em> podemos reformatear los nombres de nuestras columnas:</p>
 ## $ DOSE &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1…</code></pre>
 <p><br />
 Y con <em>at</em> también podemos escoger columnas basadas en criterios, por ejemplo:</p>
-<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb351-1" tabindex="-1"></a><span class="co">#npositiva</span></span>
-<span id="cb351-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb351-2" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span> <span class="fu">select_at</span>(<span class="fu">vars</span>(<span class="fu">contains</span>(<span class="st">&quot;ose&quot;</span>))) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb345-1" tabindex="-1"></a><span class="co">#npositiva</span></span>
+<span id="cb345-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb345-2" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span> <span class="fu">select_at</span>(<span class="fu">vars</span>(<span class="fu">contains</span>(<span class="st">&quot;ose&quot;</span>))) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 60
 ## Columns: 1
 ## $ dose &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1…</code></pre>
-<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb353-1" tabindex="-1"></a><span class="co">#negativa</span></span>
-<span id="cb353-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb353-2" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span> <span class="fu">select_at</span>(<span class="fu">vars</span>(<span class="sc">-</span><span class="fu">contains</span>(<span class="st">&quot;ose&quot;</span>))) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb347-1" tabindex="-1"></a><span class="co">#negativa</span></span>
+<span id="cb347-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb347-2" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span> <span class="fu">select_at</span>(<span class="fu">vars</span>(<span class="sc">-</span><span class="fu">contains</span>(<span class="st">&quot;ose&quot;</span>))) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 60
 ## Columns: 2
 ## $ len  &lt;dbl&gt; 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17…
 ## $ supp &lt;fct&gt; VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC…</code></pre>
-<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb355-1" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span> <span class="fu">select_at</span>(<span class="fu">vars</span>(<span class="sc">!</span><span class="fu">contains</span>(<span class="st">&quot;ose&quot;</span>))) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb349-1" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span> <span class="fu">select_at</span>(<span class="fu">vars</span>(<span class="sc">!</span><span class="fu">contains</span>(<span class="st">&quot;ose&quot;</span>))) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 60
 ## Columns: 2
 ## $ len  &lt;dbl&gt; 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17…
@@ -1305,7 +1291,7 @@ Y con <em>at</em> también podemos escoger columnas basadas en criterios, por ej
 <div id="filtrando-filas-1" class="section level3 hasAnchor" number="2.2.6">
 <h3><span class="header-section-number">2.2.6</span> Filtrando filas<a href="manejo-de-data-frames-y-bases-de-datos.html#filtrando-filas-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Para filtrar nuestra data a nivel de filas usamos la función <em>filter</em>:</p>
-<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb357-1" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">filter</span>(ToothGrowth, supp<span class="sc">==</span><span class="st">&quot;OJ&quot;</span>) )</span></code></pre></div>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb351-1" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">filter</span>(ToothGrowth, supp<span class="sc">==</span><span class="st">&quot;OJ&quot;</span>) )</span></code></pre></div>
 <pre><code>##    len supp dose
 ## 1 15.2   OJ  0.5
 ## 2 21.5   OJ  0.5
@@ -1314,19 +1300,19 @@ Y con <em>at</em> también podemos escoger columnas basadas en criterios, por ej
 ## 5 14.5   OJ  0.5
 ## 6 10.0   OJ  0.5</code></pre>
 <p>o con el pipe:</p>
-<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb359-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter</span>(supp<span class="sc">==</span><span class="st">&quot;OJ&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb353-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter</span>(supp<span class="sc">==</span><span class="st">&quot;OJ&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 30
 ## Columns: 3
 ## $ len  &lt;dbl&gt; 15.2, 21.5, 17.6, 9.7, 14.5, 10.0, 8.2, 9.4, 16.5, 9.7, 19.7, 23.3, 23.6, 26.4, 20.0, …
 ## $ supp &lt;fct&gt; OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ, OJ…
 ## $ dose &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1…</code></pre>
-<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb361-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter</span>(len<span class="sc">&gt;</span><span class="dv">30</span>) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb355-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter</span>(len<span class="sc">&gt;</span><span class="dv">30</span>) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 3
 ## Columns: 3
 ## $ len  &lt;dbl&gt; 33.9, 32.5, 30.9
 ## $ supp &lt;fct&gt; VC, VC, OJ
 ## $ dose &lt;dbl&gt; 2, 2, 2</code></pre>
-<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb363-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter</span>(supp<span class="sc">==</span><span class="st">&quot;OJ&quot;</span>, len<span class="sc">&gt;</span><span class="dv">30</span>) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb357-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter</span>(supp<span class="sc">==</span><span class="st">&quot;OJ&quot;</span>, len<span class="sc">&gt;</span><span class="dv">30</span>) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 1
 ## Columns: 3
 ## $ len  &lt;dbl&gt; 30.9
@@ -1334,14 +1320,14 @@ Y con <em>at</em> también podemos escoger columnas basadas en criterios, por ej
 ## $ dose &lt;dbl&gt; 2</code></pre>
 <p><br />
 Filtrando basado en un vector:</p>
-<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb365-1" tabindex="-1"></a>len_quiero<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">26.4</span>, <span class="fl">27.3</span> ,<span class="fl">29.4</span>, <span class="fl">23.0</span>)</span>
-<span id="cb365-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb365-2" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter</span>(len <span class="sc">%in%</span> len_quiero) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb359-1" tabindex="-1"></a>len_quiero<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">26.4</span>, <span class="fl">27.3</span> ,<span class="fl">29.4</span>, <span class="fl">23.0</span>)</span>
+<span id="cb359-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb359-2" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter</span>(len <span class="sc">%in%</span> len_quiero) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 8
 ## Columns: 3
 ## $ len  &lt;dbl&gt; 26.4, 26.4, 27.3, 26.4, 26.4, 27.3, 29.4, 23.0
 ## $ supp &lt;fct&gt; VC, OJ, OJ, OJ, OJ, OJ, OJ, OJ
 ## $ dose &lt;dbl&gt; 2, 1, 1, 2, 2, 2, 2, 2</code></pre>
-<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb367-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span>len <span class="sc">%in%</span> len_quiero) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb361-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span>len <span class="sc">%in%</span> len_quiero) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 52
 ## Columns: 3
 ## $ len  &lt;dbl&gt; 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17…
@@ -1349,13 +1335,13 @@ Filtrando basado en un vector:</p>
 ## $ dose &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1…</code></pre>
 <p><br />
 Filtrando NA’s (en caso de que este dataset tuviera NA’s):</p>
-<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb369-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(len))</span></code></pre></div>
+<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb363-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(len))</span></code></pre></div>
 <p><br />
 En el caso de <em>if</em> , <em>all</em> y <em>at</em> , nos permiten filtrar con condiciones y a través de varias columnas:</p>
-<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb370-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter_if</span>(is.numeric, <span class="fu">all_vars</span>(<span class="fu">between</span>(.,<span class="dv">2</span>,<span class="dv">20</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb364-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter_if</span>(is.numeric, <span class="fu">all_vars</span>(<span class="fu">between</span>(.,<span class="dv">2</span>,<span class="dv">20</span>)))</span></code></pre></div>
 <pre><code>##    len supp dose
 ## 1 18.5   VC    2</code></pre>
-<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb372-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter_all</span>(<span class="fu">any_vars</span>(. <span class="sc">&gt;</span> <span class="dv">30</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb366-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter_all</span>(<span class="fu">any_vars</span>(. <span class="sc">&gt;</span> <span class="dv">30</span>))</span></code></pre></div>
 <pre><code>## Warning: There was 1 warning in `filter()`.
 ## ℹ In argument: `len &gt; 30 | supp &gt; 30 | dose &gt; 30`.
 ## Caused by warning in `Ops.factor()`:
@@ -1364,7 +1350,7 @@ En el caso de <em>if</em> , <em>all</em> y <em>at</em> , nos permiten filtrar co
 ## 1 33.9   VC    2
 ## 2 32.5   VC    2
 ## 3 30.9   OJ    2</code></pre>
-<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb375-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter_at</span>(<span class="fu">vars</span>(len, dose), <span class="fu">all_vars</span>(.<span class="sc">&gt;</span><span class="dv">1</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb369-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">filter_at</span>(<span class="fu">vars</span>(len, dose), <span class="fu">all_vars</span>(.<span class="sc">&gt;</span><span class="dv">1</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>##    len supp dose
 ## 1 23.6   VC    2
 ## 2 18.5   VC    2
@@ -1379,7 +1365,7 @@ En el caso de <em>if</em> , <em>all</em> y <em>at</em> , nos permiten filtrar co
 <h3><span class="header-section-number">2.2.7</span> Creando una nueva columna<a href="manejo-de-data-frames-y-bases-de-datos.html#creando-una-nueva-columna-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><br />
 Para crear una nueva columna en <em>dplyr</em> usamos la función <em>mutate()</em>:</p>
-<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb377-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">lenlog =</span> <span class="fu">log</span>(len)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb371-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">lenlog =</span> <span class="fu">log</span>(len)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>##    len supp dose   lenlog
 ## 1  4.2   VC  0.5 1.435085
 ## 2 11.5   VC  0.5 2.442347
@@ -1389,7 +1375,7 @@ Para crear una nueva columna en <em>dplyr</em> usamos la función <em>mutate()</
 ## 6 10.0   VC  0.5 2.302585</code></pre>
 <p><br />
 Al igual que las funciones pasadas también podemos utilizar <em>if</em>, <em>all</em> y <em>at</em>:</p>
-<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb379-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">mutate_if</span>(is.numeric, round) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb373-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">mutate_if</span>(is.numeric, round) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>##   len supp dose
 ## 1   4   VC    0
 ## 2  12   VC    0
@@ -1397,7 +1383,7 @@ Al igual que las funciones pasadas también podemos utilizar <em>if</em>, <em>al
 ## 4   6   VC    0
 ## 5   6   VC    0
 ## 6  10   VC    0</code></pre>
-<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb381-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">mutate_all</span>(tolower) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb375-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">mutate_all</span>(tolower) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>##    len supp dose
 ## 1  4.2   vc  0.5
 ## 2 11.5   vc  0.5
@@ -1409,12 +1395,12 @@ Al igual que las funciones pasadas también podemos utilizar <em>if</em>, <em>al
 La acción de mutar o la función que se pone después del argumento (como round y tolower), muchas veces se pone sin paréntesis pero otras las requiere.
 Vemos también que usando el <em>mutate_all</em> cambia todas las columnas (lo que quiere decir que las numéricas las convierte en character).
 Ahora si quisieramos usarla al revés:</p>
-<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb383-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">mutate_all</span>(round) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb377-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">mutate_all</span>(round) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
 <p>Error: Problem with <code>mutate()</code> column <code>supp</code></p>
 <p><br />
 En estos casos es mejor usar if, como vimos en el ejemplo anterior, <em>all</em> aplica mejor si tenemos una data con el mismo tipo de datos (números, caracterres, factores).
 Ahora bien, <em>at</em> nos permite hacer cambios a columnas específicas:</p>
-<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb384-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">mutate_at</span>(<span class="fu">vars</span>(<span class="fu">contains</span>(<span class="st">&quot;ose&quot;</span>)), <span class="sc">~</span>(.<span class="sc">*</span><span class="dv">100</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb378-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">mutate_at</span>(<span class="fu">vars</span>(<span class="fu">contains</span>(<span class="st">&quot;ose&quot;</span>)), <span class="sc">~</span>(.<span class="sc">*</span><span class="dv">100</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>##    len supp dose
 ## 1  4.2   VC   50
 ## 2 11.5   VC   50
@@ -1422,7 +1408,7 @@ Ahora bien, <em>at</em> nos permite hacer cambios a columnas específicas:</p>
 ## 4  5.8   VC   50
 ## 5  6.4   VC   50
 ## 6 10.0   VC   50</code></pre>
-<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb386-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">mutate_at</span>(<span class="st">&quot;dose&quot;</span>, <span class="sc">~</span>(.<span class="sc">*</span><span class="dv">100</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb380-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">mutate_at</span>(<span class="st">&quot;dose&quot;</span>, <span class="sc">~</span>(.<span class="sc">*</span><span class="dv">100</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>##    len supp dose
 ## 1  4.2   VC   50
 ## 2 11.5   VC   50
@@ -1436,11 +1422,11 @@ Ahora bien, <em>at</em> nos permite hacer cambios a columnas específicas:</p>
 <div id="datos-discretos" class="section level3 hasAnchor" number="2.2.8">
 <h3><span class="header-section-number">2.2.8</span> Datos discretos<a href="manejo-de-data-frames-y-bases-de-datos.html#datos-discretos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Existen varias herramientas que nos sirven para trabajar con datos discretos, por ejemplo si queremos cambiar los datos de una columna y modificarlos:</p>
-<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb388-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">mutate</span>(<span class="at">supp2 =</span> <span class="fu">recode_factor</span>(supp,</span>
-<span id="cb388-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb388-2" tabindex="-1"></a>                        <span class="st">&quot;OJ&quot;</span> <span class="ot">=</span> <span class="st">&quot;Jugo&quot;</span>,</span>
-<span id="cb388-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb388-3" tabindex="-1"></a>                        <span class="st">&quot;VC&quot;</span> <span class="ot">=</span> <span class="st">&quot;Ascórbico&quot;</span>,</span>
-<span id="cb388-4"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb388-4" tabindex="-1"></a>                        <span class="at">.default =</span> <span class="st">&quot;other&quot;</span>,</span>
-<span id="cb388-5"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb388-5" tabindex="-1"></a>                        <span class="at">.ordered =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> <span class="fu">tail</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb382-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">mutate</span>(<span class="at">supp2 =</span> <span class="fu">recode_factor</span>(supp,</span>
+<span id="cb382-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb382-2" tabindex="-1"></a>                        <span class="st">&quot;OJ&quot;</span> <span class="ot">=</span> <span class="st">&quot;Jugo&quot;</span>,</span>
+<span id="cb382-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb382-3" tabindex="-1"></a>                        <span class="st">&quot;VC&quot;</span> <span class="ot">=</span> <span class="st">&quot;Ascórbico&quot;</span>,</span>
+<span id="cb382-4"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb382-4" tabindex="-1"></a>                        <span class="at">.default =</span> <span class="st">&quot;other&quot;</span>,</span>
+<span id="cb382-5"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb382-5" tabindex="-1"></a>                        <span class="at">.ordered =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> <span class="fu">tail</span>()</span></code></pre></div>
 <pre><code>##     len supp dose supp2
 ## 55 24.8   OJ    2  Jugo
 ## 56 30.9   OJ    2  Jugo
@@ -1450,7 +1436,7 @@ Ahora bien, <em>at</em> nos permite hacer cambios a columnas específicas:</p>
 ## 60 23.0   OJ    2  Jugo</code></pre>
 <p><br />
 Otra cosa que podemos hacer es crear una nueva columna con valores discretos usando valores numéricos, por ejemplo:</p>
-<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb390-1" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span>  <span class="fu">mutate</span>(<span class="at">dose2 =</span> <span class="fu">ifelse</span>(dose <span class="sc">&gt;</span> <span class="dv">1</span>, <span class="st">&quot;alto&quot;</span>, <span class="st">&quot;bajo&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb384-1" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span>  <span class="fu">mutate</span>(<span class="at">dose2 =</span> <span class="fu">ifelse</span>(dose <span class="sc">&gt;</span> <span class="dv">1</span>, <span class="st">&quot;alto&quot;</span>, <span class="st">&quot;bajo&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>##    len supp dose dose2
 ## 1  4.2   VC  0.5  bajo
 ## 2 11.5   VC  0.5  bajo
@@ -1461,11 +1447,11 @@ Otra cosa que podemos hacer es crear una nueva columna con valores discretos usa
 <p><br />
 Y si queremos renombrar los datos en una columna, entonces:<br />
 </p>
-<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb392-1" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span><span class="fu">mutate</span>(<span class="at">dose =</span> <span class="fu">case_when</span>(</span>
-<span id="cb392-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb392-2" tabindex="-1"></a>    dose <span class="sc">==</span> <span class="fl">0.5</span> <span class="sc">~</span> <span class="st">&quot;D_0.5&quot;</span>,</span>
-<span id="cb392-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb392-3" tabindex="-1"></a>    dose <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">&quot;D_1&quot;</span>,</span>
-<span id="cb392-4"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb392-4" tabindex="-1"></a>    dose <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">&quot;D_2&quot;</span>)) <span class="sc">%&gt;%</span>  <span class="fu">mutate</span>(</span>
-<span id="cb392-5"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb392-5" tabindex="-1"></a>      <span class="at">dose =</span> <span class="fu">factor</span>(dose, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;D_2&quot;</span>, <span class="st">&quot;D_1&quot;</span>, <span class="st">&quot;D_0.5&quot;</span>))) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb386-1" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span><span class="fu">mutate</span>(<span class="at">dose =</span> <span class="fu">case_when</span>(</span>
+<span id="cb386-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb386-2" tabindex="-1"></a>    dose <span class="sc">==</span> <span class="fl">0.5</span> <span class="sc">~</span> <span class="st">&quot;D_0.5&quot;</span>,</span>
+<span id="cb386-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb386-3" tabindex="-1"></a>    dose <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">&quot;D_1&quot;</span>,</span>
+<span id="cb386-4"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb386-4" tabindex="-1"></a>    dose <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">&quot;D_2&quot;</span>)) <span class="sc">%&gt;%</span>  <span class="fu">mutate</span>(</span>
+<span id="cb386-5"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb386-5" tabindex="-1"></a>      <span class="at">dose =</span> <span class="fu">factor</span>(dose, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;D_2&quot;</span>, <span class="st">&quot;D_1&quot;</span>, <span class="st">&quot;D_0.5&quot;</span>))) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>##    len supp  dose
 ## 1  4.2   VC D_0.5
 ## 2 11.5   VC D_0.5
@@ -1475,7 +1461,7 @@ Y si queremos renombrar los datos en una columna, entonces:<br />
 ## 6 10.0   VC D_0.5</code></pre>
 <p><br />
 Para separar o unir datos de una columna con data discreta (caracter), podemos usar las funciones <em>unite()</em> y <em>separate()</em>, por ejemplo:</p>
-<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb394-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">unite</span>(<span class="st">&quot;interaccion&quot;</span>, supp<span class="sc">:</span>dose, <span class="at">sep =</span> <span class="st">&quot;_&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb388-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">unite</span>(<span class="st">&quot;interaccion&quot;</span>, supp<span class="sc">:</span>dose, <span class="at">sep =</span> <span class="st">&quot;_&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>##    len interaccion
 ## 1  4.2      VC_0.5
 ## 2 11.5      VC_0.5
@@ -1485,11 +1471,11 @@ Para separar o unir datos de una columna con data discreta (caracter), podemos u
 ## 6 10.0      VC_0.5</code></pre>
 <p><br />
 Para ejemplifcar <em>separate</em> usaremos el ejemplo anterior:</p>
-<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb396-1" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span><span class="fu">mutate</span>(<span class="at">dose =</span> <span class="fu">case_when</span>(</span>
-<span id="cb396-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb396-2" tabindex="-1"></a>    dose <span class="sc">==</span> <span class="fl">0.5</span> <span class="sc">~</span> <span class="st">&quot;D_0.5&quot;</span>,</span>
-<span id="cb396-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb396-3" tabindex="-1"></a>    dose <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">&quot;D_1&quot;</span>,</span>
-<span id="cb396-4"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb396-4" tabindex="-1"></a>    dose <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">&quot;D_2&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">separate</span>(dose, <span class="fu">c</span>(<span class="st">&quot;D&quot;</span>, <span class="st">&quot;dose&quot;</span>),</span>
-<span id="cb396-5"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb396-5" tabindex="-1"></a>                                     <span class="at">sep =</span> <span class="st">&quot;_&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb390-1" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span><span class="fu">mutate</span>(<span class="at">dose =</span> <span class="fu">case_when</span>(</span>
+<span id="cb390-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb390-2" tabindex="-1"></a>    dose <span class="sc">==</span> <span class="fl">0.5</span> <span class="sc">~</span> <span class="st">&quot;D_0.5&quot;</span>,</span>
+<span id="cb390-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb390-3" tabindex="-1"></a>    dose <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">&quot;D_1&quot;</span>,</span>
+<span id="cb390-4"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb390-4" tabindex="-1"></a>    dose <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">&quot;D_2&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">separate</span>(dose, <span class="fu">c</span>(<span class="st">&quot;D&quot;</span>, <span class="st">&quot;dose&quot;</span>),</span>
+<span id="cb390-5"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb390-5" tabindex="-1"></a>                                     <span class="at">sep =</span> <span class="st">&quot;_&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>##    len supp D dose
 ## 1  4.2   VC D  0.5
 ## 2 11.5   VC D  0.5
@@ -1504,11 +1490,11 @@ Para ejemplifcar <em>separate</em> usaremos el ejemplo anterior:</p>
 <p><br />
 Hay varias funciones en <em>tidyverse</em> que nos permiten hacer un resumen de nuestros datos, como por ejemplo la función <em>count()</em>:<br />
 </p>
-<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb398-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">count</span>(supp, <span class="at">sort=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb392-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">count</span>(supp, <span class="at">sort=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>##   supp  n
 ## 1   OJ 30
 ## 2   VC 30</code></pre>
-<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb400-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">count</span>(dose, supp, <span class="at">sort=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb394-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">count</span>(dose, supp, <span class="at">sort=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>##   dose supp  n
 ## 1  0.5   OJ 10
 ## 2  0.5   VC 10
@@ -1518,7 +1504,7 @@ Hay varias funciones en <em>tidyverse</em> que nos permiten hacer un resumen de 
 ## 6  2.0   VC 10</code></pre>
 <p><br />
 Otra forma es usar <em>group_by()</em> que nos permite agrupar nuestros datos bajo alguna condición y luego aplicar una función a estos:</p>
-<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb402-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(supp) <span class="sc">%&gt;%</span><span class="fu">count</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb396-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(supp) <span class="sc">%&gt;%</span><span class="fu">count</span>()</span></code></pre></div>
 <pre><code>## # A tibble: 2 × 2
 ## # Groups:   supp [2]
 ##   supp      n
@@ -1527,8 +1513,8 @@ Otra forma es usar <em>group_by()</em> que nos permite agrupar nuestros datos ba
 ## 2 VC       30</code></pre>
 <p><br />
 Con este <em>group_by()</em> podemos aplicar cualquier cantidad de funciones, por ejemplo para en vez que me de el conteo me de el promedio, mediana, cuenta, suma, etc; para esto, debemos ocupar una nueva función muy útil llamada <em>summarise()</em>:</p>
-<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb404-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(supp) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">promedio =</span> <span class="fu">mean</span>(len), <span class="at">suma =</span> <span class="fu">sum</span>(len),</span>
-<span id="cb404-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb404-2" tabindex="-1"></a>                                             <span class="at">n =</span> <span class="fu">n</span>(), <span class="at">mediana =</span><span class="fu">median</span>(len))</span></code></pre></div>
+<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb398-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(supp) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">promedio =</span> <span class="fu">mean</span>(len), <span class="at">suma =</span> <span class="fu">sum</span>(len),</span>
+<span id="cb398-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb398-2" tabindex="-1"></a>                                             <span class="at">n =</span> <span class="fu">n</span>(), <span class="at">mediana =</span><span class="fu">median</span>(len))</span></code></pre></div>
 <pre><code>## # A tibble: 2 × 5
 ##   supp  promedio  suma     n mediana
 ##   &lt;fct&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt;
@@ -1536,19 +1522,19 @@ Con este <em>group_by()</em> podemos aplicar cualquier cantidad de funciones, po
 ## 2 VC        17.0  509.    30    16.5</code></pre>
 <p><br />
 Esta función también viene en todas las presentaciones, es decir, <em>at</em>, <em>if</em> y <em>all</em>, Ejemplos:</p>
-<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb406-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">group_by</span>(supp) <span class="sc">%&gt;%</span> <span class="fu">summarise_if</span>(is.numeric, mean)</span></code></pre></div>
+<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb400-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">group_by</span>(supp) <span class="sc">%&gt;%</span> <span class="fu">summarise_if</span>(is.numeric, mean)</span></code></pre></div>
 <pre><code>## # A tibble: 2 × 3
 ##   supp    len  dose
 ##   &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt;
 ## 1 OJ     20.7  1.17
 ## 2 VC     17.0  1.17</code></pre>
-<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb408-1" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span>  <span class="fu">group_by</span>(supp) <span class="sc">%&gt;%</span> <span class="fu">summarise_at</span>(<span class="fu">vars</span>(<span class="fu">contains</span>(<span class="st">&quot;ose&quot;</span>)), mean)</span></code></pre></div>
+<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb402-1" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span>  <span class="fu">group_by</span>(supp) <span class="sc">%&gt;%</span> <span class="fu">summarise_at</span>(<span class="fu">vars</span>(<span class="fu">contains</span>(<span class="st">&quot;ose&quot;</span>)), mean)</span></code></pre></div>
 <pre><code>## # A tibble: 2 × 2
 ##   supp   dose
 ##   &lt;fct&gt; &lt;dbl&gt;
 ## 1 OJ     1.17
 ## 2 VC     1.17</code></pre>
-<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb410-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">group_by</span>(supp) <span class="sc">%&gt;%</span>  <span class="fu">summarise_all</span>(mean)</span></code></pre></div>
+<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb404-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span>  <span class="fu">group_by</span>(supp) <span class="sc">%&gt;%</span>  <span class="fu">summarise_all</span>(mean)</span></code></pre></div>
 <pre><code>## # A tibble: 2 × 3
 ##   supp    len  dose
 ##   &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -1560,7 +1546,7 @@ Esta función también viene en todas las presentaciones, es decir, <em>at</em>,
 <div id="renombrando-columnas-con-tidyverse" class="section level3 hasAnchor" number="2.2.10">
 <h3><span class="header-section-number">2.2.10</span> Renombrando columnas Con <em>tidyverse</em><a href="manejo-de-data-frames-y-bases-de-datos.html#renombrando-columnas-con-tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Existen diferentes formas de renombrar las columnas una es con la función <em>select()</em>:</p>
-<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb412-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb412-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="at">dosis=</span>dose, <span class="at">longitud=</span>len, <span class="at">suplemento=</span>supp) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb406-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="at">dosis=</span>dose, <span class="at">longitud=</span>len, <span class="at">suplemento=</span>supp) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 60
 ## Columns: 3
 ## $ dosis      &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, …
@@ -1568,25 +1554,25 @@ Esta función también viene en todas las presentaciones, es decir, <em>at</em>,
 ## $ suplemento &lt;fct&gt; VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, …</code></pre>
 <p><br />
 También existe la función rename en todas sus versiones, ejemplos:</p>
-<div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb414-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb414-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">dosis=</span>dose) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb408-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">dosis=</span>dose) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 60
 ## Columns: 3
 ## $ len   &lt;dbl&gt; 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 1…
 ## $ supp  &lt;fct&gt; VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, V…
 ## $ dosis &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, …</code></pre>
-<div class="sourceCode" id="cb416"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb416-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb416-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">rename_if</span>(is.numeric, <span class="sc">~</span><span class="fu">paste0</span>(<span class="st">&quot;Num_&quot;</span>, .)) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb410-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">rename_if</span>(is.numeric, <span class="sc">~</span><span class="fu">paste0</span>(<span class="st">&quot;Num_&quot;</span>, .)) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 60
 ## Columns: 3
 ## $ Num_len  &lt;dbl&gt; 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5…
 ## $ supp     &lt;fct&gt; VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC…
 ## $ Num_dose &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.…</code></pre>
-<div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb418-1" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span> <span class="fu">rename_at</span>(<span class="fu">vars</span>(<span class="fu">contains</span>(<span class="st">&quot;ose&quot;</span>)), <span class="sc">~</span><span class="fu">paste0</span>(<span class="st">&quot;Num_&quot;</span>, .)) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb412-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb412-1" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span> <span class="fu">rename_at</span>(<span class="fu">vars</span>(<span class="fu">contains</span>(<span class="st">&quot;ose&quot;</span>)), <span class="sc">~</span><span class="fu">paste0</span>(<span class="st">&quot;Num_&quot;</span>, .)) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 60
 ## Columns: 3
 ## $ len      &lt;dbl&gt; 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5…
 ## $ supp     &lt;fct&gt; VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC, VC…
 ## $ Num_dose &lt;dbl&gt; 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.…</code></pre>
-<div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb420-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb420-1" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span> <span class="fu">rename_all</span>(toupper) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb414-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb414-1" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span> <span class="fu">rename_all</span>(toupper) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 60
 ## Columns: 3
 ## $ LEN  &lt;dbl&gt; 4.2, 11.5, 7.3, 5.8, 6.4, 10.0, 11.2, 11.2, 5.2, 7.0, 16.5, 16.5, 15.2, 17.3, 22.5, 17…
@@ -1600,7 +1586,7 @@ También existe la función rename en todas sus versiones, ejemplos:</p>
 <p><br />
 Conocemos las funciones <code>order</code> y <code>sort</code>, pero para ordenar tablas enteras, la función <code>arrange</code> de <strong>dplyr</strong> es útil.
 Por ejemplo:</p>
-<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb422-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(len) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb416"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb416-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb416-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(len) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>##   len supp dose
 ## 1 4.2   VC  0.5
 ## 2 5.2   VC  0.5
@@ -1608,7 +1594,7 @@ Por ejemplo:</p>
 ## 4 6.4   VC  0.5
 ## 5 7.0   VC  0.5
 ## 6 7.3   VC  0.5</code></pre>
-<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb424-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="sc">-</span>len) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb418-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="sc">-</span>len) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>##    len supp dose
 ## 1 33.9   VC    2
 ## 2 32.5   VC    2
@@ -1618,7 +1604,7 @@ Por ejemplo:</p>
 ## 6 27.3   OJ    1</code></pre>
 <p><br />
 También podemos ordenar por varios criterios:</p>
-<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb426-1" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span>  <span class="fu">arrange</span>(dose, supp) <span class="sc">%&gt;%</span>  <span class="fu">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb420-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb420-1" tabindex="-1"></a>ToothGrowth<span class="sc">%&gt;%</span>  <span class="fu">arrange</span>(dose, supp) <span class="sc">%&gt;%</span>  <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>##    len supp dose
 ## 1 15.2   OJ  0.5
 ## 2 21.5   OJ  0.5
@@ -1641,7 +1627,7 @@ Para la unión de tablas usaremos una familia de funciones denominadas <strong>j
 <li><p>full_join(): incluye todas las filas en x o y (este incluye todos, incluso las que no comparten)<br />
 </p></li>
 </ul>
-<div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb428-1" tabindex="-1"></a>band_members; band_instruments</span></code></pre></div>
+<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb422-1" tabindex="-1"></a>band_members; band_instruments</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 2
 ##   name  band   
 ##   &lt;chr&gt; &lt;chr&gt;  
@@ -1654,7 +1640,7 @@ Para la unión de tablas usaremos una familia de funciones denominadas <strong>j
 ## 1 John  guitar
 ## 2 Paul  bass  
 ## 3 Keith guitar</code></pre>
-<div class="sourceCode" id="cb431"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb431-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb431-1" tabindex="-1"></a>band_members <span class="sc">%&gt;%</span> <span class="fu">full_join</span>(band_instruments)</span></code></pre></div>
+<div class="sourceCode" id="cb425"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb425-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb425-1" tabindex="-1"></a>band_members <span class="sc">%&gt;%</span> <span class="fu">full_join</span>(band_instruments)</span></code></pre></div>
 <pre><code>## Joining with `by = join_by(name)`</code></pre>
 <pre><code>## # A tibble: 4 × 3
 ##   name  band    plays 
@@ -1663,13 +1649,13 @@ Para la unión de tablas usaremos una familia de funciones denominadas <strong>j
 ## 2 John  Beatles guitar
 ## 3 Paul  Beatles bass  
 ## 4 Keith &lt;NA&gt;    guitar</code></pre>
-<div class="sourceCode" id="cb434"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb434-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb434-1" tabindex="-1"></a>band_members <span class="sc">%&gt;%</span> <span class="fu">inner_join</span>(band_instruments, <span class="at">by =</span> <span class="st">&quot;name&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb428-1" tabindex="-1"></a>band_members <span class="sc">%&gt;%</span> <span class="fu">inner_join</span>(band_instruments, <span class="at">by =</span> <span class="st">&quot;name&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 2 × 3
 ##   name  band    plays 
 ##   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; 
 ## 1 John  Beatles guitar
 ## 2 Paul  Beatles bass</code></pre>
-<div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb436-1" tabindex="-1"></a>band_members <span class="sc">%&gt;%</span> <span class="fu">left_join</span>(band_instruments)</span></code></pre></div>
+<div class="sourceCode" id="cb430"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb430-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb430-1" tabindex="-1"></a>band_members <span class="sc">%&gt;%</span> <span class="fu">left_join</span>(band_instruments)</span></code></pre></div>
 <pre><code>## Joining with `by = join_by(name)`</code></pre>
 <pre><code>## # A tibble: 3 × 3
 ##   name  band    plays 
@@ -1677,7 +1663,7 @@ Para la unión de tablas usaremos una familia de funciones denominadas <strong>j
 ## 1 Mick  Stones  &lt;NA&gt;  
 ## 2 John  Beatles guitar
 ## 3 Paul  Beatles bass</code></pre>
-<div class="sourceCode" id="cb439"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb439-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb439-1" tabindex="-1"></a>band_members <span class="sc">%&gt;%</span> <span class="fu">right_join</span>(band_instruments)</span></code></pre></div>
+<div class="sourceCode" id="cb433"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb433-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb433-1" tabindex="-1"></a>band_members <span class="sc">%&gt;%</span> <span class="fu">right_join</span>(band_instruments)</span></code></pre></div>
 <pre><code>## Joining with `by = join_by(name)`</code></pre>
 <pre><code>## # A tibble: 3 × 3
 ##   name  band    plays 
@@ -1694,7 +1680,7 @@ Si queremos ver una mayor proporción, podemos usar la función <code>top_n</cod
 Esta función toma un <em>data frame</em> como primer argumento, el número de filas para mostrar en el segundo y la variable para filtrar en el tercero.
 Aquí hay un ejemplo de cómo ver las 5 filas superiores:<br />
 </p>
-<div class="sourceCode" id="cb442"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb442-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb442-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">top_n</span>(<span class="dv">5</span>, len)</span></code></pre></div>
+<div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb436-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">top_n</span>(<span class="dv">5</span>, len)</span></code></pre></div>
 <pre><code>##    len supp dose
 ## 1 33.9   VC    2
 ## 2 32.5   VC    2
@@ -1704,7 +1690,7 @@ Aquí hay un ejemplo de cómo ver las 5 filas superiores:<br />
 <p><br />
 También hay otras funciones que son útiles en los diferentes análisis donde a veces ocupamos los rownames o a veces no, estas funciones nos permiten hacer una columna que sea rownames y viceversa, por ejemplo:<br />
 </p>
-<div class="sourceCode" id="cb444"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb444-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb444-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">rownames_to_column</span>(<span class="at">var =</span> <span class="st">&quot;row&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb438"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb438-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb438-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">rownames_to_column</span>(<span class="at">var =</span> <span class="st">&quot;row&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>##   row  len supp dose
 ## 1   1  4.2   VC  0.5
 ## 2   2 11.5   VC  0.5
@@ -1712,8 +1698,8 @@ También hay otras funciones que son útiles en los diferentes análisis donde a
 ## 4   4  5.8   VC  0.5
 ## 5   5  6.4   VC  0.5
 ## 6   6 10.0   VC  0.5</code></pre>
-<div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb446-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">rownames_to_column</span>(</span>
-<span id="cb446-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb446-2" tabindex="-1"></a>  <span class="at">var =</span> <span class="st">&quot;row&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">&quot;row&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb440"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb440-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb440-1" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">rownames_to_column</span>(</span>
+<span id="cb440-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb440-2" tabindex="-1"></a>  <span class="at">var =</span> <span class="st">&quot;row&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">column_to_rownames</span>(<span class="at">var =</span> <span class="st">&quot;row&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>##    len supp dose
 ## 1  4.2   VC  0.5
 ## 2 11.5   VC  0.5
@@ -1724,9 +1710,9 @@ También hay otras funciones que son útiles en los diferentes análisis donde a
 <p><br />
 Si queremos convertir las tablas como al principio del capítulo, es decir, convertir una tabla que no está en formato <em>tidy</em> a una que sí esté y viceversa podemos usar las funciones <strong>pivot_longer()</strong> y <strong>pivot_wider()</strong> (antes denominadas <strong>gather()</strong> y <strong>spread()</strong>, pero ya están reemplazadas aunque aún no eliminadas).<br />
 </p>
-<div class="sourceCode" id="cb448"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb448-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb448-1" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
-<span id="cb448-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb448-2" tabindex="-1"></a>data_iris<span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> <span class="fu">select</span>(Sepal.Length, Sepal.Width) <span class="sc">%&gt;%</span> <span class="fu">rownames_to_column</span>(<span class="at">var =</span> <span class="st">&quot;ids&quot;</span>)</span>
-<span id="cb448-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb448-3" tabindex="-1"></a><span class="fu">head</span>(data_iris)</span></code></pre></div>
+<div class="sourceCode" id="cb442"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb442-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb442-1" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
+<span id="cb442-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb442-2" tabindex="-1"></a>data_iris<span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> <span class="fu">select</span>(Sepal.Length, Sepal.Width) <span class="sc">%&gt;%</span> <span class="fu">rownames_to_column</span>(<span class="at">var =</span> <span class="st">&quot;ids&quot;</span>)</span>
+<span id="cb442-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb442-3" tabindex="-1"></a><span class="fu">head</span>(data_iris)</span></code></pre></div>
 <pre><code>##   ids Sepal.Length Sepal.Width
 ## 1   1          5.1         3.5
 ## 2   2          4.9         3.0
@@ -1737,11 +1723,11 @@ Si queremos convertir las tablas como al principio del capítulo, es decir, conv
 <p><br />
 Vamos a cambiarla a formato tidy:<br />
 </p>
-<div class="sourceCode" id="cb450"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb450-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb450-1" tabindex="-1"></a>tidy_iris<span class="ot">&lt;-</span><span class="fu">pivot_longer</span>(<span class="at">names_to =</span> <span class="st">&quot;variable&quot;</span>, </span>
-<span id="cb450-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb450-2" tabindex="-1"></a>             <span class="at">values_to =</span> <span class="st">&quot;longitud&quot;</span>, </span>
-<span id="cb450-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb450-3" tabindex="-1"></a>             <span class="at">data =</span> data_iris, </span>
-<span id="cb450-4"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb450-4" tabindex="-1"></a>             <span class="at">cols =</span> Sepal.Length<span class="sc">:</span>Sepal.Width) </span>
-<span id="cb450-5"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb450-5" tabindex="-1"></a><span class="fu">head</span>(tidy_iris)</span></code></pre></div>
+<div class="sourceCode" id="cb444"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb444-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb444-1" tabindex="-1"></a>tidy_iris<span class="ot">&lt;-</span><span class="fu">pivot_longer</span>(<span class="at">names_to =</span> <span class="st">&quot;variable&quot;</span>, </span>
+<span id="cb444-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb444-2" tabindex="-1"></a>             <span class="at">values_to =</span> <span class="st">&quot;longitud&quot;</span>, </span>
+<span id="cb444-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb444-3" tabindex="-1"></a>             <span class="at">data =</span> data_iris, </span>
+<span id="cb444-4"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb444-4" tabindex="-1"></a>             <span class="at">cols =</span> Sepal.Length<span class="sc">:</span>Sepal.Width) </span>
+<span id="cb444-5"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb444-5" tabindex="-1"></a><span class="fu">head</span>(tidy_iris)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 3
 ##   ids   variable     longitud
 ##   &lt;chr&gt; &lt;chr&gt;           &lt;dbl&gt;
@@ -1754,9 +1740,9 @@ Vamos a cambiarla a formato tidy:<br />
 <p><br />
 Y si queremos regresar a como lo teníamos:<br />
 </p>
-<div class="sourceCode" id="cb452"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb452-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb452-1" tabindex="-1"></a>notidy_iris<span class="ot">&lt;-</span> tidy_iris  <span class="sc">%&gt;%</span> <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> variable,</span>
-<span id="cb452-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb452-2" tabindex="-1"></a>                          <span class="at">values_from =</span> longitud)</span>
-<span id="cb452-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb452-3" tabindex="-1"></a><span class="fu">head</span>(notidy_iris)</span></code></pre></div>
+<div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb446-1" tabindex="-1"></a>notidy_iris<span class="ot">&lt;-</span> tidy_iris  <span class="sc">%&gt;%</span> <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> variable,</span>
+<span id="cb446-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb446-2" tabindex="-1"></a>                          <span class="at">values_from =</span> longitud)</span>
+<span id="cb446-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb446-3" tabindex="-1"></a><span class="fu">head</span>(notidy_iris)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 3
 ##   ids   Sepal.Length Sepal.Width
 ##   &lt;chr&gt;        &lt;dbl&gt;       &lt;dbl&gt;
@@ -1769,16 +1755,16 @@ Y si queremos regresar a como lo teníamos:<br />
 </div>
 <div id="ejemplo-aplicado" class="section level3 hasAnchor" number="2.2.14">
 <h3><span class="header-section-number">2.2.14</span> Ejemplo Aplicado<a href="manejo-de-data-frames-y-bases-de-datos.html#ejemplo-aplicado" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb454"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb454-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb454-1" tabindex="-1"></a>primera<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Nombre=</span> <span class="fu">c</span>(<span class="st">&quot;Astrid&quot;</span>, <span class="st">&quot;Lea&quot;</span>, <span class="st">&quot;Sarina&quot;</span>, <span class="st">&quot;Remon&quot;</span>, <span class="st">&quot;Letizia&quot;</span>, </span>
-<span id="cb454-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb454-2" tabindex="-1"></a>                               <span class="st">&quot;Babice&quot;</span>, <span class="st">&quot;Jonas&quot;</span>, <span class="st">&quot;Wendy&quot;</span>, <span class="st">&quot;Nivedithia&quot;</span>, <span class="st">&quot;Gioia&quot;</span>),</span>
-<span id="cb454-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb454-3" tabindex="-1"></a>                     <span class="at">Sexo=</span> <span class="fu">c</span>(<span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>),</span>
-<span id="cb454-4"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb454-4" tabindex="-1"></a>                     <span class="at">Edad=</span> <span class="fu">c</span>(<span class="dv">30</span>,<span class="dv">25</span>,<span class="dv">25</span>,<span class="dv">29</span>,<span class="dv">22</span>,<span class="dv">22</span>,<span class="dv">35</span>,<span class="dv">19</span>,<span class="dv">32</span>,<span class="dv">21</span>))</span>
-<span id="cb454-5"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb454-5" tabindex="-1"></a>segunda<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Nombre=</span> <span class="fu">c</span>(<span class="st">&quot;Astrid&quot;</span>, <span class="st">&quot;Lea&quot;</span>, <span class="st">&quot;Sarina&quot;</span>, <span class="st">&quot;Remon&quot;</span>, <span class="st">&quot;Letizia&quot;</span>, </span>
-<span id="cb454-6"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb454-6" tabindex="-1"></a>                               <span class="st">&quot;Babice&quot;</span>, <span class="st">&quot;Jonas&quot;</span>, <span class="st">&quot;Wendy&quot;</span>, <span class="st">&quot;Nivedithia&quot;</span>, <span class="st">&quot;Gioia&quot;</span>),</span>
-<span id="cb454-7"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb454-7" tabindex="-1"></a>                     Superhéroe<span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Batman&quot;</span>, <span class="st">&quot;Superman&quot;</span>, <span class="st">&quot;Batman&quot;</span>, <span class="st">&quot;Spiderman&quot;</span>, <span class="st">&quot;Batman&quot;</span>, </span>
-<span id="cb454-8"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb454-8" tabindex="-1"></a>                                   <span class="st">&quot;Antman&quot;</span>, <span class="st">&quot;Batman&quot;</span>, <span class="st">&quot;Superman&quot;</span>, <span class="st">&quot;Maggot&quot;</span>, <span class="st">&quot;Superman&quot;</span>),</span>
-<span id="cb454-9"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb454-9" tabindex="-1"></a>                     <span class="at">Tatuajes=</span> <span class="fu">c</span>(<span class="dv">11</span>,<span class="dv">15</span>,<span class="dv">12</span>,<span class="dv">5</span>,<span class="dv">65</span>,<span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">13</span>,<span class="dv">900</span>,<span class="dv">0</span>))</span>
-<span id="cb454-10"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb454-10" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(primera); knitr<span class="sc">::</span><span class="fu">kable</span>(segunda)</span></code></pre></div>
+<div class="sourceCode" id="cb448"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb448-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb448-1" tabindex="-1"></a>primera<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Nombre=</span> <span class="fu">c</span>(<span class="st">&quot;Astrid&quot;</span>, <span class="st">&quot;Lea&quot;</span>, <span class="st">&quot;Sarina&quot;</span>, <span class="st">&quot;Remon&quot;</span>, <span class="st">&quot;Letizia&quot;</span>, </span>
+<span id="cb448-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb448-2" tabindex="-1"></a>                               <span class="st">&quot;Babice&quot;</span>, <span class="st">&quot;Jonas&quot;</span>, <span class="st">&quot;Wendy&quot;</span>, <span class="st">&quot;Nivedithia&quot;</span>, <span class="st">&quot;Gioia&quot;</span>),</span>
+<span id="cb448-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb448-3" tabindex="-1"></a>                     <span class="at">Sexo=</span> <span class="fu">c</span>(<span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>),</span>
+<span id="cb448-4"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb448-4" tabindex="-1"></a>                     <span class="at">Edad=</span> <span class="fu">c</span>(<span class="dv">30</span>,<span class="dv">25</span>,<span class="dv">25</span>,<span class="dv">29</span>,<span class="dv">22</span>,<span class="dv">22</span>,<span class="dv">35</span>,<span class="dv">19</span>,<span class="dv">32</span>,<span class="dv">21</span>))</span>
+<span id="cb448-5"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb448-5" tabindex="-1"></a>segunda<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Nombre=</span> <span class="fu">c</span>(<span class="st">&quot;Astrid&quot;</span>, <span class="st">&quot;Lea&quot;</span>, <span class="st">&quot;Sarina&quot;</span>, <span class="st">&quot;Remon&quot;</span>, <span class="st">&quot;Letizia&quot;</span>, </span>
+<span id="cb448-6"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb448-6" tabindex="-1"></a>                               <span class="st">&quot;Babice&quot;</span>, <span class="st">&quot;Jonas&quot;</span>, <span class="st">&quot;Wendy&quot;</span>, <span class="st">&quot;Nivedithia&quot;</span>, <span class="st">&quot;Gioia&quot;</span>),</span>
+<span id="cb448-7"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb448-7" tabindex="-1"></a>                     Superhéroe<span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Batman&quot;</span>, <span class="st">&quot;Superman&quot;</span>, <span class="st">&quot;Batman&quot;</span>, <span class="st">&quot;Spiderman&quot;</span>, <span class="st">&quot;Batman&quot;</span>, </span>
+<span id="cb448-8"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb448-8" tabindex="-1"></a>                                   <span class="st">&quot;Antman&quot;</span>, <span class="st">&quot;Batman&quot;</span>, <span class="st">&quot;Superman&quot;</span>, <span class="st">&quot;Maggot&quot;</span>, <span class="st">&quot;Superman&quot;</span>),</span>
+<span id="cb448-9"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb448-9" tabindex="-1"></a>                     <span class="at">Tatuajes=</span> <span class="fu">c</span>(<span class="dv">11</span>,<span class="dv">15</span>,<span class="dv">12</span>,<span class="dv">5</span>,<span class="dv">65</span>,<span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">13</span>,<span class="dv">900</span>,<span class="dv">0</span>))</span>
+<span id="cb448-10"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb448-10" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(primera); knitr<span class="sc">::</span><span class="fu">kable</span>(segunda)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -1919,13 +1905,13 @@ Y si queremos regresar a como lo teníamos:<br />
 <li>Combina las dos tablas en una sola y completa las siguientes asignaciones.<br />
 </li>
 </ol>
-<div class="sourceCode" id="cb455"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb455-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb455-1" tabindex="-1"></a>encuestas<span class="ot">&lt;-</span>primera <span class="sc">%&gt;%</span> <span class="fu">full_join</span>(segunda)</span></code></pre></div>
+<div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb449-1" tabindex="-1"></a>encuestas<span class="ot">&lt;-</span>primera <span class="sc">%&gt;%</span> <span class="fu">full_join</span>(segunda)</span></code></pre></div>
 <pre><code>## Joining with `by = join_by(Nombre)`</code></pre>
 <p><br />
 2.
 ¿Cuál es la edad media de las mujeres y hombres por separado?<br />
 </p>
-<div class="sourceCode" id="cb457"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb457-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb457-1" tabindex="-1"></a>encuestas <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Sexo) <span class="sc">%&gt;%</span> <span class="fu">summarise_at</span>(<span class="fu">c</span>(<span class="st">&quot;Edad&quot;</span>), mean)</span></code></pre></div>
+<div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb451-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb451-1" tabindex="-1"></a>encuestas <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Sexo) <span class="sc">%&gt;%</span> <span class="fu">summarise_at</span>(<span class="fu">c</span>(<span class="st">&quot;Edad&quot;</span>), mean)</span></code></pre></div>
 <pre><code>## # A tibble: 2 × 2
 ##   Sexo   Edad
 ##   &lt;chr&gt; &lt;dbl&gt;
@@ -1935,37 +1921,37 @@ Y si queremos regresar a como lo teníamos:<br />
 3.
 ¿Cuál fue el número más alto de tatuajes en un hombre?<br />
 </p>
-<div class="sourceCode" id="cb459"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb459-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb459-1" tabindex="-1"></a>encuestas <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Sexo<span class="sc">==</span><span class="st">&quot;M&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Tatuajes <span class="sc">==</span> <span class="fu">max</span>(Tatuajes)) </span></code></pre></div>
+<div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb453-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb453-1" tabindex="-1"></a>encuestas <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Sexo<span class="sc">==</span><span class="st">&quot;M&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Tatuajes <span class="sc">==</span> <span class="fu">max</span>(Tatuajes)) </span></code></pre></div>
 <pre><code>##   Nombre Sexo Edad Superhéroe Tatuajes
 ## 1  Jonas    M   35     Batman        9</code></pre>
 <p><br />
 4.
 ¿Cuál es el porcentaje de mujeres debajo de 32 años?<br />
 </p>
-<div class="sourceCode" id="cb461"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb461-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb461-1" tabindex="-1"></a>fem<span class="ot">&lt;-</span> encuestas <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Sexo<span class="sc">==</span><span class="st">&quot;F&quot;</span>)</span>
-<span id="cb461-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb461-2" tabindex="-1"></a>fem_32<span class="ot">&lt;-</span> encuestas <span class="sc">%&gt;%</span> <span class="fu">filter</span>( Sexo<span class="sc">==</span><span class="st">&quot;F&quot;</span>, Edad<span class="sc">&lt;</span><span class="dv">32</span>)</span>
-<span id="cb461-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb461-3" tabindex="-1"></a>(<span class="fu">nrow</span>(fem_32)<span class="sc">/</span><span class="fu">nrow</span>(fem))<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
+<div class="sourceCode" id="cb455"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb455-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb455-1" tabindex="-1"></a>fem<span class="ot">&lt;-</span> encuestas <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Sexo<span class="sc">==</span><span class="st">&quot;F&quot;</span>)</span>
+<span id="cb455-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb455-2" tabindex="-1"></a>fem_32<span class="ot">&lt;-</span> encuestas <span class="sc">%&gt;%</span> <span class="fu">filter</span>( Sexo<span class="sc">==</span><span class="st">&quot;F&quot;</span>, Edad<span class="sc">&lt;</span><span class="dv">32</span>)</span>
+<span id="cb455-3"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb455-3" tabindex="-1"></a>(<span class="fu">nrow</span>(fem_32)<span class="sc">/</span><span class="fu">nrow</span>(fem))<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
 <pre><code>## [1] 87.5</code></pre>
 <p><br />
 5.
 Agrega una nueva columna a a la data llamada <code>tatuajes.por.año</code> que muestre cuántos tatuajes por año se ha hecho cada persona por cada año en su vida.<br />
 </p>
-<div class="sourceCode" id="cb463"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb463-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb463-1" tabindex="-1"></a>encuestas<span class="ot">&lt;-</span> encuestas <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="st">&quot;tatuajesporaño&quot;</span><span class="ot">=</span>Tatuajes<span class="sc">/</span>Edad)</span>
-<span id="cb463-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb463-2" tabindex="-1"></a>encuestas<span class="sc">$</span>tatuajesporaño</span></code></pre></div>
+<div class="sourceCode" id="cb457"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb457-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb457-1" tabindex="-1"></a>encuestas<span class="ot">&lt;-</span> encuestas <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="st">&quot;tatuajesporaño&quot;</span><span class="ot">=</span>Tatuajes<span class="sc">/</span>Edad)</span>
+<span id="cb457-2"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb457-2" tabindex="-1"></a>encuestas<span class="sc">$</span>tatuajesporaño</span></code></pre></div>
 <pre><code>##  [1]  0.3666667  0.6000000  0.4800000  0.1724138  2.9545455  0.1363636  0.2571429  0.6842105
 ##  [9] 28.1250000  0.0000000</code></pre>
 <p><br />
 6.
 ¿Cuál persona tiene el mayor número de tatuajes por año?<br />
 </p>
-<div class="sourceCode" id="cb465"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb465-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb465-1" tabindex="-1"></a>encuestas  <span class="sc">%&gt;%</span> <span class="fu">filter</span>(tatuajesporaño <span class="sc">==</span> <span class="fu">max</span>(tatuajesporaño)) </span></code></pre></div>
+<div class="sourceCode" id="cb459"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb459-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb459-1" tabindex="-1"></a>encuestas  <span class="sc">%&gt;%</span> <span class="fu">filter</span>(tatuajesporaño <span class="sc">==</span> <span class="fu">max</span>(tatuajesporaño)) </span></code></pre></div>
 <pre><code>##       Nombre Sexo Edad Superhéroe Tatuajes tatuajesporaño
 ## 1 Nivedithia    F   32     Maggot      900         28.125</code></pre>
 <p><br />
 7.
 ¿Cuáles son los nombres de las mujeres a las que su superheroe favorito es superman?<br />
 </p>
-<div class="sourceCode" id="cb467"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb467-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb467-1" tabindex="-1"></a>encuestas <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Sexo<span class="sc">==</span><span class="st">&quot;F&quot;</span>, Superhéroe<span class="sc">==</span><span class="st">&quot;Superman&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(Nombre)</span></code></pre></div>
+<div class="sourceCode" id="cb461"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb461-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb461-1" tabindex="-1"></a>encuestas <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Sexo<span class="sc">==</span><span class="st">&quot;F&quot;</span>, Superhéroe<span class="sc">==</span><span class="st">&quot;Superman&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(Nombre)</span></code></pre></div>
 <pre><code>##   Nombre
 ## 1    Lea
 ## 2  Wendy
@@ -1974,7 +1960,7 @@ Agrega una nueva columna a a la data llamada <code>tatuajes.por.año</code> que 
 8.
 ¿Cuál es la mediana del número de tatuajes de cada persona que está por encima de los 20 años y que su personaje favorito es batman?<br />
 </p>
-<div class="sourceCode" id="cb469"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb469-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb469-1" tabindex="-1"></a>encuestas <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Edad<span class="sc">&gt;</span><span class="dv">20</span>, Superhéroe <span class="sc">==</span><span class="st">&quot;Batman&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">mediana=</span><span class="fu">median</span>(Tatuajes))</span></code></pre></div>
+<div class="sourceCode" id="cb463"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb463-1"><a href="manejo-de-data-frames-y-bases-de-datos.html#cb463-1" tabindex="-1"></a>encuestas <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Edad<span class="sc">&gt;</span><span class="dv">20</span>, Superhéroe <span class="sc">==</span><span class="st">&quot;Batman&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">mediana=</span><span class="fu">median</span>(Tatuajes))</span></code></pre></div>
 <pre><code>##   mediana
 ## 1    11.5</code></pre>
 

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 18 U Mann Whitney | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</title>
-  <meta name="description" content="Capítulo 18 U Mann Whitney | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <title>Capítulo 18 U Mann Whitney | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</title>
+  <meta name="description" content="Capítulo 18 U Mann Whitney | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 18 U Mann Whitney | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <meta property="og:title" content="Capítulo 18 U Mann Whitney | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="Steph0522/R_Manual" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 18 U Mann Whitney | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <meta name="twitter:title" content="Capítulo 18 U Mann Whitney | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   
   
   
@@ -384,7 +384,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</a>
           </h1>
         </div>
 
@@ -401,9 +401,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div id="u-mann-whitney---ejemplo" class="section level2 hasAnchor" number="18.1">
 <h2><span class="header-section-number">18.1</span> U Mann Whitney - Ejemplo<a href="u-mann-whitney-1.html#u-mann-whitney---ejemplo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb595"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb595-1"><a href="u-mann-whitney-1.html#cb595-1" tabindex="-1"></a>data_u<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Control=</span><span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">22</span>, <span class="dv">38</span>, <span class="dv">42</span>, <span class="dv">50</span>),</span>
-<span id="cb595-2"><a href="u-mann-whitney-1.html#cb595-2" tabindex="-1"></a>                    <span class="at">Tratamiento=</span><span class="fu">c</span>(<span class="dv">14</span>, <span class="dv">25</span>, <span class="dv">40</span>, <span class="dv">44</span>, <span class="dv">48</span>))</span></code></pre></div>
-<div class="sourceCode" id="cb596"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb596-1"><a href="u-mann-whitney-1.html#cb596-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(data_u, <span class="at">align =</span> <span class="st">&quot;c&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb585"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb585-1"><a href="u-mann-whitney-1.html#cb585-1" tabindex="-1"></a>data_u<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Control=</span><span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">22</span>, <span class="dv">38</span>, <span class="dv">42</span>, <span class="dv">50</span>),</span>
+<span id="cb585-2"><a href="u-mann-whitney-1.html#cb585-2" tabindex="-1"></a>                    <span class="at">Tratamiento=</span><span class="fu">c</span>(<span class="dv">14</span>, <span class="dv">25</span>, <span class="dv">40</span>, <span class="dv">44</span>, <span class="dv">48</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb586"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb586-1"><a href="u-mann-whitney-1.html#cb586-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(data_u, <span class="at">align =</span> <span class="st">&quot;c&quot;</span>)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">

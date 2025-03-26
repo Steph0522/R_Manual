@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 23 Ejemplo aplicado | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</title>
-  <meta name="description" content="Capítulo 23 Ejemplo aplicado | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <title>Capítulo 23 Ejemplo aplicado | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</title>
+  <meta name="description" content="Capítulo 23 Ejemplo aplicado | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 23 Ejemplo aplicado | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <meta property="og:title" content="Capítulo 23 Ejemplo aplicado | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="Steph0522/R_Manual" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 23 Ejemplo aplicado | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <meta name="twitter:title" content="Capítulo 23 Ejemplo aplicado | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   
   
   
@@ -384,7 +384,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</a>
           </h1>
         </div>
 
@@ -394,21 +394,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="ejemplo-aplicado-1" class="section level1 hasAnchor" number="23">
 <h1><span class="header-section-number">Capítulo 23</span> Ejemplo aplicado<a href="ejemplo-aplicado-1.html#ejemplo-aplicado-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="sourceCode" id="cb607"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb607-1"><a href="ejemplo-aplicado-1.html#cb607-1" tabindex="-1"></a>Grupo1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">38.9</span>, <span class="fl">61.2</span>, <span class="fl">73.3</span>, <span class="fl">21.8</span>, <span class="fl">63.4</span>, <span class="fl">64.6</span>, <span class="fl">48.4</span>, <span class="fl">48.8</span>, <span class="fl">48.5</span>)</span>
-<span id="cb607-2"><a href="ejemplo-aplicado-1.html#cb607-2" tabindex="-1"></a>Grupo2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">67.8</span>, <span class="dv">60</span>, <span class="fl">63.4</span>, <span class="dv">76</span>, <span class="fl">89.4</span>, <span class="fl">73.3</span>, <span class="fl">67.3</span>, <span class="fl">61.3</span>, <span class="fl">62.4</span>) </span>
-<span id="cb607-3"><a href="ejemplo-aplicado-1.html#cb607-3" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>( </span>
-<span id="cb607-4"><a href="ejemplo-aplicado-1.html#cb607-4" tabindex="-1"></a>                <span class="at">group =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;G1&quot;</span>, <span class="st">&quot;G2&quot;</span>), <span class="at">each =</span> <span class="dv">9</span>),</span>
-<span id="cb607-5"><a href="ejemplo-aplicado-1.html#cb607-5" tabindex="-1"></a>                <span class="at">weight =</span> <span class="fu">c</span>(Grupo1,  Grupo2)</span>
-<span id="cb607-6"><a href="ejemplo-aplicado-1.html#cb607-6" tabindex="-1"></a>                )</span></code></pre></div>
+<div class="sourceCode" id="cb597"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb597-1"><a href="ejemplo-aplicado-1.html#cb597-1" tabindex="-1"></a>Grupo1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">38.9</span>, <span class="fl">61.2</span>, <span class="fl">73.3</span>, <span class="fl">21.8</span>, <span class="fl">63.4</span>, <span class="fl">64.6</span>, <span class="fl">48.4</span>, <span class="fl">48.8</span>, <span class="fl">48.5</span>)</span>
+<span id="cb597-2"><a href="ejemplo-aplicado-1.html#cb597-2" tabindex="-1"></a>Grupo2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">67.8</span>, <span class="dv">60</span>, <span class="fl">63.4</span>, <span class="dv">76</span>, <span class="fl">89.4</span>, <span class="fl">73.3</span>, <span class="fl">67.3</span>, <span class="fl">61.3</span>, <span class="fl">62.4</span>) </span>
+<span id="cb597-3"><a href="ejemplo-aplicado-1.html#cb597-3" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>( </span>
+<span id="cb597-4"><a href="ejemplo-aplicado-1.html#cb597-4" tabindex="-1"></a>                <span class="at">group =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;G1&quot;</span>, <span class="st">&quot;G2&quot;</span>), <span class="at">each =</span> <span class="dv">9</span>),</span>
+<span id="cb597-5"><a href="ejemplo-aplicado-1.html#cb597-5" tabindex="-1"></a>                <span class="at">weight =</span> <span class="fu">c</span>(Grupo1,  Grupo2)</span>
+<span id="cb597-6"><a href="ejemplo-aplicado-1.html#cb597-6" tabindex="-1"></a>                )</span></code></pre></div>
 <p>¿Hay diferencias entre estos dos grupos?</p>
-<div class="sourceCode" id="cb608"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb608-1"><a href="ejemplo-aplicado-1.html#cb608-1" tabindex="-1"></a><span class="fu">with</span>(my_data, <span class="fu">shapiro.test</span>(weight[group <span class="sc">==</span> <span class="st">&quot;G1&quot;</span>]))</span></code></pre></div>
+<div class="sourceCode" id="cb598"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb598-1"><a href="ejemplo-aplicado-1.html#cb598-1" tabindex="-1"></a><span class="fu">with</span>(my_data, <span class="fu">shapiro.test</span>(weight[group <span class="sc">==</span> <span class="st">&quot;G1&quot;</span>]))</span></code></pre></div>
 <pre><code>## 
 ##  Shapiro-Wilk normality test
 ## 
 ## data:  weight[group == &quot;G1&quot;]
 ## W = 0.94266, p-value = 0.6101</code></pre>
-<div class="sourceCode" id="cb610"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb610-1"><a href="ejemplo-aplicado-1.html#cb610-1" tabindex="-1"></a><span class="co">#Prueba de normalidad</span></span>
-<span id="cb610-2"><a href="ejemplo-aplicado-1.html#cb610-2" tabindex="-1"></a><span class="fu">with</span>(my_data, <span class="fu">shapiro.test</span>(weight[group <span class="sc">==</span> <span class="st">&quot;G2&quot;</span>])) </span></code></pre></div>
+<div class="sourceCode" id="cb600"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb600-1"><a href="ejemplo-aplicado-1.html#cb600-1" tabindex="-1"></a><span class="co">#Prueba de normalidad</span></span>
+<span id="cb600-2"><a href="ejemplo-aplicado-1.html#cb600-2" tabindex="-1"></a><span class="fu">with</span>(my_data, <span class="fu">shapiro.test</span>(weight[group <span class="sc">==</span> <span class="st">&quot;G2&quot;</span>])) </span></code></pre></div>
 <pre><code>## 
 ##  Shapiro-Wilk normality test
 ## 

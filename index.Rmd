@@ -1,5 +1,5 @@
 ---
-title: 'NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO '
+title: 'INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO '
 author:
   - "Dra. Stephanie Hereira-Pacheco"
   - "Dr. Mauricio Hernández" 

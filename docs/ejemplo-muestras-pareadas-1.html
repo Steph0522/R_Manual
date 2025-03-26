@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 9 Ejemplo muestras pareadas | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</title>
-  <meta name="description" content="Capítulo 9 Ejemplo muestras pareadas | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <title>Capítulo 9 Ejemplo muestras pareadas | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</title>
+  <meta name="description" content="Capítulo 9 Ejemplo muestras pareadas | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 9 Ejemplo muestras pareadas | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <meta property="og:title" content="Capítulo 9 Ejemplo muestras pareadas | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="Steph0522/R_Manual" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 9 Ejemplo muestras pareadas | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <meta name="twitter:title" content="Capítulo 9 Ejemplo muestras pareadas | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   
   
   
@@ -384,7 +384,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</a>
           </h1>
         </div>
 
@@ -394,21 +394,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="ejemplo-muestras-pareadas-1" class="section level1 hasAnchor" number="9">
 <h1><span class="header-section-number">Capítulo 9</span> Ejemplo muestras pareadas<a href="ejemplo-muestras-pareadas-1.html#ejemplo-muestras-pareadas-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="sourceCode" id="cb579"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb579-1"><a href="ejemplo-muestras-pareadas-1.html#cb579-1" tabindex="-1"></a><span class="fu">shapiro.test</span>(data_pareada<span class="sc">$</span>Diferencia)</span></code></pre></div>
+<div class="sourceCode" id="cb569"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb569-1"><a href="ejemplo-muestras-pareadas-1.html#cb569-1" tabindex="-1"></a><span class="fu">shapiro.test</span>(data_pareada<span class="sc">$</span>Diferencia)</span></code></pre></div>
 <pre><code>## 
 ##  Shapiro-Wilk normality test
 ## 
 ## data:  data_pareada$Diferencia
 ## W = 0.93611, p-value = 0.5106</code></pre>
 <p>Manualmente</p>
-<div class="sourceCode" id="cb581"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb581-1"><a href="ejemplo-muestras-pareadas-1.html#cb581-1" tabindex="-1"></a>prom <span class="ot">=</span> <span class="fu">mean</span>(data_pareada<span class="sc">$</span>Diferenci); desves <span class="ot">=</span> <span class="fu">sd</span>(data_pareada<span class="sc">$</span>Diferenci); sn <span class="ot">=</span> <span class="fu">sqrt</span>(<span class="fu">nrow</span>(data_pareada));mu <span class="ot">=</span> <span class="dv">0</span></span>
-<span id="cb581-2"><a href="ejemplo-muestras-pareadas-1.html#cb581-2" tabindex="-1"></a>t<span class="ot">=</span>(prom<span class="sc">-</span>mu)<span class="sc">/</span>(desves<span class="sc">/</span>sn)</span>
-<span id="cb581-3"><a href="ejemplo-muestras-pareadas-1.html#cb581-3" tabindex="-1"></a>t;<span class="fu">pt</span>(t, <span class="at">df=</span><span class="dv">9</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb571"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb571-1"><a href="ejemplo-muestras-pareadas-1.html#cb571-1" tabindex="-1"></a>prom <span class="ot">=</span> <span class="fu">mean</span>(data_pareada<span class="sc">$</span>Diferenci); desves <span class="ot">=</span> <span class="fu">sd</span>(data_pareada<span class="sc">$</span>Diferenci); sn <span class="ot">=</span> <span class="fu">sqrt</span>(<span class="fu">nrow</span>(data_pareada));mu <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb571-2"><a href="ejemplo-muestras-pareadas-1.html#cb571-2" tabindex="-1"></a>t<span class="ot">=</span>(prom<span class="sc">-</span>mu)<span class="sc">/</span>(desves<span class="sc">/</span>sn)</span>
+<span id="cb571-3"><a href="ejemplo-muestras-pareadas-1.html#cb571-3" tabindex="-1"></a>t;<span class="fu">pt</span>(t, <span class="at">df=</span><span class="dv">9</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] 29.96903</code></pre>
 <pre><code>## [1] 1.253345e-10</code></pre>
 <p>.pull-rigth[
 Con R</p>
-<div class="sourceCode" id="cb584"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb584-1"><a href="ejemplo-muestras-pareadas-1.html#cb584-1" tabindex="-1"></a><span class="fu">t.test</span>(data_pareada<span class="sc">$</span>Temp_post, data_pareada<span class="sc">$</span>Temp_pre, <span class="at">mu =</span> <span class="dv">0</span>, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb574"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb574-1"><a href="ejemplo-muestras-pareadas-1.html#cb574-1" tabindex="-1"></a><span class="fu">t.test</span>(data_pareada<span class="sc">$</span>Temp_post, data_pareada<span class="sc">$</span>Temp_pre, <span class="at">mu =</span> <span class="dv">0</span>, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Paired t-test
 ## 

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 5 Introducción a la estadística | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</title>
-  <meta name="description" content="Capítulo 5 Introducción a la estadística | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <title>Capítulo 5 Introducción a la estadística | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</title>
+  <meta name="description" content="Capítulo 5 Introducción a la estadística | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 5 Introducción a la estadística | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <meta property="og:title" content="Capítulo 5 Introducción a la estadística | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="Steph0522/R_Manual" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 5 Introducción a la estadística | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <meta name="twitter:title" content="Capítulo 5 Introducción a la estadística | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   
   
   
@@ -384,7 +384,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</a>
           </h1>
         </div>
 
@@ -417,33 +417,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">5.5</span> ¿Cómo saber si mis datos presentan una distribución normal y homogeneidad de las variancias?:<a href="introducción-a-la-estadística.html#cómo-saber-si-mis-datos-presentan-una-distribución-normal-y-homogeneidad-de-las-variancias" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="métodos-visuales" class="section level3 hasAnchor" number="5.5.1">
 <h3><span class="header-section-number">5.5.1</span> Métodos visuales<a href="introducción-a-la-estadística.html#métodos-visuales" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb523"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb523-1"><a href="introducción-a-la-estadística.html#cb523-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb523-2"><a href="introducción-a-la-estadística.html#cb523-2" tabindex="-1"></a>data_normal<span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">200</span>)</span>
-<span id="cb523-3"><a href="introducción-a-la-estadística.html#cb523-3" tabindex="-1"></a><span class="fu">hist</span>(data_normal, <span class="at">col=</span><span class="st">&#39;steelblue&#39;</span>, <span class="at">main=</span><span class="st">&#39;Normal&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb513"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb513-1"><a href="introducción-a-la-estadística.html#cb513-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb513-2"><a href="introducción-a-la-estadística.html#cb513-2" tabindex="-1"></a>data_normal<span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">200</span>)</span>
+<span id="cb513-3"><a href="introducción-a-la-estadística.html#cb513-3" tabindex="-1"></a><span class="fu">hist</span>(data_normal, <span class="at">col=</span><span class="st">&#39;steelblue&#39;</span>, <span class="at">main=</span><span class="st">&#39;Normal&#39;</span>)</span></code></pre></div>
+<p><img src="R_Manual_files/figure-html/unnamed-chunk-247-1.png" width="672" /></p>
+<div class="sourceCode" id="cb514"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb514-1"><a href="introducción-a-la-estadística.html#cb514-1" tabindex="-1"></a>data_no_normal<span class="ot">&lt;-</span> <span class="fu">rexp</span>(<span class="dv">100</span>, <span class="at">rate=</span><span class="dv">3</span>)</span>
+<span id="cb514-2"><a href="introducción-a-la-estadística.html#cb514-2" tabindex="-1"></a><span class="fu">hist</span>(data_no_normal, <span class="at">col=</span><span class="st">&#39;red&#39;</span>, <span class="at">main=</span><span class="st">&#39;No normal&#39;</span>)</span></code></pre></div>
+<p><img src="R_Manual_files/figure-html/unnamed-chunk-247-2.png" width="672" /></p>
+<div class="sourceCode" id="cb515"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb515-1"><a href="introducción-a-la-estadística.html#cb515-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(data_normal), <span class="at">main=</span><span class="st">&quot;Normal&quot;</span>)</span></code></pre></div>
 <p><img src="R_Manual_files/figure-html/unnamed-chunk-248-1.png" width="672" /></p>
-<div class="sourceCode" id="cb524"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb524-1"><a href="introducción-a-la-estadística.html#cb524-1" tabindex="-1"></a>data_no_normal<span class="ot">&lt;-</span> <span class="fu">rexp</span>(<span class="dv">100</span>, <span class="at">rate=</span><span class="dv">3</span>)</span>
-<span id="cb524-2"><a href="introducción-a-la-estadística.html#cb524-2" tabindex="-1"></a><span class="fu">hist</span>(data_no_normal, <span class="at">col=</span><span class="st">&#39;red&#39;</span>, <span class="at">main=</span><span class="st">&#39;No normal&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb516"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb516-1"><a href="introducción-a-la-estadística.html#cb516-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(data_no_normal), <span class="at">main=</span><span class="st">&quot;No Normal&quot;</span>)</span></code></pre></div>
 <p><img src="R_Manual_files/figure-html/unnamed-chunk-248-2.png" width="672" /></p>
-<div class="sourceCode" id="cb525"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb525-1"><a href="introducción-a-la-estadística.html#cb525-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(data_normal), <span class="at">main=</span><span class="st">&quot;Normal&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb517"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb517-1"><a href="introducción-a-la-estadística.html#cb517-1" tabindex="-1"></a><span class="fu">qqnorm</span>(data_normal)</span>
+<span id="cb517-2"><a href="introducción-a-la-estadística.html#cb517-2" tabindex="-1"></a><span class="fu">qqline</span>(data_normal)</span></code></pre></div>
 <p><img src="R_Manual_files/figure-html/unnamed-chunk-249-1.png" width="672" /></p>
-<div class="sourceCode" id="cb526"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb526-1"><a href="introducción-a-la-estadística.html#cb526-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(data_no_normal), <span class="at">main=</span><span class="st">&quot;No Normal&quot;</span>)</span></code></pre></div>
-<p><img src="R_Manual_files/figure-html/unnamed-chunk-249-2.png" width="672" /></p>
-<div class="sourceCode" id="cb527"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb527-1"><a href="introducción-a-la-estadística.html#cb527-1" tabindex="-1"></a><span class="fu">qqnorm</span>(data_normal)</span>
-<span id="cb527-2"><a href="introducción-a-la-estadística.html#cb527-2" tabindex="-1"></a><span class="fu">qqline</span>(data_normal)</span></code></pre></div>
+<div class="sourceCode" id="cb518"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb518-1"><a href="introducción-a-la-estadística.html#cb518-1" tabindex="-1"></a><span class="fu">qqnorm</span>(data_no_normal)</span>
+<span id="cb518-2"><a href="introducción-a-la-estadística.html#cb518-2" tabindex="-1"></a><span class="fu">qqline</span>(data_no_normal)</span></code></pre></div>
 <p><img src="R_Manual_files/figure-html/unnamed-chunk-250-1.png" width="672" /></p>
-<div class="sourceCode" id="cb528"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb528-1"><a href="introducción-a-la-estadística.html#cb528-1" tabindex="-1"></a><span class="fu">qqnorm</span>(data_no_normal)</span>
-<span id="cb528-2"><a href="introducción-a-la-estadística.html#cb528-2" tabindex="-1"></a><span class="fu">qqline</span>(data_no_normal)</span></code></pre></div>
-<p><img src="R_Manual_files/figure-html/unnamed-chunk-251-1.png" width="672" /></p>
 </div>
 <div id="prueba-de-shapiro-wilk" class="section level3 hasAnchor" number="5.5.2">
 <h3><span class="header-section-number">5.5.2</span> Prueba de Shapiro-Wilk<a href="introducción-a-la-estadística.html#prueba-de-shapiro-wilk" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb529"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb529-1"><a href="introducción-a-la-estadística.html#cb529-1" tabindex="-1"></a><span class="fu">shapiro.test</span>(data_normal)</span></code></pre></div>
+<div class="sourceCode" id="cb519"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb519-1"><a href="introducción-a-la-estadística.html#cb519-1" tabindex="-1"></a><span class="fu">shapiro.test</span>(data_normal)</span></code></pre></div>
 <pre><code>## 
 ##  Shapiro-Wilk normality test
 ## 
 ## data:  data_normal
 ## W = 0.99076, p-value = 0.2298</code></pre>
-<div class="sourceCode" id="cb531"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb531-1"><a href="introducción-a-la-estadística.html#cb531-1" tabindex="-1"></a><span class="fu">shapiro.test</span>(data_no_normal)</span></code></pre></div>
+<div class="sourceCode" id="cb521"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb521-1"><a href="introducción-a-la-estadística.html#cb521-1" tabindex="-1"></a><span class="fu">shapiro.test</span>(data_no_normal)</span></code></pre></div>
 <pre><code>## 
 ##  Shapiro-Wilk normality test
 ## 
@@ -452,14 +452,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="pruebas-de-ajuste-o-distribución-prueba-de-kolmogorov-smirnov-prueba-de-anderson-darling" class="section level3 hasAnchor" number="5.5.3">
 <h3><span class="header-section-number">5.5.3</span> Pruebas de ajuste o distribución: Prueba de Kolmogorov-Smirnov, Prueba de Anderson-Darling<a href="introducción-a-la-estadística.html#pruebas-de-ajuste-o-distribución-prueba-de-kolmogorov-smirnov-prueba-de-anderson-darling" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb533"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb533-1"><a href="introducción-a-la-estadística.html#cb533-1" tabindex="-1"></a><span class="fu">ks.test</span>(data_normal, <span class="st">&quot;pnorm&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb523"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb523-1"><a href="introducción-a-la-estadística.html#cb523-1" tabindex="-1"></a><span class="fu">ks.test</span>(data_normal, <span class="st">&quot;pnorm&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Asymptotic one-sample Kolmogorov-Smirnov test
 ## 
 ## data:  data_normal
 ## D = 0.053155, p-value = 0.6243
 ## alternative hypothesis: two-sided</code></pre>
-<div class="sourceCode" id="cb535"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb535-1"><a href="introducción-a-la-estadística.html#cb535-1" tabindex="-1"></a><span class="fu">ks.test</span>(data_no_normal, <span class="st">&quot;pnorm&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb525"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb525-1"><a href="introducción-a-la-estadística.html#cb525-1" tabindex="-1"></a><span class="fu">ks.test</span>(data_no_normal, <span class="st">&quot;pnorm&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Asymptotic one-sample Kolmogorov-Smirnov test
 ## 
@@ -469,35 +469,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="probando-homocedasticidad-o-heterocedasticidad" class="section level3 hasAnchor" number="5.5.4">
 <h3><span class="header-section-number">5.5.4</span> Probando Homocedasticidad o heterocedasticidad<a href="introducción-a-la-estadística.html#probando-homocedasticidad-o-heterocedasticidad" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb537"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb537-1"><a href="introducción-a-la-estadística.html#cb537-1" tabindex="-1"></a><span class="fu">aggregate</span>(len <span class="sc">~</span> supp, <span class="at">data =</span> ToothGrowth, var)</span></code></pre></div>
+<div class="sourceCode" id="cb527"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb527-1"><a href="introducción-a-la-estadística.html#cb527-1" tabindex="-1"></a><span class="fu">aggregate</span>(len <span class="sc">~</span> supp, <span class="at">data =</span> ToothGrowth, var)</span></code></pre></div>
 <pre><code>##   supp      len
 ## 1   OJ 43.63344
 ## 2   VC 68.32723</code></pre>
 <p>Ratio</p>
-<div class="sourceCode" id="cb539"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb539-1"><a href="introducción-a-la-estadística.html#cb539-1" tabindex="-1"></a><span class="fl">68.32</span> <span class="sc">/</span>  <span class="fl">43.63</span></span></code></pre></div>
+<div class="sourceCode" id="cb529"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb529-1"><a href="introducción-a-la-estadística.html#cb529-1" tabindex="-1"></a><span class="fl">68.32</span> <span class="sc">/</span>  <span class="fl">43.63</span></span></code></pre></div>
 <pre><code>## [1] 1.565895</code></pre>
-<div class="sourceCode" id="cb541"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb541-1"><a href="introducción-a-la-estadística.html#cb541-1" tabindex="-1"></a><span class="fu">aggregate</span>(Petal.Width <span class="sc">~</span> Species, <span class="at">data =</span> iris, var)</span></code></pre></div>
+<div class="sourceCode" id="cb531"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb531-1"><a href="introducción-a-la-estadística.html#cb531-1" tabindex="-1"></a><span class="fu">aggregate</span>(Petal.Width <span class="sc">~</span> Species, <span class="at">data =</span> iris, var)</span></code></pre></div>
 <pre><code>##      Species Petal.Width
 ## 1     setosa  0.01110612
 ## 2 versicolor  0.03910612
 ## 3  virginica  0.07543265</code></pre>
 <p>Ratio</p>
-<div class="sourceCode" id="cb543"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb543-1"><a href="introducción-a-la-estadística.html#cb543-1" tabindex="-1"></a>r1<span class="ot">&lt;-</span><span class="fl">0.03910612</span> <span class="sc">/</span> <span class="fl">0.01110612</span> <span class="co">#versicolor vs setosa</span></span>
-<span id="cb543-2"><a href="introducción-a-la-estadística.html#cb543-2" tabindex="-1"></a>r2<span class="ot">&lt;-</span><span class="fl">0.07543265</span> <span class="sc">/</span> <span class="fl">0.01110612</span> <span class="co">#virginca vs setosa</span></span>
-<span id="cb543-3"><a href="introducción-a-la-estadística.html#cb543-3" tabindex="-1"></a>r3<span class="ot">&lt;-</span><span class="fl">0.07543264</span> <span class="sc">/</span> <span class="fl">0.03910612</span> <span class="co">#virginica vs versicolor</span></span>
-<span id="cb543-4"><a href="introducción-a-la-estadística.html#cb543-4" tabindex="-1"></a><span class="fu">cbind</span>(r1,r2,r3)</span></code></pre></div>
+<div class="sourceCode" id="cb533"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb533-1"><a href="introducción-a-la-estadística.html#cb533-1" tabindex="-1"></a>r1<span class="ot">&lt;-</span><span class="fl">0.03910612</span> <span class="sc">/</span> <span class="fl">0.01110612</span> <span class="co">#versicolor vs setosa</span></span>
+<span id="cb533-2"><a href="introducción-a-la-estadística.html#cb533-2" tabindex="-1"></a>r2<span class="ot">&lt;-</span><span class="fl">0.07543265</span> <span class="sc">/</span> <span class="fl">0.01110612</span> <span class="co">#virginca vs setosa</span></span>
+<span id="cb533-3"><a href="introducción-a-la-estadística.html#cb533-3" tabindex="-1"></a>r3<span class="ot">&lt;-</span><span class="fl">0.07543264</span> <span class="sc">/</span> <span class="fl">0.03910612</span> <span class="co">#virginica vs versicolor</span></span>
+<span id="cb533-4"><a href="introducción-a-la-estadística.html#cb533-4" tabindex="-1"></a><span class="fu">cbind</span>(r1,r2,r3)</span></code></pre></div>
 <pre><code>##            r1       r2       r3
 ## [1,] 3.521132 6.791989 1.928922</code></pre>
-<div class="sourceCode" id="cb545"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb545-1"><a href="introducción-a-la-estadística.html#cb545-1" tabindex="-1"></a>m1<span class="ot">&lt;-</span><span class="fu">lm</span>(len <span class="sc">~</span> supp, <span class="at">data=</span>ToothGrowth)</span>
-<span id="cb545-2"><a href="introducción-a-la-estadística.html#cb545-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
-<span id="cb545-3"><a href="introducción-a-la-estadística.html#cb545-3" tabindex="-1"></a><span class="fu">plot</span>(m1, <span class="at">which=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb535"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb535-1"><a href="introducción-a-la-estadística.html#cb535-1" tabindex="-1"></a>m1<span class="ot">&lt;-</span><span class="fu">lm</span>(len <span class="sc">~</span> supp, <span class="at">data=</span>ToothGrowth)</span>
+<span id="cb535-2"><a href="introducción-a-la-estadística.html#cb535-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb535-3"><a href="introducción-a-la-estadística.html#cb535-3" tabindex="-1"></a><span class="fu">plot</span>(m1, <span class="at">which=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span></code></pre></div>
+<p><img src="R_Manual_files/figure-html/unnamed-chunk-259-1.png" width="768" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb536"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb536-1"><a href="introducción-a-la-estadística.html#cb536-1" tabindex="-1"></a>m2<span class="ot">&lt;-</span><span class="fu">lm</span>(Petal.Width <span class="sc">~</span> Species, <span class="at">data=</span>iris)</span>
+<span id="cb536-2"><a href="introducción-a-la-estadística.html#cb536-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb536-3"><a href="introducción-a-la-estadística.html#cb536-3" tabindex="-1"></a><span class="fu">plot</span>(m2, <span class="at">which=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span></code></pre></div>
 <p><img src="R_Manual_files/figure-html/unnamed-chunk-260-1.png" width="768" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb546"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb546-1"><a href="introducción-a-la-estadística.html#cb546-1" tabindex="-1"></a>m2<span class="ot">&lt;-</span><span class="fu">lm</span>(Petal.Width <span class="sc">~</span> Species, <span class="at">data=</span>iris)</span>
-<span id="cb546-2"><a href="introducción-a-la-estadística.html#cb546-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
-<span id="cb546-3"><a href="introducción-a-la-estadística.html#cb546-3" tabindex="-1"></a><span class="fu">plot</span>(m2, <span class="at">which=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span></code></pre></div>
-<p><img src="R_Manual_files/figure-html/unnamed-chunk-261-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>Prueba para dos niveles = F</p>
-<div class="sourceCode" id="cb547"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb547-1"><a href="introducción-a-la-estadística.html#cb547-1" tabindex="-1"></a><span class="fu">var.test</span>(len <span class="sc">~</span> supp, <span class="at">data =</span> ToothGrowth) </span></code></pre></div>
+<div class="sourceCode" id="cb537"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb537-1"><a href="introducción-a-la-estadística.html#cb537-1" tabindex="-1"></a><span class="fu">var.test</span>(len <span class="sc">~</span> supp, <span class="at">data =</span> ToothGrowth) </span></code></pre></div>
 <pre><code>## 
 ##  F test to compare two variances
 ## 
@@ -509,7 +509,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## sample estimates:
 ## ratio of variances 
 ##          0.6385951</code></pre>
-<div class="sourceCode" id="cb549"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb549-1"><a href="introducción-a-la-estadística.html#cb549-1" tabindex="-1"></a>lmtest<span class="sc">::</span><span class="fu">bptest</span>(m2) <span class="co">#sobre un modelo</span></span></code></pre></div>
+<div class="sourceCode" id="cb539"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb539-1"><a href="introducción-a-la-estadística.html#cb539-1" tabindex="-1"></a>lmtest<span class="sc">::</span><span class="fu">bptest</span>(m2) <span class="co">#sobre un modelo</span></span></code></pre></div>
 <pre><code>## 
 ##  studentized Breusch-Pagan test
 ## 
@@ -517,7 +517,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## BP = 25.099, df = 2, p-value = 3.546e-06</code></pre>
 <div id="otras-pruebas" class="section level4 hasAnchor" number="5.5.4.1">
 <h4><span class="header-section-number">5.5.4.1</span> Otras pruebas<a href="introducción-a-la-estadística.html#otras-pruebas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb551"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb551-1"><a href="introducción-a-la-estadística.html#cb551-1" tabindex="-1"></a>GAD<span class="sc">::</span><span class="fu">C.test</span>(m2)</span></code></pre></div>
+<div class="sourceCode" id="cb541"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb541-1"><a href="introducción-a-la-estadística.html#cb541-1" tabindex="-1"></a>GAD<span class="sc">::</span><span class="fu">C.test</span>(m2)</span></code></pre></div>
 <pre><code>## 
 ##  Cochran test of homogeneity of variances
 ## 
@@ -527,7 +527,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## sample estimates:
 ##     setosa versicolor  virginica 
 ##     0.0111     0.0391     0.0754</code></pre>
-<div class="sourceCode" id="cb553"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb553-1"><a href="introducción-a-la-estadística.html#cb553-1" tabindex="-1"></a>car<span class="sc">::</span><span class="fu">leveneTest</span>(m2)</span></code></pre></div>
+<div class="sourceCode" id="cb543"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb543-1"><a href="introducción-a-la-estadística.html#cb543-1" tabindex="-1"></a>car<span class="sc">::</span><span class="fu">leveneTest</span>(m2)</span></code></pre></div>
 <pre><code>## Levene&#39;s Test for Homogeneity of Variance (center = median)
 ##        Df F value    Pr(&gt;F)    
 ## group   2  19.892 2.261e-08 ***
@@ -535,23 +535,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p><strong>Ejemplo:</strong></p>
-<div class="sourceCode" id="cb555"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb555-1"><a href="introducción-a-la-estadística.html#cb555-1" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
-<span id="cb555-2"><a href="introducción-a-la-estadística.html#cb555-2" tabindex="-1"></a>cols<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Largo_Sepalo&quot;</span>, <span class="st">&quot;Ancho_Sepalo&quot;</span>, <span class="st">&quot;Largo_Petalo&quot;</span>, <span class="st">&quot;Ancho_Petalo&quot;</span>, <span class="st">&quot;Especies&quot;</span>)</span>
-<span id="cb555-3"><a href="introducción-a-la-estadística.html#cb555-3" tabindex="-1"></a><span class="fu">colnames</span>(iris)<span class="ot">&lt;-</span> cols</span></code></pre></div>
+<div class="sourceCode" id="cb545"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb545-1"><a href="introducción-a-la-estadística.html#cb545-1" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
+<span id="cb545-2"><a href="introducción-a-la-estadística.html#cb545-2" tabindex="-1"></a>cols<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Largo_Sepalo&quot;</span>, <span class="st">&quot;Ancho_Sepalo&quot;</span>, <span class="st">&quot;Largo_Petalo&quot;</span>, <span class="st">&quot;Ancho_Petalo&quot;</span>, <span class="st">&quot;Especies&quot;</span>)</span>
+<span id="cb545-3"><a href="introducción-a-la-estadística.html#cb545-3" tabindex="-1"></a><span class="fu">colnames</span>(iris)<span class="ot">&lt;-</span> cols</span></code></pre></div>
 <p>Este conjunto de datos describe tres especies de las flores iris y como cambia el ancho y largo de su pétalo y sépalo.
 Veamos la estructura de los datos:</p>
-<div class="sourceCode" id="cb556"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb556-1"><a href="introducción-a-la-estadística.html#cb556-1" tabindex="-1"></a><span class="fu">str</span>(iris)</span></code></pre></div>
+<div class="sourceCode" id="cb546"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb546-1"><a href="introducción-a-la-estadística.html#cb546-1" tabindex="-1"></a><span class="fu">str</span>(iris)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    150 obs. of  5 variables:
 ##  $ Largo_Sepalo: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
 ##  $ Ancho_Sepalo: num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
 ##  $ Largo_Petalo: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
 ##  $ Ancho_Petalo: num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
 ##  $ Especies    : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
-<div class="sourceCode" id="cb558"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb558-1"><a href="introducción-a-la-estadística.html#cb558-1" tabindex="-1"></a><span class="fu">dim</span>(iris)</span></code></pre></div>
+<div class="sourceCode" id="cb548"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb548-1"><a href="introducción-a-la-estadística.html#cb548-1" tabindex="-1"></a><span class="fu">dim</span>(iris)</span></code></pre></div>
 <pre><code>## [1] 150   5</code></pre>
-<div class="sourceCode" id="cb560"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb560-1"><a href="introducción-a-la-estadística.html#cb560-1" tabindex="-1"></a><span class="fu">nrow</span>(iris)</span></code></pre></div>
+<div class="sourceCode" id="cb550"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb550-1"><a href="introducción-a-la-estadística.html#cb550-1" tabindex="-1"></a><span class="fu">nrow</span>(iris)</span></code></pre></div>
 <pre><code>## [1] 150</code></pre>
-<div class="sourceCode" id="cb562"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb562-1"><a href="introducción-a-la-estadística.html#cb562-1" tabindex="-1"></a><span class="fu">ncol</span>(iris)</span></code></pre></div>
+<div class="sourceCode" id="cb552"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb552-1"><a href="introducción-a-la-estadística.html#cb552-1" tabindex="-1"></a><span class="fu">ncol</span>(iris)</span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
 <p>Como vemos, posee 4 variables de respuesta y un factor que sería la especie de flor.</p>
 <ul>
@@ -564,20 +564,20 @@ Para este ejemplo, usaremos el ancho del sepalo en vez del largo del sepalo.
 ¨</p>
 <p><br />
 </p>
-<div class="sourceCode" id="cb564"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb564-1"><a href="introducción-a-la-estadística.html#cb564-1" tabindex="-1"></a><span class="fu">hist</span>(iris<span class="sc">$</span>Ancho_Sepalo)</span></code></pre></div>
+<div class="sourceCode" id="cb554"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb554-1"><a href="introducción-a-la-estadística.html#cb554-1" tabindex="-1"></a><span class="fu">hist</span>(iris<span class="sc">$</span>Ancho_Sepalo)</span></code></pre></div>
+<p><img src="R_Manual_files/figure-html/unnamed-chunk-267-1.png" width="672" /></p>
+<div class="sourceCode" id="cb555"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb555-1"><a href="introducción-a-la-estadística.html#cb555-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(iris<span class="sc">$</span>Ancho_Sepalo))</span></code></pre></div>
+<p><img src="R_Manual_files/figure-html/unnamed-chunk-267-2.png" width="672" /></p>
+<div class="sourceCode" id="cb556"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb556-1"><a href="introducción-a-la-estadística.html#cb556-1" tabindex="-1"></a><span class="fu">qqnorm</span>(iris<span class="sc">$</span>Ancho_Sepalo)</span>
+<span id="cb556-2"><a href="introducción-a-la-estadística.html#cb556-2" tabindex="-1"></a><span class="fu">qqline</span>(iris<span class="sc">$</span>Ancho_Sepalo)</span></code></pre></div>
 <p><img src="R_Manual_files/figure-html/unnamed-chunk-268-1.png" width="672" /></p>
-<div class="sourceCode" id="cb565"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb565-1"><a href="introducción-a-la-estadística.html#cb565-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(iris<span class="sc">$</span>Ancho_Sepalo))</span></code></pre></div>
-<p><img src="R_Manual_files/figure-html/unnamed-chunk-268-2.png" width="672" /></p>
-<div class="sourceCode" id="cb566"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb566-1"><a href="introducción-a-la-estadística.html#cb566-1" tabindex="-1"></a><span class="fu">qqnorm</span>(iris<span class="sc">$</span>Ancho_Sepalo)</span>
-<span id="cb566-2"><a href="introducción-a-la-estadística.html#cb566-2" tabindex="-1"></a><span class="fu">qqline</span>(iris<span class="sc">$</span>Ancho_Sepalo)</span></code></pre></div>
+<div class="sourceCode" id="cb557"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb557-1"><a href="introducción-a-la-estadística.html#cb557-1" tabindex="-1"></a><span class="fu">library</span>(car) <span class="co"># cargamos el paquete car</span></span>
+<span id="cb557-2"><a href="introducción-a-la-estadística.html#cb557-2" tabindex="-1"></a><span class="fu">qqPlot</span>(iris<span class="sc">$</span>Ancho_Sepalo )</span></code></pre></div>
 <p><img src="R_Manual_files/figure-html/unnamed-chunk-269-1.png" width="672" /></p>
-<div class="sourceCode" id="cb567"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb567-1"><a href="introducción-a-la-estadística.html#cb567-1" tabindex="-1"></a><span class="fu">library</span>(car) <span class="co"># cargamos el paquete car</span></span>
-<span id="cb567-2"><a href="introducción-a-la-estadística.html#cb567-2" tabindex="-1"></a><span class="fu">qqPlot</span>(iris<span class="sc">$</span>Ancho_Sepalo )</span></code></pre></div>
-<p><img src="R_Manual_files/figure-html/unnamed-chunk-270-1.png" width="672" /></p>
 <pre><code>## [1] 16 34</code></pre>
 <p>Al parecer nuestros datos tienen una distribución normal, según los gráficos, sin embargo, para estar seguros de esto, haremos una prueba llamada test de shapiro que nos permitirá confirmar esto:<br />
 </p>
-<div class="sourceCode" id="cb569"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb569-1"><a href="introducción-a-la-estadística.html#cb569-1" tabindex="-1"></a><span class="fu">shapiro.test</span>(iris<span class="sc">$</span>Ancho_Sepalo)</span></code></pre></div>
+<div class="sourceCode" id="cb559"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb559-1"><a href="introducción-a-la-estadística.html#cb559-1" tabindex="-1"></a><span class="fu">shapiro.test</span>(iris<span class="sc">$</span>Ancho_Sepalo)</span></code></pre></div>
 <pre><code>## 
 ##  Shapiro-Wilk normality test
 ## 

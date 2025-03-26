@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 12 Ejemplo para dos grupos | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</title>
-  <meta name="description" content="Capítulo 12 Ejemplo para dos grupos | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <title>Capítulo 12 Ejemplo para dos grupos | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</title>
+  <meta name="description" content="Capítulo 12 Ejemplo para dos grupos | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 12 Ejemplo para dos grupos | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <meta property="og:title" content="Capítulo 12 Ejemplo para dos grupos | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="Steph0522/R_Manual" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 12 Ejemplo para dos grupos | NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <meta name="twitter:title" content="Capítulo 12 Ejemplo para dos grupos | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   
   
   
@@ -384,7 +384,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">NTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</a>
           </h1>
         </div>
 
@@ -395,17 +395,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="ejemplo-para-dos-grupos-1" class="section level1 hasAnchor" number="12">
 <h1><span class="header-section-number">Capítulo 12</span> Ejemplo para dos grupos<a href="ejemplo-para-dos-grupos-1.html#ejemplo-para-dos-grupos-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Manualmente</p>
-<div class="sourceCode" id="cb588"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb588-1"><a href="ejemplo-para-dos-grupos-1.html#cb588-1" tabindex="-1"></a>prom1 <span class="ot">=</span> <span class="fu">mean</span>(freidora<span class="sc">$</span>Oster1)</span>
-<span id="cb588-2"><a href="ejemplo-para-dos-grupos-1.html#cb588-2" tabindex="-1"></a>prom2<span class="ot">=</span><span class="fu">mean</span>(freidora<span class="sc">$</span>Oster2)</span>
-<span id="cb588-3"><a href="ejemplo-para-dos-grupos-1.html#cb588-3" tabindex="-1"></a></span>
-<span id="cb588-4"><a href="ejemplo-para-dos-grupos-1.html#cb588-4" tabindex="-1"></a>s<span class="ot">=</span>((<span class="fu">var</span>(freidora<span class="sc">$</span>Oster1)<span class="sc">*</span><span class="dv">9</span>)<span class="sc">+</span>(<span class="fu">var</span>(freidora<span class="sc">$</span>Oster2)<span class="sc">*</span><span class="dv">9</span>))<span class="sc">/</span>(<span class="dv">10</span><span class="sc">+</span><span class="dv">10-2</span>)</span>
-<span id="cb588-5"><a href="ejemplo-para-dos-grupos-1.html#cb588-5" tabindex="-1"></a>t<span class="ot">=</span>(prom1<span class="sc">-</span>prom2<span class="dv">-0</span>)<span class="sc">/</span>(<span class="fu">sqrt</span>(s<span class="sc">/</span><span class="dv">10</span><span class="sc">+</span>s<span class="sc">/</span><span class="dv">10</span>))</span>
-<span id="cb588-6"><a href="ejemplo-para-dos-grupos-1.html#cb588-6" tabindex="-1"></a>t; <span class="fu">pt</span>(<span class="sc">-</span><span class="fl">6.8527</span>, <span class="at">df=</span><span class="dv">18</span>, <span class="at">lower.tail=</span><span class="cn">TRUE</span>)<span class="sc">+</span><span class="fu">pt</span>(<span class="fl">6.8527</span>, <span class="at">df=</span><span class="dv">18</span>, <span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb578"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb578-1"><a href="ejemplo-para-dos-grupos-1.html#cb578-1" tabindex="-1"></a>prom1 <span class="ot">=</span> <span class="fu">mean</span>(freidora<span class="sc">$</span>Oster1)</span>
+<span id="cb578-2"><a href="ejemplo-para-dos-grupos-1.html#cb578-2" tabindex="-1"></a>prom2<span class="ot">=</span><span class="fu">mean</span>(freidora<span class="sc">$</span>Oster2)</span>
+<span id="cb578-3"><a href="ejemplo-para-dos-grupos-1.html#cb578-3" tabindex="-1"></a></span>
+<span id="cb578-4"><a href="ejemplo-para-dos-grupos-1.html#cb578-4" tabindex="-1"></a>s<span class="ot">=</span>((<span class="fu">var</span>(freidora<span class="sc">$</span>Oster1)<span class="sc">*</span><span class="dv">9</span>)<span class="sc">+</span>(<span class="fu">var</span>(freidora<span class="sc">$</span>Oster2)<span class="sc">*</span><span class="dv">9</span>))<span class="sc">/</span>(<span class="dv">10</span><span class="sc">+</span><span class="dv">10-2</span>)</span>
+<span id="cb578-5"><a href="ejemplo-para-dos-grupos-1.html#cb578-5" tabindex="-1"></a>t<span class="ot">=</span>(prom1<span class="sc">-</span>prom2<span class="dv">-0</span>)<span class="sc">/</span>(<span class="fu">sqrt</span>(s<span class="sc">/</span><span class="dv">10</span><span class="sc">+</span>s<span class="sc">/</span><span class="dv">10</span>))</span>
+<span id="cb578-6"><a href="ejemplo-para-dos-grupos-1.html#cb578-6" tabindex="-1"></a>t; <span class="fu">pt</span>(<span class="sc">-</span><span class="fl">6.8527</span>, <span class="at">df=</span><span class="dv">18</span>, <span class="at">lower.tail=</span><span class="cn">TRUE</span>)<span class="sc">+</span><span class="fu">pt</span>(<span class="fl">6.8527</span>, <span class="at">df=</span><span class="dv">18</span>, <span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] -6.852696</code></pre>
 <pre><code>## [1] 2.062577e-06</code></pre>
 <p>.pull-rigth[
 Con R</p>
-<div class="sourceCode" id="cb591"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb591-1"><a href="ejemplo-para-dos-grupos-1.html#cb591-1" tabindex="-1"></a><span class="fu">t.test</span>(freidora<span class="sc">$</span>Oster1, freidora<span class="sc">$</span>Oster2, <span class="at">mu=</span><span class="dv">0</span>, <span class="at">paired=</span><span class="cn">FALSE</span>, <span class="at">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="at">var.equal=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb581"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb581-1"><a href="ejemplo-para-dos-grupos-1.html#cb581-1" tabindex="-1"></a><span class="fu">t.test</span>(freidora<span class="sc">$</span>Oster1, freidora<span class="sc">$</span>Oster2, <span class="at">mu=</span><span class="dv">0</span>, <span class="at">paired=</span><span class="cn">FALSE</span>, <span class="at">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="at">var.equal=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Two Sample t-test
 ## 
