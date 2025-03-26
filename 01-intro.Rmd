@@ -1,27 +1,26 @@
 #  Introducción a R y Rstudio
 
 
-### Requisitos para la instalación de R
+**Instalación de Rsudio y R **
 
 - R versión de 4.0 en adelante.
 - Rstudio versiones 2024 en adelante.
 
-### Instalación de Rsudio y R 
 
 En caso de no tener instalado R y Rstudio que son los prerrequisitos para realizar cada uno de los ejercicios, entonces debe visitar los siguientes links para descargar e instalarlos. Es recomendable instalar la última versión para que disponga de los paquetes y funciones más actualizados y, le permitan a su vez, un mejor uso del software. 
 
-#### R 
+- **R** 
 
-- Para [MacOS](https://cran.r-project.org/bin/macosx/)
-- Para [Ubuntu](https://cran.r-project.org/bin/linux/ubuntu/)
-- Para [Windows](https://cran.r-project.org/bin/windows/base/)
++ Para [MacOS](https://cran.r-project.org/bin/macosx/)
++ Para [Ubuntu](https://cran.r-project.org/bin/linux/ubuntu/)
++ Para [Windows](https://cran.r-project.org/bin/windows/base/)
 
 
-#### Rstudio 
+- **Rstudio**
 
-- En [MacOS](https://download1.rstudio.org/electron/macos/RStudio-2024.12.1-563.dmg)
-- En [Ubuntu](https://download1.rstudio.org/electron/jammy/amd64/rstudio-2024.12.1-563-amd64.deb)
-- En [Windows](https://download1.rstudio.org/electron/windows/RStudio-2024.12.1-563.exe)
++ En [MacOS](https://download1.rstudio.org/electron/macos/RStudio-2024.12.1-563.dmg)
++ En [Ubuntu](https://download1.rstudio.org/electron/jammy/amd64/rstudio-2024.12.1-563-amd64.deb)
++ En [Windows](https://download1.rstudio.org/electron/windows/RStudio-2024.12.1-563.exe)
 
 
 
@@ -47,17 +46,22 @@ R es un lenguaje de programación como C, Java o Python, pero enfocado principal
 [^1]: <https://bookdown.org/jboscomendoza/r-principiantes4/un-poco-de-historia.html>
 
 R tiene su origen en el lenguaje de programación S, desarrollado en los Laboratorios Bell de Estados Unidos. Posteriormente, en 1993, Ross Ihaka y Robert Gentleman, de la Universidad de Auckland en Nueva Zelanda, crearon una versión de S de código abierto y gratuita, lo que permitió su acceso y uso generalizado. No obstante, fue en el año 2000 cuando se lanzó una versión estable de R. Actualmente, el desarrollo y mantenimiento del software están a cargo del R Development Core Team, un grupo internacional de expertos en ciencias computacionales y estadísticas, provenientes de diversas instituciones académicas. 
-
  
 ### ¿Por qué usar R?[^2]
 
 [^2]: <https://rafalab.github.io/dslibro/getting-started.html>
 
-1.  R es gratuito y de código abierto[^3].
-2.  Se ejecuta en todas las plataformas principales: Windows, Mac Os, UNIX/Linux.
-3.  Los *scripts* y los objetos y los objetos de datos se pueden compartir sin problemas entre plataformas y usuarios.
-4.  Existe una comunidad, creciente y activa de usuarios de R y, como resultado, hay numerosos recursos para aprender[^4] [^5].
-5.  Es fácil para otras personas contribuir con complementos (add-ons en inglés) o paquetes que les permiten a los desarrolladores compartir implementaciones de software relacionados a nuevas metodologías de ciencia de datos. Esto les aporta a los usuarios de R acceso directo a los métodos y herramientas más recientes que se desarrollan para una amplia variedad de disciplinas, incluyendo la ecología, la biología molecular, las ciencias sociales y la geografía, entre otros campos. 
+1. R es gratuito y de código abierto3. 
+
+2. Se ejecuta en todas las plataformas principales: Windows, Mac Os, UNIX/Linux. 
+
+3. Los *scripts* y los objetos de datos se pueden compartir entre plataformas y usuarios. 
+
+4. Existe una comunidad creciente y activa de usuarios en R y, como resultado, hay numerosos recursos para aprender4 5. 
+
+5. Es fácil para otras personas contribuir con complementos (*add-ons* en inglés) o paquetes que les permiten a los desarrolladores compartir implementaciones de software relacionados a nuevas metodologías de ciencia de datos. Esto les aporta a los usuarios de R acceso directo a los métodos y herramientas más recientes que se desarrollan para una amplia variedad de disciplinas, incluyendo la ecología, la biología molecular, las ciencias sociales y la geografía, entre otros campos. 
+
+6. Es fácil para otras personas contribuir con complementos (*add-ons* en inglés) o paquetes que les permiten a los desarrolladores compartir implementaciones de software relacionados a nuevas metodologías. Esto aporta acceso directo a los métodos y herramientas más recientes para una amplia variedad de disciplinas, incluyendo la ecología, la biología molecular, las ciencias sociales, la geografía, entre otros campos. 
 
 [^3]: <https://opensource.org/history>
 
@@ -67,24 +71,21 @@ R tiene su origen en el lenguaje de programación S, desarrollado en los Laborat
 
 ### RStudio {#rstudio}
 
-RStudio será nuestra plataforma para los proyectos usados con el lenguaje R.
-Nos provee un editor visual e interactivo para crear y editar nuestros *scripts*, además de otras herramientas útiles que iremos viendo con el pasar de los temas.
+RStudio será nuestra plataforma de uso directo, ya que nos provee un editor visual e interactivo para crear y editar *scripts*. Además, de otras herramientas útiles que iremos evaluando a lo largo de los diferentes temas. 
 
 ### Interfaz de Rstudio
 
-Rstudio posee 4 paneles principales  (Figura 1):
+Rstudio posee 4 paneles principales (Figura 1.1): 
 
-1.  Enl el panel izquierdo superior aparece nuestro el editor de códigos. Es decir, comprende la sección donde se crean los  Donde ponemos los scripts que deber ser vamos a ejecutadoscorrer. 
+1. En el panel superior izquierdo aparece el editor de códigos, que comprende la sección donde se crean los *scripts* que deben ser ejecutados. 
 
-2.  A la derecha, el panel superior incluye pestañas como Environment e History. La pestaña Environment (ambiente) muestra los nombres de todos los objetos (como vectores, matrices, bases de datos, etc.) creados en la consola. Por otra parte, la pestaña History le muestra un historial de todo el código que ha desarrollado previamente en la consolala derecha, el panel superior incluye pestañas como Environment y History, que son el ambiente y el historial, aquí podremos observar los objetos que vayamos declarando y data que subamos, además del historial de scripts. 
+2. En el panel inferior izquierdo se encuentra la consola. Aquí es donde R evalúa y corre los códigos. Al comienzo de la consola encontrará el carácter >. Este es un mensaje indicando que R está listo para recibir un código nuevo. 
 
-3.  A la derecha, el panel superior incluye pestañas como Environment e History. La pestaña Environment (ambiente) muestra los nombres de todos los objetos (como vectores, matrices, bases de datos, etc.) creados en la consola. Por otra parte, la pestaña History le muestra un historial de todo el código que ha desarrollado previamente en la consolala derecha, el panel superior incluye pestañas como Environment y History, que son el ambiente y el historial, aquí podremos observar los objetos que vayamos declarando y data que subamos, además del historial de scripts. 
+3. A la derecha, el panel superior incluye pestañas como *Environment* e *History*. La pestaña *Environment* (ambiente) muestra el nombre de todos los objetos (como vectores, matrices, bases de datos, etc.) creados en la consola. Por otra parte, la pestaña *History* le muestra un historial de todo el código que ha desarrollado previamente en la consola. 
 
-4.  En el panel inferior derecho se muestran cinco pestañas: *File*, *Plots*, *Packages*, *Help* y *Viewer*. Pueden hacer clic en cada pestaña para moverse por las diferentes opciones. Pero a grandes rasgos, en file vemos donde nos encontramos situados y los archivos que hay en nuestro directorio. En plots se visualizan las imágenes que generamos, en packages los paquetes que poseemos instalados y cargados, en Help cuando necesitamos información extra de nuestros paquetes y en Viewer exploramos scripts de rmarkdown.
+4. En el panel inferior derecho se muestran cinco pestañas: *File, Plots, Packages, Help* y *viewer*. A grandes rasgos, *File* le brinda acceso al directorio de archivos en su computadora y en *Plots* se visualizan todos los gráficos creados. Además, *Packages* muestra una lista de todos los paquetes instaladas en R, mientras que *Help* es es el menú de ayuda para las diferentes funciones en R. 
 
-\
-
-```{r, echo=FALSE, out.width="300pt", fig.align='center', fig.cap="Figure 1. Se representan los cuatro paneles de Rstudio"}
+```{r, echo=FALSE, out.width="300pt", fig.align='center', fig.cap="Se representan los cuatro paneles de Rstudio"}
 
 ## http://ww2.coastal.edu/kingw/statistics/R-tutorials/install_help/R_console.png
 
@@ -95,19 +96,16 @@ knitr::include_graphics(file.path(img_path, "Consola2.png"))
 
 ### *Scripts*
 
-Una de las principales ventajas de R es la posibilidad de guardar los códigos y comandos mediante scripts. Un script es un archivo de texto que contiene una serie de instrucciones y comentarios. Para crear un nuevo script en R, solo tiene que hacer clic en "File", luego seleccionar "New File" y elegir "R Script". Esto abrirá un nuevo panel en la pantalla, donde podrá comenzar a escribir sus códigos y comentarios.Una de las grandes ventajas de R y Rstudio es que se pueden guardar los diversos códigos e instrucciones, los famosos conocidos como scripts, que entonces se pueden editar y guardar con un editor de texto. 
+Una de las principales ventajas de R es la posibilidad de guardar los códigos y comandos mediante *scripts*. Un *script* es un archivo de texto que contiene una serie de instrucciones y comentarios. Para crear un nuevo *script*, solo tiene que hacer clic en *"File"*, luego seleccionar *"New File"* y elegir *"R Script"*. Esto abrirá un nuevo panel en la pantalla, donde podrá comenzar a escribir sus códigos y comentarios (Figura 1.2).
 
 
-```{r, echo=FALSE,   out.width="50%", fig.cap="Figura 2. Representación gráfica de como abrir un nuevo script (File > New file > R script). "}
+```{r, echo=FALSE,   out.width="50%", fig.cap=" Representación gráfica de como abrir un nuevo script (File > New file > R script). "}
 knitr::include_graphics(file.path(img_path,"script.jpeg"))
 knitr::include_graphics(file.path(img_path,"script2.jpg"))
 
 ```
 
-\
-
-Podemos abrir y ejecutar scripts en R usando la función source(), dandoleindicando como argumento la ruta del archivo .R en nuestra computadora, o dar click en File > Open File y luego buscar la carpeta donde se encuentre entre comillas o yendo a File, entonces Open File y luego buscando en las carpetas donde tengas el script. 
-
+Podemos abrir y ejecutar scripts en R usando la función *source()*, indicando la ruta del archivo ***.R*** en nuestra computadora, o dar click en File > Open File y luego buscar la carpeta donde se encuentre el *script*.
 Por ejemplo.
 
 ```{r, eval=FALSE}
@@ -117,7 +115,7 @@ source("C:/mi_script.R")
 
 #### Cómo ejecutar comandos mientras se editan *scripts*
 
-Para comenzar, abrimos un nuevo script y le asignamos un nombre. Esto se puede hacer guardando el script sin nombre a través del editor (Figura 3). Al guardar el script por primera vez, es importante usar un nombre descriptivo, en minúsculas, sin espacios y preferiblemente con guiones bajos ("_") para separar las palabras. Se deben evitar los guiones ("-"). Un ejemplo de nombre adecuado para el script podría ser: **"mi_script.R"**.Empezamos por abrir un nuevo script y luego nombramos el script. Podemos hacer esto a través del editor guardando el nuevo script actual sin nombre. Al guardar el script por primera vez use un nombre descriptivo, con letras minúsculas, sin espacios, preferiblemente con “_” para separar palabras, evitar guiones “-” para separar las palabras. Llamaremos a este script: **mi_script.R**. 
+Para comenzar, abrimos un nuevo *script* y le asignamos un nombre. Esto se puede hacer guardando el script sin nombre a través del editor (Figura 1.3). Al guardar el *script* por primera vez, es importante usar un nombre descriptivo, en minúsculas, sin espacios y preferiblemente con guiones bajos ("_") para separar las palabras. Se deben evitar los guiones ("-"). Un ejemplo de nombre adecuado para el script podría ser: *"mi_script.R"*.
  
 
 ```{r, echo=FALSE, out.width= "300pt", fig.align='center', fig.cap="Con el editor de scripts como ventana activa, guarde y asigne un nombre a su archivo, junto con la extensión de archivo “. R”."}
@@ -129,7 +127,7 @@ Ahora podemos editar nuestro primer script. Las primeras líneas de código se u
 
  
 
-Ejecute las siguientes líneas de código y obtenga los resultados provistos en la Figura 3:
+Ejecute las siguientes líneas de código y obtenga los resultados provistos en la Figura 1.4: 
 
 ```{r, eval=FALSE}
 library(datasets)
@@ -140,51 +138,39 @@ boxplot(iris)
 ```
 
 
-```{r, echo=TRUE, out.width= "500pt",echo=FALSE, fig.align='center', fig.cap="Figura 3. Resumen (panel inferior izquierdo) y gráfico boxplot (panel inferior derecho) de la base de datos “Iris”. "}
+```{r, echo=TRUE, out.width= "500pt",echo=FALSE, fig.align='center', fig.cap="Resumen (panel inferior izquierdo) y gráfico boxplot (panel inferior derecho) de la base de datos “Iris”. "}
 knitr::include_graphics(file.path(img_path,"code.png"))
 
 ```
 
-\
 
 ### Directorio de trabajo
 
-El **directorio de trabajo** es la carpeta donde se encuentran los archivos (base de datos) que posteriormente son importados a R. Para saber cuál es la ubicación del directorio de trabajo use la siguiente función “getwd”. Para cambiar el directorio de trabajo, debe usar la función “setwd” y establecer la respectiva ruta (e.g. "/home/Desktop/”). Además, se puede conocer el contenido del directorio, utilizando las siguientes funciones “list.files” y “list.dirs”. 
+El directorio de trabajo es la carpeta donde se encuentran los archivos (base de datos) que posteriormente son importados a R. Para saber cuál es la ubicación del directorio de trabajo use la siguiente función *“getwd”*. Para cambiar el directorio de trabajo, debe usar la función *“setwd”* y establecer la respectiva ruta (e.g. "/home/Desktop/”). Además, se puede conocer el contenido del directorio, utilizando las siguientes funciones *“list.files”* y *“list.dirs”*. 
 
 ```{r, eval=FALSE}
 getwd()
-```
-
-
-```{r, eval=FALSE}
 setwd("/home/steph/Desktop/")
-```
-
-```{r, eval=FALSE}
 list.files()
 list.dirs()
 ```
 
 ### Sesión
 
-En R, los objetos y funciones se almacenan en la memoria durante una sesión y no se comparten entre sesiones. Cada vez que inicia R, se crea una nueva sesión. Debe guardar los objetos generados durante la sesión, ya que los scripts se guardan automáticamente, pero no los objetos. Estos se guardan en un archivo **.RData** en su directorio de trabajo. Para ver todos los objetos guardados, utilice la función *ls*. En la Figura 4 se muestra cómo crear un nuevo proyecto en R. 
+En R, los objetos y funciones se almacenan en la memoria durante una sesión y no se comparten entre sesiones. Cada vez que inicia R, se crea una nueva sesión. Debe guardar los objetos generados durante la sesión, ya que los scripts se guardan automáticamente, pero no los objetos. Estos se guardan en un archivo **.RData*+ en su directorio de trabajo. Para ver todos los objetos guardados, utilice la función *“ls”*. En la Figura 1.5 se muestra cómo crear un nuevo proyecto en R. 
 
-```{r, echo=FALSE, out.width= "400pt", echo=FALSE, fig.align='center', fig.cap="Figura 4."}
+```{r, echo=FALSE, out.width= "400pt", echo=FALSE, fig.align='center', fig.cap="Creación de un nuevo proyecto en R.", out.width="50%"}
 knitr::include_graphics(file.path(img_path,"new_directory.png"))
 ```
 
-### Proyecto
-
-Un proyecto de R (con extensión .Rproj) es una carpeta que contiene todos los archivos y recursos relacionados. Dentro del proyecto, los scripts, archivos de datos, resultados e historial se organizan en subcarpetas, lo que facilita la gestión del trabajo. Al crear un proyecto, todos los archivos quedan vinculados, lo que mejora la organización y el flujo de trabajo. Para crear un proyecto debe realizar los siguientes pasos (XX > XY > XZ; ver Figura XX):Un proyecto de R (extensión .Rproj) identifica todos los archivos y contenido asociado con él. Ayuda a organizar tu trabajo y así cada curso, artículo o trabajo diferente puede tener un proyecto diferente. Al crea
-
-
-\
-
-```{r, echo=FALSE, out.width= "400pt", echo=FALSE, fig.align='center', fig.cap="Figura 5."}
+```{r, echo=FALSE, out.width= "400pt", echo=FALSE, fig.align='center', fig.cap="Nombrando el nuevo proyecto y escogiendo dónde se guardará.", out.width="50%"}
 knitr::include_graphics(file.path(img_path,"new_directory2.png"))
 ```
 
-\
+
+### Proyecto
+
+Un proyecto de R (con extensión .Rproj) es una carpeta que contiene todos los archivos y recursos relacionados. Dentro del proyecto, los scripts, archivos de datos, resultados e historial se organizan en subcarpetas, lo que facilita la gestión del trabajo. Al crear un proyecto, todos los archivos quedan vinculados, lo que mejora la organización y el flujo de trabajo. Para crear un proyecto debe realizar los siguientes pasos (File>New File> New directory>New Project> Colocar el nombre del directorio y dónde se guardará>Create Project; ver Figura 1.6)
 
 ```{r, echo=FALSE, out.width= "400pt", echo=FALSE, fig.align='center', fig.cap="Figura 6."}
 knitr::include_graphics(file.path(img_path,"new_directory3.png"))
@@ -193,22 +179,19 @@ knitr::include_graphics(file.path(img_path,"new_directory3.png"))
 \
 
 ### Instalación de paquetes de R
-Una de las principales ventajas de R es que numerosos desarrolladores y programadores crean paquetes continuamente, los cuales están disponibles de forma gratuita y ofrecen diversas funcionalidades. Actualmente, existen muchos paquetes accesibles a través de CRAN (Comprehensive R Archive Network), una red global de servidores que proporcionan versiones actualizadas. Además, se pueden encontrar numerosos paquetes en plataformas como GitHub y Bioconductor. Un ejemplo de ello es el paquete tidyverse, muy útil y que exploraremos en sesiones posteriores. Para instalarlo, utilice el siguiente códigoDentro de las ventajas de R está que muchos desarrolladores y programadores elaboran constantemente complementos, aplicaciones o en palabras propias paquetes que nos permiten usar en acceso libre y que tienen muchas funcionalidades. Actualmente hay muchos disponibles en CRAN (Comprehensive R Archive Network) que es una red de servidores alrededor del mundo que almacena versiones actualizadas del código de R y su documentación. También hay muchos paquetes desarrollados publicados en GitHub y en Bioconductor. Por ejemplo para instalar el paquete tidyverse, que es de gran utilidad y que veremos en sesiones posteriores, usamos el código: 
+
+Una de las principales ventajas de R es que numerosos desarrolladores y programadores crean paquetes continuamente, los cuales están disponibles de forma gratuita y ofrecen diversas funcionalidades. Actualmente, existen muchos paquetes accesibles a través de CRAN (Comprehensive R Archive Network), una red global de servidores que proporcionan versiones actualizadas. Además, se pueden encontrar numerosos paquetes en plataformas como GitHub y Bioconductor. Un ejemplo de ello es el paquete *tidyverse* que exploraremos en sesiones posteriores. Para instalarlo, utilice el siguiente código: 
 
 ```{r,eval=FALSE}
 install.packages("tidyverse")
 ```
 
-En RStudio, se puede ir a la pestaña "Packages" y hacer clic en "Install". Luego, debe escribir el nombre del paquete que desea instalar, siempre y cuando esté disponible en CRAN. Para cargar una librería utilice la función “library()”En RStudio pueden navegar a la pestaña Pakages y seleccionar Install. Luego, escribir el paquete que queremos siempre y cuando esté en CRAN. Para cargar una librería como lo vimos anteriormente se usa la función, **library()**: 
+En RStudio, se puede ir a la pestaña “Packages” y hacer clic en “Install”. Luego, debe escribir el nombre del paquete que desea instalar, siempre y cuando esté disponible en CRAN. Posteriormente, cargue la librería utilizando la función **library()**: 
 
 ```{r, eval=FALSE}
 library(tidyverse)
 ```
-Una vez que se instalaninstalados los paquetes, no debenn instalarselo nuevamentede nuevo., Ssin embargo, cada vez que cerramos o reiniciamos sesión, reiniciamos sesión o abrimos un nuevo proyecto o sesión tenemos que volver a cargarlos. Además,  
-
-dDebemos tener en cuenta que la instalación de tidyverse instala incluye varios paquetes. Esto ocurre comúnmente cuando un paquete tiene dependencias, es decir, usa funciones de otros paquetes. Cuando cargan un paquete usando library, también cargan sus dependencias.  
-
-Hay paquetes que no se encuentra en CRAN, por lo tanto o que si queremos su versión en desarrollo, se necesitan de otros paquetes para ser instalados. , Ppor ejemplo, si queremos instalar la versión en desarrollo del paquete “rmarkdown”, que se encuentra en github, se utiliza el paquete devtools. Los dos puntos “::” se usan para llamar a una función de un paquete sin cargar el paquete completamente en la sesión.: 
+Una vez instalados los paquetes, no deben instalarse nuevamente. Sin embargo, cada vez que cerramos o reiniciamos sesión es necesario volver a cargarlos. Además, debemos tener en cuenta que la instalación de tidyverse incluye varios paquetes. Esto ocurre cuando un paquete tiene dependencias. Algunos paquetes no están en CRAN y se requiere de otros para su instalación. Por ejemplo, para instalar la versión en desarrollo de rmarkdown, se debe utilizar el paquete devtools. Los dos puntos “::” permiten llamar una función específica de un paquete sin cargarlo completamente. 
 
 ```{r, eval=FALSE, echo=TRUE}
 devtools::install_github('rstudio/rmarkdown')
@@ -217,15 +200,17 @@ devtools::install_github('rstudio/rmarkdown')
 
 ### Tipos de objetos en R
 
-a información que manipulamos en R se estructura en forma de objetos y los podemos ver almacenados en el panel del ambiente de trabajo o Enviroment. Una ventaja de los lenguajes de programación es la posibilidad de definir variables y escribir expresiones matemáticas para almacenar valores que se usarán eventualmente. En R, usamos <- para asignar valores a las variables. Aunque también se puede usar =, pero se recomienda evitarlo, ya que el signo = se utiliza para igualdad lógica, lo que podría generar confusión. Los objetos pueden ser de diferentes tipos: 
+La información que manipulamos en R se estructura en forma de objetos y los podemos ver almacenados en el panel del ambiente de trabajo o *Enviroment*. Una ventaja de los lenguajes de programación es la posibilidad de definir variables y escribir expresiones matemáticas para almacenar valores que se usarán eventualmente. En R, usamos <- para asignar valores a las variables. Aunque también se puede usar =, se recomienda evitarlo ya que el signo = se utiliza para igualdad lógica, lo que podría generar confusión. 
 
--   Números escalares o letras
+Los objetos pueden ser de diferentes tipos: 
 
--   Vectores y matrices
+- Números escalares o letras 
 
--   Dataframes, tablas y listas
+- Vectores y matrices 
 
-Más adelante detallaremos este tipo de objetos o datos en R. Aquí unos ejemplosEn las siguientes líneas de comando se puede observar algunos tipo de objetos: 
+- Dataframes, tablas y listas 
+
+En las siguientes líneas de comando se puede observar diferentes tipos de objetos: 
 
 ```{r}
 
@@ -238,170 +223,119 @@ e<- list(c(1:20), c(1:10))                                      #lista
 ```
 
  
-
-Para visualizar ver la información el valor almacenadao en un objetouna variable, simplemente le pedimos a R que evalúe a y R nos muestra el valor almacenadoesa información mediante la función print o escribiendo directamente el objeto creado. Por Ejemplo: 
-
-```{r}
-a
-```
-
-Una forma explícita de pedirle a R que nos muestre el valor almacenado en `a` es usar `print` así:
+Para visualizar la información almacenada en un objeto, simplemente le pedimos a R que evalúe esa información mediante la función print o escribiendo directamente el objeto creado. Por Ejemplo: 
 
 ```{r}
 print(a)
 ```
 
-Otra forma de examinar los objetos es buscarlos en el *Enviorment* o ambiente de trabajo y visualizarlos desde allí.
-Deberíamos ver `a`, `b` y las que ya hemos declarado en el ambiente.
-Si intentamos imprimir o visualizar el valor de un objeto que no está definido en el ambiente se recibirá un mensaje de error.
-Por ejemplo, si escriben `f`, verán lo siguiente: `Error: object 'f' not found`.
+Otra forma de examinar los objetos es buscarlos directamente en el ambiente de trabajo. Si intentamos visualizar el valor de un objeto que no está definido en el ambiente de trabajo se recibirá un mensaje de error. Por ejemplo, si escriben la letra f, encontrarán el siguiente error: ***object “f” not found***. 
 
-##### Algunos tips para asignar variables u objetos en R...
+#### Algunos tips para asignar variables u objetos en R...
 
--   Los nombres de variables tienen que comenzar con una letra, no pueden contener espacios y no deben ser variables predefinidas en R (como funciones o argumentos de funciones).
-    Por ejemplo, no nombren una de sus variables `install.packages` escribiendo algo como: `install.packages <- 2`.
-    Esto reescribe la función o causa confusiones para R.
+- Los nombres de variables tienen que comenzar con una letra, no pueden contener espacios y no deben ser variables predefinidas en R (como funciones o argumentos de funciones). Por ejemplo, nombrar un objeto de la siguiente manera “install.packages <- 2” provocará confusiones para R, ya que lo reconocerá como una función. 
 
--   Que tus nombres sean descriptivos y/o significativos para lo que se está almacenado, usar solo minúsculas y usar guiones bajos *( \_ )* como sustituto de espacios, evitar caracteres especiales (- ; . \@ ?) .
+- Los nombres deben ser descriptivos para que reflejen el contenido almacenado. Es recomendable usar minúsculas y separar las palabras con guiones bajos (_) en lugar de espacios. Además, se deben evitar caracteres especiales como guiones (-), puntos (.), punto y coma (;), arroba (@) o signos de interrogación (?). 
 
 #### Guardar los espacios de trabajo y exportar objetos de R
 
-Los objetos evaluados permanecen en el espacio de trabajo hasta que finalicen sus sesiones sin guardar.
-Pero los espacios de trabajo también se pueden guardar para su uso posterior.
-De hecho, al salir de R, el programa les pregunta si desean guardar su espacio de trabajo.
-Si lo guardan, la próxima vez que inicien R, el programa restaurará el espacio de trabajo con todos los objetos en él.
+Los objetos evaluados permanecen en el espacio de trabajo hasta finalizar sesión. Sin embargo, puede guardar el espacio de trabajo para usarlo posteriormente. Al finalizar sesión, el programa muestra una ventana emergente sugiriendo si desea guardar el *script*. Además, al reiniciar R, se restaurará con los objetos previamente guardados. Por otra parte, es recomendable crear un proyecto de trabajo (como vimos previamente) para guardar todos los archivos y scripts que estén relacionados con el mismo.  
 
-Sin embargo, no se recomienda guardar el espacio de trabajo porque sino se trabaja con diferentes proyectos, será más difícil darle seguimiento de lo que guardan y ocupara mucho espacio en la memoria de su disco.
-En cambio, se recomienda en gran medida realizar un proyecto por trabajo o tarea y así tener un espacio de trabajo para cada uno.
-Decidiendo o no si guardar las sesiones y no entrar en confusiones entre las diferentes sesiones.
-
-Ahora bien R ya posee funciones de exporte, tales como:
-
+Usando como ejemplo el “data.frame” creado en el ejemplo anterior “d”. R posee funciones para la exportación de datos en formato de textos editables, como son: 
 ```{r, eval=FALSE}
 library(readr)
-write_tsv(d, "data.tsv")
-write.table(d, "data.txt", sep = "\t")
-write_csv(d, "data.csv")
+write_tsv(d, "database.tsv")
+write.table(d, "datase.txt", sep = "\t")
+write_csv(da, "database.csv")
 ```
 
-Estas funciones guardan tus tablas u objetos con formatos de texto.
-También hay una forma de guardar objetos de R sin declararlos como texto sino que se queden con la identidad de R:
+También existe la forma de guardar objetos sin declararlos texto, sino como la identidad de R. Por ejemplo: 
 
 ```{r, eval=FALSE}
-saveRDS(d, "data.RDS")
+saveRDS(d, "database.RDS")
 ```
 
 Y para abrir o cargar este tipo de objetos con extensión .RDS usamos la siguiente función:
 
 ```{r, eval=FALSE}
-readRDS("data.RDS")
+readRDS("database.RDS")
 ```
 
 ### Funciones en R[^6]
 
 [^6]: <https://rafalab.github.io/dslibro/r-basics.html#>
 
-Una vez que definidos los objetos o las variables, si queremos continuar con el análisis de datos generalmente se usan una serie de funciones específicas que se aplican a las variables o datos.
-R incluye muchas funciones por *default* o preestablecidas y otras pueden extraerse al cargar los diversos paquetes.
-A lo largo de este curso ya hemos usado varias funciones tales como las funciones para exportar datos como *write_csv()* o para cargar paquetes tales como *library()*, entre otras.
-Hay otras funciones más sencillas como por ejemplo la función `log` o `sqrt` con las que podemos obtener el logaritmo o la raíz cuadrada.
-***(Nótese que las funciones en su gran mayoría están definidas en inglés)***.
+Una vez definidos los objetos o variables, se usan funciones específicas para continuar con el análisis de datos. R incluye funciones preestablecidas y otras que se encuentran en determinados paquetes. En apartados previos utilizamos funciones como *write_csv()* para exportar datos o *library()* para cargar paquetes. También existen funciones como *log()* o *sqrt()* para calcular logaritmos o raíces cuadradas. ***(Nótese que la mayoría de las funciones están definidas en inglés)***. 
 
-Muchas otras funciones vienen establecidas en otros paquetes como fue el caso que vimos de *read_csv()* del paquete *readr*.
-La sintaxis o el lenguaje de R nos indica que necesitas usar paréntesis para evaluar funciones como hemos visto en los ejemplos anteriores que hemos usado funciones.
-Algunas funciones como *ls()* no requieren argumentos sino que nos da la información que ocupamos sin evaluar nada dentro de los paréntesis.
-Sin embargo, en otras funciones sí requieren uno o más argumentos.
-A continuación se muestra un ejemplo de cómo asignamos un objeto al argumento de la función `log`.
-Recuerden que anteriormente definimos `a` como 1:
+La sintaxis de R indica que se deben usar paréntesis para evaluar funciones. Por ejemplo, con la función *log()*, debemos asignar un valor a su argumento para obtener un resultado (e.g. “*log(a)*”. Sin embargo, algunas funciones como *ls()* no requieren argumentos y devuelven información sin necesidad de incluir información dentro de los paréntesis. 
 
 ```{r}
 log(a)
 ```
 
-Podemos explorar funciones en el panel inferior derecho en la pestaña de *Packages* o *Paquetes* podemos explorar los paquetes y al hacer click en alguno nos despliega las funciones que posee y su documento de ayuda también.
-Se puede saber cuáles son los argumentos de la función o lo que la función espera o las opciones que tiene, con el comando *help* o también anteponiendo un signo *?* antes de la función.
-También mientras escribimos la función si usamos la tecla *tab* nos indica también que argumentos espera esta función.
-Pueden averiguar lo que la función espera y lo que hace revisando unos manuales muy útiles incluidos en R.
-Pueden obtener ayuda utilizando la función `help` así:
+En R, podemos explorar funciones desde la pestaña “Paquetes”. Al hacer clic en un paquete, se despliegan las funciones que contiene junto con su documentación. Para conocer los argumentos de una función, podemos usar el comando *help* o preceder la función con un signo de interrogación (*?*). También es posible consultar manuales y obtener ayuda detallada sobre las funciones.: 
 
 ```{r, eval=FALSE}
 help("log")
 ?log
 ```
 
-La página de ayuda les mostrará qué argumentos espera la función.
-Por ejemplo, `log` necesita `x` y `base` para correr.
-Sin embargo, algunos argumentos son obligatorios y otros son opcionales.
-Pueden determinar cuáles son opcionales notando en el documento de ayuda cuáles valores predeterminados se asignan con `=`.
-Definir estos es opcional.
-Por ejemplo, la base de la función `log` por defecto es `base = exp(1)` que hace `log` el logaritmo natural por defecto.
-
-Para echar un vistazo rápido a los argumentos sin abrir el sistema de ayuda, pueden escribir:
-
+La página de ayuda de cada función muestra qué argumentos requiere. Por ejemplo, la función log() necesita los argumentos x y base. Algunos argumentos son obligatorios y otros opcionales, los cuales se indican en la documentación con valores predeterminados asignados con el signo =. El valor predeterminado de base en la función log() es exp(1), lo que hace que el logaritmo calculado sea el logaritmo natural: 
 ```{r}
 args(log)
 ```
 
-Pueden cambiar los valores predeterminados simplemente asignando otro objeto:
 
 ```{r}
 log(x = 8, base = 2)
 
 ```
 
-El código anterior funciona, pero también podemos ahorrarnos un poco de escritura: si no usan un nombre de argumento, R supone que están ingresando argumentos en el orden en que se muestran en la página de ayuda o por `args`.
-Entonces, al no usar los nombres, R supone que los argumentos son `x` seguido por `base`:
+Podemos escribir de manera más breve si omitimos el nombre de los argumentos.: 
 
 ```{r}
 log(8,2)
 ```
 
-Si se usan los nombres de los argumentos, podemos incluirlos en el orden en que queramos:
-
-```{r}
-log(base = 2, x = 8)
-```
-
-Para especificar argumentos, debemos usar `=` y no `<-`.
-Aquí si aplica la igualdad, en el caso de las funciones.
-
-Hay algunas excepciones a la regla de que las funciones necesitan los paréntesis para ser evaluadas.
-Entre estas, las más utilizados son los operadores aritméticos y relacionales.
-Por ejemplo:
-
+Existen algunas funciones que no necesitan paréntesis para ser evaluadas. Entre estas destacan los operadores aritméticos y relacionales: 
 ```{r}
 a + a
+```
+```{r}
 a - 2
+```
+```{r}
 1 * pi
+```
+```{r}
 2 / 3
+```
+```{r}
 4 ^ a
 ```
 
-También es posible declarar una función que a lo mejor no esté definida en R.
-Por ejemplo, la función *mean()* en Rbase nos da el promedio de un conjunto de datos, pero si quisieramos definirla en caso de no conocerla o hacerlo a nuestra manera, sería algo así:
+También podemos crear funciones personalizadas en R. Por ejemplo, si queremos definir nuestra propia versión de la función mean(), que calcula el promedio, podríamos hacerlo de la siguiente manera: 
 
 ```{r}
 average<- function(x){sum(x)/length(x)}
 x<- 1:100
 average(x)
+```
+
+
+```{r}
 mean(x)
 ```
 
-Al compararlas nos arrojan el mismo valor.
-Lo importante de este punto es que hemos declarado una nueva función, declarando primero la variable (o variables, dependiendo el caso) y luego las operaciones y asignandolos a un objeto de R:
-
+Note que ambas devuelven el mismo resultado. Lo importante es que hemos creado una nueva función, definiendo primero las variables (o variables) y luego las operaciones asignadas a un objeto R. 
 ```{r, eval=FALSE}
 nombre <- function(argumentos) {
   operaciones}
 ```
 
-Para trabajar con R resulta importante conocer los principales tipos de objetos y sus propiedades básicas.
 
 ## Tipos de datos
-
-Como vimos en el ejemplo anterior, los objetos en R pueden ser de varios tipos.
-Por ejemplo, necesitamos distinguir números de los caracteres.
-La función `class` nos ayuda a determinar qué tipo de objeto tenemos:
+Como se ejemplificó previamente, los objetos en R pueden ser de diversos tipos, como números o caracteres. Para identificarlos, podemos usar la función *class()*, que nos permite determinar su clase o tipo de datos: 
 
 ```{r}
 a <- 5
@@ -419,28 +353,18 @@ class(a)
 | Perdido/Omitido        | NA                    | NA          |
 | Vacío                  | null                  | NULL        |
 
-Existen otro tipos de datos más complejos que no están en el alcance del presente curso, por ejemplo: números complejos, fechas, entre otros.
 
-#### Para tener en cuenta...
+#### Para tener en cuenta
 
--   El tipo *character* representa texto y es fácil reconocerlo porque un dato siempre esta rodeado de comillas, simples o dobles.
-    Este es el tipo de datos más flexible de R, pues una cadena de texto puede contener letras, números, espacios, signos de puntuación y símbolos especiales.
+-  Un valor de tipo “character”es una cadena de caracteres, que puede incluir letras, números y símbolos. Se pueden convertir los objetos en valores de caracteres mediante la función as.character(). 
 
--   Un factor es un tipo de datos específico a R.
-    Puede ser descrito como un dato numérico representado por una etiqueta.
-    Por último, cada una de las etiquetas o valores que puedes asumir un factor se conoce como **nivel** o **level**.
-    los niveles tienen un orden diferente al orden de aparición en el factor.
-    En R, por defecto, los niveles se ordenan alfabéticamente.
-    **Advertencia**: Los factores pueden causar confusión ya que a veces se comportan como caracteres y otras veces no.
-    Como resultado, estos son una fuente común de errores.
-    A veces las funciones necesitan a fuerza que se ocupe un vector y a veces lo contrario.
+- Un factor es un tipo de dato exclusivo de R, que representa valores categóricos usando etiquetas en lugar de números. Cada etiqueta o valor que puede tomar un factor se llama “nivel”. Los niveles no siguen necesariamente el orden en que aparecen en los datos, y por defecto, R los ordena alfabéticamente. 
 
--   La diferencia entre las dos es que un dato `NULL` aparece sólo cuando R intenta recuperar un dato y no encuentra nada, mientras que `NA` es usado para representar explícitamente datos perdidos, omitidos o que por alguna razón son faltantes.
-    `NA` además puede aparecer como resultado de una operación realizada, pero no tuvo éxito en su ejecución.
+- En los conjuntos de datos estadísticos, a menudo encontramos datos faltantes, que en R son representados como valores NA. En cambio, NULL indica que el valor en cuestión simplemente no existe. 
 
-#### Coerción de datos...
+#### Coerción de datos
 
-En R, los datos pueden ser coercionados, es decir, forzados, para transformarlos de un tipo a otro.
+En R, los datos pueden ser coercionados, es decir, forzados, para transformarlos de un tipo a otro. 
 
 | Función de coerción | Tipo     |
 |---------------------|----------|
@@ -455,72 +379,77 @@ Veamos algunos ejemplos:
 ```{r}
 a<- 5
 as.character(a)
+```
+
+
+```{r}
 as.factor("medio")
 ```
 
 ### Tipos de estructura de los datos
 
-Los datos se estructuran de diferentes formas dependiendo de su propósito, en todo caso, la función *class()* también nos puede dar información sobre los tipos de estructuras de datos.
+Los datos se estructuran de diferentes formas dependiendo de su propósito, en todo caso, la función *class()* también nos puede dar información sobre los tipos de estructuras de datos. 
 
 #### Vectores
 
-Los vectores son colecciones de uno o más datos del mismo tipo.
-Por ejemplo, si tenemos un vector con datos numéricos tenemos un vector de tipo numérico.
-No es posible mezclar datos de tipos diferentes dentro de ellos.
-Por ejemplo, un vector de colores puede ser:
+Los vectores son colecciones de uno o más datos del mismo tipo. Por ejemplo, si tenemos un vector con datos numéricos tenemos un vector de tipo numérico. No es posible mezclar datos de tipos diferentes dentro de ellos. Por ejemplo, un vector de colores puede ser: 
 
 ```{r}
 colores<- c("red", "black", "blue")
 is.vector(colores)
+```
+
+
+```{r}
 class(colores)
 ```
 
-Al usar las funcion `is.vector()` corroboramos que efectivamente es un vector al darnos `TRUE` pero al pedirle que nos indique el tipo con la función `class` nos dice que es un "character" es decir que es un vector de una cadena de texto.
+Al usar las funcion is.vector() corroboramos que efectivamente es un vector al darnos TRUE pero al pedirle que nos indique el tipo con la función class nos dice que es un “character” es decir que es un vector de una cadena de texto. 
 
-Existen algunas operaciones al aplicarlas a un vector, se aplican a cada uno de sus elementos.
-A este proceso le llamamos **vectorización**.
-Las operaciones aritméticas y relacionales pueden vectorizarse.
-Si las aplicamos a un vector, la operación se realizará para cada uno de los elementos que contiene.
+Existen algunas operaciones al aplicarlas a un vector, se aplican a cada uno de sus elementos. A este proceso le llamamos **vectorización**. Las operaciones aritméticas y relacionales pueden vectorizarse. Si las aplicamos a un vector, la operación se realizará para cada uno de los elementos que contiene.
 
 ```{r}
 un_vector <- c(1:10)
 un_vector*10
-un_vector+1
-un_vector + un_vector
+```
 
+
+```{r}
+un_vector+1
+```
+
+
+```{r}
+un_vector + un_vector
 ```
 
 #### Matrices y arreglos
 
-Las matrices y arreglos no son más que vectores multidimensionales, es decir un conjunto de vectores.
-Al igual que un vector deben contener un sólo tipo de datos.
-En sentido estricto, una arreglo es una matrix pero con `n` dimensiones, mientras que las matrices tienen solo dos dimensiones.
-Las matrices y los arreglos suelen ser usados de manera regular en matemáticas y estadística, por ser sencillas y contener solo un tipo de datos (usualmente de tipo numérico).
-En general, es preferible usar listas en lugar de arrays, una estructura de datos que además tienen ciertas ventajas que se revisará más adelante.
-En R, podemos usar el símbolo `:` para indicar una secuencia de números que tiene un principio y fin, por ejemplo:
+Las matrices y arreglos no son más que vectores multidimensionales, es decir un conjunto de vectores. Al igual que un vector deben contener un sólo tipo de datos. En sentido estricto, una arreglo es una matrix pero con n dimensiones, mientras que las matrices tienen solo dos dimensiones. Las matrices y los arreglos suelen ser usados de manera regular en matemáticas y estadística, por ser sencillas y contener solo un tipo de datos (usualmente de tipo numérico). En general, es preferible usar listas en lugar de arrays, una estructura de datos que además tienen ciertas ventajas que se revisará más adelante. En R, podemos usar el símbolo : para indicar una secuencia de números que tiene un principio y fin, por ejemplo: 
 
 ```{r}
 vect<- 1:20
 ```
 
-Este es un vector con números que va desde el 1 al 20.
-Pero para hacerlo matriz hacemos:
+Este es un vector con números que va desde el 1 al 20. Pero para hacerlo matriz hacemos: 
 
 ```{r}
 matr<- matrix(1:20)
 ```
 
-O para dividirlo en varias renglones y columnas:
-
+O para dividirlo en varias renglones y columnas: 
 ```{r}
 matri<-matrix(1:20, nrow = 5, ncol = 4)
 dim(matri)
+```
+
+
+```{r}
 matri
 
 ```
 
-Con la función *dim()* podemos saber cuales son las dimensiones (es decir, largo y ancho) de nuestra matriz.
-Las operaciones aritméticas también son vectorizadas al aplicarlas a una matriz.
+Con la función *dim()* podemos saber cuales son las dimensiones (es decir, largo y ancho) de nuestra matriz. Las operaciones aritméticas también son vectorizadas al aplicarlas a una matriz.
 La operación es aplicada a cada uno de los elementos de la matriz al igual que los vectores.
 
 ```{r}
@@ -535,11 +464,7 @@ t(matri)
 
 #### Listas
 
-Las listas, al igual que los vectores, son estructuras de datos unidimensionales, sólo tienen largo, pero a diferencia de los vectores cada uno de sus elementos puede ser de diferente tipo o incluso de diferente clase, por lo que son estructuras heterogéneas.
-Podemos tener listas que contengan escalares, vectores, matrices, data frames u otras listas.
-Para crear una lista usamos la función list(), que nos pedirá los elementos que deseamos incluir en nuestra lista.
-Para esta estructura, no importan las dimensiones o largo de los elementos que queramos incluir en ella.
-Al igual que con un data frame, tenemos la opción de poner nombre a cada elemento de una lista.
+Las listas, al igual que los vectores, son estructuras de datos unidimensionales, sólo tienen largo, pero a diferencia de los vectores cada uno de sus elementos puede ser de diferente tipo o incluso de diferente clase, por lo que son estructuras heterogéneas. Podemos tener listas que contengan escalares, vectores, matrices, data frames u otras listas. Para crear una lista usamos la función list(), que nos pedirá los elementos que deseamos incluir en nuestra lista. Para esta estructura, no importan las dimensiones o largo de los elementos que queramos incluir en ella. Al igual que con un data frame, tenemos la opción de poner nombre a cada elemento de una lista. 
 
 ```{r}
 un_vector <- 1:20
@@ -551,8 +476,7 @@ una_lista <- list("vector" = un_vector, "matriz" = una_matriz, "df" = una_df)
 una_lista
 ```
 
-No es posible vectorizar operaciones aritméticas usando listas.
-Al intentarlo nos es devuelto un error.
+No es posible vectorizar operaciones aritméticas usando listas. Al intentarlo nos es devuelto un error.
 
 Finalmente, en caso de que sea necesario utilizar funciones que requieran a fuerza una matrix o un *data frame* también aplica la coerción entre estas dos estructuras de datos:
 
@@ -581,32 +505,25 @@ class(df_transpuesta)
 
 ## *Data frames*
 
-La forma más común de almacenar un set de datos en R es usando un *data frame*.
-Los data frames son estructuras de datos de dos dimensiones (rectangulares) que pueden contener datos de diferentes tipos, por lo tanto, son heterogéneas.
+La forma más común de almacenar un set de datos en R es usando un *data frame*. Los data frames son estructuras de datos de dos dimensiones (rectangulares) que pueden contener datos de diferentes tipos, por lo tanto, son heterogéneas.
 Podemos entender a los data frames como una versión más flexible de una matriz.
 Mientras que en una matriz todas las celdas deben contener datos del mismo tipo, los renglones de un data frame admiten datos de distintos tipos, pero sus columnas conservan la restricción de contener datos de un sólo tipo.
 
-Vamos a trabajar con una data de ejemplo y exploraremos esta *data frame*, es una data en la que evaluan el efecto de la dosis de vitamina C sobre el crecimiento de los dientes de unos tipos de cerdos.
-La función `str` es útil para obtener más información sobre la estructura de un objeto:
+Vamos a trabajar con una data de ejemplo y exploraremos esta *data frame*, es una data en la que evaluan el efecto de la dosis de vitamina C sobre el crecimiento de los dientes de unos tipos de cerdos. La función `str` es útil para obtener más información sobre la estructura de un objeto:
 
 ```{r, echo=TRUE}
 data(ToothGrowth)
 str(ToothGrowth)
 ```
 
-Esto nos dice mucho más sobre el objeto.
-Vemos que la tabla tiene 60 filas y 3 variables.
+Esto nos dice mucho más sobre el objeto. Vemos que la tabla tiene 60 filas y 3 variables.
 Podemos mostrar las primeras seis líneas usando la función `head`:
 
 ```{r}
 head(ToothGrowth)
 ```
 
-Para crear un data frame usamos la función *data.frame()*.
-Esta función nos pedirá un número de vectores igual al número de columnas que deseemos.
-Todos los vectores que proporcionemos deben tener el mismo largo.
-Es decir, un data frame está compuesto por vectores.
-Veamos un ejemplo:
+Para crear un data frame usamos la función *data.frame()*. Esta función nos pedirá un número de vectores igual al número de columnas que deseemos. Todos los vectores que proporcionemos deben tener el mismo largo. Es decir, un data frame está compuesto por vectores. Veamos un ejemplo:
 
 ```{r}
 df <- data.frame(
@@ -616,15 +533,22 @@ df <- data.frame(
 )
 
 df
+```
+
+
+```{r}
 dim(df)
 ```
 
 La función `dim` nos permite conocer también las dimensiones de nuestra data frame.
-En este caso tenemos 3 filas y 3 columnas.
-Las funciones `names` y `colnames` nos permiten conocer los nombres de los headers o de las columnas.
+En este caso tenemos 3 filas y 3 columnas.Las funciones `names` y `colnames` nos permiten conocer los nombres de los headers o de las columnas.
 
 ```{r}
 names(df)
+```
+
+
+```{r}
 colnames(df)
 ```
 
@@ -634,14 +558,21 @@ Para tener acceso a las diversas variables o columnas de un *data.frame* utiliza
 
 ```{r}
 df$factor
+```
+
+
+```{r}
 class(df$factor)
+```
+
+
+```{r}
 is.vector(df$factor)
 ```
 
 Cuando usamos el operador `$` el tipo de objeto que obtenemos es un vector, en el ejemplo como la columna 'factor' es una cadena de caracteres entonces al usar las funciones *class()* y *is.vector()* nos confirma lo antes mencionado.
 
-**Tip**: R viene con una muy buena funcionalidad de autocompletar que nos ahorra la molestia de escribir todos los nombres.
-Escriban `df$f` y luego presionen la tecla *tab* en su teclado.
+**Tip**: R viene con una muy buena funcionalidad de autocompletar que nos ahorra la molestia de escribir todos los nombres. Escriban `df$f` y luego presionen la tecla *tab* en su teclado.
 Esta funcionalidad y muchas otras características útiles de autocompletar están disponibles en RStudio, esto aplica también para las funciones.
 
 En el caso de las listas también podemos acceder con el operador `$`, aunque también podemos usar corchetes dobles (`[[`) así.
@@ -660,7 +591,7 @@ notas_estudiantes$nombres
 notas_estudiantes[["nombres"]]
 ```
 
-Y obtenemos el mismo resultados.
+Y obtenemos el mismo resultado.
 
 Para el caso de las matrices se puede acceder usando corchetes (`[`).
 Si desean la primera fila y la pimera columna, entonces:

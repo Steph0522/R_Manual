@@ -155,8 +155,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="1" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html"><i class="fa fa-check"></i><b>1</b> Introducción a R y Rstudio</a>
 <ul>
-<li class="chapter" data-level="1.0.1" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#requisitos-para-la-instalación-de-r"><i class="fa fa-check"></i><b>1.0.1</b> Requisitos para la instalación de R</a></li>
-<li class="chapter" data-level="1.0.2" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#instalación-de-rsudio-y-r"><i class="fa fa-check"></i><b>1.0.2</b> Instalación de Rsudio y R</a></li>
 <li class="chapter" data-level="1.1" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#getting-started"><i class="fa fa-check"></i><b>1.1</b> Comenzando con R y RStudio</a>
 <ul>
 <li class="chapter" data-level="1.1.1" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#breve-descripción-de-r"><i class="fa fa-check"></i><b>1.1.1</b> Breve descripción de R</a></li>
@@ -396,21 +394,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="ejemplo-muestras-pareadas-1" class="section level1 hasAnchor" number="9">
 <h1><span class="header-section-number">Capítulo 9</span> Ejemplo muestras pareadas<a href="ejemplo-muestras-pareadas-1.html#ejemplo-muestras-pareadas-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="sourceCode" id="cb575"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb575-1"><a href="ejemplo-muestras-pareadas-1.html#cb575-1" tabindex="-1"></a><span class="fu">shapiro.test</span>(data_pareada<span class="sc">$</span>Diferencia)</span></code></pre></div>
+<div class="sourceCode" id="cb579"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb579-1"><a href="ejemplo-muestras-pareadas-1.html#cb579-1" tabindex="-1"></a><span class="fu">shapiro.test</span>(data_pareada<span class="sc">$</span>Diferencia)</span></code></pre></div>
 <pre><code>## 
 ##  Shapiro-Wilk normality test
 ## 
 ## data:  data_pareada$Diferencia
 ## W = 0.93611, p-value = 0.5106</code></pre>
 <p>Manualmente</p>
-<div class="sourceCode" id="cb577"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb577-1"><a href="ejemplo-muestras-pareadas-1.html#cb577-1" tabindex="-1"></a>prom <span class="ot">=</span> <span class="fu">mean</span>(data_pareada<span class="sc">$</span>Diferenci); desves <span class="ot">=</span> <span class="fu">sd</span>(data_pareada<span class="sc">$</span>Diferenci); sn <span class="ot">=</span> <span class="fu">sqrt</span>(<span class="fu">nrow</span>(data_pareada));mu <span class="ot">=</span> <span class="dv">0</span></span>
-<span id="cb577-2"><a href="ejemplo-muestras-pareadas-1.html#cb577-2" tabindex="-1"></a>t<span class="ot">=</span>(prom<span class="sc">-</span>mu)<span class="sc">/</span>(desves<span class="sc">/</span>sn)</span>
-<span id="cb577-3"><a href="ejemplo-muestras-pareadas-1.html#cb577-3" tabindex="-1"></a>t;<span class="fu">pt</span>(t, <span class="at">df=</span><span class="dv">9</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb581"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb581-1"><a href="ejemplo-muestras-pareadas-1.html#cb581-1" tabindex="-1"></a>prom <span class="ot">=</span> <span class="fu">mean</span>(data_pareada<span class="sc">$</span>Diferenci); desves <span class="ot">=</span> <span class="fu">sd</span>(data_pareada<span class="sc">$</span>Diferenci); sn <span class="ot">=</span> <span class="fu">sqrt</span>(<span class="fu">nrow</span>(data_pareada));mu <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb581-2"><a href="ejemplo-muestras-pareadas-1.html#cb581-2" tabindex="-1"></a>t<span class="ot">=</span>(prom<span class="sc">-</span>mu)<span class="sc">/</span>(desves<span class="sc">/</span>sn)</span>
+<span id="cb581-3"><a href="ejemplo-muestras-pareadas-1.html#cb581-3" tabindex="-1"></a>t;<span class="fu">pt</span>(t, <span class="at">df=</span><span class="dv">9</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] 29.96903</code></pre>
 <pre><code>## [1] 1.253345e-10</code></pre>
 <p>.pull-rigth[
 Con R</p>
-<div class="sourceCode" id="cb580"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb580-1"><a href="ejemplo-muestras-pareadas-1.html#cb580-1" tabindex="-1"></a><span class="fu">t.test</span>(data_pareada<span class="sc">$</span>Temp_post, data_pareada<span class="sc">$</span>Temp_pre, <span class="at">mu =</span> <span class="dv">0</span>, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb584"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb584-1"><a href="ejemplo-muestras-pareadas-1.html#cb584-1" tabindex="-1"></a><span class="fu">t.test</span>(data_pareada<span class="sc">$</span>Temp_post, data_pareada<span class="sc">$</span>Temp_pre, <span class="at">mu =</span> <span class="dv">0</span>, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Paired t-test
 ## 
@@ -443,32 +441,32 @@ Con R</p>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": null,
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["R_Manual.pdf", "R_Manual.docx"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": null,
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["R_Manual.pdf", "R_Manual.docx"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

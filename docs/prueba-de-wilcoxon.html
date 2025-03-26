@@ -155,8 +155,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="1" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html"><i class="fa fa-check"></i><b>1</b> Introducción a R y Rstudio</a>
 <ul>
-<li class="chapter" data-level="1.0.1" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#requisitos-para-la-instalación-de-r"><i class="fa fa-check"></i><b>1.0.1</b> Requisitos para la instalación de R</a></li>
-<li class="chapter" data-level="1.0.2" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#instalación-de-rsudio-y-r"><i class="fa fa-check"></i><b>1.0.2</b> Instalación de Rsudio y R</a></li>
 <li class="chapter" data-level="1.1" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#getting-started"><i class="fa fa-check"></i><b>1.1</b> Comenzando con R y RStudio</a>
 <ul>
 <li class="chapter" data-level="1.1.1" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html#breve-descripción-de-r"><i class="fa fa-check"></i><b>1.1.1</b> Breve descripción de R</a></li>
@@ -407,10 +405,10 @@ diferencia.</li>
 </ol>
 <div id="prueba-wilcoxon---ejemplo" class="section level2 hasAnchor" number="21.1">
 <h2><span class="header-section-number">21.1</span> Prueba Wilcoxon - ejemplo<a href="prueba-de-wilcoxon.html#prueba-wilcoxon---ejemplo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb595"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb595-1"><a href="prueba-de-wilcoxon.html#cb595-1" tabindex="-1"></a>data_w<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Observ=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">11</span>),</span>
-<span id="cb595-2"><a href="prueba-de-wilcoxon.html#cb595-2" tabindex="-1"></a>                    <span class="at">Antes=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">8</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">5</span>),</span>
-<span id="cb595-3"><a href="prueba-de-wilcoxon.html#cb595-3" tabindex="-1"></a>                    <span class="at">Despues=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="sc">-</span><span class="dv">5</span>,<span class="sc">-</span><span class="dv">7</span>,<span class="sc">-</span><span class="dv">362</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="sc">-</span><span class="dv">10</span>))</span>
-<span id="cb595-4"><a href="prueba-de-wilcoxon.html#cb595-4" tabindex="-1"></a>data_w<span class="sc">$</span>Diferencia<span class="ot">&lt;-</span> data_w<span class="sc">$</span>Antes<span class="sc">-</span>data_w<span class="sc">$</span>Despues</span></code></pre></div>
+<div class="sourceCode" id="cb599"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb599-1"><a href="prueba-de-wilcoxon.html#cb599-1" tabindex="-1"></a>data_w<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Observ=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">11</span>),</span>
+<span id="cb599-2"><a href="prueba-de-wilcoxon.html#cb599-2" tabindex="-1"></a>                    <span class="at">Antes=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">8</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">5</span>),</span>
+<span id="cb599-3"><a href="prueba-de-wilcoxon.html#cb599-3" tabindex="-1"></a>                    <span class="at">Despues=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="sc">-</span><span class="dv">5</span>,<span class="sc">-</span><span class="dv">7</span>,<span class="sc">-</span><span class="dv">362</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="sc">-</span><span class="dv">10</span>))</span>
+<span id="cb599-4"><a href="prueba-de-wilcoxon.html#cb599-4" tabindex="-1"></a>data_w<span class="sc">$</span>Diferencia<span class="ot">&lt;-</span> data_w<span class="sc">$</span>Antes<span class="sc">-</span>data_w<span class="sc">$</span>Despues</span></code></pre></div>
 <table class=" lightable-classic" style="color: black; font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -1283,32 +1281,32 @@ Rango_Signo
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": null,
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["R_Manual.pdf", "R_Manual.docx"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": null,
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["R_Manual.pdf", "R_Manual.docx"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>
