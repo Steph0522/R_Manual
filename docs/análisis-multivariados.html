@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 28 Análisis multivariados | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</title>
-  <meta name="description" content="Capítulo 28 Análisis multivariados | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <title>Capítulo 18 Análisis multivariados | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</title>
+  <meta name="description" content="Capítulo 18 Análisis multivariados | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 28 Análisis multivariados | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <meta property="og:title" content="Capítulo 18 Análisis multivariados | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="Steph0522/R_Manual" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 28 Análisis multivariados | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <meta name="twitter:title" content="Capítulo 18 Análisis multivariados | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   
   
   
@@ -33,7 +33,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="análisis-de-riqueza-y-diversidad-alfa-y-beta.html"/>
+<link rel="prev" href="análisis-de-riqueza-y-diversidad-alfa-y-beta-1.html"/>
 <link rel="next" href="modelización-estadística.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -55,10 +55,6 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
-<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
@@ -147,10 +143,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">MANUAL DE R Y RSTUDIO</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Breve semblanza de los autores:</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Breve semblanza de los autores</a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#aviso-legal-protección-de-propiedad-intelectual"><i class="fa fa-check"></i>Aviso Legal: protección de propiedad intelectual</a></li>
-<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#índice"><i class="fa fa-check"></i><b>0.1</b> Índice</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#protección-de-propiedad-intelectual"><i class="fa fa-check"></i>Protección de propiedad intelectual</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#índice"><i class="fa fa-check"></i>Índice</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#prefacio"><i class="fa fa-check"></i>Prefacio</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="introducción-a-r-y-rstudio.html"><a href="introducción-a-r-y-rstudio.html"><i class="fa fa-check"></i><b>1</b> Introducción a R y Rstudio</a>
@@ -335,42 +331,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.7" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#correlación-de-rango-de-spearman"><i class="fa fa-check"></i><b>15.7</b> Correlación de rango de Spearman</a></li>
 <li class="chapter" data-level="15.8" data-path="tipos-de-pruebas-no-paramétricas.html"><a href="tipos-de-pruebas-no-paramétricas.html#correlación-de-kendall"><i class="fa fa-check"></i><b>15.8</b> Correlación de Kendall</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="pruebas-no-paramétricas-1.html"><a href="pruebas-no-paramétricas-1.html"><i class="fa fa-check"></i><b>16</b> PRUEBAS NO PARAMÉTRICAS</a></li>
-<li class="chapter" data-level="17" data-path="u-mann-whitney.html"><a href="u-mann-whitney.html"><i class="fa fa-check"></i><b>17</b> U Mann Whitney</a></li>
-<li class="chapter" data-level="18" data-path="u-mann-whitney-1.html"><a href="u-mann-whitney-1.html"><i class="fa fa-check"></i><b>18</b> U Mann Whitney</a>
+<li class="chapter" data-level="16" data-path="análisis-de-riqueza-y-diversidad-alfa-y-beta.html"><a href="análisis-de-riqueza-y-diversidad-alfa-y-beta.html"><i class="fa fa-check"></i><b>16</b> Análisis de riqueza y diversidad alfa y beta</a></li>
+<li class="chapter" data-level="17" data-path="análisis-de-riqueza-y-diversidad-alfa-y-beta-1.html"><a href="análisis-de-riqueza-y-diversidad-alfa-y-beta-1.html"><i class="fa fa-check"></i><b>17</b> Análisis de riqueza y diversidad alfa y beta</a></li>
+<li class="chapter" data-level="18" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html"><i class="fa fa-check"></i><b>18</b> Análisis multivariados</a>
 <ul>
-<li class="chapter" data-level="18.1" data-path="u-mann-whitney-1.html"><a href="u-mann-whitney-1.html#u-mann-whitney---ejemplo"><i class="fa fa-check"></i><b>18.1</b> U Mann Whitney - Ejemplo</a></li>
+<li class="chapter" data-level="18.1" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#pca"><i class="fa fa-check"></i><b>18.1</b> PCA</a></li>
+<li class="chapter" data-level="18.2" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#pcoa"><i class="fa fa-check"></i><b>18.2</b> PCoA</a></li>
+<li class="chapter" data-level="18.3" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#nmds"><i class="fa fa-check"></i><b>18.3</b> NMDS</a></li>
+<li class="chapter" data-level="18.4" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#permanova"><i class="fa fa-check"></i><b>18.4</b> Permanova</a></li>
+<li class="chapter" data-level="18.5" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#permdis"><i class="fa fa-check"></i><b>18.5</b> permdis</a></li>
+<li class="chapter" data-level="18.6" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#anosim"><i class="fa fa-check"></i><b>18.6</b> Anosim</a></li>
+<li class="chapter" data-level="18.7" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#rda"><i class="fa fa-check"></i><b>18.7</b> RDA</a></li>
+<li class="chapter" data-level="18.8" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#cca"><i class="fa fa-check"></i><b>18.8</b> CCA</a></li>
 </ul></li>
-<li class="chapter" data-level="19" data-path="u-mann-whitney---ejemplo-1.html"><a href="u-mann-whitney---ejemplo-1.html"><i class="fa fa-check"></i><b>19</b> U Mann Whitney - Ejemplo</a></li>
-<li class="chapter" data-level="20" data-path="prueba-de-wilcoxon-para-dos-muestras-dependientes.html"><a href="prueba-de-wilcoxon-para-dos-muestras-dependientes.html"><i class="fa fa-check"></i><b>20</b> Prueba de Wilcoxon para dos muestras dependientes</a></li>
-<li class="chapter" data-level="21" data-path="prueba-de-wilcoxon.html"><a href="prueba-de-wilcoxon.html"><i class="fa fa-check"></i><b>21</b> Prueba de Wilcoxon</a>
+<li class="chapter" data-level="19" data-path="modelización-estadística.html"><a href="modelización-estadística.html"><i class="fa fa-check"></i><b>19</b> Modelización estadística:</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="prueba-de-wilcoxon.html"><a href="prueba-de-wilcoxon.html#prueba-wilcoxon---ejemplo"><i class="fa fa-check"></i><b>21.1</b> Prueba Wilcoxon - ejemplo</a></li>
-</ul></li>
-<li class="chapter" data-level="22" data-path="wilcoxon--ejemplo.html"><a href="wilcoxon--ejemplo.html"><i class="fa fa-check"></i><b>22</b> Wilcoxon -ejemplo</a></li>
-<li class="chapter" data-level="23" data-path="ejemplo-aplicado-1.html"><a href="ejemplo-aplicado-1.html"><i class="fa fa-check"></i><b>23</b> Ejemplo aplicado</a></li>
-<li class="chapter" data-level="24" data-path="ejemplo-aplicado-2.html"><a href="ejemplo-aplicado-2.html"><i class="fa fa-check"></i><b>24</b> Ejemplo aplicado</a></li>
-<li class="chapter" data-level="25" data-path="ejemplo-aplicado-3.html"><a href="ejemplo-aplicado-3.html"><i class="fa fa-check"></i><b>25</b> Ejemplo aplicado</a></li>
-<li class="chapter" data-level="26" data-path="resumen.html"><a href="resumen.html"><i class="fa fa-check"></i><b>26</b> RESUMEN</a></li>
-<li class="chapter" data-level="27" data-path="análisis-de-riqueza-y-diversidad-alfa-y-beta.html"><a href="análisis-de-riqueza-y-diversidad-alfa-y-beta.html"><i class="fa fa-check"></i><b>27</b> Análisis de riqueza y diversidad alfa y beta</a></li>
-<li class="chapter" data-level="28" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html"><i class="fa fa-check"></i><b>28</b> Análisis multivariados</a>
-<ul>
-<li class="chapter" data-level="28.1" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#pca"><i class="fa fa-check"></i><b>28.1</b> PCA</a></li>
-<li class="chapter" data-level="28.2" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#pcoa"><i class="fa fa-check"></i><b>28.2</b> PCoA</a></li>
-<li class="chapter" data-level="28.3" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#nmds"><i class="fa fa-check"></i><b>28.3</b> NMDS</a></li>
-<li class="chapter" data-level="28.4" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#permanova"><i class="fa fa-check"></i><b>28.4</b> Permanova</a></li>
-<li class="chapter" data-level="28.5" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#permdis"><i class="fa fa-check"></i><b>28.5</b> permdis</a></li>
-<li class="chapter" data-level="28.6" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#anosim"><i class="fa fa-check"></i><b>28.6</b> Anosim</a></li>
-<li class="chapter" data-level="28.7" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#rda"><i class="fa fa-check"></i><b>28.7</b> RDA</a></li>
-<li class="chapter" data-level="28.8" data-path="análisis-multivariados.html"><a href="análisis-multivariados.html#cca"><i class="fa fa-check"></i><b>28.8</b> CCA</a></li>
-</ul></li>
-<li class="chapter" data-level="29" data-path="modelización-estadística.html"><a href="modelización-estadística.html"><i class="fa fa-check"></i><b>29</b> Modelización estadística:</a>
-<ul>
-<li class="chapter" data-level="29.1" data-path="modelización-estadística.html"><a href="modelización-estadística.html#modelo-lineal-general"><i class="fa fa-check"></i><b>29.1</b> Modelo lineal general</a></li>
-<li class="chapter" data-level="29.2" data-path="modelización-estadística.html"><a href="modelización-estadística.html#glm-con-distribución-poisson"><i class="fa fa-check"></i><b>29.2</b> GLM con distribución Poisson</a></li>
-<li class="chapter" data-level="29.3" data-path="modelización-estadística.html"><a href="modelización-estadística.html#glm-con-distribución-quasi-poisson"><i class="fa fa-check"></i><b>29.3</b> GLM con distribución quasi-Poisson</a></li>
-<li class="chapter" data-level="29.4" data-path="modelización-estadística.html"><a href="modelización-estadística.html#glm-con-distribución-de-bernoulli-binomial"><i class="fa fa-check"></i><b>29.4</b> GLM con distribución de Bernoulli (Binomial)</a></li>
-<li class="chapter" data-level="29.5" data-path="modelización-estadística.html"><a href="modelización-estadística.html#glmm-modelos-lineales-generales-mixtos"><i class="fa fa-check"></i><b>29.5</b> GLMM: modelos lineales generales mixtos</a></li>
+<li class="chapter" data-level="19.1" data-path="modelización-estadística.html"><a href="modelización-estadística.html#modelo-lineal-general"><i class="fa fa-check"></i><b>19.1</b> Modelo lineal general</a></li>
+<li class="chapter" data-level="19.2" data-path="modelización-estadística.html"><a href="modelización-estadística.html#glm-con-distribución-poisson"><i class="fa fa-check"></i><b>19.2</b> GLM con distribución Poisson</a></li>
+<li class="chapter" data-level="19.3" data-path="modelización-estadística.html"><a href="modelización-estadística.html#glm-con-distribución-quasi-poisson"><i class="fa fa-check"></i><b>19.3</b> GLM con distribución quasi-Poisson</a></li>
+<li class="chapter" data-level="19.4" data-path="modelización-estadística.html"><a href="modelización-estadística.html#glm-con-distribución-de-bernoulli-binomial"><i class="fa fa-check"></i><b>19.4</b> GLM con distribución de Bernoulli (Binomial)</a></li>
+<li class="chapter" data-level="19.5" data-path="modelización-estadística.html"><a href="modelización-estadística.html#glmm-modelos-lineales-generales-mixtos"><i class="fa fa-check"></i><b>19.5</b> GLMM: modelos lineales generales mixtos</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -392,31 +372,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="análisis-multivariados" class="section level1 hasAnchor" number="28">
-<h1><span class="header-section-number">Capítulo 28</span> Análisis multivariados<a href="análisis-multivariados.html#análisis-multivariados" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="pca" class="section level2 hasAnchor" number="28.1">
-<h2><span class="header-section-number">28.1</span> PCA<a href="análisis-multivariados.html#pca" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="análisis-multivariados" class="section level1 hasAnchor" number="18">
+<h1><span class="header-section-number">Capítulo 18</span> Análisis multivariados<a href="análisis-multivariados.html#análisis-multivariados" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="pca" class="section level2 hasAnchor" number="18.1">
+<h2><span class="header-section-number">18.1</span> PCA<a href="análisis-multivariados.html#pca" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="pcoa" class="section level2 hasAnchor" number="28.2">
-<h2><span class="header-section-number">28.2</span> PCoA<a href="análisis-multivariados.html#pcoa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="pcoa" class="section level2 hasAnchor" number="18.2">
+<h2><span class="header-section-number">18.2</span> PCoA<a href="análisis-multivariados.html#pcoa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="nmds" class="section level2 hasAnchor" number="28.3">
-<h2><span class="header-section-number">28.3</span> NMDS<a href="análisis-multivariados.html#nmds" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="nmds" class="section level2 hasAnchor" number="18.3">
+<h2><span class="header-section-number">18.3</span> NMDS<a href="análisis-multivariados.html#nmds" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="permanova" class="section level2 hasAnchor" number="28.4">
-<h2><span class="header-section-number">28.4</span> Permanova<a href="análisis-multivariados.html#permanova" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="permanova" class="section level2 hasAnchor" number="18.4">
+<h2><span class="header-section-number">18.4</span> Permanova<a href="análisis-multivariados.html#permanova" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="permdis" class="section level2 hasAnchor" number="28.5">
-<h2><span class="header-section-number">28.5</span> permdis<a href="análisis-multivariados.html#permdis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="permdis" class="section level2 hasAnchor" number="18.5">
+<h2><span class="header-section-number">18.5</span> permdis<a href="análisis-multivariados.html#permdis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="anosim" class="section level2 hasAnchor" number="28.6">
-<h2><span class="header-section-number">28.6</span> Anosim<a href="análisis-multivariados.html#anosim" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="anosim" class="section level2 hasAnchor" number="18.6">
+<h2><span class="header-section-number">18.6</span> Anosim<a href="análisis-multivariados.html#anosim" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="rda" class="section level2 hasAnchor" number="28.7">
-<h2><span class="header-section-number">28.7</span> RDA<a href="análisis-multivariados.html#rda" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="rda" class="section level2 hasAnchor" number="18.7">
+<h2><span class="header-section-number">18.7</span> RDA<a href="análisis-multivariados.html#rda" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="cca" class="section level2 hasAnchor" number="28.8">
-<h2><span class="header-section-number">28.8</span> CCA<a href="análisis-multivariados.html#cca" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="cca" class="section level2 hasAnchor" number="18.8">
+<h2><span class="header-section-number">18.8</span> CCA<a href="análisis-multivariados.html#cca" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 </div>
 </div>
@@ -425,7 +405,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="análisis-de-riqueza-y-diversidad-alfa-y-beta.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="análisis-de-riqueza-y-diversidad-alfa-y-beta-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="modelización-estadística.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

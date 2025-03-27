@@ -6,23 +6,29 @@ author:
   - "Dr. Daniel Rivera"
   - "MsC. Braulio Pérez Alva" 
   - "MsC. Yefrin Valladares"
-  
 site: bookdown::bookdown_site
 documentclass: book
 url: 'https://steph0522.github.io/R_Manual/index.html'
 github-repo: "Steph0522/R_Manual"
 output:
- bookdown::gitbook:
-  toc_depth: 3 
-  config:
-    sharing: null
-editor_options: 
+  bookdown::gitbook:
+    toc_depth: 3
+    config:
+      sharing: null
+  bookdown::word_document2:
+    latex_engine: xelatex
+    pandoc_args: [
+      "--variable", "mainfont=Times New Roman",
+      "--variable", "sansfont=Arial"
+    ]
+editor_options:
   markdown: 
     wrap: 72
 #link-citations: yes
 ---
 
-# Breve semblanza de los autores:  {-}
+
+# Breve semblanza de los autores  {-}
 
 La Dra. Stephanie Hereira-Pacheco (PhD) es Ingeniera Agroindustrial de profesión, posee un máster en y un doctorado en ciencias en la especialidad en Biotecnología. Es investigadora del Centro en Ciencias Biológicas de la Universidad Autónoma de Tlaxcala (México). Dentro de sus líneas de investigación destacan los temas relacionados a ecología microbiana, metagenómica, bioinformática y metabolitos secundarios. Ha publicado una gran cantidad de artículos científicos en diferentes revistas de alto impacto entre ellas PeerJ, Scientific Reports, Molecular Ecology. Fungal Ecoloy, Microbology Spectrum, etc.  
 
@@ -32,12 +38,12 @@ El Dr. Mauricio Hernández (PhD) es biólogo, posee un máster en geología y un
 
  
 
-## Aviso Legal: protección de propiedad intelectual {-}
+## Protección de propiedad intelectual {-}
 
 El contenido de este manual se encuentra bajo la protección de las normativas vigentes en materia de Propiedad Intelectual en los marcos legales de México y Honduras. Por lo tanto, su reproducción o distribución no autorizada con fines comerciales o lucrativos está prohibida. 
 
 
-## Índice 
+## Índice {-}
 
 Prefacio 
 

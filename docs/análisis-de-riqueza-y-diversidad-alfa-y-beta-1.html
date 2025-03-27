@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</title>
-  <meta name="description" content="INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <title>Capítulo 17 Análisis de riqueza y diversidad alfa y beta | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</title>
+  <meta name="description" content="Capítulo 17 Análisis de riqueza y diversidad alfa y beta | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <meta property="og:title" content="Capítulo 17 Análisis de riqueza y diversidad alfa y beta | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="Steph0522/R_Manual" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
+  <meta name="twitter:title" content="Capítulo 17 Análisis de riqueza y diversidad alfa y beta | INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO" />
   
   
   
@@ -33,8 +33,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="introducción-a-r-y-rstudio.html"/>
+<link rel="prev" href="análisis-de-riqueza-y-diversidad-alfa-y-beta.html"/>
+<link rel="next" href="análisis-multivariados.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -372,115 +372,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">INTRODUCCIÓN A LA CIENCIA DE DATOS (O BIOESTADÍSTICA) USANDO R/RSTUDIO</h1>
-<p class="author"><em>Dra. Stephanie Hereira-Pacheco</em></p>
-<p class="author"><em>Dr. Mauricio Hernández</em></p>
-<p class="author"><em>Dr. Daniel Rivera</em></p>
-<p class="author"><em>MsC. Braulio Pérez Alva</em></p>
-<p class="author"><em>MsC. Yefrin Valladares</em></p>
-</div>
-<div id="breve-semblanza-de-los-autores" class="section level1 unnumbered hasAnchor">
-<h1>Breve semblanza de los autores<a href="index.html#breve-semblanza-de-los-autores" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>La Dra. Stephanie Hereira-Pacheco (PhD) es Ingeniera Agroindustrial de profesión, posee un máster en y un doctorado en ciencias en la especialidad en Biotecnología. Es investigadora del Centro en Ciencias Biológicas de la Universidad Autónoma de Tlaxcala (México). Dentro de sus líneas de investigación destacan los temas relacionados a ecología microbiana, metagenómica, bioinformática y metabolitos secundarios. Ha publicado una gran cantidad de artículos científicos en diferentes revistas de alto impacto entre ellas PeerJ, Scientific Reports, Molecular Ecology. Fungal Ecoloy, Microbology Spectrum, etc.</p>
-<p>El Dr. Mauricio Hernández (PhD) es biólogo, posee un máster en geología y un doctorado en Ciencias Biológicas. El Dr. Hernández es profesor e investigador en el Departamento de Biología Celular y Genética, Escuela de Biología, Facultad de Ciencias (Universidad Nacional Autónoma de Honduras). Sus líneas de investigación cubren áreas relacionadas a la ecología molecular, microbiología, ambientes contaminados por compuestos orgánicos persistentes, entre otros. Sus trabajos de investigación han sido publicados en revistas internaciones como ser Molecular Ecology, Animal Microbiome, Integrative Zoology, Trends in Ecology and Evolution, Environmental Pollution, Journal of Hazardous Materials, etc.</p>
-<div id="protección-de-propiedad-intelectual" class="section level2 unnumbered hasAnchor">
-<h2>Protección de propiedad intelectual<a href="index.html#protección-de-propiedad-intelectual" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>El contenido de este manual se encuentra bajo la protección de las normativas vigentes en materia de Propiedad Intelectual en los marcos legales de México y Honduras. Por lo tanto, su reproducción o distribución no autorizada con fines comerciales o lucrativos está prohibida.</p>
-</div>
-<div id="índice" class="section level2 unnumbered hasAnchor">
-<h2>Índice<a href="index.html#índice" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Prefacio</p>
-<p>Introducción a R y Rstudio</p>
-<ul>
-<li><p>Requisitos para la instalación de R</p></li>
-<li><p>Instalación de R y Rstudio</p></li>
-<li><p>Tipos de datos</p></li>
-<li><p>Dataframes</p></li>
-<li><p>Directorio de trabajo</p></li>
-<li><p>Funciones básicas en R</p></li>
-</ul>
-<p>Manejo de dataframes y bases de datos</p>
-<p>Construcción de gráficos</p>
-<p>Valor de significancia p en estadística (p-value)</p>
-<ul>
-<li><p>¿Qué es el valor p?</p></li>
-<li><p>Interpretación general del valor p</p></li>
-<li><p>Marco de prueba de hipótesis: hipótesis nula y alternativa</p></li>
-<li><p>Regla de decisión: umbrales comunes para el valor p</p></li>
-<li><p>Errores en la prueba de hipótesis</p></li>
-</ul>
-<p>Introducción a la estadística</p>
-<ul>
-<li><p>Diferencia entre estadística y bioestadística</p></li>
-<li><p>Estadística descriptiva: medidas de tendencia central y medidas de dispersión</p></li>
-<li><p>Estadística inferencial: univariada y multivariada</p></li>
-<li><p>Estadística inferencial paramétrica: supuestos principales de las pruebas paramétricas</p></li>
-<li><p>Estadística inferencial no paramétrica: supuestos principales de las pruebas no paramétricas</p></li>
-<li><p>Test estadísticos para determinar distribución y homogeneidad de varianzas en un conjunto de datos: prueba de Shapiro-Wilk, pruebas de ajuste o distribución (Kolmogorov-Smirnov, Anderson-Darling) y prueba de Levins (varianzas).</p></li>
-</ul>
-<p>Tipos de pruebas paramétricas</p>
-<ul>
-<li><p>Prueba t (t de Student) para un conjunto de datos</p></li>
-<li><p>Prueba t (t de Student) para dos conjuntos de datos</p></li>
-<li><p>Prueba t (t de Student) para datos pareados</p></li>
-<li><p>Prueba t de Welch</p></li>
-<li><p>Prueba F de Fisher</p></li>
-<li><p>Análisis de varianza “ANOVA”: una vía (one-way) y dos vías (two-way)</p></li>
-<li><p>Análisis de covarianza (ANCOVA)</p></li>
-<li><p>Correlación de Pearson</p></li>
-<li><p>Regresión lineal simple y múltiple</p></li>
-</ul>
-<p>Tipos de pruebas no paramétricas</p>
-<ul>
-<li><p>Prueba de Mann-Whitney U (o Wilcoxon rank-sum test) – muestras independientes</p></li>
-<li><p>Prueba de Wilcoxon para muestras relacionadas</p></li>
-<li><p>Prueba de Kruskal-Wallis – muestras independientes</p></li>
-<li><p>Prueba de Friedman – muestras relacionadas</p></li>
-<li><p>Prueba de Chi-Cuadrado – datos categóricos (frecuencias)</p></li>
-<li><p>Prueba de McNemar – datos categóricos (frecuencias)</p></li>
-<li><p>Correlación de rango de Spearman</p></li>
-<li><p>Correlación de Kendall</p></li>
-</ul>
-<p>Análisis de riqueza, diversidad alfa y beta</p>
-<ul>
-<li>Números de Hill (diversidad al órden q0, q1 y q2)</li>
-</ul>
-<p>Análisis multivariados</p>
-<ul>
-<li><p>Análisis de componentes principales (PCA)</p></li>
-<li><p>Análisis de coordenadas principales (PCoA)</p></li>
-<li><p>Escalamiento multidimensional no métrico (NMDS)</p></li>
-<li><p>Análisis de varianza multivariado permutacional (PERMANOVA)</p></li>
-<li><p>PERMDIS</p></li>
-<li><p>ANOSIM</p></li>
-<li><p>RDA</p></li>
-<li><p>CCA</p></li>
-</ul>
-<p>Modelización estadística</p>
-<ul>
-<li><p>Modelo lineal</p></li>
-<li><p>Modelo lineal general (GLM)</p></li>
-<li><p>GLM con distribución Poisson</p></li>
-<li><p>GLM con distribución quasi-Poisson</p></li>
-<li><p>GLM con distribución de Bernoulli (binomail)</p></li>
-<li><p>GLMM: modelos lineales generales mixtos</p></li>
-</ul>
-</div>
-<div id="prefacio" class="section level2 unnumbered hasAnchor">
-<h2>Prefacio<a href="index.html#prefacio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Actualmente, las ciencias biológicas son consideradas una de las áreas más activas en la investigación científica. Dentro de este campo, los investigadores recurren cada vez más a las herramientas computacionales para analizar e interpretar datos biológicos complejos. Entre las diversas herramientas de programación disponibles, R ha sido considerado como uno de los lenguajes más robustos, versátiles y ampliamente utilizados para los análisis de datos. Sin embargo, consideramos que existe una brecha importante entre la recolección, análisis e interpretación de datos, particularmente para los estudiantes universitarios. Aunado a esta falta de conocimiento, reconocemos que los estudiantes egresados deben poseer las habilidades básicas para realizar análisis estadísticos y brindar explicaciones sencillas a fenómenos naturales biológicos. Este manual tiene como objetivo proporcionar una introducción al uso del software R, orientado principalmente a estudiantes de pregrado y posgrado, así como investigadores de las ciencias biológicas. Debido a la gran cantidad de paquetes desarrollados por la comunidad científica, R ofrece una amplia gama de herramientas relacionadas con la manipulación de datos, modelado estadístico, visualización de gráficos, entre otros.</p>
-<p>A lo largo de texto, trataremos de cubrir aspectos básicos de R, como la importación y exportación de datos, pruebas para evaluar distribución y varianza de los datos, aplicación de pruebas paramétricas y no paramétricas, gráficos de alta calidad, entre otros. El contenido ha sido cuidadosamente estructurado para brindar una guía detallada con ejemplos prácticos en el contexto de las ciencias biológicas. Por lo tanto, los estudiantes serán capaces de manejar conjuntos de datos, visualizar distribuciones y tendencias, realizar pruebas de hipótesis, aplicar modelos estadísticos y otros aspectos fundamentales para sus proyectos de investigación.</p>
-
-</div>
+<div id="análisis-de-riqueza-y-diversidad-alfa-y-beta-1" class="section level1 hasAnchor" number="17">
+<h1><span class="header-section-number">Capítulo 17</span> Análisis de riqueza y diversidad alfa y beta<a href="análisis-de-riqueza-y-diversidad-alfa-y-beta-1.html#análisis-de-riqueza-y-diversidad-alfa-y-beta-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="introducción-a-r-y-rstudio.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="análisis-de-riqueza-y-diversidad-alfa-y-beta.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="análisis-multivariados.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
